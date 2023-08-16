@@ -8,8 +8,6 @@ book:
   site-url: https://hastie.su.domains/ISLP/ISLP_website.pdf
   repo-url: https://github.com/r4ds/bookclub-islp
   sharing: [twitter, facebook, linkedin]
-  page-footer:
-    right: "1850 depiction of Ptilocercus lowii"
 
   chapters:
     - index.qmd
@@ -33,6 +31,7 @@ format:
     theme: cosmo
     fontsize: 16pt
     css: style.css
+    include-in-header: sidebars-toggle.html
 
 execute:
   freeze: true
