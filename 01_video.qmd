@@ -2,15 +2,23 @@
 
 ## Cohort 01
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/dP42YWsVIGo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/gtYyk-6MpQg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <summary><details>
 ```
-00:22:16	Isabella Velásquez:	For more info on TidyTuesday: https://github.com/rfordatascience/tidytuesday#readme
-00:26:23	shamsuddeen:	https://docs.google.com/spreadsheets/d/1io_R_ZaGtzJcDF5KcY4hbgMBsJVi_4USE4JGsHcv9ug/edit#gid=0
-00:45:23	shamsuddeen:	https://github.com/conda-forge/miniforge
-00:59:07	shamsuddeen:	https://github.com/conda-forge/miniforge
-01:03:03	shamsuddeen:	https://blogs.shmuhammad.com/
+00:07:02    Lucio Cornejo:    start
+00:12:04    Mateo Vega:    Hey everyone! sorry I cannot turn on the mic right now
+00:12:32    Mateo Vega:    On the ISLR?
+00:12:50    Mateo Vega:    No hahaha
+00:13:48    Mateo Vega:    Yes, both things would be fine
+00:13:56    Shah Nawaz:    both
+00:19:20    Mateo Vega:    I would like to use quarto
+00:19:52    Mateo Vega:    I already have some practice with it so no problem
+00:21:38    Lydia Gibson:    https://quarto.org/docs/presentations/
+00:22:16    Lydia Gibson:    Quarto book sounds good
+00:37:56    Lydia Gibson:    I think that's classification
+00:41:34    Mateo Vega:    See you, thanks!
+00:41:40    Lucio Cornejo:    end
 ```
 </details>
 </summary>

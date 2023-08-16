@@ -1,4 +1,9 @@
-# 1. Preliminaries
+# 1. Introduction
 
 ## Learning Objectives
 
+- Recognize various types of statistical learning.
+- Understand why this book is useful for you.
+- Be able to read mathematical notation used throughout this book.
+- Describe the overall layout of this book.
+- Be able to find data used in examples throughout the book.

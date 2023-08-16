@@ -1,0 +1,41 @@
+<script type="module">
+  // When keyboard's 's' key is pressed, 
+  // hide both sidebars (tables of contents)
+  document.addEventListener(
+    "keydown", 
+    function (evt) {
+      // Avoid keydown event repetition due to holding key
+      if (evt.repeat) return;
+
+      if ('s' === event.key.toLowerCase()) {
+        const quartoContent = document.querySelector("#quarto-content");
+        
+        if (window.getComputedStyle(quartoContent).display === 'grid') {
+          // Remove grid display
+          quartoContent.style.display = "block";
+          
+          // Hide every HTML element, except for main content
+          quartoContent
+            .querySelectorAll(":scope > :not(.content, script)")
+            .forEach(e => e.style.display = "none");
+  
+          // Change content margin for desktop view
+          quartoContent
+            .querySelector("main.content")
+            .style.margin = "20px 100px";
+        } else {
+          // Try to restore Quarto's initial style
+          quartoContent.style.display = "grid";
+
+          quartoContent
+            .querySelectorAll(":scope > :not(.content, script)")
+            .forEach(e => e.style.display = "flex");
+
+          quartoContent
+            .querySelector("main.content")
+            .style.margin = "21px 0";
+        }
+      }
+    }
+  );
+</script> 

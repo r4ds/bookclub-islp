@@ -9,3 +9,5 @@ docs
 *.pdf
 *_notes_files/
 .quarto
+
+!sidebars-toggle.html
