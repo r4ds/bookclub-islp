@@ -1,0 +1,4 @@
+# 2. Python Language Basics, IPython, and Jupyter Notebooks
+
+## Learning Objectives
+

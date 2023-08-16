@@ -1,0 +1,1115 @@
+# Data Structures and Sequences
+
+## Tuples
+
+![](https://pynative.com/wp-content/uploads/2021/02/python-tuple.jpg)
+
+A tuple is a fixed-length, immutable sequence of Python objects which, once assigned, cannot be changed. The easiest way to create one is with a comma-separated sequence of values wrapped in parentheses:
+
+```{python}
+tup = (4, 5, 6)
+tup
+```
+
+In many contexts, the parentheses can be omitted
+
+```{python}
+tup = 4, 5, 6
+tup
+```
+
+You can convert any sequence or iterator to a tuple by invoking
+
+```{python}
+tuple([4,0,2])
+
+tup = tuple('string')
+
+tup
+```
+
+Elements can be accessed with square brackets [] 
+
+Note the zero indexing
+
+```{python}
+tup[0]
+
+```
+
+Tuples of tuples
+
+```{python}
+nested_tup = (4,5,6),(7,8)
+
+nested_tup
+
+```
+
+```{python}
+nested_tup[0]
+```
+
+```{python}
+nested_tup[1]
+```
+
+While the objects stored in a tuple may be mutable themselves, once the tuple is created it’s not possible to modify which object is stored in each slot:
+
+```{python}
+tup = tuple(['foo', [1, 2], True])
+
+tup[2]
+
+```
+
+```{{python}}
+
+tup[2] = False
+
+```
+
+````
+TypeError                                 Traceback (most recent call last)
+Input In [9], in <cell line: 1>()
+----> 1 tup[2] = False
+
+TypeError: 'tuple' object does not support item assignment
+TypeError: 'tuple' object does not support item assignment
+````
+
+If an object inside a tuple is mutable, such as a list, you can modify it in place
+
+```{python}
+tup[1].append(3)
+
+tup
+```
+
+You can concatenate tuples using the + operator to produce longer tuples:
+
+```{python}
+(4, None, 'foo') + (6, 0) + ('bar',)
+
+```
+
+### Unpacking tuples
+
+If you try to assign to a tuple-like expression of variables, Python will attempt to unpack the value on the righthand side of the equals sign:
+
+```{python}
+tup = (4, 5, 6)
+tup
+```
+
+```{python}
+
+a, b, c = tup
+
+c
+
+```
+
+Even sequences with nested tuples can be unpacked:
+
+```{python}
+ 
+tup = 4, 5, (6,7)
+
+a, b, (c, d) = tup
+
+d
+```
+
+To easily swap variable names
+
+```{python}
+a, b = 1, 4
+
+a
+
+```
+
+```{python}
+b
+```
+
+```{python}
+b, a = a, b
+
+a
+```
+
+```{python}
+b
+```
+
+A common use of variable unpacking is iterating over sequences of tuples or lists
+
+```{python}
+seq = [(1, 2, 3), (4, 5, 6), (7, 8, 9)]
+
+seq
+```
+
+```{python}
+for a, b, c in seq:
+     print(f'a={a}, b={b}, c={c}')
+
+```
+
+`*rest` syntax for plucking elements
+
+```{python}
+values = 1,2,3,4,5
+
+a, b, *rest = values
+
+rest
+
+```
+
+ As a matter of convention, many Python programmers will use the underscore (_) for unwanted variables:
+
+```{python}
+
+a, b, *_ = values
+
+```
+
+### Tuple methods
+
+Since the size and contents of a tuple cannot be modified, it is very light on instance methods. A particularly useful one (also available on lists) is `count`
+
+```{python}
+a = (1,2,2,2,2,3,4,5,7,8,9)
+
+a.count(2)
+
+```
+
+## List
+
+![](https://pynative.com/wp-content/uploads/2021/03/python-list.jpg)
+
+In contrast with tuples, lists are variable length and their contents can be modified in place.
+
+Lists are mutable. 
+
+Lists use `[]` square brackts or the `list` function
+
+```{python}
+
+a_list = [2, 3, 7, None]
+
+tup = ("foo", "bar", "baz")
+
+b_list = list(tup)
+
+b_list
+
+```
+
+```{python}
+
+b_list[1] = "peekaboo"
+
+b_list
+```
+
+Lists and tuples are semantically similar (though tuples cannot be modified) and can be used interchangeably in many functions.
+
+```{python}
+gen = range(10)
+
+gen
+```
+
+```{python}
+
+list(gen)
+
+```
+
+### Adding and removing list elements
+
+the `append` method
+
+```{python}
+
+b_list.append("dwarf")
+
+b_list
+```
+
+the `insert` method
+
+```{python}
+
+b_list.insert(1, "red")
+
+b_list
+```
+
+`insert` is computationally more expensive than `append`
+
+the `pop` method, the inverse of `insert`
+
+```{python}
+
+b_list.pop(2)
+
+```
+
+```{python}
+
+b_list
+```
+
+the `remove` method
+
+```{python}
+
+b_list.append("foo")
+
+b_list
+```
+
+```{python}
+
+b_list.remove("foo")
+
+b_list
+
+```
+
+Check if a list contains a value using the `in` keyword:
+
+```{python}
+
+"dwarf" in b_list
+
+```
+
+The keyword `not` can be used to negate an `in`
+
+```{python}
+"dwarf" not in b_list
+
+```
+
+### Concatenating and combining lists
+
+similar with tuples, use `+` to concatenate
+
+```{python}
+[4, None, "foo"] + [7, 8, (2, 3)]
+
+```
+
+the `extend` method
+
+```{python}
+x = [4, None, "foo"]
+
+x.extend([7,8,(2,3)])
+
+x
+```
+
+list concatenation by addition is an expensive operation
+
+using `extend` is preferable
+
+```{{python}}
+everything = []
+for chunk in list_of_lists:
+    everything.extend(chunk)
+
+```
+
+is generally faster than
+
+```{{python}}
+
+everything = []
+for chunk in list_of_lists:
+    everything = everything + chunk
+
+```
+
+### Sorting
+
+the `sort` method
+
+```{python}
+
+a = [7, 2, 5, 1, 3]
+
+a.sort()
+
+a
+
+```
+
+`sort` options
+
+```{python}
+b = ["saw", "small", "He", "foxes", "six"]
+
+b.sort(key = len)
+
+b
+
+```
+
+### Slicing
+
+Slicing semantics takes a bit of getting used to, especially if you’re coming from R or MATLAB.
+
+using the indexing operator `[]`
+
+```{python}
+
+seq = [7, 2, 3, 7, 5, 6, 0, 1]
+
+seq[3:5]
+
+```
+
+also assigned with a sequence
+
+```{python}
+
+seq[3:5] = [6,3]
+
+seq
+```
+
+Either the `start` or `stop` can be omitted
+
+```{python}
+seq[:5]
+
+```
+
+```{python}
+seq[3:]
+```
+
+Negative indices slice the sequence relative to the end:
+
+```{python}
+seq[-4:]
+```
+
+A step can also be used after a second colon to, say, take every other element:
+
+```{python}
+seq[::2]
+
+```
+
+A clever use of this is to pass -1, which has the useful effect of reversing a list or tuple:
+
+```{python}
+seq[::-1]
+```
+
+## Dictionary
+
+![](https://pynative.com/wp-content/uploads/2021/02/dictionaries-in-python.jpg)
+
+The dictionary or dict may be the most important built-in Python data structure. 
+
+One approach for creating a dictionary is to use curly braces {} and colons to separate keys and values:
+
+```{python}
+empty_dict = {}
+
+d1 = {"a": "some value", "b": [1, 2, 3, 4]}
+
+d1
+```
+
+access, insert, or set elements 
+
+```{python}
+
+d1[7] = "an integer"
+
+d1
+
+```
+
+and as before
+
+```{python}
+"b" in d1
+```
+
+the `del` and `pop` methods
+
+```{python}
+
+del d1[7]
+
+d1
+```
+
+```{python}
+
+ret = d1.pop("a")
+
+ret
+```
+
+The `keys` and `values` methods
+
+```{python}
+list(d1.keys())
+```
+
+```{python}
+list(d1.values())
+```
+
+the `items` method
+
+```{python}
+list(d1.items())
+
+```
+
+ the update method to merge one dictionary into another
+
+```{python}
+
+d1.update({"b": "foo", "c": 12})
+
+d1
+
+```
+
+ ### Creating dictionaries from sequences
+
+```{python}
+list(range(5))
+```
+
+```{python}
+tuples = zip(range(5), reversed(range(5)))
+
+tuples
+
+mapping = dict(tuples)
+
+mapping
+
+```
+
+### Default values
+
+imagine categorizing a list of words by their first letters as a dictionary of lists
+
+```{python}
+words = ["apple", "bat", "bar", "atom", "book"]
+
+by_letter = {}
+
+for word in words:
+        letter = word[0]
+        if letter not in by_letter:
+            by_letter[letter] = [word]
+        else:
+            by_letter[letter].append(word)
+
+by_letter
+```
+
+The `setdefault` dictionary method can be used to simplify this workflow. The preceding for loop can be rewritten as:
+
+```{python}
+by_letter = {}
+
+for word in words:
+        letter = word[0]
+        by_letter.setdefault(letter, []).append(word)
+
+by_letter
+```
+The built-in `collections`module has a useful class, `defaultdict`, which makes this even easier.
+
+```{python}
+from collections import defaultdict
+
+by_letter = defaultdict(list)
+
+for word in words:
+        by_letter[word[0]].append(word)
+
+by_letter
+```
+
+### Valid dictionary key types
+
+keys generally have to be immutable objects like scalars or tuples for *hashability*
+
+To use a list as a key, one option is to convert it to a tuple, which can be hashed as long as its elements also can be:
+
+```{python}
+d = {}
+
+d[tuple([1,2,3])] = 5
+
+d
+
+```
+
+## Set
+
+![](https://pynative.com/wp-content/uploads/2021/03/python-sets.jpg)
+
+can be created in two ways: via the `set` function or via a `set literal` with curly braces:
+
+```{python}
+
+set([2, 2, 2, 1, 3, 3])
+
+{2,2,1,3,3}
+
+```
+
+Sets support mathematical set operations like union, intersection, difference, and symmetric difference.
+
+The `union` of these two sets:
+
+```{python}
+a = {1, 2, 3, 4, 5}
+
+b = {3, 4, 5, 6, 7, 8}
+
+a.union(b)
+
+a | b
+
+```
+
+The `&`operator or the `intersection` method
+
+```{python}
+a.intersection(b)
+
+a & b
+
+```
+
+[A table of commonly used `set` methods](https://wesmckinney.com/book/python-builtin.html#tbl-table_set_operations)
+
+All of the logical set operations have in-place counterparts, which enable you to replace the contents of the set on the left side of the operation with the result. For very large sets, this may be more efficient
+
+
+```{python}
+
+c = a.copy()
+
+c |= b
+
+c
+```
+
+
+```{python}
+
+d = a.copy()
+
+d &= b
+
+d
+```
+
+set elements generally must be immutable, and they must be hashable
+
+you can convert them to tuples
+
+You can also check if a set is a subset of (is contained in) or a superset of (contains all elements of) another set
+
+```{python}
+a_set = {1, 2, 3, 4, 5}
+
+{1, 2, 3}.issubset(a_set)
+
+```
+
+```{python}
+
+a_set.issuperset({1, 2, 3})
+
+```
+
+## Built-In Sequence Functions
+
+### enumerate
+
+`enumerate` returns a sequence of (i, value) tuples
+
+### sorted
+
+`sorted` returns a new sorted list 
+
+```{python}
+
+sorted([7,1,2,9,3,6,5,0,22])
+
+```
+
+### zip
+
+`zip` “pairs” up the elements of a number of lists, tuples, or other sequences to create a list of tuples
+
+```{python}
+seq1 = ["foo", "bar", "baz"]
+
+seq2 = ["one", "two", "three"]
+
+zipped = zip(seq1, seq2)
+
+list(zipped)
+
+```
+
+`zip` can take an arbitrary number of sequences, and the number of elements it produces is determined by the shortest sequence
+
+```{python}
+seq3 = [False, True]
+
+list(zip(seq1, seq2, seq3))
+
+```
+
+A common use of `zip` is simultaneously iterating over multiple sequences, possibly also combined with `enumerate`
+
+```{python}
+for index, (a, b) in enumerate(zip(seq1, seq2)):
+    print(f"{index}: {a}, {b}")
+
+```
+
+`reversed` iterates over the elements of a sequence in reverse order
+
+```{python}
+
+list(reversed(range(10)))
+```
+
+## List, Set, and Dictionary Comprehensions
+
+```
+[expr for value in collection if condition]
+```
+
+For example, given a list of strings, we could filter out strings with length 2 or less and convert them to uppercase like this
+
+```{python}
+strings = ["a", "as", "bat", "car", "dove", "python"]
+
+[x.upper() for x in strings if len(x) > 2]
+
+```
+
+A dictionary comprehension looks like this
+
+```
+dict_comp = {key-expr: value-expr for value in collection
+             if condition}
+```
+
+Suppose we wanted a set containing just the lengths of the strings contained in the collection
+
+```{python}
+unique_lengths = {len(x) for x in strings}
+
+unique_lengths
+
+```
+
+we could create a lookup map of these strings for their locations in the list
+
+```{python}
+loc_mapping = {value: index for index, value in enumerate(strings)}
+
+loc_mapping
+
+```
+## Nested list comprehensions
+
+Suppose we have a list of lists containing some English and Spanish names. We want to get a single list containing all names with two or more a’s in them
+
+```{python}
+all_data = [["John", "Emily", "Michael", "Mary", "Steven"],
+            ["Maria", "Juan", "Javier", "Natalia", "Pilar"]]
+
+result = [name for names in all_data for name in names
+          if name.count("a") >= 2]
+
+result
+```
+
+Here is another example where we “flatten” a list of tuples of integers into a simple list of integers
+
+```{python}
+some_tuples = [(1, 2, 3), (4, 5, 6), (7, 8, 9)]
+
+flattened = [x for tup in some_tuples for x in tup]
+
+flattened
+
+```
+
+# Functions
+
+![](https://miro.medium.com/max/1200/1*ZegxhR33NdeVRpBPYXnYYQ.gif)
+
+`Functions` are the primary and most important method of code organization and reuse in Python.
+
+they use the `def` keyword
+
+Each function can have positional arguments and keyword arguments. Keyword arguments are most commonly used to specify default values or optional arguments. Here we will define a function with an optional z argument with the default value 1.5
+
+```{python}
+
+def my_function(x, y, z=1.5):
+    return (x + y) * z 
+
+my_function(4,25)
+
+```
+
+The main restriction on function arguments is that the keyword arguments must follow the positional arguments
+
+## Namespaces, Scope, and Local Functions
+
+A more descriptive name describing a variable scope in Python is a namespace.
+
+Consider the following function
+
+```{python}
+a = []
+
+def func():
+    for i in range(5):
+        a.append(i)
+
+```
+
+When `func()` is called, the empty list a is created, five elements are appended, and then a is destroyed when the function exits. 
+
+```{python}
+func()
+
+func()
+
+a
+```
+
+## Returing Multiple Values
+
+What’s happening here is that the function is actually just returning one object, a tuple, which is then being unpacked into the result variables.
+
+```{python}
+def f():
+    a = 5
+    b = 6
+    c = 7
+    return a, b, c
+
+a, b, c = f()
+
+a
+
+```
+
+## Functions are Objects
+
+ Suppose we were doing some data cleaning and needed to apply a bunch of transformations to the following list of strings:
+
+```{python}
+states = ["   Alabama ", "Georgia!", "Georgia", "georgia", "FlOrIda",
+          "south   carolina##", "West virginia?"]
+
+import re
+
+def clean_strings(strings):
+    result = []
+    for value in strings:
+        value = value.strip()
+        value = re.sub("[!#?]", "", value)
+        value = value.title()
+        result.append(value)
+    return result
+
+clean_strings(states)
+```
+
+Another approach
+
+```{python}
+def remove_punctuation(value):
+    return re.sub("[!#?]", "", value)
+
+clean_ops = [str.strip, remove_punctuation, str.title]
+
+def clean_strings(strings, ops):
+    result = []
+    for value in strings:
+        for func in ops:
+            value = func(value)
+        result.append(value)
+    return result
+
+clean_strings(states, clean_ops)
+
+```
+
+You can use functions as arguments to other functions like the built-in `map` function
+
+```{python}
+
+for x in map(remove_punctuation, states):
+    print(x)
+```
+
+## Anonymous Lambda Functions
+
+ a way of writing functions consisting of a single statement
+
+suppose you wanted to sort a collection of strings by the number of distinct letters in each string
+
+```{python}
+strings = ["foo", "card", "bar", "aaaaaaa", "ababdo"]
+
+strings.sort(key=lambda x: len(set(x)))
+
+strings
+```
+
+# Generators
+
+Many objects in Python support iteration, such as over objects in a list or lines in a file. 
+
+```{python}
+some_dict = {"a": 1, "b": 2, "c": 3}
+
+for key in some_dict:
+    print(key)
+
+```
+
+Most methods expecting a list or list-like object will also accept any iterable object. This includes built-in methods such as `min`, `max`, and `sum`, and type constructors like `list` and `tuple`
+
+A `generator` is a convenient way, similar to writing a normal function, to construct a new iterable object. Whereas normal functions execute and return a single result at a time, generators can return a sequence of multiple values by pausing and resuming execution each time the generator is used. To create a generator, use the yield keyword instead of return in a function
+
+```{python}
+def squares(n=10):
+    print(f"Generating squares from 1 to {n ** 2}")
+    for i in range(1, n + 1):
+        yield i ** 2
+
+gen = squares()
+
+for x in gen:
+    print(x, end=" ")
+```
+
+> Since generators produce output one element at a time versus an entire list all at once, it can help your program use less memory.
+
+## Generator expressions
+
+ This is a generator analogue to list, dictionary, and set comprehensions. To create one, enclose what would otherwise be a list comprehension within parentheses instead of brackets:
+
+```{python}
+gen = (x ** 2 for x in range(100))
+
+gen
+
+```
+
+Generator expressions can be used instead of list comprehensions as function arguments in some cases:
+
+```{python}
+
+sum(x ** 2 for x in range(100))
+
+```
+
+```{python}
+dict((i, i ** 2) for i in range(5))
+```
+
+## itertools module
+
+`itertools` module has a collection of generators for many common data algorithms.
+
+`groupby` takes any sequence and a function, grouping consecutive elements in the sequence by return value of the function
+
+```{python}
+import itertools
+
+def first_letter(x):
+    return x[0]
+
+names = ["Alan", "Adam", "Jackie", "Lily", "Katie", "Molly"]
+
+for letter, names in itertools.groupby(names, first_letter):
+    print(letter, list(names))
+
+```
+
+[Table of other itertools functions](https://wesmckinney.com/book/python-builtin.html#tbl-table_itertools)
+
+# Errors and Exception Handling
+
+Handling errors or exceptions gracefully is an important part of building robust programs
+
+```{python}
+def attempt_float(x):
+    try:
+        return float(x)
+    except:
+        return x
+
+attempt_float("1.2345")
+
+```
+
+```{python}
+attempt_float("something")
+```
+
+You might want to suppress only ValueError, since a TypeError (the input was not a string or numeric value) might indicate a legitimate bug in your program. To do that, write the exception type after except:
+
+```{python}
+def attempt_float(x):
+    try:
+        return float(x)
+    except ValueError:
+        return x
+
+```
+
+```{python}
+#| eval: false
+attempt_float((1, 2))
+```
+
+```
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+d:\packages\bookclub-py4da\03_notes.qmd in <cell line: 1>()
+----> 1001 attempt_float((1, 2))
+
+Input In [114], in attempt_float(x)
+      1 def attempt_float(x):
+      2     try:
+----> 3         return float(x)
+      4     except ValueError:
+      5         return x
+
+TypeError: float() argument must be a string or a real number, not 'tuple'
+
+```
+
+You can catch multiple exception types by writing a tuple of exception types instead (the parentheses are required):
+
+```{python}
+def attempt_float(x):
+    try:
+        return float(x)
+    except (TypeError, ValueError):
+        return x
+
+attempt_float((1, 2))
+
+```
+
+In some cases, you may not want to suppress an exception, but you want some code to be executed regardless of whether or not the code in the try block succeeds. To do this, use `finally`:
+
+```{python}
+#| eval: false
+f = open(path, mode="w")
+
+try:
+    write_to_file(f)
+finally:
+    f.close()
+
+```
+
+Here, the file object f will always get closed. 
+
+you can have code that executes only if the try: block succeeds using else:
+
+```{python}
+#| eval: false
+f = open(path, mode="w")
+
+try:
+    write_to_file(f)
+except:
+    print("Failed")
+else:
+    print("Succeeded")
+finally:
+    f.close()
+
+```
+
+## Exceptions in IPython
+
+If an exception is raised while you are %run-ing a script or executing any statement, IPython will by default print a full call stack trace. Having additional context by itself is a big advantage over the standard Python interpreter
+
+# Files and the Operating System
+
+To open a file for reading or writing, use the built-in open function with either a relative or absolute file path and an optional file encoding.
+
+We can then treat the file object f like a list and iterate over the lines
+
+```{python}
+#| eval: false
+
+path = "examples/segismundo.txt"
+
+f = open(path, encoding="utf-8")
+
+lines = [x.rstrip() for x in open(path, encoding="utf-8")]
+
+lines
+
+```
+
+When you use open to create file objects, it is recommended to close the file
+
+```{python}
+#| eval: false
+f.close()
+
+```
+
+some of the most commonly used methods are `read`, `seek`, and `tell`.
+
+`read(10)` returns 10 characters from the file
+
+the `read` method advances the file object position by the number of bytes read
+
+`tell()` gives you the current position in the file
+
+To get consistent behavior across platforms, it is best to pass an encoding (such as `encoding="utf-8"`)
+
+`seek(3)` changes the file position to the indicated byte 
+
+To write text to a file, you can use the file’s `write` or `writelines` methods
+
+## Byte and Unicode with Files
+
+The default behavior for Python files (whether readable or writable) is text mode, which means that you intend to work with Python strings (i.e., Unicode). 
+

@@ -1,0 +1,19 @@
+# Video {-}
+
+## Cohort 01
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DWBaOXhA8zs" title="Python for Data Analysis: Plotting and Visualization (py4da01 9)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<summary><details>
+```
+00:26:25	Layla Bouzoubaa:	dev.new
+00:26:26	Jadey Ryan:	dev.new()
+00:26:58	Jadey Ryan:	grDevices
+00:27:53	Layla Bouzoubaa:	could be an issue to report
+00:40:08	shamsuddeen:	ggpy: https://github.com/yhat/ggpy
+00:41:31	shamsuddeen:	plotnine : https://github.com/has2k1/plotnine
+01:01:35	Jadey Ryan:	thank you!!
+```
+</details>
+</summary>
+

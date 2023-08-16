@@ -1,0 +1,749 @@
+# 4. NumPy Basics: Arrays and Vectorized Computation
+
+## Learning Objectives
+
+- Learn about NumPy, a package for numerical computing in Python
+- Use NumPy for array-based data: operations, algorithms
+
+## Import NumPy
+
+```{python}
+import numpy as np # Recommended standard NumPy convention 
+```
+
+## Array-based operations
+* A fast, flexible container for large datasets in Python
+* Stores multiple items of the same type together
+* Can perform operations on whole blocks of data with similar syntax
+
+![Image of an array with 10 length and the first index, 8th element, and indicies denoted by text](https://media.geeksforgeeks.org/wp-content/uploads/CommonArticleDesign1-min.png)
+
+::: {.panel-tabset}
+
+## Create an array
+```{python}
+arr = np.array([[1.5, -0.1, 3], [0, -3, 6.5]])
+arr
+```
+
+## Perform operation
+All of the elements have been multiplied by 10.
+
+```{python}
+arr * 10
+```
+:::
+
+* Every array has a `shape` indicating the size of each dimension
+* and a `dtype`, an object describing the data type of the array
+
+::: {.panel-tabset}
+
+## Shape
+```{python}
+arr.shape
+```
+
+## dtype
+```{python}
+arr.dtype
+```
+:::
+
+### ndarray
+
+* Generic one/multi-dimensional container where all elements are the same type
+* Created using `numpy.array` function
+
+::: {.panel-tabset}
+## 1D
+```{python}
+data1 = [6, 7.5, 8, 0, 1]
+arr1 = np.array(data1)
+arr1
+```
+```{python}
+print(arr1.ndim)
+print(arr1.shape)
+```
+
+## Multi-dimensional
+```{python}
+data2 = [[1, 2, 3, 4], [5, 6, 7, 8]]
+arr2 = np.array(data2)
+arr2
+```
+```{python}
+print(arr2.ndim)
+print(arr2.shape)
+```
+:::
+
+#### Special array creation
+
+* `numpy.zeros` creates an array of zeros with a given length or shape
+* `numpy.ones` creates an array of ones with a given length or shape
+* `numpy.empty` creates an array without initialized values
+* `numpy.arange` creates a range
+* Pass a tuple for the shape to create a higher dimensional array
+
+::: {.panel-tabset}
+
+## Zeros
+```{python}
+np.zeros(10)
+```
+
+## Multi-dimensional
+```{python}
+np.zeros((3, 6))
+```
+:::
+
+::: {.column-margin}
+`numpy.empty` does not return an array of zeros, though it may look like it.
+```{python}
+np.empty(1)
+```
+:::
+
+[Wes provides a table of array creation functions in the book.](https://wesmckinney.com/book/numpy-basics.html#tbl-table_array_ctor)
+
+#### Data types for ndarrays
+
+* Unless explicitly specified, `numpy.array` tries to infer a good data created arrays. 
+* Data type is stored in a special `dtype` metadata object.
+* Can be explict or converted (cast)
+* It is important to care about the general kind of data you’re dealing with.
+
+::: {.panel-tabset}
+## Inferred dtype
+```{python}
+arr1.dtype
+```
+## Explicit dtype
+```{python}
+arr2 = np.array([1, 2, 3], dtype=np.int32)
+arr2.dtype
+```
+## Cast dtype
+```{python}
+float_arr = arr1.astype(np.float64)
+float_arr.dtype
+```
+## Cast dtype using another array
+```{python}
+int_array = arr1.astype(arr2.dtype)
+int_array.dtype
+```
+:::
+
+::: {.column-margin}
+Calling `astype` always creates a new array (a copy of the data), even if the new data type is the same as the old data type.
+:::
+
+[Wes provides a table of supported data types in the book.](https://wesmckinney.com/book/numpy-basics.html#tbl-table_array_dtypes)
+
+## Arithmetic with NumPy Arrays
+
+::: {.panel-tabset}
+## Vectorization
+
+Batch operations on data without `for` loops
+
+```{python}
+arr = np.array([[1., 2., 3.], [4., 5., 6.]])
+arr * arr
+```
+
+## Arithmetic operations with scalars 
+
+Propagate the scalar argument to each element in the array
+
+```{python}
+1 / arr
+```
+
+## Comparisons between arrays
+
+of the same size yield boolean arrays
+
+```{python}
+arr2 = np.array([[0., 4., 1.], [7., 2., 12.]])
+
+arr2 > arr
+```
+
+:::
+
+## Basic Indexing and Slicing
+
+* select a subset of your data or individual elements
+
+```{python}
+arr = np.arange(10)
+arr
+```
+
+::: {.column-margin}
+Array views are on the original data. Data is not copied, and any modifications to the view will be reflected in the source array. If you want a copy of a slice of an ndarray instead of a view, you will need to explicitly copy the array—for example, `arr[5:8].copy()`.
+:::
+
+::: {.panel-tabset}
+
+## select the sixth element
+
+```{python}
+arr[5]
+```
+
+## select sixth through eighth
+
+```{python}
+arr[5:8]
+```
+
+## broadcast data
+
+```{python}
+arr[5:8] = 12
+```
+
+:::
+
+Example of "not copied data"
+
+**Original**
+
+```{python}
+arr_slice = arr[5:8]
+arr
+```
+
+**Change values in new array**
+
+Notice that arr is now changed.
+
+```{python}
+arr_slice[1] = 123
+arr
+```
+
+**Change all values in an array**
+
+This is done with bare slice `[:]`:
+
+```{python}
+arr_slice[:] = 64
+arr_slice
+```
+
+Higher dimensional arrays have 1D arrays at each index:
+
+```{python}
+arr2d = np.array([[1,2,3], [4,5,6], [7,8,9]])
+arr2d
+```
+
+To slice, can pass a comma-separated list to select individual elements:
+
+```{python}
+arr2d[0][2]
+```
+
+![](https://media.geeksforgeeks.org/wp-content/uploads/Numpy1.jpg)
+
+Omitting indicies will reduce number of dimensions:
+
+```{python}
+arr2d[0]
+```
+
+Can assign scalar values or arrays:
+
+```{python}
+arr2d[0] = 9
+arr2d
+```
+
+Or create an array of the indices. This is like indexing in two steps:
+
+```{python}
+arr2d = np.array([[1,2,3], [4,5,6], [7,8,9]])
+arr2d[1,0]
+```
+
+### Indexing with slices
+
+ndarrays can be sliced with the same syntax as Python lists:
+
+```{python}
+arr = np.arange(10)
+
+arr[1:6]
+```
+
+This slices a range of elements ("select the first row of `arr2d`"):
+
+```{python}
+# arr2d[row, column]
+arr2d[:1]
+```
+
+Can pass multiple indicies:
+
+```{python}
+arr2d[:3, :1] # colons keep the dimensions
+# arr2d[0:3, 0] # does not keep the dimensions
+```
+
+## Boolean Indexing
+
+```{python}
+names = np.array(["Bob", "Joe", "Will", "Bob", "Will", "Joe", "Joe"])
+names
+```
+
+```{python}
+data = np.array([[4, 7], [0, 2], [-5, 6], [0, 0], [1, 2], [-12, -4], [3, 4]])
+data
+```
+
+Like arithmetic operations, comparisons (such as `==`) with arrays are also vectorized. 
+
+```{python}
+names == "Bob"
+```
+
+This boolean array can be passed when indexing the array:
+
+```{python}
+data[names == "Bob"]
+```
+
+Select from the rows where names == "Bob" and index the columns, too:
+
+```{python}
+data[names == "Bob", 1:]
+```
+
+Select everything but "Bob":
+
+```{python}
+names != "Bob" # or ~(names == "Bob")
+```
+
+Use boolean arithmetic operators like `&` (and) and `|` (or):
+
+```{python}
+mask = (names == "Bob") | (names == "Will")
+mask
+```
+
+:::{.column-margin}
+Selecting data from an array by boolean indexing and assigning the result to a new variable always creates a copy of the data.
+:::
+
+Setting values with boolean arrays works by substituting the value or values on the righthand side into the locations where the boolean array's values are `True`.
+
+```{python}
+data[data < 0] = 0
+```
+
+You can also set whole rows or columns using a one-dimensional boolean array:
+
+```{python}
+data[names != "Joe"] = 7
+```
+
+## Fancy Indexing
+
+A term adopted by NumPy to describe indexing using integer arrays.
+
+```{python}
+arr = np.zeros((8, 4)) # 8 × 4 array
+
+for i in range(8):
+  arr[i] = i
+
+arr
+```
+
+Pass a list or ndarray of integers specifying the desired order to subset rows in a particular order:
+
+```{python}
+arr[[4, 3, 0, 6]]
+```
+
+Use negative indices selects rows from the end:
+
+```{python}
+arr[[-3, -5, -7]]
+```
+
+Passing multiple index arrays selects a one-dimensional array of elements corresponding to each tuple of indices (go down then across):
+
+```{python}
+arr = np.arange(32).reshape((8, 4))
+arr
+```
+
+Here, the elements (1, 0), (5, 3), (7, 1), and (2, 2) are selected.
+
+```{python}
+arr[[1, 5, 7, 2], [0, 3, 1, 2]]
+```
+
+:::{.column-margin}
+Fancy indexing, unlike slicing, always copies the data into a new array when assigning the result to a new variable.
+:::
+
+## Transposing Arrays and Swapping Axes
+
+Transposing is a special form of reshaping using the special `T` attribute:
+
+```{python}
+arr = np.arange(15).reshape((3, 5))
+arr
+```
+
+```{python}
+arr.T
+```
+
+### Matrix multiplication
+
+:::{.panel-tabset}
+## using `T`
+
+```{python}
+np.dot(arr.T, arr)
+```
+
+## using `@` infix operator
+
+```{python}
+arr.T @ arr
+```
+
+:::
+
+ndarray has the method `swapaxes`, which takes a pair of axis numbers and switches the indicated axes to rearrange the data:
+
+```{python}
+arr = np.array([[0, 1, 0], [1, 2, -2], [6, 3, 2], [-1, 0, -1], [1, 0, 1], [3, 5, 6]])
+arr
+arr.swapaxes(0, 1)
+```
+
+## Pseudorandom Number Generation
+
+The `numpy.random` module supplements the built-in Python random module with functions for efficiently generating whole arrays of sample values from many kinds of probability distributions.
+
+* Much faster than Python's built-in `random` module
+
+```{python}
+samples = np.random.standard_normal(size=(4, 4))
+samples
+```
+
+Can use an explicit generator:
+
+* `seed` determines initial state of generator
+```{python}
+rng = np.random.default_rng(seed=12345)
+data = rng.standard_normal((2, 3))
+data
+```
+
+[Wes provides a table of NumPy random number generator methods](https://wesmckinney.com/book/numpy-basics.html#tbl-table_numpy_random)
+
+## Universal Functions: Fast Element-Wise Array Functions
+
+A universal function, or ufunc, is a function that performs element-wise operations on data in ndarrays.
+
+Many ufuncs are simple element-wise transformations:
+
+:::{.panel-tabset}
+## unary 
+One array
+```{python}
+arr = np.arange(10)
+np.sqrt(arr)
+```
+
+## binary
+
+```{python}
+arr1 = rng.standard_normal(10)
+arr2 = rng.standard_normal(10)
+np.maximum(arr1, arr2)
+```
+
+## multiple
+
+```{python}
+remainder, whole_part = np.modf(arr1)
+remainder
+```
+
+:::
+
+Use the `out` argument to assign results into an existing array rather than create a new one:
+
+```{python}
+out = np.zeros_like(arr)
+np.add(arr, 1, out=out)
+```
+
+## Array-Oriented Programming with Arrays
+
+Evaluate the function `sqrt(x^2 + y^2)` across a regular grid of values: use the `numpy.meshgrid` function takes two one-dimensional arrays and produce two two-dimensional matrices corresponding to all pairs of (x, y) in the two arrays:
+
+```{python}
+points = np.arange(-5, 5, 0.01) # 100 equally spaced points
+xs, ys = np.meshgrid(points, points)
+xs
+```
+
+```{python}
+ys
+```
+
+Evaluate the function as if it were two points:
+
+```{python}
+z = np.sqrt(xs ** 2 + ys ** 2)
+z
+```
+
+### Bonus: matplotlib visualization
+
+```{python}
+import matplotlib.pyplot as plt
+
+plt.imshow(z, cmap=plt.cm.gray)  #, extent=[-25, 10, -10, 10])
+plt.colorbar() 
+plt.title("Image plot of $\sqrt{x^2 + y^2}$ for a grid of values")
+```
+
+```{python}
+plt.close("all")
+```
+
+## Expressing Conditional Logic as Array Operations
+
+The `numpy.where` function is a vectorized version of the ternary expression `x if condition else`.
+
+* second and third arguments to `numpy.where` can also be scalars
+* can also combine scalars and arrays
+
+```{python}
+xarr = np.array([1.1, 1.2, 1.3, 1.4, 1.5])
+yarr = np.array([2.1, 2.2, 2.3, 2.4, 2.5])
+cond = np.array([True, False, True, True, False])
+```
+
+Take a value from `xarr` whenever the corresponding value in `cond` is `True`, and otherwise take the value from `yarr`:
+
+:::{.panel-tabset}
+
+## `x if condition else`
+```{python}
+result = [(x if c else y)
+  for x, y, c in zip(xarr, yarr, cond)]
+  
+result
+```
+
+## `numpy.where`
+```{python}
+result = np.where(cond, xarr, yarr)
+result
+```
+:::
+
+Can also do this with scalars, or combine arrays and scalars:
+
+```{python}
+arr = rng.standard_normal((4,4))
+arr
+```
+
+```{python}
+np.where(arr > 0, 2, -2)
+```
+
+```{python}
+# set only positive to 2
+np.where(arr > 0,2,arr)
+```
+
+## Mathematical and Statistical Methods
+
+Use "aggregations' like `sum`, `mean`, and `std`
+
+* If using NumPy, must pass the array you want to aggregate as the first argument
+
+```{python}
+arr = rng.standard_normal((5, 4))
+
+arr.mean()
+```
+
+```{python}
+np.mean(arr)
+```
+
+Can use `axis` to specify which axis to computer the statistic
+
+:::{.panel-tabset}
+
+## "compute across the columns"
+```{python}
+arr.mean(axis=1)
+```
+
+## "compute across the rows"
+
+```{python}
+arr.mean(axis=0)
+```
+
+:::
+
+Other methods like cumsum and cumprod do not aggregate, instead producing an array of the intermediate results:
+
+```{python}
+arr.cumsum()
+```
+
+In multidimensional arrays, accumulation functions like cumsum compute along the indicated axis:
+
+:::{.panel-tabset}
+
+## "compute across the columns"
+```{python}
+arr.cumsum(axis=1)
+```
+
+## "compute across the rows"
+
+```{python}
+arr.cumsum(axis=0)
+```
+
+:::
+
+## Methods for Boolean Arrays
+
+Boolean values are coerced to 1 (`True`) and 0 (`False`) in the preceding methods. Thus, sum is often used as a means of counting True values in a boolean array:
+
+```{python}
+(arr > 0).sum() # Number of positive values
+```
+
+`any` tests whether one or more values in an array is True, while `all` checks if every value is True:
+
+```{python}
+bools = np.array([False, False, True, False])
+bools.any()
+```
+
+## Sorting
+
+NumPy arrays can be sorted in place with the `sort` method:
+
+```{python}
+arr = rng.standard_normal(6)
+arr.sort()
+arr
+```
+
+Can sort multidimensional section by providing an axis:
+
+```{python}
+arr = rng.standard_normal((5, 3))
+```
+
+:::{.panel-tabset}
+## "compute across the columns"
+```{python}
+arr.cumsum(axis=1)
+```
+
+## "compute across the rows"
+
+```{python}
+arr.cumsum(axis=0)
+```
+
+:::
+
+The top-level method `numpy.sort` returns a sorted copy of an array (like the Python built-in function `sorted`) instead of modifying the array in place:
+
+```{python}
+arr2 = np.array([5, -10, 7, 1, 0, -3])
+sorted_arr2 = np.sort(arr2)
+sorted_arr2
+```
+
+## Unique and Other Set Logic
+
+`numpy.unique` returns the sorted unique values in an array:
+
+```{python}
+np.unique(names)
+```
+
+`numpy.in1d` tests membership of the values in one array in another, returning a boolean array:
+
+```{python}
+np.in1d(arr1, arr2)
+```
+
+## File Input and Output with Arrays
+
+NumPy is able to save `np.save` and load `np.load` data to and from disk in some text or binary formats.
+
+Arrays are saved by default in an uncompressed raw binary format with file extension .npy:
+
+```{python}
+arr = np.arange(10)
+np.save("some_array", arr)
+```
+
+```{python}
+np.load("some_array.npy")
+```
+
+* Save multiple arrays in an uncompressed archive using `numpy.savez`
+* If your data compresses well, use `numpy.savez_compressed` instead
+
+## 4.6 Linear Algebra
+
+Linear algebra operations, like matrix multiplication, decompositions, determinants, and other square matrix math, can be done with Numpy (`np.dot(y)` vs `x.dot(y)`):
+
+```{python}
+np.dot(arr1, arr)
+```
+
+## Example: Random Walks
+
+```{python}
+import matplotlib.pyplot as plt
+#! blockstart
+import random
+position = 0
+walk = [position]
+nsteps = 1000
+for _ in range(nsteps):
+    step = 1 if random.randint(0, 1) else -1
+    position += step
+    walk.append(position)
+#! blockend
+
+plt.plot(walk[:100])
+plt.show()
+```
+

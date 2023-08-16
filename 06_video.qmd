@@ -1,0 +1,30 @@
+# Video {-}
+
+## Cohort 01
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vrwt3R8PIeA" title="Python for Data Analysis: Data Loading, Storage, and File Formats" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<summary><details>
+```
+00:04:53	phanikumar tata:	hello everyone , got some issues with my camera
+00:57:00	Jim Gruman:	thank you Jadey!!
+00:57:30	phanikumar tata:	Great presentation
+00:57:47	phanikumar tata:	can you
+00:58:14	phanikumar tata:	you show you how u r doing .QMD plese
+00:58:33	phanikumar tata:	Quearto to run Python
+00:58:37	Isabella Velásquez:	quarto --help
+01:00:22	Isabella Velásquez:	https://www.youtube.com/watch?v=MaEjLS2ouGg&list=PL3x6DOfs2NGh7IQIQ_pXNkjLVKa-7lgCw&index=2
+01:00:50	phanikumar tata:	do u have a link
+01:00:56	phanikumar tata:	Thanks a lot
+01:02:08	phanikumar tata:	Oh u need to install reticulate on top of Quearto
+01:03:06	Isabella Velásquez:	pip install nbformat
+01:04:33	Isabella Velásquez:	you do if you're using RStudio. If you're using Jupyter Lab or VS Code, you do not
+01:04:54	Isabella Velásquez:	actually, you may not need reticulate on RStudio - have to double check
+01:07:51	phanikumar tata:	some times
+01:07:59	phanikumar tata:	.lock file would fail it
+01:08:02	phanikumar tata:	to work
+
+```
+</details>
+</summary>
+

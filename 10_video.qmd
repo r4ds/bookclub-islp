@@ -1,0 +1,15 @@
+# Video {-}
+
+## Cohort 01
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/X-fJPkp8erQ" title="Python for Data Analysis: Data Aggregation and Group Operations (py4da01 10)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<summary><details>
+```
+00:02:37	Oluwafemi Oyedele:	Hi, Jim, Hi Ron, Good Evening!!!
+00:09:47	Ron:	command shift enter on mac, not sure on windows
+00:41:50	Oluwafemi Oyedele:	Thank you !!!
+```
+</details>
+</summary>
+

@@ -1,0 +1,41 @@
+# How to add to the book {.unnumbered}
+
+## Set up Quarto
+
+This book is made with [Quarto](https://quarto.org/). Please see the [Get Started](https://quarto.org/docs/get-started/) chapter of the Quarto documentation to learn how to install and run Quarto in your IDE.
+
+## Add to book
+
+Once you have everything set up, forked the repo, and cloned to your computer, you can add a new chapter to the book.
+
+Create a new file in the repository folder. For example, to create a new file called `01_exercises.qmd`, navigate to the folder then create one using `touch 01_exercises.qmd`. If you are using VSCode, you can use the Quarto plug-in. You can use plain `.md` files, Quarto `.qmd`, or Jupyter `.ipynb` files in this book. Check out the files under Examples to see the various options.
+
+Write in what you would like in the file.
+
+Then, in the `_quarto.yml` file, under `chapters`, add a part with your chapter. The file listed after `part` is the first page of chapter; the ones under `chapters` will be subpages.
+
+``` yml
+  - part: 01_main.qmd
+      chapters: 
+      - 01_notes.qmd
+      - 01_video.qmd
+      - 01_exercises.qmd
+```
+
+## Render the book
+
+Once you have added and edited your files, don't forget to render the book. Run this in the terminal:
+
+``` bash
+quarto render --to html
+```
+
+## Push up to GitHub
+
+Push your changes to your forked repo and then create a pull request for the R4DS admins to merge your changes.
+
+``` bash
+git add .
+git commit -m "Message here"
+git push
+```

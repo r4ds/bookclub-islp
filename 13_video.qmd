@@ -1,0 +1,16 @@
+# Video {-}
+
+## Cohort 01
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LxtCdtCbhmE" title="Python for Data Analysis: Data Analysis Examples (py4da01 13)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<summary><details>
+```
+00:28:14	Ron:	https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.argsort.html
+00:38:36	Ron:	I am switching computers carry on brb :)
+00:40:47	Ronald Legere:	back
+00:53:27	Layla Bouzoubaa:	https://course.fast.ai/Resources/book.html
+```
+</details>
+</summary>
+

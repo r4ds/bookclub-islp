@@ -1,0 +1,617 @@
+## Notes {.unnumbered}
+
+Before we can even get to the fun of data analysis, we first need to learn how to load in our data!
+
+![](images/DAmeme.png){dpi="300" width="425"}
+
+Today, we'll learn to work with the following categories of data inputs and outputs:
+
+-   Text
+-   Binary
+-   Web APIs
+-   Databases
+
+## Reading and Writing Data in Text Format
+
+### `read_csv` Arguments
+
+[Table 6.1](https://wesmckinney.com/book/accessing-data.html#tbl-table_parsing_functions) lists the various data types pandas can read.
+
+Each function can be called with `pd.read_*` (for example, `pd.read_csv`).
+
+::: callout-note
+Wes points out that the number of arguments can be overwhelming. `pd.read_csv` has about 50. The [pandas documentation](https://pandas.pydata.org/docs/reference/io.html) is a good resource for finding the right arguments.
+:::
+
+[Table 6.2](https://wesmckinney.com/book/accessing-data.html#tbl-table_read_csv_function) lists frequently used options in `pd.read_csv`.
+
+Let's import the [Palmer Penguins dataset](https://github.com/allisonhorst/palmerpenguins/blob/main/inst/extdata/penguins.csv) to explore this function and some of the csv arguments. *Note*: I added random numbers for month and day to demonstrate date parsing.
+
+```{python}
+import pandas as pd
+
+penguins = pd.read_csv("data/penguins.csv")
+
+penguins.head(5)
+
+```
+
+#### Index Columns
+
+**Indexing** gets column names from the file or from this argument
+
+```{python}
+penguins_indexed = pd.read_csv("data/penguins.csv", index_col = "species")
+penguins_indexed.head(5)
+
+```
+
+#### Infer or Convert Data Type
+
+**Type inference and data conversion** converts values (including missing) to a user-defined value.
+
+If you data uses another string value as the missing placeholder, you can add it to `na_values`.
+
+```{python}
+penguins_NA = pd.read_csv(
+  "data/penguins.csv", 
+  na_values = ["male"]
+  )
+  
+penguins_NA.head(5)
+
+```
+
+#### Parse Date and Time
+
+**Date and time parsing** combines date and time from multiple columns into a single column
+
+```{python}
+penguins_dates = pd.read_csv(
+  "data/penguins.csv", 
+  parse_dates = {"date": ["month", "day", "year"]}
+  )
+  
+penguins_dates["date"] = pd.to_datetime(
+  penguins_dates.date, 
+  format = "%m%d%Y"
+  )
+  
+print(penguins_dates.date.head(5))
+
+print(penguins_dates.date.dtypes)
+
+```
+
+#### Iterate Through Large Files
+
+**Iterating** allows iteration over chunks of very large files
+
+Using `nrows` to read in only 5 rows:
+
+```{python}
+pd.read_csv("data/penguins.csv", nrows = 5
+  )
+
+```
+
+Using `chunksize` and the `TextFileReader` to aggregate and summarize the data by species:
+
+```{python}
+chunker = pd.read_csv("data/penguins.csv", chunksize = 10)
+
+print(type(chunker))
+
+tot = pd.Series([], dtype = 'int64')
+for piece in chunker:
+    tot = tot.add(piece["species"].value_counts(), fill_value = 0)
+
+tot
+
+```
+
+#### Import Semi-Clean Data
+
+**Unclean data issues** skips rows, comments, punctuation, etc.
+
+We can import a subset of the columns using `usecols` and change their names (`header = 0`; `names = [list]`).
+
+```{python}
+penguins_custom = pd.read_csv(
+  "data/penguins.csv", 
+  usecols = [0,1,6],
+  header = 0, 
+  names = ["Species", "Island", "Sex"]
+  )
+
+penguins_custom.head(5)
+
+```
+
+### Writing Data to Text Format
+
+To write to a csv file, we can use pandas DataFrame's `to_csv` method with `index = False` so the row numbers are not stored in the first column. Missing values are written as empty strings, we can specify a placeholder with `na_rep = "NA"`:
+
+```{python}
+penguins_custom.to_csv(
+  "data/penguins_custom.csv", 
+  index = False,
+  na_rep = "NA"
+  )
+
+```
+
+::: {layout-ncol="2"}
+![](images/penguins_custom_noArgs.png){width="317"}
+
+![](images/penguins_custom.png){width="247"}
+:::
+
+### Working with Other Delimited Formats
+
+#### Reading
+
+In case your tabular data makes pandas trip up and you need a little extra manual processing, you can use Python's built in `csv` module.
+
+Let's read in the penguins dataset the hard, manual way.
+
+```{python}
+import csv
+
+penguin_reader = csv.reader(penguins)
+
+print(penguin_reader)
+  
+```
+
+Now we have the `_csv_reader` object.
+
+Next, Wes iterated through the reader to print the lines, which seems to only give me the row with my headings.
+
+```{python}
+for line in penguin_reader:
+  print(line)
+
+```
+
+We'll keep following along to wrangle it into a form we can use:
+
+```{python}
+with open("data/penguins.csv") as penguin_reader:
+  lines = list(csv.reader(penguin_reader))
+  
+header, values = lines[0], lines[1:]
+
+print(header)
+print(values[5])
+```
+
+Now we have two lists: header and values. We use a dictionary of data columns and the expression `zip(*values)`. This combination of dictionary comprehension and expression is generally faster than iterating through a loop. However, Wes warns that this can use a lot of memory on large files.
+
+```{python}
+penguin_dict = {h: v for h, v in zip(header, zip(*values))}
+
+# too big to print and I'm not sure how to print a select few key-value pairs
+
+```
+
+::: callout-note
+## Recall
+
+For a reminder on dictionary comprehensions, see [Chapter 3](https://wesmckinney.com/book/python-builtin.html#comprehensions).
+:::
+
+Now to finally get this into a usable dataframe we'll use pandas DataFrame `from_dict` method!
+
+```{python}
+penguin_df = pd.DataFrame.from_dict(penguin_dict)
+penguin_df.head(5)
+
+```
+
+#### `csv.Dialect`
+
+Since there are many kinds of delimited files, string quoting conventions, and line terminators, you may find yourself wanting to define a "Dialect" to read in your delimited file. The options available are found in [Table 6.3](https://wesmckinney.com/book/accessing-data.html#tbl-table_csv_dialect).
+
+You can either define a `csv.Dialect` subclass or pass dialect parameters to `csv.reader`.
+
+```{python}
+# option 1
+
+## define a dialect subclass
+
+class my_dialect(csv.Dialect):
+    lineterminator = "\n"
+    delimiter = ";"
+    quotechar = '"'
+    quoting = csv.QUOTE_MINIMAL
+    
+## use the subclass
+
+reader = csv.reader(penguins, dialect = my_dialect)
+
+# option 2
+
+## pass just dialect parameters
+
+reader = csv.reader(penguins, delimiter = ",")
+
+```
+
+::: callout-tip
+## Recap for when to use what?
+
+For most data, pandas `read_*` functions, plus the overwhelming number of options, will likely get you close to what you need.
+
+If there are additional, minor wrangling needs, you can try using Python's `csv.reader` with either a `csv.Dialect` subclass or just by passing in dialect parameters.
+
+If you have complicated or multicharacter delimiters, you'll likely need to import the string module and use the `split` method or regular expression method `re.split`.
+:::
+
+#### Writing
+
+`csv.writer` is the companion to `csv.reader` with the same dialect and format options. The first argument in `open` is the path and filename you want to write to and the second argument `"w"` makes the file writeable.
+
+::: callout-note
+[Python documentation](https://docs.python.org/3/library/csv.html#id3) notes that `newline=""` should be specified in case there are newlines embedded inside quoted fields to ensure they are interpreted correctly.
+:::
+
+```{python}
+with open("data/write_data.csv", "w", newline = "") as f:
+    writer = csv.writer(f, dialect = my_dialect)
+    writer.writerow(("one", "two", "three"))
+    writer.writerow(("1", "2", "3"))
+    writer.writerow(("4", "5", "6"))
+    writer.writerow(("7", "8", "9"))
+
+```
+
+#### JavaScript Object Notation (JSON) Data
+
+Standard format for HTTP requests between web browsers, applications, and APIs. Its almost valid Python code:
+
+-   Instead of `NaN`, it uses `null`
+
+-   Doesn't allow trailing commas at end of lists
+
+-   Data types: objects (dictionaries), arrays (lists), strings, numbers, booleans, and nulls.
+
+We'll make up a simple file of my pets' names, types, and sex to demonstrate JSON data loading and writing.
+
+![](images/mts.jpg){width="319"}
+
+Import the json module and use `json.loads` to convert a JSON string to Python. There are multiple ways to convert JSON objects to a DataFrame.
+
+```{python}
+import json
+
+obj = """
+{"name": "Jadey",
+ "pets": [{"name": "Mai", "type": "cat", "sex": "Female"},
+          {"name": "Tai", "type": "cat", "sex": "Male"},
+          {"name": "Skye", "type": "cat", "sex": "Female"}]
+}
+"""
+
+json_to_py = json.loads(obj)
+
+print(json_to_py)
+type(json_to_py)
+
+```
+
+Since this imported the object as a dictionary, we can use `pd.DataFrame` to create a DataFrame of the pets' names, type, and sex.
+
+```{python}
+pets_df = pd.DataFrame(json_to_py["pets"], columns = ["name", "type", "sex"])
+
+print(type(pets_df))
+pets_df
+```
+
+Use `json.dumps` to convert from Python (class: dictionary) back to JSON (class: string).
+
+```{python}
+py_to_json = json.dumps(json_to_py)
+
+print("json_to_py type:", type(json_to_py))
+print("py_to_json type:", type(py_to_json))
+py_to_json
+```
+
+We can use pandas `pd.read_json` function and `to_json` DataFrame method to read and write JSON files.
+
+```{python}
+
+pets_df.to_json("data/pets.json")
+```
+
+We can easily import a JSON file using `pandas.read_json`.
+
+```{python}
+pet_data = pd.read_json("data/pets.json")
+pet_data
+```
+
+### Web Scraping
+
+#### HTML
+
+`pd.read_html` uses libraries to read and write HTML and XML:
+
+-   Try: xlml \[faster\]
+
+-   Catch: beautifulsoup4 and html5lib \[better equipped for malformed files\]
+
+If you want to specify which parsing engine is used, you can use the `flavor` argument.
+
+```{python}
+tables = pd.read_html(
+  "https://www.fdic.gov/resources/resolutions/bank-failures/failed-bank-list/", 
+  flavor = "html5lib"
+  )
+
+print("Table Length:", len(tables))
+
+# since this outputs a list of tables, we can grab just the first table
+
+tables[0].head(5)
+```
+
+#### XML
+
+XML format is more general than HTML, but they are structurally similar. See [pandas documentation](https://pandas.pydata.org/docs/reference/api/pandas.read_xml.html) for `pd.read_xml`.
+
+This snippet of an xml file is from [Microsoft](https://docs.microsoft.com/en-us/previous-versions/windows/desktop/ms762271(v=vs.85)).
+
+``` xml
+<catalog>
+   <book id="bk101">
+      <author>Gambardella, Matthew</author>
+      <title>XML Developer's Guide</title>
+      <genre>Computer</genre>
+      <price>44.95</price>
+      <publish_date>2000-10-01</publish_date>
+      <description>An in-depth look at creating applications 
+      with XML.</description>
+   </book>
+```
+
+```{python}
+books = pd.read_xml("data/books.xml")
+
+books.head(5)
+```
+
+If you'd like to manually parse a file, Wes demonstrates this process in the [textbook](https://wesmckinney.com/book/accessing-data.html#io_file_formats_xml), before demonstrating how the following steps are turned into one line of code using `pd.read_xml`.
+
+1.  `from lxml import objectify`
+2.  Use `lxml.objectify`,
+3.  Create a dictionary of tag names to data values
+4.  Cnvert that list of dictionaries into a DataFrame.
+
+### Binary Data Formats
+
+#### Pickle
+
+Python has a built-in `pickle` module that converts pandas objects into the pickle format (serializes the data into a byte stream), which is generally readable only in Python.
+
+More information can be found in Python [documentation](https://docs.python.org/3/library/pickle.html).
+
+Here's a demo to show pickling and unpickling the penguins dataset.
+
+```{python}
+print("Unpickled penguins type:", type(penguins))
+
+penguins.to_pickle("data/penguins_pickle")
+
+# do some machine learning
+
+pickled_penguins = pd.read_pickle("data/penguins_pickle")
+pickled_penguins
+```
+
+::: callout-warning
+`pickle` is recommended only as a short-term storage format (i.e. loading and unloading your machine learning models) because the format may not be stable over time. Also, the module is not secure -- pickle data can be maliciously tampered with. [Python docs](https://docs.python.org/3/library/pickle.html) recommend signing data with `hmac` to ensure it hasn't been tampered with.
+:::
+
+#### Microsoft Excel Files
+
+`pd.ExcelFile` class or `pd.read_excel` functions use packages `xlrd` (for older .xlx files) and `openpyxl` (for newer .xlsx files), which must be installed separately from pandas.
+
+``` bash
+conda install xlrd openpyxl
+```
+
+`pd.read_excel` takes most of the same arguments as `pd.read_csv`.
+
+```{python}
+penguins_excel = pd.read_excel(
+  "data/penguins.xlsx", 
+  index_col = "species",
+  parse_dates = {"date": ["month", "day", "year"]}
+)
+
+penguins_excel.head(5)
+```
+
+To read multiple sheets, use `pd.ExcelFile`.
+
+```{python}
+penguins_sheets = pd.ExcelFile("data/penguins_sheets.xlsx")
+
+print("Available sheet names:", penguins_sheets.sheet_names)
+
+penguins_sheets
+```
+
+Then we can `parse` all sheets into a dictionary by specifying the `sheet_name` argument as `None`. Or, we can read in a subset of sheets.
+
+```{python}
+sheets = penguins_sheets.parse(sheet_name = None)
+
+sheets
+```
+
+Then we can subset one of the sheets as a pandas DataFrame object.
+
+```{python}
+chinstrap = sheets["chinstrap"].head(5)
+chinstrap
+```
+
+Write one sheet to using `to_excel:`
+
+```{python}
+chinstrap.to_excel("data/chinstrap.xlsx")
+```
+
+If you want to write to multiple sheets, create an `ExcelWriter` class and then write the data to it:
+
+```{python}
+
+gentoo = sheets["gentoo"].head(5)
+
+writer = pd.ExcelWriter("data/chinstrap_gentoo.xlsx")
+
+chinstrap.to_excel(writer, sheet_name = "chinstrap")
+
+gentoo.to_excel(writer, sheet_name = "gentoo")
+
+writer.save()
+```
+
+#### HDF5 Format
+
+Hierarchical data format (HDF) is used in Python, C, Java, Julia, MATLAB, and others for storing big scientific array data (multiple datasets and metadata within one file). HDF5 can be used to efficiently read/write chunks of large arrays.
+
+The PyTables package must first be installed.
+
+``` bash
+conda install pytables
+
+pip install tables # the package is called "tables" in PyPI
+```
+
+pandas provides an dictionary-like-class for HDF5 files called `HDFStore`:
+
+```{python}
+store = pd.HDFStore("data/pets.h5")
+
+store["pets"] = pets_df
+store["pets"]
+```
+
+`HDFStore` can store data as a `fixed` or as a `table` schema. Table allows querying but is generally slower.
+
+```{python}
+pets_df.to_hdf("data/petnames.h5", "pets", format = "table")
+pd.read_hdf("data/petnames.h5", "pets", where=["columns = name"])
+```
+
+::: callout-tip
+## When should I use HDF5?
+
+Wes recommends using HDF5 for write-once, read-many datasets that are worked with locally. If your data is stored on remote servers, then you may try other binary formats designed for distributed storage (for example, [Apache Parquet](https://parquet.apache.org/)).
+:::
+
+### Interacting with Web APIs
+
+To access data from APIs, Wes suggests using the [requests](http://docs.python-requests.org/) package.
+
+``` bash
+conda install requests
+```
+
+Let's pull from this free zoo animal API.
+
+```{python}
+import requests
+
+url = "https://zoo-animal-api.herokuapp.com/animals/rand"
+
+resp = requests.get(url)
+
+resp.raise_for_status()
+
+print("HTTP status", resp)
+
+animal = resp.json()
+animal
+
+animal_df = pd.DataFrame([animal]) # important to wrap the dictionary object into a list
+animal_df
+```
+
+::: callout-note
+It is important to note that the dictionary is wrapped into a list. If it isn't, then you will get the following error: `ValueError: If using all scalar values, you must pass an index`.
+:::
+
+### Interacting with Databases
+
+Some popular SQL-based relational databases are: SQL Server, PostgreSQL, MySQL, SQLite3. We can use pandas to load the results of a SQL query into a DataFrame.
+
+Import sqlite3 and create a database.
+
+```{python}
+import sqlite3
+
+con = sqlite3.connect("data/data.sqlite")
+```
+
+This creates a table.
+
+```{python}
+#| eval: false
+
+query = """
+  CREATE TABLE states
+  (Capital VARCHAR(20), State VARCHAR(20),
+  x1 REAL, x2 INTEGER
+);"""
+
+con.execute(query)
+
+con.commit()
+```
+
+This inserts the rows of data:
+
+```{python}
+
+data = [("Atlanta", "Georgia", 1.25, 6), ("Seattle", "Washington", 2.6, 3), ("Sacramento", "California", 1.7, 5)]
+        
+stmt = "INSERT INTO states VALUES(?, ?, ?, ?)"
+
+con.executemany(stmt, data)
+
+con.commit()
+```
+
+Now we can look at the data:
+
+```{python}
+cursor = con.execute("SELECT * FROM states")
+
+rows = cursor.fetchall()
+
+rows
+```
+
+To get the data into a pandas DataFrame, we'll need to provide column names in the `cursor.description`.
+
+```{python}
+print(cursor.description)
+
+pd.DataFrame(rows, columns = [x[0] for x in cursor.description])
+```
+
+As per usual, Wes likes to show us the manual way first and then the easier version. Using [SQLAlchemy](http://www.sqlalchemy.org/), we can must less verbosely create our DataFrame.
+
+```{python}
+import sqlalchemy as sqla
+
+db = sqla.create_engine("sqlite:///data/data.sqlite")
+
+pd.read_sql("SELECT * FROM states", db)
+```

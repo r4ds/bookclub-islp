@@ -1,0 +1,17 @@
+# Video {-}
+
+## Cohort 01
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dP42YWsVIGo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<summary><details>
+```
+00:22:16	Isabella Velásquez:	For more info on TidyTuesday: https://github.com/rfordatascience/tidytuesday#readme
+00:26:23	shamsuddeen:	https://docs.google.com/spreadsheets/d/1io_R_ZaGtzJcDF5KcY4hbgMBsJVi_4USE4JGsHcv9ug/edit#gid=0
+00:45:23	shamsuddeen:	https://github.com/conda-forge/miniforge
+00:59:07	shamsuddeen:	https://github.com/conda-forge/miniforge
+01:03:03	shamsuddeen:	https://blogs.shmuhammad.com/
+```
+</details>
+</summary>
+
