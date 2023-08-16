@@ -14,13 +14,13 @@ In particular, the **Statistical learning theory** deals with the problem of fin
   - Identify `clusters` within `cancer cell lines`.
 
 
-## Why ISLR?
+## Why ISLP?
 
 - "Facilitate the transition of statistical learning from an academic to a mainstream field."
 - Machine learning* is useful to everyone, let's all learn enough to use it responsibly.
-- R "labs" make this make sense for this community!
+- Python "labs" make this make sense for this community!
 
-## Premises of ISLR
+## Premises of ISLP
 
 From Page 9 of the Introduction:
 
@@ -44,7 +44,7 @@ From Page 9 of the Introduction:
 
 It is a middle way between theoretical statistics and the practice of applying statistics to real-world problems.
 
-It can be considered as a user manual, with self-contained R labs, which lead you through the use of different methods for applying statistical analysis to different kinds of data.
+It can be considered as a user manual, with self-contained Python labs, which lead you through the use of different methods for applying statistical analysis to different kinds of data.
 
 - 2: Terminology & main concepts
 - 3-4: Classic linear methods
