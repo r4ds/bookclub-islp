@@ -1,8 +1,0 @@
-# 3. Built-in Data Structures, Functions, and Files
-
-## Learning Objectives
-
-* The data structures tuples, lists, dictionaries, and sets
-* Functions
-* Errors and Exception Handling
-* Files and the Operating System

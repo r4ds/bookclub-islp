@@ -1,4 +1,0 @@
-# 11. Time Series
-
-## Learning Objectives
-

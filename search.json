@@ -1,0 +1,135 @@
+[
+  {
+    "objectID": "index.html#welcome",
+    "href": "index.html#welcome",
+    "title": "Introduction to Statistical Learning using Python",
+    "section": "Welcome",
+    "text": "Welcome\nThis is a companion for the book Python for Data Analysis, 3E by Wes McKinney.\nThis website is being developed by the R4DS Online Learning Community. Follow along and join the community to participate.\nThis companion follows the R4DS Online Learning Community Code of Conduct."
+  },
+  {
+    "objectID": "index.html#book-club-meetings",
+    "href": "index.html#book-club-meetings",
+    "title": "Introduction to Statistical Learning using Python",
+    "section": "Book club meetings",
+    "text": "Book club meetings\n\nEach week, a volunteer will present a chapter from the book.\n\nThis is the best way to learn the material.\n\nPresentations will usually consist of a review of the material, a discussion, and/or a demonstration of the principles presented in that chapter.\nMore information about how to present is available in the GitHub repo.\nPresentations will be recorded and will be available on the R4DS Online Learning Community YouTube Channel."
+  },
+  {
+    "objectID": "01_main.html#learning-objectives",
+    "href": "01_main.html#learning-objectives",
+    "title": "1. Introduction",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\n\nRecognize various types of statistical learning.\nUnderstand why this book is useful for you.\nBe able to read mathematical notation used throughout this book.\nDescribe the overall layout of this book.\nBe able to find data used in examples throughout the book."
+  },
+  {
+    "objectID": "01_notes.html#what-is-statistical-learning",
+    "href": "01_notes.html#what-is-statistical-learning",
+    "title": "Notes",
+    "section": "What is statistical learning?",
+    "text": "What is statistical learning?\nStatistical learning is the theoretical foundation for machine learning framework. It makes connections between the fields of statistics, linear algebra and functional analysis.\nIn particular, the Statistical learning theory deals with the problem of finding a predictive function based on data and this is what is best known as supervised learning, in this book we will see more than just theory, as we will deal with unsupervised learning as well as making practical applications.\n\nSupervised: “Building a model to predict an output from inputs.”\n\nPredict wage from age, education, and year.\nPredict market direction from previous days' performance.\n\nUnsupervised: Inputs but no specific outputs, find relationships and structure.\n\nIdentify clusters within cancer cell lines."
+  },
+  {
+    "objectID": "01_notes.html#why-islp",
+    "href": "01_notes.html#why-islp",
+    "title": "Notes",
+    "section": "Why ISLP?",
+    "text": "Why ISLP?\n\n“Facilitate the transition of statistical learning from an academic to a mainstream field.”\nMachine learning* is useful to everyone, let’s all learn enough to use it responsibly.\nPython “labs” make this make sense for this community!"
+  },
+  {
+    "objectID": "01_notes.html#premises-of-islp",
+    "href": "01_notes.html#premises-of-islp",
+    "title": "Notes",
+    "section": "Premises of ISLP",
+    "text": "Premises of ISLP\nFrom Page 9 of the Introduction:\n\n“Many statistical learning methods are relevant and useful in a wide range of academic and non-academic disciplines, beyond just the statistical sciences.”\n“Statistical learning should not be viewed as a series of black boxes.”\n“While it is important to know what job is performed by each cog, it is not necessary to have the skills to construct the machine inside the box!”\n“We presume that the reader is interested in applying statistical learning methods to real-world problems.”"
+  },
+  {
+    "objectID": "01_notes.html#notation",
+    "href": "01_notes.html#notation",
+    "title": "Notes",
+    "section": "Notation",
+    "text": "Notation\n\nn = number of observations (rows)\np = number of features/variables (columns)\nWe’ll come back here if we need to as we go!\nSome symbols they assume we know:\n\n\\(\\in\\) = “is an element of”, “in”\n\\({\\rm I\\!R}\\) = “real numbers”"
+  },
+  {
+    "objectID": "01_notes.html#what-have-we-gotten-ourselves-into",
+    "href": "01_notes.html#what-have-we-gotten-ourselves-into",
+    "title": "Notes",
+    "section": "What have we gotten ourselves into?",
+    "text": "What have we gotten ourselves into?\nAn Introduction to Statistical Learning (ISL by James, Witten, Hastie and Tibshiraniis), is a collection of modern statistical methods for modeling and making predictions from real-world data.\nIt is a middle way between theoretical statistics and the practice of applying statistics to real-world problems.\nIt can be considered as a user manual, with self-contained Python labs, which lead you through the use of different methods for applying statistical analysis to different kinds of data.\n\n2: Terminology & main concepts\n3-4: Classic linear methods\n5: Resampling (so we can choose the best method)\n6: Modern updates to linear methods\n7+: Beyond Linearity (we can worry about details as we get there)"
+  },
+  {
+    "objectID": "01_notes.html#wheres-the-data",
+    "href": "01_notes.html#wheres-the-data",
+    "title": "Notes",
+    "section": "Where’s the data?",
+    "text": "Where’s the data?\npip install ISLP\nWe’ll look at this data in more detail below."
+  },
+  {
+    "objectID": "01_notes.html#some-useful-resources",
+    "href": "01_notes.html#some-useful-resources",
+    "title": "Notes",
+    "section": "Some useful resources:",
+    "text": "Some useful resources:\n\nthe book page: statlearning.com\npdf of the book: ISLRv2_website\nISLP labs\ncourse on edX: statistical-learning\nyoutube channel: playlists\nexercise solutions: applied solutions\n\nSome more theoretical resources:\n\nThe Elements of Statistical Learning (ESL, by Hastie, Tibshirani, and Friedman) ESLII"
+  },
+  {
+    "objectID": "01_notes.html#what-is-covered-in-the-book",
+    "href": "01_notes.html#what-is-covered-in-the-book",
+    "title": "Notes",
+    "section": "What is covered in the book?",
+    "text": "What is covered in the book?\nThe book provides a series of toolkits classified as supervised or unsupervised techniques for understanding data.\nThe second edition of the book (2021) contains additions within the most updated statistical analysis.\n\n\n\n\n\nEditions"
+  },
+  {
+    "objectID": "01_notes.html#how-is-the-book-divided",
+    "href": "01_notes.html#how-is-the-book-divided",
+    "title": "Notes",
+    "section": "How is the book divided?",
+    "text": "How is the book divided?\nThe book is divided into 13 chapters covering:\n\nIntroduction and Statistical Learning:\n\nSupervised Versus Unsupervised Learning\nRegression Versus Classification Problems\n\n\nLinear statistical learning\n\nLinear Regression:\n\nbasic concepts\nintroduction of K-nearest neighbor classifier\n\nClassification:\n\nlogistic regression\nlinear discriminant analysis\n\nResampling Methods:\n\ncross-validation\nthe bootstrap\n\nLinear Model Selection and Regularization: potential improvements over standard linear regression\n\nstepwise selection\nridge regression\nprincipal components regression\nthe lasso\n\n\nNon-linear statistical learning\n\nMoving Beyond Linearity:\n\nPolynomial Regression\nRegression Spline\nSmoothing Splines\nLocal Regression\nGeneralized Additive Models\n\nTree-Based Methods:\n\nDecision Trees\nBagging, Random Forests, Boosting, and Bayesian Additive Regression Trees\n\nSupport Vector Machines (linear and non-linear classification)\nDeep Learning (non-linear regression and classification)\nSurvival Analysis and Censored Data\nUnsupervised Learning:\n\nPrincipal components analysis\nK-means clustering\nHierarchical clustering\n\nMultiple Testing\n\nEach chapter includes 1 self-contained R lab on the topic"
+  },
+  {
+    "objectID": "01_notes.html#some-examples-of-the-problems-addressed-with-statistical-analysis",
+    "href": "01_notes.html#some-examples-of-the-problems-addressed-with-statistical-analysis",
+    "title": "Notes",
+    "section": "Some examples of the problems addressed with statistical analysis",
+    "text": "Some examples of the problems addressed with statistical analysis\n\nIdentify the risk factors for some type of cancers\nPredict whether someone will have a hearth attack on the basis of demographic, diet, and clinical measurements\nEmail spam detection\nClassify a tissue sample into one of several cancer classes, based on a gene expression profile\nEstablish the relationship between salary and demographic variables in population survey data\n\n(source)"
+  },
+  {
+    "objectID": "01_notes.html#datasets-provided-in-the-islp-package",
+    "href": "01_notes.html#datasets-provided-in-the-islp-package",
+    "title": "Notes",
+    "section": "Datasets provided in the ISLP package",
+    "text": "Datasets provided in the ISLP package\nThe book provides the ISLP Python package with all the datasets needed the analysis.\n\n\n\n\n\nDatasets in ISLP package"
+  },
+  {
+    "objectID": "01_video.html#cohort-01",
+    "href": "01_video.html#cohort-01",
+    "title": "Video",
+    "section": "Cohort 01",
+    "text": "Cohort 01\n\n\n\n\n00:07:02    Lucio Cornejo:    start\n00:12:04    Mateo Vega:    Hey everyone! sorry I cannot turn on the mic right now\n00:12:32    Mateo Vega:    On the ISLR?\n00:12:50    Mateo Vega:    No hahaha\n00:13:48    Mateo Vega:    Yes, both things would be fine\n00:13:56    Shah Nawaz:    both\n00:19:20    Mateo Vega:    I would like to use quarto\n00:19:52    Mateo Vega:    I already have some practice with it so no problem\n00:21:38    Lydia Gibson:    https://quarto.org/docs/presentations/\n00:22:16    Lydia Gibson:    Quarto book sounds good\n00:37:56    Lydia Gibson:    I think that's classification\n00:41:34    Mateo Vega:    See you, thanks!\n00:41:40    Lucio Cornejo:    end"
+  },
+  {
+    "objectID": "how-to.html#set-up-quarto",
+    "href": "how-to.html#set-up-quarto",
+    "title": "How to add to the book",
+    "section": "Set up Quarto",
+    "text": "Set up Quarto\nThis book is made with Quarto. Please see the Get Started chapter of the Quarto documentation to learn how to install and run Quarto in your IDE."
+  },
+  {
+    "objectID": "how-to.html#add-to-book",
+    "href": "how-to.html#add-to-book",
+    "title": "How to add to the book",
+    "section": "Add to book",
+    "text": "Add to book\nOnce you have everything set up, forked the repo, and cloned to your computer, you can add a new chapter to the book.\nCreate a new file in the repository folder. For example, to create a new file called 01_exercises.qmd, navigate to the folder then create one using touch 01_exercises.qmd. If you are using VSCode, you can use the Quarto plug-in. You can use plain .md files, Quarto .qmd, or Jupyter .ipynb files in this book. Check out the files under Examples to see the various options.\nWrite in what you would like in the file.\nThen, in the _quarto.yml file, under chapters, add a part with your chapter. The file listed after part is the first page of chapter; the ones under chapters will be subpages.\n  - part: 01_main.qmd\n      chapters: \n      - 01_notes.qmd\n      - 01_video.qmd\n      - 01_exercises.qmd"
+  },
+  {
+    "objectID": "how-to.html#render-the-book",
+    "href": "how-to.html#render-the-book",
+    "title": "How to add to the book",
+    "section": "Render the book",
+    "text": "Render the book\nOnce you have added and edited your files, don’t forget to render the book. Run this in the terminal:\nquarto render --to html"
+  },
+  {
+    "objectID": "how-to.html#push-up-to-github",
+    "href": "how-to.html#push-up-to-github",
+    "title": "How to add to the book",
+    "section": "Push up to GitHub",
+    "text": "Push up to GitHub\nPush your changes to your forked repo and then create a pull request for the R4DS admins to merge your changes.\ngit add .\ngit commit -m \"Message here\"\ngit push"
+  }
+]
