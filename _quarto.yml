@@ -15,7 +15,7 @@ book:
     - index.qmd
     - part: 01_main.qmd
       chapters:
-        - 01_notes.ipynb
+        - 01_notes.qmd
         - 01_video.qmd
     # - part: 02_main.qmd
     #   chapters:
@@ -32,6 +32,7 @@ format:
   html:
     theme: cosmo
     fontsize: 16pt
+    css: style.css
 
 execute:
   freeze: true
