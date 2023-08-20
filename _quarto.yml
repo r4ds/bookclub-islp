@@ -15,10 +15,10 @@ book:
       chapters:
         - 01_notes.qmd
         - 01_video.qmd
-    # - part: 02_main.qmd
-    #   chapters:
-    #     - 02_notes.qmd
-    #     - 02_video.qmd
+    - part: 02_main.qmd
+      chapters:
+        - 02_notes.qmd
+        - 02_video.qmd
     # - part: examples.md
     #   chapters:
     #     - example_quarto.qmd
