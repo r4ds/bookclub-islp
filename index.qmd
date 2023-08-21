@@ -1,6 +1,6 @@
 ## Welcome {.unnumbered}
 
-This is a companion for the book [Python for Data Analysis, 3E](https://wesmckinney.com/book/) by Wes McKinney.
+This is a companion for the book [Introduction to Statistical Learning with Python](https://www.statlearning.com/).
 
 This website is being developed by the [R4DS Online Learning Community](https://rfordatasci.com/). Follow along and [join the community](https://r4ds.io/join) to participate.
 

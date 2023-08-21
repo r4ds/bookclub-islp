@@ -1,4 +1,12 @@
-# 2. Python Language Basics, IPython, and Jupyter Notebooks
+# 2. Statistical Learning 
 
-## Learning Objectives
+## Learning objectives
 
+- Compare supervised vs unsupervised learning.
+- Compare regression vs classification problems.
+- Measure the accuracy of regression model fits.
+- Measure the accuracy of classification model fits.
+- Describe the trade-off between more accurate models and more interpretable models.
+- Compare Parametric vs Nonparametric models
+- Understand overfitting.
+- Describe how bias and variance contribute to the model error.
