@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -64,8 +30,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01_video.html" rel="next">
-<link href="./01_main.html" rel="prev">
+<link href="./02_video.html" rel="next">
+<link href="./02_main.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -153,7 +119,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01_main.html">1. Introduction</a></li><li class="breadcrumb-item"><a href="./01_notes.html">Notes</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02_main.html">2. Statistical Learning</a></li><li class="breadcrumb-item"><a href="./02_notes.html">Notes</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -221,7 +187,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01_notes.html" class="sidebar-item-text sidebar-link active">
+  <a href="./01_notes.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Notes</span></a>
   </div>
 </li>
@@ -244,7 +210,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02_notes.html" class="sidebar-item-text sidebar-link">
+  <a href="./02_notes.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Notes</span></a>
   </div>
 </li>
@@ -283,17 +249,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#what-is-statistical-learning" id="toc-what-is-statistical-learning" class="nav-link active" data-scroll-target="#what-is-statistical-learning">What is statistical learning?</a></li>
-  <li><a href="#why-islp" id="toc-why-islp" class="nav-link" data-scroll-target="#why-islp">Why ISLP?</a></li>
-  <li><a href="#premises-of-islp" id="toc-premises-of-islp" class="nav-link" data-scroll-target="#premises-of-islp">Premises of ISLP</a></li>
-  <li><a href="#notation" id="toc-notation" class="nav-link" data-scroll-target="#notation">Notation</a></li>
-  <li><a href="#what-have-we-gotten-ourselves-into" id="toc-what-have-we-gotten-ourselves-into" class="nav-link" data-scroll-target="#what-have-we-gotten-ourselves-into">What have we gotten ourselves into?</a></li>
-  <li><a href="#wheres-the-data" id="toc-wheres-the-data" class="nav-link" data-scroll-target="#wheres-the-data">Where’s the data?</a></li>
-  <li><a href="#some-useful-resources" id="toc-some-useful-resources" class="nav-link" data-scroll-target="#some-useful-resources">Some useful resources:</a></li>
-  <li><a href="#what-is-covered-in-the-book" id="toc-what-is-covered-in-the-book" class="nav-link" data-scroll-target="#what-is-covered-in-the-book">What is covered in the book?</a></li>
-  <li><a href="#how-is-the-book-divided" id="toc-how-is-the-book-divided" class="nav-link" data-scroll-target="#how-is-the-book-divided">How is the book divided?</a></li>
-  <li><a href="#some-examples-of-the-problems-addressed-with-statistical-analysis" id="toc-some-examples-of-the-problems-addressed-with-statistical-analysis" class="nav-link" data-scroll-target="#some-examples-of-the-problems-addressed-with-statistical-analysis">Some examples of the problems addressed with statistical analysis</a></li>
-  <li><a href="#datasets-provided-in-the-islp-package" id="toc-datasets-provided-in-the-islp-package" class="nav-link" data-scroll-target="#datasets-provided-in-the-islp-package">Datasets provided in the ISLP package</a></li>
+  <li><a href="#what-is-statistical-learning" id="toc-what-is-statistical-learning" class="nav-link active" data-scroll-target="#what-is-statistical-learning">What is Statistical Learning?</a>
+  <ul class="collapse">
+  <li><a href="#why-estimate-f" id="toc-why-estimate-f" class="nav-link" data-scroll-target="#why-estimate-f">Why estimate <span class="math inline">\(f\)</span>?</a></li>
+  <li><a href="#how-do-we-estimate-f" id="toc-how-do-we-estimate-f" class="nav-link" data-scroll-target="#how-do-we-estimate-f">How do we estimate <span class="math inline">\(f\)</span> ?</a></li>
+  <li><a href="#the-trade-off-between-prediction-accuracy-and-model-interpretability" id="toc-the-trade-off-between-prediction-accuracy-and-model-interpretability" class="nav-link" data-scroll-target="#the-trade-off-between-prediction-accuracy-and-model-interpretability">The trade-off between prediction accuracy and model interpretability</a></li>
+  <li><a href="#supervised-vs-unsupervised-learning" id="toc-supervised-vs-unsupervised-learning" class="nav-link" data-scroll-target="#supervised-vs-unsupervised-learning">Supervised vs Unsupervised Learning</a></li>
+  <li><a href="#regression-vs-classification-problems" id="toc-regression-vs-classification-problems" class="nav-link" data-scroll-target="#regression-vs-classification-problems">Regression vs Classification problems</a></li>
+  </ul></li>
+  <li><a href="#assessing-model-accuracy" id="toc-assessing-model-accuracy" class="nav-link" data-scroll-target="#assessing-model-accuracy">Assessing model accuracy</a>
+  <ul class="collapse">
+  <li><a href="#measuring-the-quality-of-fit" id="toc-measuring-the-quality-of-fit" class="nav-link" data-scroll-target="#measuring-the-quality-of-fit">Measuring the quality of fit</a></li>
+  <li><a href="#the-bias-variance-trade-off" id="toc-the-bias-variance-trade-off" class="nav-link" data-scroll-target="#the-bias-variance-trade-off">The Bias-Variance Trade-off</a></li>
+  <li><a href="#the-classification-setting" id="toc-the-classification-setting" class="nav-link" data-scroll-target="#the-classification-setting">The Classification setting</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -318,189 +287,235 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 <section id="what-is-statistical-learning" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-statistical-learning">What is statistical learning?</h2>
-<p><a href="https://en.wikipedia.org/wiki/Statistical_learning_theory"><strong>Statistical learning</strong></a> is the theoretical foundation for machine learning framework. It makes connections between the fields of statistics, linear algebra and functional analysis.</p>
-<p>In particular, the <strong>Statistical learning theory</strong> deals with the problem of finding a predictive function based on data and this is what is best known as <strong>supervised learning</strong>, in this book we will see more than just theory, as we will deal with <strong>unsupervised learning</strong> as well as making practical applications.</p>
+<h2 class="anchored" data-anchor-id="what-is-statistical-learning">What is Statistical Learning?</h2>
+<p>In this chapter will deal with developing an <strong>accurate</strong> model that can be used to <strong>predict</strong> some value.</p>
+<p>Notation:</p>
 <ul>
-<li><strong>Supervised:</strong> “Building a model to <strong>predict an <em>output</em> from <em>inputs</em>.</strong>”
-<ul>
-<li>Predict <code>wage</code> from <code>age</code>, <code>education</code>, and <code>year</code>.</li>
-<li>Predict <code>market direction</code> from <code>previous days' performance</code>.</li>
-</ul></li>
-<li><strong>Unsupervised:</strong> Inputs but no specific outputs, <strong>find relationships and structure.</strong>
-<ul>
-<li>Identify <code>clusters</code> within <code>cancer cell lines</code>.</li>
-</ul></li>
+<li><strong>Input variables</strong>: <span class="math inline">\(X_1, \cdots, X_p\)</span><br>
+Also known as <em>predictors, features, independent variables</em>.</li>
+<li><strong>Output variable</strong>: <span class="math inline">\(Y\)</span><br>
+Also known as <em>response or dependent variable</em>.</li>
 </ul>
-</section>
-<section id="why-islp" class="level2">
-<h2 class="anchored" data-anchor-id="why-islp">Why ISLP?</h2>
-<ul>
-<li>“Facilitate the transition of statistical learning from an academic to a mainstream field.”</li>
-<li>Machine learning* is useful to everyone, let’s all learn enough to use it responsibly.</li>
-<li>Python “labs” make this make sense for this community!</li>
-</ul>
-</section>
-<section id="premises-of-islp" class="level2">
-<h2 class="anchored" data-anchor-id="premises-of-islp">Premises of ISLP</h2>
-<p>From Page 9 of the Introduction:</p>
-<ul>
-<li>“Many statistical learning methods are relevant and useful in a wide range of academic and non-academic disciplines, beyond just the statistical sciences.”</li>
-<li>“Statistical learning should not be viewed as a series of black boxes.”</li>
-<li>“While it is important to know what job is performed by each cog, it is not necessary to have the skills to construct the machine inside the box!”</li>
-<li>“We presume that the reader is interested in applying statistical learning methods to real-world problems.”</li>
-</ul>
-</section>
-<section id="notation" class="level2">
-<h2 class="anchored" data-anchor-id="notation">Notation</h2>
-<ul>
-<li><em>n</em> = number of observations (rows)</li>
-<li><em>p</em> = number of features/variables (columns)</li>
-<li>We’ll come back here if we need to as we go!</li>
-<li>Some symbols they assume we know:
-<ul>
-<li><span class="math inline">\(\in\)</span> = “is an element of”, “in”</li>
-<li><span class="math inline">\({\rm I\!R}\)</span> = “real numbers”</li>
-</ul></li>
-</ul>
-</section>
-<section id="what-have-we-gotten-ourselves-into" class="level2">
-<h2 class="anchored" data-anchor-id="what-have-we-gotten-ourselves-into">What have we gotten ourselves into?</h2>
-<p><strong>An Introduction to Statistical Learning (ISL by James, Witten, Hastie and Tibshiraniis)</strong>, is a collection of modern statistical methods for modeling and making predictions from real-world data.</p>
-<p>It is a middle way between theoretical statistics and the practice of applying statistics to real-world problems.</p>
-<p>It can be considered as a user manual, with self-contained Python labs, which lead you through the use of different methods for applying statistical analysis to different kinds of data.</p>
-<ul>
-<li>2: Terminology &amp; main concepts</li>
-<li>3-4: Classic linear methods</li>
-<li>5: Resampling (so we can choose the best method)</li>
-<li>6: Modern updates to linear methods</li>
-<li>7+: Beyond Linearity (we can worry about details as we get there)</li>
-</ul>
-</section>
-<section id="wheres-the-data" class="level2">
-<h2 class="anchored" data-anchor-id="wheres-the-data">Where’s the data?</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pip install ISLP</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>We’ll look at this data in more detail below.</p>
-</section>
-<section id="some-useful-resources" class="level2">
-<h2 class="anchored" data-anchor-id="some-useful-resources">Some useful resources:</h2>
-<ul>
-<li>the book page: <a href="https://www.statlearning.com/">statlearning.com</a></li>
-<li>pdf of the book: <a href="https://hastie.su.domains/ISLP/ISLP_website.pdf">ISLRv2_website</a></li>
-<li>ISLP <a href="https://github.com/intro-stat-learning/ISLP_labs/tree/v2">labs</a></li>
-<li>course on edX: <a href="https://www.edx.org/course/statistical-learning">statistical-learning</a></li>
-<li>youtube channel: <a href="https://www.youtube.com/channel/UCB2p-jaoolkv0h22m4I9l9Q/playlists">playlists</a></li>
-<li>exercise solutions: <a href="https://botlnec.github.io/islp/">applied solutions</a></li>
-</ul>
-<p><strong>Some more theoretical resources:</strong></p>
-<ul>
-<li>The Elements of Statistical Learning (ESL, by Hastie, Tibshirani, and Friedman) <a href="https://web.stanford.edu/~hastie/Papers/ESLII.pdf">ESLII</a></li>
-</ul>
-</section>
-<section id="what-is-covered-in-the-book" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-covered-in-the-book">What is covered in the book?</h2>
-<p>The book provides a series of toolkits classified as <strong>supervised or unsupervised</strong> techniques for understanding data.</p>
-<p>The second edition of the book (2021) contains additions within the most updated statistical analysis.</p>
+<p>We assume there is some relationship between <span class="math inline">\(Y\)</span> and <span class="math inline">\(X = \left( X_1, \cdots, X_p \right)\)</span>, which we write as:</p>
+<p><span class="math display">\[Y = f(X) + \epsilon\]</span></p>
+<p>, where <span class="math inline">\(\epsilon\)</span> is a random <strong>error term</strong> which is <strong>independent</strong> from <span class="math inline">\(X\)</span> and has mean zero; and, <span class="math inline">\(f\)</span> represents the <strong>systematic information</strong> that <span class="math inline">\(X\)</span> provides about <span class="math inline">\(Y\)</span> .</p>
 <div class="cell">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/01-contents.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption class="figure-caption">Editions</figcaption>
+<p><img src="images/02-prediction.jpg" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption class="figure-caption">Income data set</figcaption>
 </figure>
 </div>
 </div>
 </div>
+<p>In essence, statistical learning deals with <strong>different approaches to estimate <span class="math inline">\(f\)</span></strong> .</p>
+<section id="why-estimate-f" class="level3">
+<h3 class="anchored" data-anchor-id="why-estimate-f">Why estimate <span class="math inline">\(f\)</span>?</h3>
+<p>Two main reasons to estimate <span class="math inline">\(f\)</span>:</p>
+<section id="prediction" class="level4">
+<h4 class="anchored" data-anchor-id="prediction">Prediction</h4>
+<ul>
+<li><p>Predict <span class="math inline">\(Y\)</span> using a set of inputs <span class="math inline">\(X\)</span> .</p></li>
+<li><p>Representation: <span class="math inline">\(\hat{Y}= \hat{f}(X)\)</span>, where <span class="math inline">\(\hat{f}\)</span> represents our <em>estimate</em> for <span class="math inline">\(f\)</span>, and <span class="math inline">\(\hat{Y}\)</span> our <em>prediction</em> for <span class="math inline">\(Y\)</span> .*</p></li>
+<li><p>In this setting, <span class="math inline">\(\hat{f}\)</span> is often treated as a <strong>black-box</strong>, meaning we don’t mind not knowing the exact form of <span class="math inline">\(\hat{f}\)</span>, if it generates accurate predictions for <span class="math inline">\(Y\)</span> .</p></li>
+<li><p><span class="math inline">\(\hat{Y}\)</span>’s accuracy depends on:</p>
+<ul>
+<li><strong>Reducible error</strong>
+<ul>
+<li>Due to <span class="math inline">\(\hat{f}\)</span> not being a perfect estimate for <span class="math inline">\(f\)</span>.</li>
+<li><strong>Can be reduced</strong> by using a proper statistical learning technique.</li>
+</ul></li>
+<li><strong>Irreducible error</strong>
+<ul>
+<li>Due to <span class="math inline">\(\epsilon\)</span> and its variability.</li>
+<li><span class="math inline">\(\epsilon\)</span> is independent from <span class="math inline">\(X\)</span>, so no matter how well we estimate <span class="math inline">\(f\)</span>, we can’t reduce this error.</li>
+</ul></li>
+</ul></li>
+<li><p>The quantity <span class="math inline">\(\epsilon\)</span> may contain <strong>unmeasured variables</strong> useful for predicting <span class="math inline">\(Y\)</span>; or, may contain <strong>unmeasure variation</strong>, so no prediction model will be perfect.</p></li>
+<li><p>Mathematical form, after choosing predictors <span class="math inline">\(X\)</span> and an estimate <span class="math inline">\(\hat{f}\)</span>:</p></li>
+</ul>
+<p><span class="math display">\[
+E( Y - \hat{Y} )^2 =
+E(f(X) + \epsilon - \hat{f}(X))^2 =
+\underbrace{[f(X) - \hat{f}(X)]^2}_{reducible} +
+\underbrace{\text{ Var}(\epsilon)}_{irreducible}\; .
+\]</span></p>
+<p>In practice, we almost always don’t know how <span class="math inline">\(\epsilon\)</span>’s variability affects our model, so, in this boook, we will focus on techniques for estimating <span class="math inline">\(f\)</span> .</p>
 </section>
-<section id="how-is-the-book-divided" class="level2">
-<h2 class="anchored" data-anchor-id="how-is-the-book-divided">How is the book divided?</h2>
-<p>The book is divided into 13 chapters covering:</p>
+<section id="inference" class="level4">
+<h4 class="anchored" data-anchor-id="inference">Inference</h4>
+<p>In this case, we are interested in <strong>understanding the association</strong> between <span class="math inline">\(Y\)</span> and <span class="math inline">\(X_1, \cdots, X_p\)</span>.</p>
 <ul>
-<li>Introduction and Statistical Learning:
+<li>For example:
 <ul>
-<li>Supervised Versus Unsupervised Learning</li>
-<li>Regression Versus Classification Problems</li>
+<li><em>Which predictors are most associated with response?</em></li>
+<li><em>What is the relationship between the response and each predictor?</em></li>
+<li><em>Can such relationship be summarized via a linear equation, or is it more complex?</em></li>
 </ul></li>
 </ul>
-<p><strong>Linear statistical learning</strong></p>
-<ul>
-<li>Linear Regression:
-<ul>
-<li>basic concepts</li>
-<li>introduction of K-nearest neighbor classifier</li>
-</ul></li>
-<li>Classification:
-<ul>
-<li>logistic regression</li>
-<li>linear discriminant analysis</li>
-</ul></li>
-<li>Resampling Methods:
-<ul>
-<li>cross-validation</li>
-<li>the bootstrap</li>
-</ul></li>
-<li>Linear Model Selection and Regularization: potential improvements over standard linear regression
-<ul>
-<li>stepwise selection</li>
-<li>ridge regression</li>
-<li>principal components regression</li>
-<li>the lasso</li>
-</ul></li>
-</ul>
-<p><strong>Non-linear statistical learning</strong></p>
-<ul>
-<li><p>Moving Beyond Linearity:</p>
-<ul>
-<li>Polynomial Regression</li>
-<li>Regression Spline</li>
-<li>Smoothing Splines</li>
-<li>Local Regression</li>
-<li>Generalized Additive Models</li>
-</ul></li>
-<li><p>Tree-Based Methods:</p>
-<ul>
-<li>Decision Trees</li>
-<li>Bagging, Random Forests, Boosting, and Bayesian Additive Regression Trees</li>
-</ul></li>
-<li><p>Support Vector Machines (linear and non-linear classification)</p></li>
-<li><p>Deep Learning (non-linear regression and classification)</p></li>
-<li><p>Survival Analysis and Censored Data</p></li>
-<li><p>Unsupervised Learning:</p>
-<ul>
-<li>Principal components analysis</li>
-<li>K-means clustering</li>
-<li>Hierarchical clustering</li>
-</ul></li>
-<li><p>Multiple Testing</p></li>
-</ul>
-<p><strong>Each chapter includes 1 self-contained R lab on the topic</strong></p>
+<p>The exact form of <span class="math inline">\(\hat{f}\)</span> is required.</p>
+<p>Linear models allow for easier interpretability, but can lack in prediction accuracy; while, non-linear models can be more accurate, but less interpretable.</p>
 </section>
-<section id="some-examples-of-the-problems-addressed-with-statistical-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="some-examples-of-the-problems-addressed-with-statistical-analysis">Some examples of the problems addressed with statistical analysis</h2>
-<ul>
-<li>Identify the risk factors for some type of cancers</li>
-<li>Predict whether someone will have a hearth attack on the basis of demographic, diet, and clinical measurements</li>
-<li>Email spam detection</li>
-<li>Classify a tissue sample into one of several cancer classes, based on a gene expression profile</li>
-<li>Establish the relationship between salary and demographic variables in population survey data</li>
-</ul>
-<p>(<a href="https://web.stanford.edu/~hastie/ISLR2/Slides/Ch1_Inroduction.pdf">source</a>)</p>
 </section>
-<section id="datasets-provided-in-the-islp-package" class="level2">
-<h2 class="anchored" data-anchor-id="datasets-provided-in-the-islp-package">Datasets provided in the ISLP package</h2>
-<p>The book provides the ISLP Python package with all the datasets needed the analysis.</p>
+<section id="how-do-we-estimate-f" class="level3">
+<h3 class="anchored" data-anchor-id="how-do-we-estimate-f">How do we estimate <span class="math inline">\(f\)</span> ?</h3>
+<ul>
+<li><p>First, let’s agree on some conventions:</p>
+<ul>
+<li><span class="math inline">\(n\)</span> : Number of observations.</li>
+<li><span class="math inline">\(x_{ij}\)</span>: Value of the <span class="math inline">\(j\text{th}\)</span> predictor, for <span class="math inline">\(i\text{th}\)</span> observation.</li>
+<li><span class="math inline">\(y_i\)</span> : Response variable for <span class="math inline">\(i\text{th}\)</span> observation.</li>
+<li><strong>Training data</strong>:
+<ul>
+<li>Set of observations.</li>
+<li>Used to esmitate <span class="math inline">\(f\)</span>.</li>
+<li><span class="math inline">\(\left\{ (x_1, y_1), \cdots, (x_n, y_n) \right\}\)</span>, where <span class="math inline">\(x_i = (x_{i1}, \cdots, x_{ip})^T\)</span> .</li>
+</ul></li>
+</ul></li>
+<li><p>Goal: Find a function <span class="math inline">\(\hat{f}\)</span> such that <span class="math inline">\(Y\approx\hat{f}(X)\)</span> for any observation <span class="math inline">\((X,Y)\)</span> .</p></li>
+<li><p>Most statistical methods for achieving this goal can be characterized as either <strong>parametric</strong> or <strong>non-parametric</strong>.</p></li>
+</ul>
+<section id="parametric-methods" class="level4">
+<h4 class="anchored" data-anchor-id="parametric-methods">Parametric methods</h4>
+<ul>
+<li><p>Steps:</p>
+<ol type="1">
+<li>Make an assumption about the <strong>form</strong> of <span class="math inline">\(f\)</span>.<br>
+It could be linear (<span class="math inline">\(f(X) = \beta_0 + \beta_1 X_1 + \cdot + \beta_p X_p,\)</span> parameters <span class="math inline">\(\beta_0, \cdots, \beta_p\)</span> to be estimated) or not.</li>
+<li>The model has been selected.<br>
+Now, we need a procedure to <strong>fit</strong> the model using the training data.<br>
+The most common of such fitting procedures is called <strong>(ordinary) least squares</strong>.</li>
+</ol></li>
+<li><p>Via these steps, the problem of estimating <span class="math inline">\(f\)</span> has been reduced to a problem of estimating a <strong>set of parameters</strong>.</p></li>
+<li><p>We can make the models more <strong>flexible</strong> via considering a greater number of parameters, but, this can lead to <strong>overfitting the data</strong>, that is, following the errors/noise too closely, which will not yield accurate estimates of the response for observations outside of the original training data.<br>
+</p></li>
+</ul>
+</section>
+<section id="non-parametric-methods" class="level4">
+<h4 class="anchored" data-anchor-id="non-parametric-methods">Non-parametric methods</h4>
+<ul>
+<li>No assumptions about the form of <span class="math inline">\(f\)</span> are made.</li>
+<li>Instead, we seek an estimate of <span class="math inline">\(f\)</span> which that gets as close to the data point as possible.</li>
+<li>Has the potential to fit a wider range of possible forms for <span class="math inline">\(f\)</span>.</li>
+<li>Tipically requires a very large number of observations (compared to paramatric approach) in order to accurately estimate <span class="math inline">\(f\)</span>.</li>
+</ul>
+</section>
+</section>
+<section id="the-trade-off-between-prediction-accuracy-and-model-interpretability" class="level3">
+<h3 class="anchored" data-anchor-id="the-trade-off-between-prediction-accuracy-and-model-interpretability">The trade-off between prediction accuracy and model interpretability</h3>
+<p>We’ve seen that parametric models are usually restrictive; and, non-parametric models, flexible. However:</p>
+<ul>
+<li><strong>Restrictive</strong> models are usually more <strong>interpretable</strong>, so they are useful for inference.</li>
+<li><strong>Flexible</strong> models can be difficult to interpret, due to the complexity of <span class="math inline">\(\hat{f}\)</span>.</li>
+</ul>
+<p>Despite this, we will often obtain <strong>more accurate predictions</strong> usinf a <strong>less flexible method</strong>, due to the potential for <em>overfitting the data</em> in highly flexible models.</p>
+</section>
+<section id="supervised-vs-unsupervised-learning" class="level3">
+<h3 class="anchored" data-anchor-id="supervised-vs-unsupervised-learning">Supervised vs Unsupervised Learning</h3>
+<p>In <strong>supervised learning</strong>, we wish to fit a model that relates inputs/predictors to some output.</p>
+<p>In <strong>unsupervised learning</strong>, we lack a reponse/variable to predict. Instead, we seek to understand the relationships between the variables or between the observations.</p>
+<p>There are instances where a mix of such methods is required (<strong>semi-supervised learning problems</strong>), but such topic will not be covered in this book.</p>
+</section>
+<section id="regression-vs-classification-problems" class="level3">
+<h3 class="anchored" data-anchor-id="regression-vs-classification-problems">Regression vs Classification problems</h3>
+<ul>
+<li>If the <strong>response is</strong> …
+<ul>
+<li><strong>Quantitative</strong>, then, it’s a regression problem.</li>
+<li><strong>Categorical</strong>, then, it’s a classification problem.</li>
+</ul></li>
+<li>Most of the methods covered in this book can be applied regardless of the predictor variable type, but the categorical variables will require some pre-processing.</li>
+</ul>
+</section>
+</section>
+<section id="assessing-model-accuracy" class="level2">
+<h2 class="anchored" data-anchor-id="assessing-model-accuracy">Assessing model accuracy</h2>
+<ul>
+<li><p>There is no <strong>best method</strong> for Statistical Learning, the method’s efficacy can depend on the data set.</p></li>
+<li><p>For a specific data set, <strong>how do we select the best Statistics approach</strong>?</p></li>
+</ul>
+<section id="measuring-the-quality-of-fit" class="level3">
+<h3 class="anchored" data-anchor-id="measuring-the-quality-of-fit">Measuring the quality of fit</h3>
+<ul>
+<li><p>The performance of a statistical learning method can be evaluated comparing the predictions of the model, with their true/real response.</p></li>
+<li><p>Most commonly used measure for this:</p>
+<ul>
+<li><strong>Mean squared error</strong></li>
+<li><span class="math inline">\(\text{ MSE } = \dfrac{1}{n}\displaystyle{ \sum_{i=1}^{n}(y_i - \hat{f}(x_i))^2 }\)</span></li>
+<li>Small MSE means that the predicted and the true responses are very close.</li>
+</ul></li>
+<li><p>We want the model to accurately predict <strong>unseen data</strong> (testing data), not so much the training data, where the response is already known.</p></li>
+<li><p>The <em>best</em> model will be the one which produces the <strong>lowest test MSE</strong>, not the lowest training MSE.</p></li>
+<li><p>It’s <strong>not true</strong> that the model with lowest training MSE will also have the lowest test MSE.</p></li>
+</ul>
 <div class="cell">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/01-datasets.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption class="figure-caption">Datasets in ISLP package</figcaption>
+<p><img src="images/02-train-test-MSE.jpg" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption class="figure-caption">Training MSE vs Test MSE</figcaption>
 </figure>
 </div>
 </div>
 </div>
+<ul>
+<li><strong>Fundamental property</strong>: For any data set and any statistical learning method used, as the flexibility of the statistical learning method increases:
+<ul>
+<li>The training MSE decreases monotonically.</li>
+<li>The test MSE graph has a <em>U</em>-shape.</li>
+</ul></li>
+</ul>
+<blockquote class="blockquote">
+<p>As model flexibility increases, training MSE will decrease, but the test MSE <strong>may not</strong>.</p>
+</blockquote>
+<ul>
+<li><p>Small training MSE but big test MSE implies having overfitted the data.</p></li>
+<li><p>Regardless of overfitting or not, we almost always expect <span class="math inline">\(\text{training MSE } &lt; \text{ testing MSE }\)</span>, beacuse most statistical learning methods seek to minimize the training MSE.</p></li>
+<li><p>Estimating test MSE is very difficult, usually because lack of data. Later in this book, we’ll discuss approaches to estimate the <strong>mininum point</strong> for the test MSE curve.</p></li>
+</ul>
+</section>
+<section id="the-bias-variance-trade-off" class="level3">
+<h3 class="anchored" data-anchor-id="the-bias-variance-trade-off">The Bias-Variance Trade-off</h3>
+<ul>
+<li><p><strong>Definition</strong>: The <strong>expected test MSE</strong> at <span class="math inline">\(x_0\)</span> (<span class="math inline">\(E(y_0 - \hat{f}(x_0))^2\)</span>) refers to the averga test MSE that we would obtain after repeatedly estimating <span class="math inline">\(f\)</span> using a large number of training sets, and tested each esimate at <span class="math inline">\(x_0\)</span>.</p></li>
+<li><p><strong>Definition</strong>: The variance of a statistical learning method which produces an estimate <span class="math inline">\(\hat{f}\)</span> refers to how the estimate function changes, for different training sets.</p></li>
+<li><p><strong>Definition</strong>: <strong>Bias</strong> refers to the error generated by approximating a possibly complicated model (like in real-life usually), by a much simpler one … (how <span class="math inline">\(f\)</span> and the possibles <span class="math inline">\(\hat{f}\)</span> <em>differ</em>).</p></li>
+<li><p>As a general rule, the <strong>more flexible</strong> a statistical method, the <strong>higher its variance</strong> and <strong>lower its bias</strong>.</p></li>
+<li><p>For any given value <span class="math inline">\(x_0\)</span>, the following can be proved:</p></li>
+</ul>
+<p><span class="math display">\[
+E(y_0 - \hat{f}(x_0))^2 = \text{Var}(\hat{f}(x_0)) + \text{Bias}(\hat{f}(x_0))^2 + \text{ Var }(\epsilon)
+\]</span></p>
+<ul>
+<li><p>Due to variance and squared bias being non negative, the previous equation implies that, to <strong>minimize the expected test error</strong>, we require a statistical learnig method which achieves <strong>low variance</strong> and <strong>low bias</strong>.</p></li>
+<li><p>The tradeoff:</p>
+<ul>
+<li><em>Extremely low bias but high variance</em>: For example, draw a line which passes over every single point in the training data.</li>
+<li><em>Extremely low variance but high bias</em>: For example, fit a horizontal line to the data.</li>
+<li><blockquote class="blockquote">
+<p>The challenge lies in finding a method for which both the variance and the squared bias are low.</p>
+</blockquote></li>
+</ul></li>
+<li><p>In a real-life situation, <span class="math inline">\(f\)</span> is usually unkwon, so it’s not possible to explicitly compute the test MSE, bias or variance of a statistical method.</p></li>
+<li><p>The test MSE can be estimated using <strong>cross-validation</strong>, but we’ll discuss it later in this book.</p></li>
+</ul>
+</section>
+<section id="the-classification-setting" class="level3">
+<h3 class="anchored" data-anchor-id="the-classification-setting">The Classification setting</h3>
+<p>Let’s see how the concepts recently discussed change when we the prediction is a categorical variable.</p>
+<p>The most common approach for quantifying the accuracy of our estimate <span class="math inline">\(\hat{f}\)</span> is the <strong>training error rate</strong>, the proportion of mistakes made by applying <span class="math inline">\(\hat{f}\)</span> to the training observations:</p>
+<p><span class="math display">\[
+\dfrac{1}{n}\displaystyle{ \sum_{i=1}^{n} I(y_i \neq \hat{y}_i)}
+\]</span></p>
+<p>, where <span class="math inline">\(I\)</span> is <span class="math inline">\(1\)</span> when <span class="math inline">\(y_i = \hat{y}_i\)</span>, and <span class="math inline">\(0\)</span> otherwise.</p>
+<ul>
+<li><p>The <strong>test error rate</strong> is defined as <span class="math inline">\(\text{ Average}(I(y_i \neq \hat{y}_i))\)</span>, where the average is computed by comparing the predictions <span class="math inline">\(\hat{y}_i\)</span> with the true response <span class="math inline">\(y_i\)</span>.</p></li>
+<li><p>A <strong>good classifier</strong> is one for which the test error is smallest.</p></li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -739,12 +754,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./01_main.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">1. Introduction</span>
+      <a href="./02_main.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">2. Statistical Learning</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01_video.html" class="pagination-link">
+      <a href="./02_video.html" class="pagination-link">
         <span class="nav-page-text">Video</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
