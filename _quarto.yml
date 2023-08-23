@@ -19,6 +19,7 @@ book:
       chapters:
         - 02_notes.qmd
         - 02_video.qmd
+        - 02_exercises.qmd
     # - part: examples.md
     #   chapters:
     #     - example_quarto.qmd
