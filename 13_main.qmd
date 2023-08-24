@@ -1,4 +1,7 @@
-# 13. Data Analysis Examples
+# 13. Multiple Testing
 
 ## Learning Objectives
 
+- item 1
+- item 2
+- item 3

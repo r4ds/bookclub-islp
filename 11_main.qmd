@@ -1,4 +1,9 @@
-# 11. Time Series
+# 11. Survival Analysis and Censored Data
 
 ## Learning Objectives
+
+- item 1
+- item 2
+- item 3
+
 
