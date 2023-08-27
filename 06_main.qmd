@@ -1,3 +1,7 @@
-# 6. Data Loading, Storage, and File Formats
+# 6. Linear Model Selection and Regularization
 
 ## Learning Objectives
+
+- item 1
+- item 2
+- item 3

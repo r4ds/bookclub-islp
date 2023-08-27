@@ -1,4 +1,7 @@
-# 10. Data Aggregation and Group Operations
+# 10. Deep Learning
 
 ## Learning Objectives
 
+- item 1
+- item 2
+- item 3

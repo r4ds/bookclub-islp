@@ -1,7 +1,7 @@
-# 5. Getting Started with pandas
+# 5. Resampling Methods
 
 ## Learning Objectives
 
-* Learn about Pandas two major data structures: Series and DataFrame
-
-* Learn some essential functionality!
+- item 1
+- item 2
+- item 3

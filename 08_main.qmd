@@ -1,4 +1,7 @@
-# 8. Data Wrangling: Join, Combine, and Reshape
+# 8. Tree-Based Methods
 
 ## Learning Objectives
 
+- item 1
+- item 2
+- item 3

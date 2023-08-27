@@ -1,4 +1,7 @@
-# 12. Introduction to Modeling Libraries in Python
+# 12. Unsupervised Learning
 
 ## Learning Objectives
 
+- item 1
+- item 2
+- item 3

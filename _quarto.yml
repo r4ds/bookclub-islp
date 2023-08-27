@@ -19,6 +19,62 @@ book:
       chapters:
         - 02_notes.qmd
         - 02_video.qmd
+        - 02_exercises.qmd
+    - part: 03_main.qmd
+      chapters:
+        - 03_notes.qmd
+        - 03_video.qmd
+        - 03_exercises.qmd
+    - part: 04_main.qmd
+      chapters:
+        - 04_notes.qmd
+        - 04_video.qmd
+        - 04_exercises.qmd
+    - part: 05_main.qmd
+      chapters:
+        - 05_notes.qmd
+        - 05_video.qmd
+        - 05_exercises.qmd
+    - part: 06_main.qmd
+      chapters:
+        - 06_notes.qmd
+        - 06_video.qmd
+        - 06_exercises.qmd
+    - part: 07_main.qmd
+      chapters:
+        - 07_notes.qmd
+        - 07_video.qmd
+        - 07_exercises.qmd
+    - part: 08_main.qmd
+      chapters:
+        - 08_notes.qmd
+        - 08_video.qmd
+        - 08_exercises.qmd
+    - part: 09_main.qmd
+      chapters:
+        - 09_notes.qmd
+        - 09_video.qmd
+        - 09_exercises.qmd
+    - part: 10_main.qmd
+      chapters:
+        - 10_notes.qmd
+        - 10_video.qmd
+        - 10_exercises.qmd
+    - part: 11_main.qmd
+      chapters:
+        - 11_notes.qmd
+        - 11_video.qmd
+        - 11_exercises.qmd
+    - part: 12_main.qmd
+      chapters:
+        - 12_notes.qmd
+        - 12_video.qmd
+        - 12_exercises.qmd
+    - part: 13_main.qmd
+      chapters:
+        - 13_notes.qmd
+        - 13_video.qmd
+        - 13_exercises.qmd
     # - part: examples.md
     #   chapters:
     #     - example_quarto.qmd
