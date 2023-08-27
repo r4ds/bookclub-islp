@@ -2,34 +2,214 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://hastie.su.domains/ISLP/ISLP_website.pdf/index.html</loc>
-    <lastmod>2023-08-21T13:09:13.676Z</lastmod>
+    <lastmod>2023-08-27T18:21:40.488Z</lastmod>
   </url>
   <url>
     <loc>https://hastie.su.domains/ISLP/ISLP_website.pdf/01_main.html</loc>
-    <lastmod>2023-08-21T13:09:13.680Z</lastmod>
+    <lastmod>2023-08-27T18:21:40.496Z</lastmod>
   </url>
   <url>
     <loc>https://hastie.su.domains/ISLP/ISLP_website.pdf/01_notes.html</loc>
-    <lastmod>2023-08-21T13:09:13.692Z</lastmod>
+    <lastmod>2023-08-27T18:21:40.508Z</lastmod>
   </url>
   <url>
     <loc>https://hastie.su.domains/ISLP/ISLP_website.pdf/01_video.html</loc>
-    <lastmod>2023-08-21T13:09:13.696Z</lastmod>
+    <lastmod>2023-08-27T18:21:40.524Z</lastmod>
   </url>
   <url>
     <loc>https://hastie.su.domains/ISLP/ISLP_website.pdf/02_main.html</loc>
-    <lastmod>2023-08-21T13:09:13.700Z</lastmod>
+    <lastmod>2023-08-27T18:21:40.532Z</lastmod>
   </url>
   <url>
     <loc>https://hastie.su.domains/ISLP/ISLP_website.pdf/02_notes.html</loc>
-    <lastmod>2023-08-21T13:09:13.712Z</lastmod>
+    <lastmod>2023-08-27T18:21:40.548Z</lastmod>
   </url>
   <url>
     <loc>https://hastie.su.domains/ISLP/ISLP_website.pdf/02_video.html</loc>
-    <lastmod>2023-08-21T13:09:13.716Z</lastmod>
+    <lastmod>2023-08-27T18:21:40.556Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hastie.su.domains/ISLP/ISLP_website.pdf/02_exercises.html</loc>
+    <lastmod>2023-08-27T18:21:40.592Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hastie.su.domains/ISLP/ISLP_website.pdf/03_main.html</loc>
+    <lastmod>2023-08-27T18:21:40.600Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hastie.su.domains/ISLP/ISLP_website.pdf/03_notes.html</loc>
+    <lastmod>2023-08-27T18:21:40.616Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hastie.su.domains/ISLP/ISLP_website.pdf/03_video.html</loc>
+    <lastmod>2023-08-27T18:21:40.624Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hastie.su.domains/ISLP/ISLP_website.pdf/03_exercises.html</loc>
+    <lastmod>2023-08-27T18:21:40.632Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hastie.su.domains/ISLP/ISLP_website.pdf/04_main.html</loc>
+    <lastmod>2023-08-27T18:21:40.644Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hastie.su.domains/ISLP/ISLP_website.pdf/04_notes.html</loc>
+    <lastmod>2023-08-27T18:21:40.652Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hastie.su.domains/ISLP/ISLP_website.pdf/04_video.html</loc>
+    <lastmod>2023-08-27T18:21:40.664Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hastie.su.domains/ISLP/ISLP_website.pdf/04_exercises.html</loc>
+    <lastmod>2023-08-27T18:21:40.672Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hastie.su.domains/ISLP/ISLP_website.pdf/05_main.html</loc>
+    <lastmod>2023-08-27T18:21:40.684Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hastie.su.domains/ISLP/ISLP_website.pdf/05_notes.html</loc>
+    <lastmod>2023-08-27T18:21:40.692Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hastie.su.domains/ISLP/ISLP_website.pdf/05_video.html</loc>
+    <lastmod>2023-08-27T18:21:40.700Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hastie.su.domains/ISLP/ISLP_website.pdf/05_exercises.html</loc>
+    <lastmod>2023-08-27T18:21:40.716Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hastie.su.domains/ISLP/ISLP_website.pdf/06_main.html</loc>
+    <lastmod>2023-08-27T18:21:40.724Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hastie.su.domains/ISLP/ISLP_website.pdf/06_notes.html</loc>
+    <lastmod>2023-08-27T18:21:40.732Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hastie.su.domains/ISLP/ISLP_website.pdf/06_video.html</loc>
+    <lastmod>2023-08-27T18:21:40.740Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hastie.su.domains/ISLP/ISLP_website.pdf/06_exercises.html</loc>
+    <lastmod>2023-08-27T18:21:40.756Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hastie.su.domains/ISLP/ISLP_website.pdf/07_main.html</loc>
+    <lastmod>2023-08-27T18:21:40.764Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hastie.su.domains/ISLP/ISLP_website.pdf/07_notes.html</loc>
+    <lastmod>2023-08-27T18:21:40.772Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hastie.su.domains/ISLP/ISLP_website.pdf/07_video.html</loc>
+    <lastmod>2023-08-27T18:21:40.780Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hastie.su.domains/ISLP/ISLP_website.pdf/07_exercises.html</loc>
+    <lastmod>2023-08-27T18:21:40.788Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hastie.su.domains/ISLP/ISLP_website.pdf/08_main.html</loc>
+    <lastmod>2023-08-27T18:21:40.808Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hastie.su.domains/ISLP/ISLP_website.pdf/08_notes.html</loc>
+    <lastmod>2023-08-27T18:21:40.828Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hastie.su.domains/ISLP/ISLP_website.pdf/08_video.html</loc>
+    <lastmod>2023-08-27T18:21:40.844Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hastie.su.domains/ISLP/ISLP_website.pdf/08_exercises.html</loc>
+    <lastmod>2023-08-27T18:21:40.864Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hastie.su.domains/ISLP/ISLP_website.pdf/09_main.html</loc>
+    <lastmod>2023-08-27T18:21:40.896Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hastie.su.domains/ISLP/ISLP_website.pdf/09_notes.html</loc>
+    <lastmod>2023-08-27T18:21:40.904Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hastie.su.domains/ISLP/ISLP_website.pdf/09_video.html</loc>
+    <lastmod>2023-08-27T18:21:40.912Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hastie.su.domains/ISLP/ISLP_website.pdf/09_exercises.html</loc>
+    <lastmod>2023-08-27T18:21:40.920Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hastie.su.domains/ISLP/ISLP_website.pdf/10_main.html</loc>
+    <lastmod>2023-08-27T18:21:40.928Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hastie.su.domains/ISLP/ISLP_website.pdf/10_notes.html</loc>
+    <lastmod>2023-08-27T18:21:40.940Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hastie.su.domains/ISLP/ISLP_website.pdf/10_video.html</loc>
+    <lastmod>2023-08-27T18:21:40.952Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hastie.su.domains/ISLP/ISLP_website.pdf/10_exercises.html</loc>
+    <lastmod>2023-08-27T18:21:40.960Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hastie.su.domains/ISLP/ISLP_website.pdf/11_main.html</loc>
+    <lastmod>2023-08-27T18:21:40.968Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hastie.su.domains/ISLP/ISLP_website.pdf/11_notes.html</loc>
+    <lastmod>2023-08-27T18:21:40.980Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hastie.su.domains/ISLP/ISLP_website.pdf/11_video.html</loc>
+    <lastmod>2023-08-27T18:21:40.996Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hastie.su.domains/ISLP/ISLP_website.pdf/11_exercises.html</loc>
+    <lastmod>2023-08-27T18:21:41.004Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hastie.su.domains/ISLP/ISLP_website.pdf/12_main.html</loc>
+    <lastmod>2023-08-27T18:21:41.012Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hastie.su.domains/ISLP/ISLP_website.pdf/12_notes.html</loc>
+    <lastmod>2023-08-27T18:21:41.020Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hastie.su.domains/ISLP/ISLP_website.pdf/12_video.html</loc>
+    <lastmod>2023-08-27T18:21:41.032Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hastie.su.domains/ISLP/ISLP_website.pdf/12_exercises.html</loc>
+    <lastmod>2023-08-27T18:21:41.044Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hastie.su.domains/ISLP/ISLP_website.pdf/13_main.html</loc>
+    <lastmod>2023-08-27T18:21:41.052Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hastie.su.domains/ISLP/ISLP_website.pdf/13_notes.html</loc>
+    <lastmod>2023-08-27T18:21:41.060Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hastie.su.domains/ISLP/ISLP_website.pdf/13_video.html</loc>
+    <lastmod>2023-08-27T18:21:41.072Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hastie.su.domains/ISLP/ISLP_website.pdf/13_exercises.html</loc>
+    <lastmod>2023-08-27T18:21:41.084Z</lastmod>
   </url>
   <url>
     <loc>https://hastie.su.domains/ISLP/ISLP_website.pdf/how-to.html</loc>
-    <lastmod>2023-08-21T13:09:13.720Z</lastmod>
+    <lastmod>2023-08-27T18:21:41.096Z</lastmod>
   </url>
 </urlset>

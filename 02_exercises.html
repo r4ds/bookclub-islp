@@ -1,0 +1,1572 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Introduction to Statistical Learning using Python - Applied Exercises</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./03_main.html" rel="next">
+<link href="./02_video.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+<script type="module">
+  // When keyboard's 's' key is pressed, 
+  // hide both sidebars (tables of contents)
+  document.addEventListener(
+    "keydown", 
+    function (evt) {
+      // Avoid keydown event repetition due to holding key
+      if (evt.repeat) return;
+
+      if ('s' === event.key.toLowerCase()) {
+        const quartoContent = document.querySelector("#quarto-content");
+        
+        if (window.getComputedStyle(quartoContent).display === 'grid') {
+          // Remove grid display
+          quartoContent.style.display = "block";
+          
+          // Hide every HTML element, except for main content
+          quartoContent
+            .querySelectorAll(":scope > :not(.content, script)")
+            .forEach(e => e.style.display = "none");
+  
+          // Change content margin for desktop view
+          quartoContent
+            .querySelector("main.content")
+            .style.margin = "20px 100px";
+        } else {
+          // Try to restore Quarto's initial style
+          quartoContent.style.display = "grid";
+
+          quartoContent
+            .querySelectorAll(":scope > :not(.content, script)")
+            .forEach(e => e.style.display = "flex");
+
+          quartoContent
+            .querySelector("main.content")
+            .style.margin = "21px 0";
+        }
+      }
+    }
+  );
+</script> 
+
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02_main.html">2. Statistical Learning</a></li><li class="breadcrumb-item"><a href="./02_exercises.html">Applied Exercises</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Introduction to Statistical Learning using Python</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/r4ds/bookclub-islp" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
+              <i class="bi bi-bi-facebook pe-1"></i>
+            Facebook
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-bi-linkedin pe-1"></i>
+            LinkedIn
+            </a>
+          </li>
+      </ul>
+    </div>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welcome</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./01_main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. Introduction</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01_notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Notes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01_video.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Video</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./02_main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2. Statistical Learning</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02_notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Notes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02_video.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Video</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02_exercises.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Applied Exercises</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./03_main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3. Linear Regression</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03_notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Notes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03_video.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Video</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03_exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./04_main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4. Classification</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04_notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Notes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04_video.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Video</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04_exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./05_main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5. Resampling Methods</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05_notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Notes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05_video.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Video</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05_exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./06_main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6. Linear Model Selection and Regularization</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06_notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Notes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06_video.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Video</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06_exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./07_main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7. Moving Beyond Linearity</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07_notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Notes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07_video.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Video</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07_exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./08_main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8. Tree-Based Methods</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08_notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Notes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08_video.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Video</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08_exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./09_main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">9. Support Vector Machines</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09_notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Notes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09_video.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Video</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09_exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./10_main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Deep Learning</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10_notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Notes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10_video.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Video</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10_exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./11_main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11. Survival Analysis and Censored Data</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11_notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Notes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11_video.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Video</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11_exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./12_main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12. Unsupervised Learning</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12_notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Notes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12_video.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Video</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12_exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./13_main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13. Multiple Testing</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13_notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Notes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13_video.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Video</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13_exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./how-to.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">How to add to the book</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#this-exercise-relates-to-the-college-data-set-which-can-be-found-in-the-file-college.csv-on-the-book-website.-it-contains-a-number-of-variables-for-777-different-universities-and-colleges-in-the-us.-the-variables-are" id="toc-this-exercise-relates-to-the-college-data-set-which-can-be-found-in-the-file-college.csv-on-the-book-website.-it-contains-a-number-of-variables-for-777-different-universities-and-colleges-in-the-us.-the-variables-are" class="nav-link active" data-scroll-target="#this-exercise-relates-to-the-college-data-set-which-can-be-found-in-the-file-college.csv-on-the-book-website.-it-contains-a-number-of-variables-for-777-different-universities-and-colleges-in-the-us.-the-variables-are">8. This exercise relates to the <code>College</code> data set, which can be found in the file <code>College.csv</code> on the book website. It contains a number of variables for 777 different universities and colleges in the US. The variables are</a>
+  <ul class="collapse">
+  <li><a href="#a-use-the-pd.read_csv-function-to-read-the-data-into-python.-call-the-loaded-data-college.-make-sure-that-you-have-the-directory-set-to-the-correct-location-for-the-data." id="toc-a-use-the-pd.read_csv-function-to-read-the-data-into-python.-call-the-loaded-data-college.-make-sure-that-you-have-the-directory-set-to-the-correct-location-for-the-data." class="nav-link" data-scroll-target="#a-use-the-pd.read_csv-function-to-read-the-data-into-python.-call-the-loaded-data-college.-make-sure-that-you-have-the-directory-set-to-the-correct-location-for-the-data.">(a) Use the <code>pd.read_csv()</code> function to read the data into <code>Python</code>. Call the loaded data <code>college</code>. Make sure that you have the directory set to the correct location for the data.</a></li>
+  <li><a href="#b-look-at-the-data-used-in-the-notebook-by-creating-and-running-a-new-cell-with-just-the-code-college-in-it.-you-should-notice-that-the-first-column-is-just-the-name-of-each-university-in-a-column-named-something-like-unnamed-0.-we-dont-really-want-pandas-to-treat-this-as-data.-however-it-may-be-handy-to-have-these-names-for-later.-try-the-following-commands-and-similarly-look-at-the-resulting-data-frames" id="toc-b-look-at-the-data-used-in-the-notebook-by-creating-and-running-a-new-cell-with-just-the-code-college-in-it.-you-should-notice-that-the-first-column-is-just-the-name-of-each-university-in-a-column-named-something-like-unnamed-0.-we-dont-really-want-pandas-to-treat-this-as-data.-however-it-may-be-handy-to-have-these-names-for-later.-try-the-following-commands-and-similarly-look-at-the-resulting-data-frames" class="nav-link" data-scroll-target="#b-look-at-the-data-used-in-the-notebook-by-creating-and-running-a-new-cell-with-just-the-code-college-in-it.-you-should-notice-that-the-first-column-is-just-the-name-of-each-university-in-a-column-named-something-like-unnamed-0.-we-dont-really-want-pandas-to-treat-this-as-data.-however-it-may-be-handy-to-have-these-names-for-later.-try-the-following-commands-and-similarly-look-at-the-resulting-data-frames">(b) Look at the data used in the notebook by creating and running a new cell with just the code <code>college</code> in it. You should notice that the first column is just the name of each university in a column named something like <code>Unnamed: 0</code>. We don’t really want <code>pandas</code> to treat this as data. However, it may be handy to have these names for later. Try the following commands and similarly look at the resulting data frames:</a></li>
+  <li><a href="#c-use-the-describe-method-to-produce-a-numerical-summary-of-the-variables-in-the-data-set." id="toc-c-use-the-describe-method-to-produce-a-numerical-summary-of-the-variables-in-the-data-set." class="nav-link" data-scroll-target="#c-use-the-describe-method-to-produce-a-numerical-summary-of-the-variables-in-the-data-set.">(c) Use the <code>describe()</code> method to produce a numerical summary of the variables in the data set.</a></li>
+  <li><a href="#d-use-the-pd.plotting.scatter_matrix-function-to-produce-a-scatterplot-matrix-of-the-first-columns-top10perc-apps-enroll.-recall-that-you-can-reference-a-list-c-of-columns-of-a-data-frame-a-using-ac." id="toc-d-use-the-pd.plotting.scatter_matrix-function-to-produce-a-scatterplot-matrix-of-the-first-columns-top10perc-apps-enroll.-recall-that-you-can-reference-a-list-c-of-columns-of-a-data-frame-a-using-ac." class="nav-link" data-scroll-target="#d-use-the-pd.plotting.scatter_matrix-function-to-produce-a-scatterplot-matrix-of-the-first-columns-top10perc-apps-enroll.-recall-that-you-can-reference-a-list-c-of-columns-of-a-data-frame-a-using-ac.">(d) Use the <code>pd.plotting.scatter_matrix()</code> function to produce a scatterplot matrix of the first columns <code>[Top10perc, Apps, Enroll]</code>. Recall that you can reference a list C of columns of a data frame <code>A</code> using <code>A[C]</code>.</a></li>
+  <li><a href="#e-use-the-boxplot-method-of-college-to-produce-side-by-side-boxplots-of-outstate-versus-private." id="toc-e-use-the-boxplot-method-of-college-to-produce-side-by-side-boxplots-of-outstate-versus-private." class="nav-link" data-scroll-target="#e-use-the-boxplot-method-of-college-to-produce-side-by-side-boxplots-of-outstate-versus-private.">(e) Use the boxplot() method of college to produce side-by-side boxplots of Outstate versus Private.</a></li>
+  <li><a href="#f-create-a-new-qualitative-variable-called-elite-by-binning-the-top10perc-variable-into-two-groups-based-on-whether-or-not-the-proportion-of-students-coming-from-the-top-10-of-their-high-school-classes-exceeds-50." id="toc-f-create-a-new-qualitative-variable-called-elite-by-binning-the-top10perc-variable-into-two-groups-based-on-whether-or-not-the-proportion-of-students-coming-from-the-top-10-of-their-high-school-classes-exceeds-50." class="nav-link" data-scroll-target="#f-create-a-new-qualitative-variable-called-elite-by-binning-the-top10perc-variable-into-two-groups-based-on-whether-or-not-the-proportion-of-students-coming-from-the-top-10-of-their-high-school-classes-exceeds-50.">(f) Create a new qualitative variable, called Elite, by binning the Top10perc variable into two groups based on whether or not the proportion of students coming from the top 10% of their high school classes exceeds 50%.</a></li>
+  <li><a href="#g-use-the-plot.hist-method-of-college-to-produce-some-histograms-with-difering-numbers-of-bins-for-a-few-of-the-quantitative-variables.-the-command-plt.subplots2-2-may-be-useful-it-will-divide-the-plot-window-into-four-regions-so-that-four-plots-can-be-made-simultaneously.-by-changing-the-arguments-you-can-divide-the-screen-up-in-other-combinations." id="toc-g-use-the-plot.hist-method-of-college-to-produce-some-histograms-with-difering-numbers-of-bins-for-a-few-of-the-quantitative-variables.-the-command-plt.subplots2-2-may-be-useful-it-will-divide-the-plot-window-into-four-regions-so-that-four-plots-can-be-made-simultaneously.-by-changing-the-arguments-you-can-divide-the-screen-up-in-other-combinations." class="nav-link" data-scroll-target="#g-use-the-plot.hist-method-of-college-to-produce-some-histograms-with-difering-numbers-of-bins-for-a-few-of-the-quantitative-variables.-the-command-plt.subplots2-2-may-be-useful-it-will-divide-the-plot-window-into-four-regions-so-that-four-plots-can-be-made-simultaneously.-by-changing-the-arguments-you-can-divide-the-screen-up-in-other-combinations.">(g) Use the <code>plot.hist()</code> method of <code>college</code> to produce some histograms with difering numbers of bins for a few of the quantitative variables. The command <code>plt.subplots(2, 2)</code> may be useful: it will divide the plot window into four regions so that four plots can be made simultaneously. By changing the arguments you can divide the screen up in other combinations.</a></li>
+  <li><a href="#h-continue-exploring-the-data-and-provide-a-brief-summary-of-what-you-discover." id="toc-h-continue-exploring-the-data-and-provide-a-brief-summary-of-what-you-discover." class="nav-link" data-scroll-target="#h-continue-exploring-the-data-and-provide-a-brief-summary-of-what-you-discover.">(h) Continue exploring the data, and provide a brief summary of what you discover.</a></li>
+  </ul></li>
+  <li><a href="#this-exercise-involves-the-auto-data-set-studied-in-the-lab.-make-sure-that-the-missing-values-have-been-removed-from-the-data." id="toc-this-exercise-involves-the-auto-data-set-studied-in-the-lab.-make-sure-that-the-missing-values-have-been-removed-from-the-data." class="nav-link" data-scroll-target="#this-exercise-involves-the-auto-data-set-studied-in-the-lab.-make-sure-that-the-missing-values-have-been-removed-from-the-data.">9. This exercise involves the <code>Auto</code> data set studied in the lab. Make sure that the missing values have been removed from the data.</a>
+  <ul class="collapse">
+  <li><a href="#a-which-of-the-predictors-are-quantitative-and-which-are-qualitative" id="toc-a-which-of-the-predictors-are-quantitative-and-which-are-qualitative" class="nav-link" data-scroll-target="#a-which-of-the-predictors-are-quantitative-and-which-are-qualitative">(a) Which of the predictors are quantitative, and which are qualitative?</a></li>
+  <li><a href="#b-what-is-the-range-of-each-quantitative-predictor-you-can-answer-this-using-the-min-and-max-methods-in-numpy." id="toc-b-what-is-the-range-of-each-quantitative-predictor-you-can-answer-this-using-the-min-and-max-methods-in-numpy." class="nav-link" data-scroll-target="#b-what-is-the-range-of-each-quantitative-predictor-you-can-answer-this-using-the-min-and-max-methods-in-numpy.">(b) What is the range of each quantitative predictor? You can answer this using the <code>min()</code> and <code>max()</code> methods in <code>numpy</code>.</a></li>
+  <li><a href="#c-what-is-the-mean-and-standard-deviation-of-each-quantitative-predictor" id="toc-c-what-is-the-mean-and-standard-deviation-of-each-quantitative-predictor" class="nav-link" data-scroll-target="#c-what-is-the-mean-and-standard-deviation-of-each-quantitative-predictor">(c) What is the mean and standard deviation of each quantitative predictor?</a></li>
+  <li><a href="#d-now-remove-the-10th-through-85th-observations.-what-is-the-range-mean-and-standard-deviation-of-each-predictor-in-the-subset-of-the-data-that-remains" id="toc-d-now-remove-the-10th-through-85th-observations.-what-is-the-range-mean-and-standard-deviation-of-each-predictor-in-the-subset-of-the-data-that-remains" class="nav-link" data-scroll-target="#d-now-remove-the-10th-through-85th-observations.-what-is-the-range-mean-and-standard-deviation-of-each-predictor-in-the-subset-of-the-data-that-remains">(d) Now remove the 10th through 85th observations. What is the range, mean, and standard deviation of each predictor in the subset of the data that remains?</a></li>
+  <li><a href="#e-using-the-full-data-set-investigate-the-predictors-graphically-using-scatterplots-or-other-tools-of-your-choice.-create-some-plots-highlighting-the-relationships-among-the-predictors.-comment-on-your-findings." id="toc-e-using-the-full-data-set-investigate-the-predictors-graphically-using-scatterplots-or-other-tools-of-your-choice.-create-some-plots-highlighting-the-relationships-among-the-predictors.-comment-on-your-findings." class="nav-link" data-scroll-target="#e-using-the-full-data-set-investigate-the-predictors-graphically-using-scatterplots-or-other-tools-of-your-choice.-create-some-plots-highlighting-the-relationships-among-the-predictors.-comment-on-your-findings.">(e) Using the full data set, investigate the predictors graphically, using scatterplots or other tools of your choice. Create some plots highlighting the relationships among the predictors. Comment on your findings.</a></li>
+  <li><a href="#f-suppose-that-we-wish-to-predict-gas-mileage-mpg-on-the-basis-of-the-other-variables.-do-your-plots-suggest-that-any-of-the-other-variables-might-be-useful-in-predicting-mpg-justify-your-answer." id="toc-f-suppose-that-we-wish-to-predict-gas-mileage-mpg-on-the-basis-of-the-other-variables.-do-your-plots-suggest-that-any-of-the-other-variables-might-be-useful-in-predicting-mpg-justify-your-answer." class="nav-link" data-scroll-target="#f-suppose-that-we-wish-to-predict-gas-mileage-mpg-on-the-basis-of-the-other-variables.-do-your-plots-suggest-that-any-of-the-other-variables-might-be-useful-in-predicting-mpg-justify-your-answer.">(f) Suppose that we wish to predict gas mileage (<code>mpg</code>) on the basis of the other variables. Do your plots suggest that any of the other variables might be useful in predicting <code>mpg</code>? Justify your answer.</a></li>
+  </ul></li>
+  <li><a href="#this-exercise-involves-the-boston-housing-data-set." id="toc-this-exercise-involves-the-boston-housing-data-set." class="nav-link" data-scroll-target="#this-exercise-involves-the-boston-housing-data-set.">10. This exercise involves the <code>Boston</code> housing data set.</a>
+  <ul class="collapse">
+  <li><a href="#a-to-begin-load-in-the-boston-data-set-which-is-part-of-the-islp-library." id="toc-a-to-begin-load-in-the-boston-data-set-which-is-part-of-the-islp-library." class="nav-link" data-scroll-target="#a-to-begin-load-in-the-boston-data-set-which-is-part-of-the-islp-library.">(a) To begin, load in the <code>Boston</code> data set, which is part of the <code>ISLP</code> library.</a></li>
+  <li><a href="#b-how-many-rows-are-in-this-data-set-how-many-columns-what-do-the-rows-and-columns-represent" id="toc-b-how-many-rows-are-in-this-data-set-how-many-columns-what-do-the-rows-and-columns-represent" class="nav-link" data-scroll-target="#b-how-many-rows-are-in-this-data-set-how-many-columns-what-do-the-rows-and-columns-represent">(b) How many rows are in this data set? How many columns? What do the rows and columns represent?</a></li>
+  <li><a href="#c-make-some-pairwise-scatterplots-of-the-predictors-columns-in-this-data-set.-describe-your-fndings." id="toc-c-make-some-pairwise-scatterplots-of-the-predictors-columns-in-this-data-set.-describe-your-fndings." class="nav-link" data-scroll-target="#c-make-some-pairwise-scatterplots-of-the-predictors-columns-in-this-data-set.-describe-your-fndings.">(c) Make some pairwise scatterplots of the predictors (columns) in this data set. Describe your fndings.</a></li>
+  <li><a href="#d-are-any-of-the-predictors-associated-with-per-capita-crime-rate-if-so-explain-the-relationship." id="toc-d-are-any-of-the-predictors-associated-with-per-capita-crime-rate-if-so-explain-the-relationship." class="nav-link" data-scroll-target="#d-are-any-of-the-predictors-associated-with-per-capita-crime-rate-if-so-explain-the-relationship.">(d) Are any of the predictors associated with per capita crime rate? If so, explain the relationship.</a></li>
+  <li><a href="#e-do-any-of-the-suburbs-of-boston-appear-to-have-particularly-high-crime-rates-tax-rates-pupil-teacher-ratios-comment-on-the-range-of-each-predictor." id="toc-e-do-any-of-the-suburbs-of-boston-appear-to-have-particularly-high-crime-rates-tax-rates-pupil-teacher-ratios-comment-on-the-range-of-each-predictor." class="nav-link" data-scroll-target="#e-do-any-of-the-suburbs-of-boston-appear-to-have-particularly-high-crime-rates-tax-rates-pupil-teacher-ratios-comment-on-the-range-of-each-predictor.">(e) Do any of the suburbs of Boston appear to have particularly high crime rates? Tax rates? Pupil-teacher ratios? Comment on the range of each predictor.</a></li>
+  <li><a href="#f-how-many-of-the-suburbs-in-this-data-set-bound-the-charles-river" id="toc-f-how-many-of-the-suburbs-in-this-data-set-bound-the-charles-river" class="nav-link" data-scroll-target="#f-how-many-of-the-suburbs-in-this-data-set-bound-the-charles-river">(f) How many of the suburbs in this data set bound the Charles river?</a></li>
+  <li><a href="#g-what-is-the-median-pupil-teacher-ratio-among-the-towns-in-this-data-set" id="toc-g-what-is-the-median-pupil-teacher-ratio-among-the-towns-in-this-data-set" class="nav-link" data-scroll-target="#g-what-is-the-median-pupil-teacher-ratio-among-the-towns-in-this-data-set">(g) What is the median pupil-teacher ratio among the towns in this data set?</a></li>
+  <li><a href="#h-which-suburb-of-boston-has-lowest-median-value-of-owneroccupied-homes-what-are-the-values-of-the-other-predictors-for-that-suburb-and-how-do-those-values-compare-to-the-overall-ranges-for-those-predictors-comment-on-your-fndings." id="toc-h-which-suburb-of-boston-has-lowest-median-value-of-owneroccupied-homes-what-are-the-values-of-the-other-predictors-for-that-suburb-and-how-do-those-values-compare-to-the-overall-ranges-for-those-predictors-comment-on-your-fndings." class="nav-link" data-scroll-target="#h-which-suburb-of-boston-has-lowest-median-value-of-owneroccupied-homes-what-are-the-values-of-the-other-predictors-for-that-suburb-and-how-do-those-values-compare-to-the-overall-ranges-for-those-predictors-comment-on-your-fndings.">(h) Which suburb of Boston has lowest median value of owneroccupied homes? What are the values of the other predictors for that suburb, and how do those values compare to the overall ranges for those predictors? Comment on your fndings.</a></li>
+  <li><a href="#i-in-this-data-set-how-many-of-the-suburbs-average-more-than-seven-rooms-per-dwelling-more-than-eight-rooms-per-dwelling-comment-on-the-suburbs-that-average-more-than-eight-rooms-per-dwelling." id="toc-i-in-this-data-set-how-many-of-the-suburbs-average-more-than-seven-rooms-per-dwelling-more-than-eight-rooms-per-dwelling-comment-on-the-suburbs-that-average-more-than-eight-rooms-per-dwelling." class="nav-link" data-scroll-target="#i-in-this-data-set-how-many-of-the-suburbs-average-more-than-seven-rooms-per-dwelling-more-than-eight-rooms-per-dwelling-comment-on-the-suburbs-that-average-more-than-eight-rooms-per-dwelling.">(i) In this data set, how many of the suburbs average more than seven rooms per dwelling? More than eight rooms per dwelling? Comment on the suburbs that average more than eight rooms per dwelling.</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Applied Exercises</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reticulate)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>os <span class="ot">&lt;-</span> <span class="fu">import</span>(<span class="st">"os"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>os<span class="sc">$</span><span class="fu">listdir</span>(<span class="st">"."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "03_exercises.qmd"       ".Rhistory"              "03_main.qmd"           
+ [4] "02_main.qmd"            ".Rbuildignore"          "examples.md"           
+ [7] "07_exercises.qmd"       "10_exercises.qmd"       "_quarto.yml"           
+[10] "bookclub-islp.Rproj"    "example_python.ipynb"   "09_main.qmd"           
+[13] "08_main.qmd"            "03_video.qmd"           "06_notes.qmd"          
+[16] ".DS_Store"              "12_notes.qmd"           "08_video.qmd"          
+[19] "13_exercises.qmd"       "04_exercises.qmd"       "11_video.qmd"          
+[22] "05_video.qmd"           "images"                 "13_main.qmd"           
+[25] "12_main.qmd"            "01_notes.qmd"           "02_video.qmd"          
+[28] "how-to.qmd"             "ISLP_labs_R4DS"         "example_quarto.qmd"    
+[31] "13_notes.qmd"           "04_main.qmd"            "07_notes.qmd"          
+[34] "05_main.qmd"            "09_video.qmd"           "06_notes.ipynb"        
+[37] "docs"                   "index.qmd"              "04_video.qmd"          
+[40] "09_exercises.qmd"       "10_video.qmd"           "02_notes.qmd"          
+[43] "README.md"              "some_array.npy"         "08_exercises.qmd"      
+[46] ".gitignore"             "figpath.png"            "01_video.qmd"          
+[49] "04_notes.qmd"           ".github"                "style.css"             
+[52] "10_notes.qmd"           "cover.png"              "13_video.qmd"          
+[55] "07_video.qmd"           "sidebars-toggle.html"   "01_main.qmd"           
+[58] "09_notes.qmd"           "03_notes.qmd"           "07_main.qmd"           
+[61] "06_main.qmd"            "05_exercises.qmd"       ".git"                  
+[64] "12_exercises.qmd"       "02_exercises.rmarkdown" "data"                  
+[67] "11_exercises.qmd"       "06_exercises.qmd"       "_freeze"               
+[70] "11_notes.qmd"           ".Rproj.user"            ".quarto"               
+[73] "ISLP_data"              "05_notes.qmd"           "02_exercises.qmd"      
+[76] "06_video.qmd"           "10_main.qmd"            "11_main.qmd"           
+[79] "12_video.qmd"           "08_notes.qmd"          </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#%matplotlib inline</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib.pyplot <span class="im">import</span> subplots</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ISLP <span class="im">import</span> load_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>pd.set_option(<span class="st">'display.max_columns'</span>, <span class="va">None</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#pd.set_option('display.max_rows', None)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="this-exercise-relates-to-the-college-data-set-which-can-be-found-in-the-file-college.csv-on-the-book-website.-it-contains-a-number-of-variables-for-777-different-universities-and-colleges-in-the-us.-the-variables-are" class="level2">
+<h2 class="anchored" data-anchor-id="this-exercise-relates-to-the-college-data-set-which-can-be-found-in-the-file-college.csv-on-the-book-website.-it-contains-a-number-of-variables-for-777-different-universities-and-colleges-in-the-us.-the-variables-are">8. This exercise relates to the <code>College</code> data set, which can be found in the file <code>College.csv</code> on the book website. It contains a number of variables for 777 different universities and colleges in the US. The variables are</h2>
+<ul>
+<li><code>Private</code> : Public/private indicator</li>
+<li><code>Apps</code> : Number of applications received</li>
+<li><code>Accept</code> : Number of applicants accepted</li>
+<li><code>Enroll</code> : Number of new students enrolled</li>
+<li><code>Top10perc</code> : New students from top 10 % of high school class</li>
+<li><code>Top25perc</code> : New students from top 25 % of high school class</li>
+<li><code>F.Undergrad</code> : Number of full-time undergraduates</li>
+<li><code>P.Undergrad</code> : Number of part-time undergraduates</li>
+<li><code>Outstate</code> : Out-of-state tuition</li>
+<li><code>Room.Board</code> : Room and board costs</li>
+<li><code>Books</code> : Estimated book costs</li>
+<li><code>Personal</code> : Estimated personal spending</li>
+<li><code>PhD</code> : Percent of faculty with Ph.D.s</li>
+<li><code>Terminal</code> : Percent of faculty with terminal degree</li>
+<li><code>S.F.Ratio</code> : Student/faculty ratio</li>
+<li><code>perc.alumni</code> : Percent of alumni who donate</li>
+<li><code>Expend</code> : Instructional expenditure per student</li>
+<li><code>Grad.Rate</code> : Graduation rate</li>
+</ul>
+<p>Before reading the data into <code>Python</code>, it can be viewed in Excel or a text editor.</p>
+<section id="a-use-the-pd.read_csv-function-to-read-the-data-into-python.-call-the-loaded-data-college.-make-sure-that-you-have-the-directory-set-to-the-correct-location-for-the-data." class="level3">
+<h3 class="anchored" data-anchor-id="a-use-the-pd.read_csv-function-to-read-the-data-into-python.-call-the-loaded-data-college.-make-sure-that-you-have-the-directory-set-to-the-correct-location-for-the-data.">(a) Use the <code>pd.read_csv()</code> function to read the data into <code>Python</code>. Call the loaded data <code>college</code>. Make sure that you have the directory set to the correct location for the data.</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>college <span class="op">=</span> pd.read_csv(<span class="st">'ISLP_data/College.csv'</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>college</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                         Unnamed: 0 Private   Apps  Accept  Enroll  Top10perc  \
+0      Abilene Christian University     Yes   1660    1232     721         23   
+1                Adelphi University     Yes   2186    1924     512         16   
+2                    Adrian College     Yes   1428    1097     336         22   
+3               Agnes Scott College     Yes    417     349     137         60   
+4         Alaska Pacific University     Yes    193     146      55         16   
+..                              ...     ...    ...     ...     ...        ...   
+772         Worcester State College      No   2197    1515     543          4   
+773               Xavier University     Yes   1959    1805     695         24   
+774  Xavier University of Louisiana     Yes   2097    1915     695         34   
+775                 Yale University     Yes  10705    2453    1317         95   
+776    York College of Pennsylvania     Yes   2989    1855     691         28   
+
+     Top25perc  F.Undergrad  P.Undergrad  Outstate  Room.Board  Books  \
+0           52         2885          537      7440        3300    450   
+1           29         2683         1227     12280        6450    750   
+2           50         1036           99     11250        3750    400   
+3           89          510           63     12960        5450    450   
+4           44          249          869      7560        4120    800   
+..         ...          ...          ...       ...         ...    ...   
+772         26         3089         2029      6797        3900    500   
+773         47         2849         1107     11520        4960    600   
+774         61         2793          166      6900        4200    617   
+775         99         5217           83     19840        6510    630   
+776         63         2988         1726      4990        3560    500   
+
+     Personal  PhD  Terminal  S.F.Ratio  perc.alumni  Expend  Grad.Rate  
+0        2200   70        78       18.1           12    7041         60  
+1        1500   29        30       12.2           16   10527         56  
+2        1165   53        66       12.9           30    8735         54  
+3         875   92        97        7.7           37   19016         59  
+4        1500   76        72       11.9            2   10922         15  
+..        ...  ...       ...        ...          ...     ...        ...  
+772      1200   60        60       21.0           14    4469         40  
+773      1250   73        75       13.3           31    9189         83  
+774       781   67        75       14.4           20    8323         49  
+775      2115   96        96        5.8           49   40386         99  
+776      1250   75        75       18.1           28    4509         99  
+
+[777 rows x 19 columns]</code></pre>
+</div>
+</div>
+</section>
+<section id="b-look-at-the-data-used-in-the-notebook-by-creating-and-running-a-new-cell-with-just-the-code-college-in-it.-you-should-notice-that-the-first-column-is-just-the-name-of-each-university-in-a-column-named-something-like-unnamed-0.-we-dont-really-want-pandas-to-treat-this-as-data.-however-it-may-be-handy-to-have-these-names-for-later.-try-the-following-commands-and-similarly-look-at-the-resulting-data-frames" class="level3">
+<h3 class="anchored" data-anchor-id="b-look-at-the-data-used-in-the-notebook-by-creating-and-running-a-new-cell-with-just-the-code-college-in-it.-you-should-notice-that-the-first-column-is-just-the-name-of-each-university-in-a-column-named-something-like-unnamed-0.-we-dont-really-want-pandas-to-treat-this-as-data.-however-it-may-be-handy-to-have-these-names-for-later.-try-the-following-commands-and-similarly-look-at-the-resulting-data-frames">(b) Look at the data used in the notebook by creating and running a new cell with just the code <code>college</code> in it. You should notice that the first column is just the name of each university in a column named something like <code>Unnamed: 0</code>. We don’t really want <code>pandas</code> to treat this as data. However, it may be handy to have these names for later. Try the following commands and similarly look at the resulting data frames:</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>college2 <span class="op">=</span> pd.read_csv(<span class="st">'ISLP_data/College.csv'</span>, index_col<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">#college2</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>college3 <span class="op">=</span> college.rename({<span class="st">'Unnamed: 0'</span>: <span class="st">'college'</span>},</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co">#college3</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>college3 <span class="op">=</span> college3.set_index(<span class="st">'college'</span>)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co">#college3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This has used the first column in the file as an <code>index</code> for the data frame. This means that <code>pandas</code> has given each row a name corresponding to the appropriate university. Now you should see that the first data column is <code>Private</code>. Note that the names of the colleges appear on the left of the table. We also introduced a new python object above: a <em>dictionary</em>, which is specified by <code>(key, value)</code> pairs. Keep your modified version of the data with the following:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>college <span class="op">=</span> college3</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>college</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                               Private   Apps  Accept  Enroll  Top10perc  \
+college                                                                    
+Abilene Christian University       Yes   1660    1232     721         23   
+Adelphi University                 Yes   2186    1924     512         16   
+Adrian College                     Yes   1428    1097     336         22   
+Agnes Scott College                Yes    417     349     137         60   
+Alaska Pacific University          Yes    193     146      55         16   
+...                                ...    ...     ...     ...        ...   
+Worcester State College             No   2197    1515     543          4   
+Xavier University                  Yes   1959    1805     695         24   
+Xavier University of Louisiana     Yes   2097    1915     695         34   
+Yale University                    Yes  10705    2453    1317         95   
+York College of Pennsylvania       Yes   2989    1855     691         28   
+
+                                Top25perc  F.Undergrad  P.Undergrad  Outstate  \
+college                                                                         
+Abilene Christian University           52         2885          537      7440   
+Adelphi University                     29         2683         1227     12280   
+Adrian College                         50         1036           99     11250   
+Agnes Scott College                    89          510           63     12960   
+Alaska Pacific University              44          249          869      7560   
+...                                   ...          ...          ...       ...   
+Worcester State College                26         3089         2029      6797   
+Xavier University                      47         2849         1107     11520   
+Xavier University of Louisiana         61         2793          166      6900   
+Yale University                        99         5217           83     19840   
+York College of Pennsylvania           63         2988         1726      4990   
+
+                                Room.Board  Books  Personal  PhD  Terminal  \
+college                                                                      
+Abilene Christian University          3300    450      2200   70        78   
+Adelphi University                    6450    750      1500   29        30   
+Adrian College                        3750    400      1165   53        66   
+Agnes Scott College                   5450    450       875   92        97   
+Alaska Pacific University             4120    800      1500   76        72   
+...                                    ...    ...       ...  ...       ...   
+Worcester State College               3900    500      1200   60        60   
+Xavier University                     4960    600      1250   73        75   
+Xavier University of Louisiana        4200    617       781   67        75   
+Yale University                       6510    630      2115   96        96   
+York College of Pennsylvania          3560    500      1250   75        75   
+
+                                S.F.Ratio  perc.alumni  Expend  Grad.Rate  
+college                                                                    
+Abilene Christian University         18.1           12    7041         60  
+Adelphi University                   12.2           16   10527         56  
+Adrian College                       12.9           30    8735         54  
+Agnes Scott College                   7.7           37   19016         59  
+Alaska Pacific University            11.9            2   10922         15  
+...                                   ...          ...     ...        ...  
+Worcester State College              21.0           14    4469         40  
+Xavier University                    13.3           31    9189         83  
+Xavier University of Louisiana       14.4           20    8323         49  
+Yale University                       5.8           49   40386         99  
+York College of Pennsylvania         18.1           28    4509         99  
+
+[777 rows x 18 columns]</code></pre>
+</div>
+</div>
+</section>
+<section id="c-use-the-describe-method-to-produce-a-numerical-summary-of-the-variables-in-the-data-set." class="level3">
+<h3 class="anchored" data-anchor-id="c-use-the-describe-method-to-produce-a-numerical-summary-of-the-variables-in-the-data-set.">(c) Use the <code>describe()</code> method to produce a numerical summary of the variables in the data set.</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>college.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>               Apps        Accept       Enroll   Top10perc   Top25perc  \
+count    777.000000    777.000000   777.000000  777.000000  777.000000   
+mean    3001.638353   2018.804376   779.972973   27.558559   55.796654   
+std     3870.201484   2451.113971   929.176190   17.640364   19.804778   
+min       81.000000     72.000000    35.000000    1.000000    9.000000   
+25%      776.000000    604.000000   242.000000   15.000000   41.000000   
+50%     1558.000000   1110.000000   434.000000   23.000000   54.000000   
+75%     3624.000000   2424.000000   902.000000   35.000000   69.000000   
+max    48094.000000  26330.000000  6392.000000   96.000000  100.000000   
+
+        F.Undergrad   P.Undergrad      Outstate   Room.Board        Books  \
+count    777.000000    777.000000    777.000000   777.000000   777.000000   
+mean    3699.907336    855.298584  10440.669241  4357.526384   549.380952   
+std     4850.420531   1522.431887   4023.016484  1096.696416   165.105360   
+min      139.000000      1.000000   2340.000000  1780.000000    96.000000   
+25%      992.000000     95.000000   7320.000000  3597.000000   470.000000   
+50%     1707.000000    353.000000   9990.000000  4200.000000   500.000000   
+75%     4005.000000    967.000000  12925.000000  5050.000000   600.000000   
+max    31643.000000  21836.000000  21700.000000  8124.000000  2340.000000   
+
+          Personal         PhD    Terminal   S.F.Ratio  perc.alumni  \
+count   777.000000  777.000000  777.000000  777.000000   777.000000   
+mean   1340.642214   72.660232   79.702703   14.089704    22.743887   
+std     677.071454   16.328155   14.722359    3.958349    12.391801   
+min     250.000000    8.000000   24.000000    2.500000     0.000000   
+25%     850.000000   62.000000   71.000000   11.500000    13.000000   
+50%    1200.000000   75.000000   82.000000   13.600000    21.000000   
+75%    1700.000000   85.000000   92.000000   16.500000    31.000000   
+max    6800.000000  103.000000  100.000000   39.800000    64.000000   
+
+             Expend  Grad.Rate  
+count    777.000000  777.00000  
+mean    9660.171171   65.46332  
+std     5221.768440   17.17771  
+min     3186.000000   10.00000  
+25%     6751.000000   53.00000  
+50%     8377.000000   65.00000  
+75%    10830.000000   78.00000  
+max    56233.000000  118.00000  </code></pre>
+</div>
+</div>
+</section>
+<section id="d-use-the-pd.plotting.scatter_matrix-function-to-produce-a-scatterplot-matrix-of-the-first-columns-top10perc-apps-enroll.-recall-that-you-can-reference-a-list-c-of-columns-of-a-data-frame-a-using-ac." class="level3">
+<h3 class="anchored" data-anchor-id="d-use-the-pd.plotting.scatter_matrix-function-to-produce-a-scatterplot-matrix-of-the-first-columns-top10perc-apps-enroll.-recall-that-you-can-reference-a-list-c-of-columns-of-a-data-frame-a-using-ac.">(d) Use the <code>pd.plotting.scatter_matrix()</code> function to produce a scatterplot matrix of the first columns <code>[Top10perc, Apps, Enroll]</code>. Recall that you can reference a list C of columns of a data frame <code>A</code> using <code>A[C]</code>.</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#fig, ax = subplots(figsize=(8, 8))</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>pd.plotting.scatter_matrix(college[[<span class="st">'Top10perc'</span>,<span class="st">'Apps'</span>,<span class="st">'Enroll'</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>array([[&lt;AxesSubplot:xlabel='Top10perc', ylabel='Top10perc'&gt;,
+        &lt;AxesSubplot:xlabel='Apps', ylabel='Top10perc'&gt;,
+        &lt;AxesSubplot:xlabel='Enroll', ylabel='Top10perc'&gt;],
+       [&lt;AxesSubplot:xlabel='Top10perc', ylabel='Apps'&gt;,
+        &lt;AxesSubplot:xlabel='Apps', ylabel='Apps'&gt;,
+        &lt;AxesSubplot:xlabel='Enroll', ylabel='Apps'&gt;],
+       [&lt;AxesSubplot:xlabel='Top10perc', ylabel='Enroll'&gt;,
+        &lt;AxesSubplot:xlabel='Apps', ylabel='Enroll'&gt;,
+        &lt;AxesSubplot:xlabel='Enroll', ylabel='Enroll'&gt;]], dtype=object)</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#plt.show()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="02_exercises_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="e-use-the-boxplot-method-of-college-to-produce-side-by-side-boxplots-of-outstate-versus-private." class="level3">
+<h3 class="anchored" data-anchor-id="e-use-the-boxplot-method-of-college-to-produce-side-by-side-boxplots-of-outstate-versus-private.">(e) Use the boxplot() method of college to produce side-by-side boxplots of Outstate versus Private.</h3>
+</section>
+<section id="f-create-a-new-qualitative-variable-called-elite-by-binning-the-top10perc-variable-into-two-groups-based-on-whether-or-not-the-proportion-of-students-coming-from-the-top-10-of-their-high-school-classes-exceeds-50." class="level3">
+<h3 class="anchored" data-anchor-id="f-create-a-new-qualitative-variable-called-elite-by-binning-the-top10perc-variable-into-two-groups-based-on-whether-or-not-the-proportion-of-students-coming-from-the-top-10-of-their-high-school-classes-exceeds-50.">(f) Create a new qualitative variable, called Elite, by binning the Top10perc variable into two groups based on whether or not the proportion of students coming from the top 10% of their high school classes exceeds 50%.</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>college[<span class="st">'Elite'</span>] <span class="op">=</span> pd.cut(college[<span class="st">'Top10perc'</span>],</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  [<span class="dv">0</span>,<span class="fl">0.5</span>,<span class="dv">1</span>],</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  labels<span class="op">=</span>[<span class="st">'No'</span>, <span class="st">'Yes'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Use the <code>value_counts()</code> method of <code>college['Elite']</code> to see how many elite universities there are. Finally, use the <code>boxplot()</code> method again to produce side-by-side boxplots of <code>Outstate</code> versus <code>Elite</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>college[<span class="st">'Elite'</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Yes    3
+No     0
+Name: Elite, dtype: int64</code></pre>
+</div>
+</div>
+</section>
+<section id="g-use-the-plot.hist-method-of-college-to-produce-some-histograms-with-difering-numbers-of-bins-for-a-few-of-the-quantitative-variables.-the-command-plt.subplots2-2-may-be-useful-it-will-divide-the-plot-window-into-four-regions-so-that-four-plots-can-be-made-simultaneously.-by-changing-the-arguments-you-can-divide-the-screen-up-in-other-combinations." class="level3">
+<h3 class="anchored" data-anchor-id="g-use-the-plot.hist-method-of-college-to-produce-some-histograms-with-difering-numbers-of-bins-for-a-few-of-the-quantitative-variables.-the-command-plt.subplots2-2-may-be-useful-it-will-divide-the-plot-window-into-four-regions-so-that-four-plots-can-be-made-simultaneously.-by-changing-the-arguments-you-can-divide-the-screen-up-in-other-combinations.">(g) Use the <code>plot.hist()</code> method of <code>college</code> to produce some histograms with difering numbers of bins for a few of the quantitative variables. The command <code>plt.subplots(2, 2)</code> may be useful: it will divide the plot window into four regions so that four plots can be made simultaneously. By changing the arguments you can divide the screen up in other combinations.</h3>
+</section>
+<section id="h-continue-exploring-the-data-and-provide-a-brief-summary-of-what-you-discover." class="level3">
+<h3 class="anchored" data-anchor-id="h-continue-exploring-the-data-and-provide-a-brief-summary-of-what-you-discover.">(h) Continue exploring the data, and provide a brief summary of what you discover.</h3>
+</section>
+</section>
+<section id="this-exercise-involves-the-auto-data-set-studied-in-the-lab.-make-sure-that-the-missing-values-have-been-removed-from-the-data." class="level2">
+<h2 class="anchored" data-anchor-id="this-exercise-involves-the-auto-data-set-studied-in-the-lab.-make-sure-that-the-missing-values-have-been-removed-from-the-data.">9. This exercise involves the <code>Auto</code> data set studied in the lab. Make sure that the missing values have been removed from the data.</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>Auto <span class="op">=</span> pd.read_csv(<span class="st">'ISLP_data/Auto.csv'</span>,</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>                    na_values<span class="op">=</span>[<span class="st">'?'</span>])</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>Auto</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      mpg  cylinders  displacement  horsepower  weight  acceleration  year  \
+0    18.0          8         307.0       130.0    3504          12.0    70   
+1    15.0          8         350.0       165.0    3693          11.5    70   
+2    18.0          8         318.0       150.0    3436          11.0    70   
+3    16.0          8         304.0       150.0    3433          12.0    70   
+4    17.0          8         302.0       140.0    3449          10.5    70   
+..    ...        ...           ...         ...     ...           ...   ...   
+392  27.0          4         140.0        86.0    2790          15.6    82   
+393  44.0          4          97.0        52.0    2130          24.6    82   
+394  32.0          4         135.0        84.0    2295          11.6    82   
+395  28.0          4         120.0        79.0    2625          18.6    82   
+396  31.0          4         119.0        82.0    2720          19.4    82   
+
+     origin                       name  
+0         1  chevrolet chevelle malibu  
+1         1          buick skylark 320  
+2         1         plymouth satellite  
+3         1              amc rebel sst  
+4         1                ford torino  
+..      ...                        ...  
+392       1            ford mustang gl  
+393       2                  vw pickup  
+394       1              dodge rampage  
+395       1                ford ranger  
+396       1                 chevy s-10  
+
+[397 rows x 9 columns]</code></pre>
+</div>
+</div>
+<section id="a-which-of-the-predictors-are-quantitative-and-which-are-qualitative" class="level3">
+<h3 class="anchored" data-anchor-id="a-which-of-the-predictors-are-quantitative-and-which-are-qualitative">(a) Which of the predictors are quantitative, and which are qualitative?</h3>
+<p>Mpg, Displacement, Horsepower, Weight and Acceleration are quantitative. Cylinders, Year, Origin, and Name are qualitative.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>Auto.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 397 entries, 0 to 396
+Data columns (total 9 columns):
+ #   Column        Non-Null Count  Dtype  
+---  ------        --------------  -----  
+ 0   mpg           397 non-null    float64
+ 1   cylinders     397 non-null    int64  
+ 2   displacement  397 non-null    float64
+ 3   horsepower    392 non-null    float64
+ 4   weight        397 non-null    int64  
+ 5   acceleration  397 non-null    float64
+ 6   year          397 non-null    int64  
+ 7   origin        397 non-null    int64  
+ 8   name          397 non-null    object 
+dtypes: float64(4), int64(4), object(1)
+memory usage: 28.0+ KB</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>Auto[<span class="st">'cylinders'</span>] <span class="op">=</span> Auto[<span class="st">'cylinders'</span>].astype(<span class="st">'object'</span>) </span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>Auto[<span class="st">'cylinders'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0      8
+1      8
+2      8
+3      8
+4      8
+      ..
+392    4
+393    4
+394    4
+395    4
+396    4
+Name: cylinders, Length: 397, dtype: object</code></pre>
+</div>
+</div>
+</section>
+<section id="b-what-is-the-range-of-each-quantitative-predictor-you-can-answer-this-using-the-min-and-max-methods-in-numpy." class="level3">
+<h3 class="anchored" data-anchor-id="b-what-is-the-range-of-each-quantitative-predictor-you-can-answer-this-using-the-min-and-max-methods-in-numpy.">(b) What is the range of each quantitative predictor? You can answer this using the <code>min()</code> and <code>max()</code> methods in <code>numpy</code>.</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>mpg_min <span class="op">=</span> Auto[<span class="st">'mpg'</span>].<span class="bu">min</span>( )</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>mpg_max <span class="op">=</span> Auto[<span class="st">'mpg'</span>].<span class="bu">max</span>( )</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'The min and max miles per gallon are'</span>, (mpg_min, mpg_max))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The min and max miles per gallon are (9.0, 46.6)</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>dsp_min <span class="op">=</span> Auto[<span class="st">'displacement'</span>].<span class="bu">min</span>( )</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>dsp_max <span class="op">=</span> Auto[<span class="st">'displacement'</span>].<span class="bu">max</span>( )</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'The min and max displacement are'</span>, (dsp_min, dsp_max))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The min and max displacement are (68.0, 455.0)</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>hpwr_min <span class="op">=</span> Auto[<span class="st">'horsepower'</span>].<span class="bu">min</span>( )</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>hpwr_max <span class="op">=</span> Auto[<span class="st">'horsepower'</span>].<span class="bu">max</span>( )</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'The min and max horsepower are'</span>, (hpwr_min, hpwr_max))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The min and max horsepower are (46.0, 230.0)</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>wt_min <span class="op">=</span> Auto[<span class="st">'weight'</span>].<span class="bu">min</span>( )</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>wt_max <span class="op">=</span> Auto[<span class="st">'weight'</span>].<span class="bu">max</span>( )</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'The min and max weights are'</span>, (wt_min, wt_max))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The min and max weights are (1613, 5140)</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>acc_min <span class="op">=</span> Auto[<span class="st">'acceleration'</span>].<span class="bu">min</span>( )</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>acc_max <span class="op">=</span> Auto[<span class="st">'acceleration'</span>].<span class="bu">max</span>( )</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'The min and max accelerations are'</span>, (acc_min, acc_max))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The min and max accelerations are (8.0, 24.8)</code></pre>
+</div>
+</div>
+</section>
+<section id="c-what-is-the-mean-and-standard-deviation-of-each-quantitative-predictor" class="level3">
+<h3 class="anchored" data-anchor-id="c-what-is-the-mean-and-standard-deviation-of-each-quantitative-predictor">(c) What is the mean and standard deviation of each quantitative predictor?</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>mpg_mean <span class="op">=</span> Auto[<span class="st">'mpg'</span>].mean( )</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>mpg_sd <span class="op">=</span> Auto[<span class="st">'mpg'</span>].std( )</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'The mean and standard deviation of miles per gallon are'</span>, mpg_mean,<span class="st">'and'</span>, mpg_sd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The mean and standard deviation of miles per gallon are 23.515869017632248 and 7.825803928946562</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>dsp_mean <span class="op">=</span> Auto[<span class="st">'displacement'</span>].mean( )</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>dsp_sd <span class="op">=</span> Auto[<span class="st">'displacement'</span>].std( )</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'The mean and standard deviation of weight are'</span>, dsp_mean,<span class="st">'and'</span>, dsp_sd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The mean and standard deviation of weight are 193.53274559193954 and 104.37958329992945</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>hpwr_mean <span class="op">=</span> Auto[<span class="st">'horsepower'</span>].mean( )</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>hpwr_sd <span class="op">=</span> Auto[<span class="st">'horsepower'</span>].std( )</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'The mean and standard deviation of horsepower are'</span>, hpwr_mean,<span class="st">'and'</span>, hpwr_sd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The mean and standard deviation of horsepower are 104.46938775510205 and 38.49115993282855</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>wt_mean <span class="op">=</span> Auto[<span class="st">'weight'</span>].mean( )</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>wt_sd <span class="op">=</span> Auto[<span class="st">'weight'</span>].std( )</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'The mean and standard deviation of weight are'</span>, wt_mean,<span class="st">'and'</span>, wt_sd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The mean and standard deviation of weight are 2970.2619647355164 and 847.9041194897246</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>acc_mean <span class="op">=</span> Auto[<span class="st">'acceleration'</span>].mean( )</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>acc_sd <span class="op">=</span> Auto[<span class="st">'acceleration'</span>].std( )</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'The mean and standard deviation of acceleration are'</span>, acc_mean,<span class="st">'and'</span>, acc_sd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The mean and standard deviation of acceleration are 15.555667506297214 and 2.7499952929761515</code></pre>
+</div>
+</div>
+</section>
+<section id="d-now-remove-the-10th-through-85th-observations.-what-is-the-range-mean-and-standard-deviation-of-each-predictor-in-the-subset-of-the-data-that-remains" class="level3">
+<h3 class="anchored" data-anchor-id="d-now-remove-the-10th-through-85th-observations.-what-is-the-range-mean-and-standard-deviation-of-each-predictor-in-the-subset-of-the-data-that-remains">(d) Now remove the 10th through 85th observations. What is the range, mean, and standard deviation of each predictor in the subset of the data that remains?</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>Auto_new <span class="op">=</span> Auto.drop(Auto.index[<span class="dv">10</span>:<span class="dv">85</span>])</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>Auto_new</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      mpg cylinders  displacement  horsepower  weight  acceleration  year  \
+0    18.0         8         307.0       130.0    3504          12.0    70   
+1    15.0         8         350.0       165.0    3693          11.5    70   
+2    18.0         8         318.0       150.0    3436          11.0    70   
+3    16.0         8         304.0       150.0    3433          12.0    70   
+4    17.0         8         302.0       140.0    3449          10.5    70   
+..    ...       ...           ...         ...     ...           ...   ...   
+392  27.0         4         140.0        86.0    2790          15.6    82   
+393  44.0         4          97.0        52.0    2130          24.6    82   
+394  32.0         4         135.0        84.0    2295          11.6    82   
+395  28.0         4         120.0        79.0    2625          18.6    82   
+396  31.0         4         119.0        82.0    2720          19.4    82   
+
+     origin                       name  
+0         1  chevrolet chevelle malibu  
+1         1          buick skylark 320  
+2         1         plymouth satellite  
+3         1              amc rebel sst  
+4         1                ford torino  
+..      ...                        ...  
+392       1            ford mustang gl  
+393       2                  vw pickup  
+394       1              dodge rampage  
+395       1                ford ranger  
+396       1                 chevy s-10  
+
+[322 rows x 9 columns]</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>mpg_min <span class="op">=</span> Auto_new[<span class="st">'mpg'</span>].<span class="bu">min</span>( )</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>mpg_max <span class="op">=</span> Auto_new[<span class="st">'mpg'</span>].<span class="bu">max</span>( )</span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'The min and max miles per gallon of the subsetted data are'</span>, (mpg_min, mpg_max))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The min and max miles per gallon of the subsetted data are (11.0, 46.6)</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>mpg_mean <span class="op">=</span> Auto_new[<span class="st">'mpg'</span>].mean( )</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>mpg_sd <span class="op">=</span> Auto_new[<span class="st">'mpg'</span>].std( )</span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'The mean and standard deviation of miles per gallon of the subsetted data are'</span>, mpg_mean,<span class="st">'and'</span>, mpg_sd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The mean and standard deviation of miles per gallon of the subsetted data are 24.40931677018633 and 7.913357147165568</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>dsp_min <span class="op">=</span> Auto_new[<span class="st">'displacement'</span>].<span class="bu">min</span>( )</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>dsp_max <span class="op">=</span> Auto_new[<span class="st">'displacement'</span>].<span class="bu">max</span>( )</span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'The min and max displacement of the subsetted data are'</span>, (dsp_min, dsp_max))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The min and max displacement of the subsetted data are (68.0, 455.0)</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>dsp_mean <span class="op">=</span> Auto_new[<span class="st">'displacement'</span>].mean( )</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>dsp_sd <span class="op">=</span> Auto_new[<span class="st">'displacement'</span>].std( )</span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'The mean and standard deviation of weight of the subsetted data are'</span>, dsp_mean,<span class="st">'and'</span>, dsp_sd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The mean and standard deviation of weight of the subsetted data are 187.6801242236025 and 100.12092459330134</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>hpwr_min <span class="op">=</span> Auto[<span class="st">'horsepower'</span>].<span class="bu">min</span>( )</span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>hpwr_max <span class="op">=</span> Auto[<span class="st">'horsepower'</span>].<span class="bu">max</span>( )</span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'The min and max horsepower of the subsetted data are'</span>, (hpwr_min, hpwr_max))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The min and max horsepower of the subsetted data are (46.0, 230.0)</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>hpwr_mean <span class="op">=</span> Auto[<span class="st">'horsepower'</span>].mean( )</span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>hpwr_sd <span class="op">=</span> Auto[<span class="st">'horsepower'</span>].std( )</span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'The mean and standard deviation of horsepower of the subsetted data are'</span>, hpwr_mean,<span class="st">'and'</span>, hpwr_sd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The mean and standard deviation of horsepower of the subsetted data are 104.46938775510205 and 38.49115993282855</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>wt_min <span class="op">=</span> Auto[<span class="st">'weight'</span>].<span class="bu">min</span>( )</span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>wt_max <span class="op">=</span> Auto[<span class="st">'weight'</span>].<span class="bu">max</span>( )</span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'The min and max weights of the subsetted data are'</span>, (wt_min, wt_max))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The min and max weights of the subsetted data are (1613, 5140)</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>wt_mean <span class="op">=</span> Auto[<span class="st">'weight'</span>].mean( )</span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>wt_sd <span class="op">=</span> Auto[<span class="st">'weight'</span>].std( )</span>
+<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'The mean and standard deviation of weight of the subsetted data are'</span>, wt_mean,<span class="st">'and'</span>, wt_sd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The mean and standard deviation of weight of the subsetted data are 2970.2619647355164 and 847.9041194897246</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>acc_min <span class="op">=</span> Auto[<span class="st">'acceleration'</span>].<span class="bu">min</span>( )</span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>acc_max <span class="op">=</span> Auto[<span class="st">'acceleration'</span>].<span class="bu">max</span>( )</span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'The min and max accelerations of the subsetted data are'</span>, (acc_min, acc_max))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The min and max accelerations of the subsetted data are (8.0, 24.8)</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>acc_mean <span class="op">=</span> Auto[<span class="st">'acceleration'</span>].mean( )</span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>acc_sd <span class="op">=</span> Auto[<span class="st">'acceleration'</span>].std( )</span>
+<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'The mean and standard deviation of acceleration of the subsetted data are'</span>, acc_mean,<span class="st">'and'</span>, acc_sd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The mean and standard deviation of acceleration of the subsetted data are 15.555667506297214 and 2.7499952929761515</code></pre>
+</div>
+</div>
+</section>
+<section id="e-using-the-full-data-set-investigate-the-predictors-graphically-using-scatterplots-or-other-tools-of-your-choice.-create-some-plots-highlighting-the-relationships-among-the-predictors.-comment-on-your-findings." class="level3">
+<h3 class="anchored" data-anchor-id="e-using-the-full-data-set-investigate-the-predictors-graphically-using-scatterplots-or-other-tools-of-your-choice.-create-some-plots-highlighting-the-relationships-among-the-predictors.-comment-on-your-findings.">(e) Using the full data set, investigate the predictors graphically, using scatterplots or other tools of your choice. Create some plots highlighting the relationships among the predictors. Comment on your findings.</h3>
+</section>
+<section id="f-suppose-that-we-wish-to-predict-gas-mileage-mpg-on-the-basis-of-the-other-variables.-do-your-plots-suggest-that-any-of-the-other-variables-might-be-useful-in-predicting-mpg-justify-your-answer." class="level3">
+<h3 class="anchored" data-anchor-id="f-suppose-that-we-wish-to-predict-gas-mileage-mpg-on-the-basis-of-the-other-variables.-do-your-plots-suggest-that-any-of-the-other-variables-might-be-useful-in-predicting-mpg-justify-your-answer.">(f) Suppose that we wish to predict gas mileage (<code>mpg</code>) on the basis of the other variables. Do your plots suggest that any of the other variables might be useful in predicting <code>mpg</code>? Justify your answer.</h3>
+</section>
+</section>
+<section id="this-exercise-involves-the-boston-housing-data-set." class="level2">
+<h2 class="anchored" data-anchor-id="this-exercise-involves-the-boston-housing-data-set.">10. This exercise involves the <code>Boston</code> housing data set.</h2>
+<section id="a-to-begin-load-in-the-boston-data-set-which-is-part-of-the-islp-library." class="level3">
+<h3 class="anchored" data-anchor-id="a-to-begin-load-in-the-boston-data-set-which-is-part-of-the-islp-library.">(a) To begin, load in the <code>Boston</code> data set, which is part of the <code>ISLP</code> library.</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>Boston <span class="op">=</span> load_data(<span class="st">"Boston"</span>)</span>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>Boston</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        crim    zn  indus  chas    nox     rm   age     dis  rad  tax  \
+0    0.00632  18.0   2.31     0  0.538  6.575  65.2  4.0900    1  296   
+1    0.02731   0.0   7.07     0  0.469  6.421  78.9  4.9671    2  242   
+2    0.02729   0.0   7.07     0  0.469  7.185  61.1  4.9671    2  242   
+3    0.03237   0.0   2.18     0  0.458  6.998  45.8  6.0622    3  222   
+4    0.06905   0.0   2.18     0  0.458  7.147  54.2  6.0622    3  222   
+..       ...   ...    ...   ...    ...    ...   ...     ...  ...  ...   
+501  0.06263   0.0  11.93     0  0.573  6.593  69.1  2.4786    1  273   
+502  0.04527   0.0  11.93     0  0.573  6.120  76.7  2.2875    1  273   
+503  0.06076   0.0  11.93     0  0.573  6.976  91.0  2.1675    1  273   
+504  0.10959   0.0  11.93     0  0.573  6.794  89.3  2.3889    1  273   
+505  0.04741   0.0  11.93     0  0.573  6.030  80.8  2.5050    1  273   
+
+     ptratio  lstat  medv  
+0       15.3   4.98  24.0  
+1       17.8   9.14  21.6  
+2       17.8   4.03  34.7  
+3       18.7   2.94  33.4  
+4       18.7   5.33  36.2  
+..       ...    ...   ...  
+501     21.0   9.67  22.4  
+502     21.0   9.08  20.6  
+503     21.0   5.64  23.9  
+504     21.0   6.48  22.0  
+505     21.0   7.88  11.9  
+
+[506 rows x 13 columns]</code></pre>
+</div>
+</div>
+</section>
+<section id="b-how-many-rows-are-in-this-data-set-how-many-columns-what-do-the-rows-and-columns-represent" class="level3">
+<h3 class="anchored" data-anchor-id="b-how-many-rows-are-in-this-data-set-how-many-columns-what-do-the-rows-and-columns-represent">(b) How many rows are in this data set? How many columns? What do the rows and columns represent?</h3>
+</section>
+<section id="c-make-some-pairwise-scatterplots-of-the-predictors-columns-in-this-data-set.-describe-your-fndings." class="level3">
+<h3 class="anchored" data-anchor-id="c-make-some-pairwise-scatterplots-of-the-predictors-columns-in-this-data-set.-describe-your-fndings.">(c) Make some pairwise scatterplots of the predictors (columns) in this data set. Describe your fndings.</h3>
+</section>
+<section id="d-are-any-of-the-predictors-associated-with-per-capita-crime-rate-if-so-explain-the-relationship." class="level3">
+<h3 class="anchored" data-anchor-id="d-are-any-of-the-predictors-associated-with-per-capita-crime-rate-if-so-explain-the-relationship.">(d) Are any of the predictors associated with per capita crime rate? If so, explain the relationship.</h3>
+</section>
+<section id="e-do-any-of-the-suburbs-of-boston-appear-to-have-particularly-high-crime-rates-tax-rates-pupil-teacher-ratios-comment-on-the-range-of-each-predictor." class="level3">
+<h3 class="anchored" data-anchor-id="e-do-any-of-the-suburbs-of-boston-appear-to-have-particularly-high-crime-rates-tax-rates-pupil-teacher-ratios-comment-on-the-range-of-each-predictor.">(e) Do any of the suburbs of Boston appear to have particularly high crime rates? Tax rates? Pupil-teacher ratios? Comment on the range of each predictor.</h3>
+</section>
+<section id="f-how-many-of-the-suburbs-in-this-data-set-bound-the-charles-river" class="level3">
+<h3 class="anchored" data-anchor-id="f-how-many-of-the-suburbs-in-this-data-set-bound-the-charles-river">(f) How many of the suburbs in this data set bound the Charles river?</h3>
+</section>
+<section id="g-what-is-the-median-pupil-teacher-ratio-among-the-towns-in-this-data-set" class="level3">
+<h3 class="anchored" data-anchor-id="g-what-is-the-median-pupil-teacher-ratio-among-the-towns-in-this-data-set">(g) What is the median pupil-teacher ratio among the towns in this data set?</h3>
+</section>
+<section id="h-which-suburb-of-boston-has-lowest-median-value-of-owneroccupied-homes-what-are-the-values-of-the-other-predictors-for-that-suburb-and-how-do-those-values-compare-to-the-overall-ranges-for-those-predictors-comment-on-your-fndings." class="level3">
+<h3 class="anchored" data-anchor-id="h-which-suburb-of-boston-has-lowest-median-value-of-owneroccupied-homes-what-are-the-values-of-the-other-predictors-for-that-suburb-and-how-do-those-values-compare-to-the-overall-ranges-for-those-predictors-comment-on-your-fndings.">(h) Which suburb of Boston has lowest median value of owneroccupied homes? What are the values of the other predictors for that suburb, and how do those values compare to the overall ranges for those predictors? Comment on your fndings.</h3>
+</section>
+<section id="i-in-this-data-set-how-many-of-the-suburbs-average-more-than-seven-rooms-per-dwelling-more-than-eight-rooms-per-dwelling-comment-on-the-suburbs-that-average-more-than-eight-rooms-per-dwelling." class="level3">
+<h3 class="anchored" data-anchor-id="i-in-this-data-set-how-many-of-the-suburbs-average-more-than-seven-rooms-per-dwelling-more-than-eight-rooms-per-dwelling-comment-on-the-suburbs-that-average-more-than-eight-rooms-per-dwelling.">(i) In this data set, how many of the suburbs average more than seven rooms per dwelling? More than eight rooms per dwelling? Comment on the suburbs that average more than eight rooms per dwelling.</h3>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./02_video.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Video</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./03_main.html" class="pagination-link">
+        <span class="nav-page-text">3. Linear Regression</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
