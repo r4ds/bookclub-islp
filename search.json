@@ -102,7 +102,7 @@
     "href": "01_video.html#cohort-01",
     "title": "Video",
     "section": "Cohort 01",
-    "text": "Cohort 01\n\n\n\n\n00:07:02    Lucio Cornejo:    start\n00:12:04    Mateo Vega:    Hey everyone! sorry I cannot turn on the mic right now\n00:12:32    Mateo Vega:    On the ISLR?\n00:12:50    Mateo Vega:    No hahaha\n00:13:48    Mateo Vega:    Yes, both things would be fine\n00:13:56    Shah Nawaz:    both\n00:19:20    Mateo Vega:    I would like to use quarto\n00:19:52    Mateo Vega:    I already have some practice with it so no problem\n00:21:38    Lydia Gibson:    https://quarto.org/docs/presentations/\n00:22:16    Lydia Gibson:    Quarto book sounds good\n00:37:56    Lydia Gibson:    I think that's classification\n00:41:34    Mateo Vega:    See you, thanks!\n00:41:40    Lucio Cornejo:    end"
+    "text": "Cohort 01\n\n\n\n\nLOG"
   },
   {
     "objectID": "02_main.html#learning-objectives",
@@ -130,7 +130,7 @@
     "href": "02_video.html#cohort-01",
     "title": "Video",
     "section": "Cohort 01",
-    "text": "Cohort 01\n\n\n\n\n00:09:36    Isabella Velásquez: https://github.com/r4ds/bookclub-py4da\n00:15:43    Layla Bouzoubaa:    heart heart heart\n00:15:50    Layla Bouzoubaa:    I am lving quarto\n00:16:07    Layla Bouzoubaa:    😻😻😻😻\n00:16:27    shamsuddeen:    Yes\n00:17:49    Jadey Ryan: thank you so much Isabella! so helpful 🥳\n00:21:12    Isabella Velásquez: Get started with Quarto: https://quarto.org/docs/get-started/\n00:21:50    Ron:    Busted ;)\n00:39:01    Isabella Velásquez: import pandas as pd\n\n%pdef pd.read_csv\n00:39:23    Isabella Velásquez: ^ this runs (no parentheses)\n00:41:15    Ron:    For simpler functions %pdef is pretty helpful, for example %pdef pd.DataFrame is only a few lines ;)\n00:41:46    Layla Bouzoubaa:    ahh, perfect! thank you much!\n00:43:13    Layla Bouzoubaa:    wooaahh\n00:52:53    Isabella Velásquez: Error in \"5\" + 6 : non-numeric argument to binary operator\n01:02:27    Ron:    I LOVE f-strings.\n01:06:45    Isabella Velásquez: I have to go, thanks so much, this was great!\n01:07:19    Layla Bouzoubaa:    me as well, have a great weekend all!\n01:08:17    Jim Gruman: thankyou!!!\n01:08:25    Jadey Ryan: thank you!!!"
+    "text": "Cohort 01\n\n\n\n\nLOG"
   },
   {
     "objectID": "02_exercises.html#this-exercise-relates-to-the-college-data-set-which-can-be-found-in-the-file-college.csv-on-the-book-website.-it-contains-a-number-of-variables-for-777-different-universities-and-colleges-in-the-us.-the-variables-are",
@@ -165,7 +165,7 @@
     "href": "03_video.html#cohort-01",
     "title": "Video",
     "section": "Cohort 01",
-    "text": "Cohort 01\n\n\n\n\n00:30:39    Karim Badr: Is there a difference between append and extend?\n00:30:57    Ron:    Append is for adding a single element\n00:31:11    Karim Badr: Thanks!\n00:36:34    Ron:    Some discussion of this here: https://stackoverflow.com/questions/11364533/why-are-slice-and-range-upper-bound-exclusive\n00:36:49    Ron:    if you are wondering (like I am) why it is like that :)"
+    "text": "Cohort 01\n\n\n\n\nLOG"
   },
   {
     "objectID": "04_main.html#learning-objectives",
@@ -179,7 +179,7 @@
     "href": "04_video.html#cohort-01",
     "title": "Video",
     "section": "Cohort 01",
-    "text": "Cohort 01\n\n\n\n\n00:37:17    Serena DeStefani:   Sorry, I have to go today because I have some work left to do. But this session is very nice and hopefully I will be back! Thank you\n00:53:43    Karim Badr: Quick google search about transpose vs swapaxes and other forms for this: https://blog.fearcat.in/a?ID=01750-160525d9-9c23-4590-9020-6a3f90d3bdbf"
+    "text": "Cohort 01\n\n\n\n\nLOG"
   },
   {
     "objectID": "05_main.html#learning-objectives",
@@ -193,7 +193,7 @@
     "href": "05_video.html#cohort-01",
     "title": "Video",
     "section": "Cohort 01",
-    "text": "Cohort 01\n\n\n\n\n00:43:47    Karim Badr: Great summary!\n00:44:18    Oluwafemi Oyedele:  Thank you !!!\n00:44:23    Jim Gruman: Thank You!!!!\n00:44:24    shamsuddeen:    thank you\n00:44:30    Jadey Ryan: thank you Ron!\n00:44:56    Layla Bouzoubaa:    Jim i love you hex stickers in the frame! i'm going to steal that idea 😄\n00:46:06    Serena DeStefani:   😂"
+    "text": "Cohort 01\n\n\n\n\nLOG"
   },
   {
     "objectID": "06_main.html#learning-objectives",
@@ -207,7 +207,7 @@
     "href": "06_video.html#cohort-01",
     "title": "Video",
     "section": "Cohort 01",
-    "text": "Cohort 01\n\n\n\n\n00:04:53    phanikumar tata:    hello everyone , got some issues with my camera\n00:57:00    Jim Gruman: thank you Jadey!!\n00:57:30    phanikumar tata:    Great presentation\n00:57:47    phanikumar tata:    can you\n00:58:14    phanikumar tata:    you show you how u r doing .QMD plese\n00:58:33    phanikumar tata:    Quearto to run Python\n00:58:37    Isabella Velásquez: quarto --help\n01:00:22    Isabella Velásquez: https://www.youtube.com/watch?v=MaEjLS2ouGg&list=PL3x6DOfs2NGh7IQIQ_pXNkjLVKa-7lgCw&index=2\n01:00:50    phanikumar tata:    do u have a link\n01:00:56    phanikumar tata:    Thanks a lot\n01:02:08    phanikumar tata:    Oh u need to install reticulate on top of Quearto\n01:03:06    Isabella Velásquez: pip install nbformat\n01:04:33    Isabella Velásquez: you do if you're using RStudio. If you're using Jupyter Lab or VS Code, you do not\n01:04:54    Isabella Velásquez: actually, you may not need reticulate on RStudio - have to double check\n01:07:51    phanikumar tata:    some times\n01:07:59    phanikumar tata:    .lock file would fail it\n01:08:02    phanikumar tata:    to work"
+    "text": "Cohort 01\n\n\n\n\nLOG"
   },
   {
     "objectID": "07_main.html#learning-objectives",
@@ -221,7 +221,7 @@
     "href": "07_video.html#cohort-01",
     "title": "Video",
     "section": "Cohort 01",
-    "text": "Cohort 01\n\n\n\n\n00:10:09    Isabella Velásquez: ahhh I had to set my interpreter in RStudio (via Global options&gt;Python)! that's why it worked from the terminal but not from the Render button."
+    "text": "Cohort 01\n\n\n\n\nLOG"
   },
   {
     "objectID": "08_main.html#learning-objectives",
@@ -235,7 +235,7 @@
     "href": "08_video.html#cohort-01",
     "title": "Video",
     "section": "Cohort 01",
-    "text": "Cohort 01\n\n\n\n\n00:27:19    Isabella Velásquez: dplyr has suffixes! I have never used them: https://dplyr.tidyverse.org/reference/mutate-joins.html\n00:58:49    Layla Bouzoubaa:    i think there is something similar with r\n00:59:11    Ron:    https://dataprep.ai/\n00:59:13    Layla Bouzoubaa:    actually i think janitor pkg has a func that does reporting"
+    "text": "Cohort 01\n\n\n\n\nLOG"
   },
   {
     "objectID": "09_main.html#learning-objectives",
@@ -249,7 +249,7 @@
     "href": "09_video.html#cohort-01",
     "title": "Video",
     "section": "Cohort 01",
-    "text": "Cohort 01\n\n\n\n\n00:26:25    Layla Bouzoubaa:    dev.new\n00:26:26    Jadey Ryan: dev.new()\n00:26:58    Jadey Ryan: grDevices\n00:27:53    Layla Bouzoubaa:    could be an issue to report\n00:40:08    shamsuddeen:    ggpy: https://github.com/yhat/ggpy\n00:41:31    shamsuddeen:    plotnine : https://github.com/has2k1/plotnine\n01:01:35    Jadey Ryan: thank you!!"
+    "text": "Cohort 01\n\n\n\n\nLOG"
   },
   {
     "objectID": "10_main.html#learning-objectives",
@@ -263,7 +263,7 @@
     "href": "10_video.html#cohort-01",
     "title": "Video",
     "section": "Cohort 01",
-    "text": "Cohort 01\n\n\n\n\n00:02:37    Oluwafemi Oyedele:  Hi, Jim, Hi Ron, Good Evening!!!\n00:09:47    Ron:    command shift enter on mac, not sure on windows\n00:41:50    Oluwafemi Oyedele:  Thank you !!!"
+    "text": "Cohort 01\n\n\n\n\nLOG"
   },
   {
     "objectID": "11_main.html#learning-objectives",
@@ -277,7 +277,7 @@
     "href": "11_video.html#cohort-01",
     "title": "Video",
     "section": "Cohort 01",
-    "text": "Cohort 01"
+    "text": "Cohort 01\n\n\n\n\nLOG"
   },
   {
     "objectID": "12_main.html#learning-objectives",
@@ -291,7 +291,7 @@
     "href": "12_video.html#cohort-01",
     "title": "Video",
     "section": "Cohort 01",
-    "text": "Cohort 01\n\n\n\n\n00:32:55    shamsuddeen:    I think we will finish early today. I will demo using VScode for translating R code to Python using Copilot for few minutes after the presentation\n00:35:45    Ron:    AR = Autoregression\n00:36:22    Ron:    Sounds like 'getting angry at yourself' ;)\n00:40:55    Ron:    Wow that yellowbrick looks great!"
+    "text": "Cohort 01\n\n\n\n\nLOG"
   },
   {
     "objectID": "13_main.html#learning-objectives",
@@ -305,7 +305,7 @@
     "href": "13_video.html#cohort-01",
     "title": "Video",
     "section": "Cohort 01",
-    "text": "Cohort 01\n\n\n\n\n00:28:14    Ron:    https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.argsort.html\n00:38:36    Ron:    I am switching computers carry on brb :)\n00:40:47    Ronald Legere:  back\n00:53:27    Layla Bouzoubaa:    https://course.fast.ai/Resources/book.html"
+    "text": "Cohort 01\n\n\n\n\nLOG"
   },
   {
     "objectID": "how-to.html#set-up-quarto",
