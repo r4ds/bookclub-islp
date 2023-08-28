@@ -2,15 +2,11 @@
 
 ## Cohort 01
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/AHAFp8HTDDc" title="Python for Data Analysis: Data Wrangling: Join, Combine, and Reshape (py4da01 8)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LINKCODE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <summary><details>
 ```
-00:27:19	Isabella Velásquez:	dplyr has suffixes! I have never used them: https://dplyr.tidyverse.org/reference/mutate-joins.html
-00:58:49	Layla Bouzoubaa:	i think there is something similar with r
-00:59:11	Ron:	https://dataprep.ai/
-00:59:13	Layla Bouzoubaa:	actually i think janitor pkg has a func that does reporting
+LOG
 ```
 </details>
 </summary>
-

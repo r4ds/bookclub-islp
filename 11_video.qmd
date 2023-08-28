@@ -2,4 +2,11 @@
 
 ## Cohort 01
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/sPQAM3-m9_Y" title="Python for Data Analysis: Time Series (py4da01 11)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LINKCODE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<summary><details>
+```
+LOG
+```
+</details>
+</summary>

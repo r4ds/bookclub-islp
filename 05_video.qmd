@@ -2,18 +2,11 @@
 
 ## Cohort 01
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/a59xpcWFfSQ" title="Python for Data Analysis: Getting Started with pandas" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LINKCODE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <summary><details>
 ```
-00:43:47	Karim Badr:	Great summary!
-00:44:18	Oluwafemi Oyedele:	Thank you !!!
-00:44:23	Jim Gruman:	Thank You!!!!
-00:44:24	shamsuddeen:	thank you
-00:44:30	Jadey Ryan:	thank you Ron!
-00:44:56	Layla Bouzoubaa:	Jim i love you hex stickers in the frame! i'm going to steal that idea 😄
-00:46:06	Serena DeStefani:	😂
+LOG
 ```
 </details>
 </summary>
-
