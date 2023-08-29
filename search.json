@@ -158,7 +158,91 @@
     "href": "03_main.html#learning-objectives",
     "title": "3. Linear Regression",
     "section": "Learning Objectives",
-    "text": "Learning Objectives\n\nitem 1\nitem 2\nitem 3"
+    "text": "Learning Objectives\n\nPerform linear regression with a single predictor variable.\nEstimate the standard error of regression coefficients.\nEvaluate the goodness of fit of a regression.\nPerform linear regression with multiple predictor variables.\nEvaluate the relative importance of variables in a multiple linear regression.\nInclude interaction effects in a multiple linear regression.\nPerform linear regression with qualitative predictor variables.\nModel non-linear relationships using polynomial regression.\nIdentify non-linearity in a data set.\nCompare and contrast linear regression with KNN regression."
+  },
+  {
+    "objectID": "03_notes.html#questions-to-answer",
+    "href": "03_notes.html#questions-to-answer",
+    "title": "Notes",
+    "section": "Questions to Answer",
+    "text": "Questions to Answer\nRecall the Advertising data from Chapter 2. Here are a few important questions that we might seek to address:\n\nIs there a relationship between advertising budget and sales?\nHow strong is the relationship between advertising budget and sales? Does knowledge of the advertising budget provide a lot of information about product sales?\nWhich media are associated with sales?\nHow large is the association between each medium and sales? For every dollar spent on advertising in a particular medium, by what amount will sales increase?\nHow accurately can we predict future sales?\nIs the relationship linear? If there is approximately a straight-line relationship between advertising expenditure in the various media and sales, then linear regression is an appropriate tool. If not, then it may still be possible to transform the predictor or the response so that linear regression can be used.\nIs there synergy among the advertising media? Or, in stats terms, is there an interaction effect?"
+  },
+  {
+    "objectID": "03_notes.html#simple-linear-regression-definition",
+    "href": "03_notes.html#simple-linear-regression-definition",
+    "title": "Notes",
+    "section": "Simple Linear Regression: Definition",
+    "text": "Simple Linear Regression: Definition\nSimple linear regression: Very straightforward approach to predicting response \\(Y\\) on predictor \\(X\\).\n\\[Y \\approx \\beta_{0} + \\beta_{1}X\\]\n\nRead “\\(\\approx\\)” as “is approximately modeled by.”\n\\(\\beta_{0}\\) = intercept\n\\(\\beta_{1}\\) = slope\n\n\\[\\hat{y} = \\hat{\\beta}_{0} + \\hat{\\beta}_{1}x\\]\n\n\\(\\hat{\\beta}_{0}\\) = our approximation of intercept\n\\(\\hat{\\beta}_{1}\\) = our approximation of slope\n\\(x\\) = sample of \\(X\\)\n\\(\\hat{y}\\) = our prediction of \\(Y\\) from \\(x\\)\nhat symbol denotes “estimated value”\nLinear regression is a simple approach to supervised learning"
+  },
+  {
+    "objectID": "03_notes.html#simple-linear-regression-visualization",
+    "href": "03_notes.html#simple-linear-regression-visualization",
+    "title": "Notes",
+    "section": "Simple Linear Regression: Visualization",
+    "text": "Simple Linear Regression: Visualization\n\n\n\n\n\nFor the Advertising data, the least squares fit for the regression of sales onto TV is shown. The fit is found by minimizing the residual sum of squares. Each grey line segment represents a residual. In this case a linear fit captures the essence of the relationship, although it overestimates the trend in the left of the plot."
+  },
+  {
+    "objectID": "03_notes.html#simple-linear-regression-math",
+    "href": "03_notes.html#simple-linear-regression-math",
+    "title": "Notes",
+    "section": "Simple Linear Regression: Math",
+    "text": "Simple Linear Regression: Math\n\nRSS = residual sum of squares\n\n\\[\\mathrm{RSS} = e^{2}_{1} + e^{2}_{2} + \\ldots + e^{2}_{n}\\]\n\\[\\mathrm{RSS} = (y_{1} - \\hat{\\beta}_{0} - \\hat{\\beta}_{1}x_{1})^{2} + (y_{2} - \\hat{\\beta}_{0} - \\hat{\\beta}_{1}x_{2})^{2} + \\ldots + (y_{n} - \\hat{\\beta}_{0} - \\hat{\\beta}_{1}x_{n})^{2}\\]\n\\[\\mathrm{RSS} = (y_{1} - \\hat{\\beta}_{0} - \\hat{\\beta}_{1}x_{1})^{2} + (y_{2} - \\hat{\\beta}_{0} - \\hat{\\beta}_{1}x_{2})^{2} + \\ldots + (y_{n} - \\hat{\\beta}_{0} - \\hat{\\beta}_{1}x_{n})^{2}\\]\n\\[\\hat{\\beta}_{0} = \\bar{y} - \\hat{\\beta}_{1}\\bar{x}\\]\n\n\\(\\bar{x}\\), \\(\\bar{y}\\) = sample means of \\(x\\) and \\(y\\)\n\n\nVisualization of Fit\n\n\n\n\n\nContour and three-dimensional plots of the RSS on the Advertising data, using sales as the response and TV as the predictor. The red dots correspond to the least squares estimates \\(\\\\hat\\\\beta_0\\) and \\(\\\\hat\\\\beta_1\\), given by (3.4).\n\n\n\n\nLearning Objectives:\n\nPerform linear regression with a single predictor variable."
+  },
+  {
+    "objectID": "03_notes.html#assessing-accuracy-of-coefficient-estimates",
+    "href": "03_notes.html#assessing-accuracy-of-coefficient-estimates",
+    "title": "Notes",
+    "section": "Assessing Accuracy of Coefficient Estimates",
+    "text": "Assessing Accuracy of Coefficient Estimates\n\\[Y = \\beta_{0} + \\beta_{1}X + \\epsilon\\]\n\nRSE = residual standard error\nEstimate of \\(\\sigma\\)\n\n\\[\\mathrm{RSE} = \\sqrt{\\frac{\\mathrm{RSS}}{n - 2}}\\]\n\\[\\mathrm{SE}(\\hat\\beta_0)^2 = \\sigma^2 \\left[\\frac{1}{n} + \\frac{\\bar{x}^2}{\\sum_{i=1}^n (x_i - \\bar{x})^2}\\right],\\ \\ \\mathrm{SE}(\\hat\\beta_1)^2 = \\frac{\\sigma^2}{\\sum_{i=1}^n (x_i - \\bar{x})^2}\\]\n\n95% confidence interval: a range of values such that with 95% probability, the range will contain the true unknown value of the parameter\n\nIf we take repeated samples and construct the confidence interval for each sample, 95% of the intervals will contain the true unknown value of the parameter\n\n\n\\[\\hat\\beta_1 \\pm 2\\ \\cdot \\ \\mathrm{SE}(\\hat\\beta_1)\\]\n\\[\\hat\\beta_0 \\pm 2\\ \\cdot \\ \\mathrm{SE}(\\hat\\beta_0)\\]\nLearning Objectives:\n\nEstimate the standard error of regression coefficients."
+  },
+  {
+    "objectID": "03_notes.html#assessing-the-accuracy-of-the-model",
+    "href": "03_notes.html#assessing-the-accuracy-of-the-model",
+    "title": "Notes",
+    "section": "Assessing the Accuracy of the Model",
+    "text": "Assessing the Accuracy of the Model\n\nRSE can be considered a measure of the lack of fit of the model. a\n\\(R^2\\) statistic (also called coefficient of determination) provides an alternative that is in the form of a proportion of the variance explained, ranges from 0 to 1, a good value depends on the application.\n\n\\[R^2 = 1 - \\frac{RSS}{TSS}\\]\nwhere TSS is the total sum of squarse:\n\\[TSS = \\Sigma (y_i - \\bar{y})^2\\]\nQuiz: Can \\(R^2\\) be negative?\nAnswer"
+  },
+  {
+    "objectID": "03_notes.html#multiple-linear-regression",
+    "href": "03_notes.html#multiple-linear-regression",
+    "title": "Notes",
+    "section": "Multiple Linear Regression",
+    "text": "Multiple Linear Regression\nMultiple linear regression extends simple linear regression for p predictors:\n\\[Y = \\beta_{0} + \\beta_{1}X_1 + \\beta_{2}X_2 + ... +\\beta_{p}X_p + \\epsilon_i\\]\n\n\\(\\beta_{j}\\) is the average effect on \\(Y\\) from \\(X_{j}\\) holding all other predictors fixed.\nFit is once again choosing the \\(\\beta_{j}\\) that minimizes the RSS.\nExample in book shows that although fitting sales against newspaper alone indicated a significant slope (0.055 +- 0.017), when you include radio in a multiple regression, newspaper no longer has any significant effect. (-0.001 +- 0.006)\n\n\nImportant Questions\n\nIs at least one of the predictors \\(X_1\\), \\(X_2\\), … , \\(X_p\\) useful in predicting the response?\nF statistic close to 1 when there is no relationship, otherwise greater then 1.\n\n\\[F = \\frac{(TSS-RSS)/p}{RSS/(n-p-1)}\\]\n\nDo all the predictors help to explain \\(Y\\) , or is only a subset of the predictors useful?\np-values can help identify important predictors, but it is possible to be mislead by this especially with large number of predictors. Variable selection methods include Forward selection, backward selection and mixed. Topic is continued in Chapter 6.\nHow well does the model fit the data?\n\\(R^2\\) still gives proportion of the variance explained, so look for values “close” to 1. Can also look at RSE which is generalized for multiple regression as:\n\n\\[RSE = \\sqrt{\\frac{1}{n-p-1}RSS}\\]\n\nGiven a set of predictor values, what response value should we predict, and how accurate is our prediction?\nThree sets of uncertainty in predictions:\n\nUncertainty in the estimates of \\(\\beta_i\\)\nModel bias\nIrreducible error \\(\\epsilon\\)"
+  },
+  {
+    "objectID": "03_notes.html#qualitative-predictors",
+    "href": "03_notes.html#qualitative-predictors",
+    "title": "Notes",
+    "section": "Qualitative Predictors",
+    "text": "Qualitative Predictors\n\nDummy variables: if there are \\(k\\) levels, introduce \\(k-1\\) dummy variables which are equal to one (“one hot”) when the underlying qualitative predictor takes that value. For example if there are 3 levels, introduce two new dummy variables and fit the model:\n\n\\[y_i = \\beta_0 + \\beta_1 x_{i1} + \\beta_2 x_{i2} + \\epsilon_i\\]\n\n\n\nQualitative Predicitor\n\\(x_{i1}\\)\n\\(x_{i2}\\)\n\n\n\n\nlevel 0 (baseline)\n0\n0\n\n\nlevel 1\n1\n0\n\n\nlevel 2\n0\n1\n\n\n\n\nCoefficients are interpreted the average effect relative to the baseline.\nAlternative is to use index variables, a different coefficient for each level:\n\n\\[y_i = \\beta_{0 1} + \\beta_{0 2} +\\beta_{0 3} + \\epsilon_i\\]"
+  },
+  {
+    "objectID": "03_notes.html#extensions",
+    "href": "03_notes.html#extensions",
+    "title": "Notes",
+    "section": "Extensions",
+    "text": "Extensions\n\nInteraction / Synergy effects\nInclude a product term to account for synergy where one changes in one variable changes the association of the Y with another:\n\n\\[Y = \\beta_{0} + \\beta_{1}X_1 + \\beta_{2}X_2 +  \\beta_{3}X_1 X_2 + \\epsilon_i\\]\n\nNon-linear relationships (e.g. polynomial fits)\n\n\\[Y = \\beta_{0} + \\beta_{1}X + \\beta_{2}X^2 + ... \\beta_{n}X^n + \\epsilon_i\\]"
+  },
+  {
+    "objectID": "03_notes.html#potential-problems",
+    "href": "03_notes.html#potential-problems",
+    "title": "Notes",
+    "section": "Potential Problems",
+    "text": "Potential Problems\n\nNon-linear relationships\nResidual plots are useful tool to see if any remaining trends exist. If so consider fitting transformation of the data.\nCorrelation of Error Terms\nLinear regression assumes that the error terms \\(\\epsilon_i\\) are uncorrelated. Residuals may indicate that this is not correct (obvious tracking in the data). One could also look at the autocorrelation of the residuals. What to do about it?\nNon-constant variance of error terms\nAgain this can be revealed by examining the residuals. Consider transformation of the predictors to remove non-constant variance. The figure below shows residuals demonstrating non-constant variance, and shows this being mitigated to a great extent by log transforming the data.\n\n\n\n\n\n\nFigure 3.11\n\n\n\n\n\nOutliers\n\nOutliers are points with for which \\(y_i\\) is far from value predicted by the model (including irreducible error). See point labeled ‘20’ in figure 3.13.\nDetect outliers by plotting studentized residuals (residual \\(e_i\\) divided by the estimated error) and look for residuals larger then 3 standard deviations in absolute value.\nAn outlier may not effect the fit much but can have dramatic effect on the RSE.\nOften outliers are mistakes in data collection and can be removed, but could also be an indicator of a deficient model.\n\nHigh Leverage Points\n\nThese are points with unusual values of \\(x_i\\). Examples is point labeled ‘41’ in figure 3.13.\nThese points can have large impact on the fit, as in the example, including point 41 pulls slope up significantly.\nUse leverage statistic to identify high leverage points, which can be hard to identify in multiple regression.\n\n\n\n\n\n\n\nFigure 3.13\n\n\n\n\n\nCollinearity\n\nTwo or more predictor variables are closely related to one another.\nSimple collinearity can be identified by looking at correlations between predictors.\nCauses the standard error to grow (and p-values to grow)\nOften can be dealt with by removing one of the highly correlated predictors or combining them.\nMulticollinearity (involving 3 or more predictors) is not so easy to identify. Use Variance inflation factor, which is the ratio of the variance of \\(\\hat{\\beta_j}\\) when fitting the full model to fitting the parameter on its own. Can be computed using the formula:\n\n\n\\[VIF(\\hat{\\beta_j}) = \\frac{1}{1-R^2_{X_j|X_{-j}}}\\]\nwhere \\(R^2_{X_j|X_{-j}}\\) is the \\(R^2\\) from a regression of \\(X_j\\) onto all the other predictors."
+  },
+  {
+    "objectID": "03_notes.html#answers-to-the-marketing-plan-questions",
+    "href": "03_notes.html#answers-to-the-marketing-plan-questions",
+    "title": "Notes",
+    "section": "Answers to the Marketing Plan questions",
+    "text": "Answers to the Marketing Plan questions\n\nIs there a relationship between advertising budget and sales?\nTool: Multiple regression, look at F-statistic.\nHow strong is the relationship between advertising budget and sales?\nTool: \\(R^2\\) and RSE\nWhich media are associated with sales?\nTool: p-values for each predictor’s t-statistic. Explored further in chapter 6.\nHow large is the association between each medium and sales?\nTool: Confidence intervals on \\(\\hat{\\beta_j}\\)\nHow accurately can we predict future sales?\nTool:: Prediction intervals for individual response, confidence intervals for average response.\nIs the relationship linear?\nTool: Residual Plots\nIs there synergy among the advertising media?\nTool: Interaction terms and associated p-vales."
+  },
+  {
+    "objectID": "03_notes.html#comparison-of-linear-regression-with-k-nearest-neighbors",
+    "href": "03_notes.html#comparison-of-linear-regression-with-k-nearest-neighbors",
+    "title": "Notes",
+    "section": "Comparison of Linear Regression with K-Nearest Neighbors",
+    "text": "Comparison of Linear Regression with K-Nearest Neighbors\n\nThis section examines the K-nearest neighbor (KNN) method (a non-parameteric method).\nThis is essentially a k-point moving average.\nThis serves to illustrate the Bias-Variance trade-off nicely."
   },
   {
     "objectID": "03_video.html#cohort-01",
