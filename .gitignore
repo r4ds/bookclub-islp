@@ -9,5 +9,7 @@ docs
 *.pdf
 *_notes_files/
 .quarto
+.vdoc.py
+.vdoc.r
 
 !sidebars-toggle.html

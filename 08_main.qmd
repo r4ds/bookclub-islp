@@ -2,6 +2,10 @@
 
 ## Learning Objectives
 
-- item 1
-- item 2
-- item 3
+- Use **decision trees** o model relationships between predictors and an outcome
+- Compare and contrast tree-based models with other model types
+- Use **tree-based ensemble methods** to improve predictive models
+- Compare and contrast the various methods of building tree ensembles: bagging, boosting, random forests, and Bayesian Additive Regression Trees (BART)
+
+Sources: 
+https://github.com/JauntyJJS/islr2-bookclub-cohort3-chapter8,  https://hastie.su.domains/ISLR2/Slides/Ch8_Tree_Based_Methods.pdf
