@@ -186,7 +186,7 @@
     "href": "03_notes.html#simple-linear-regression-math",
     "title": "Notes",
     "section": "Simple Linear Regression: Math",
-    "text": "Simple Linear Regression: Math\n\nRSS = residual sum of squares\n\n\\[\\mathrm{RSS} = e^{2}_{1} + e^{2}_{2} + \\ldots + e^{2}_{n}\\]\n\\[\\mathrm{RSS} = (y_{1} - \\hat{\\beta}_{0} - \\hat{\\beta}_{1}x_{1})^{2} + (y_{2} - \\hat{\\beta}_{0} - \\hat{\\beta}_{1}x_{2})^{2} + \\ldots + (y_{n} - \\hat{\\beta}_{0} - \\hat{\\beta}_{1}x_{n})^{2}\\]\n\\[\\mathrm{RSS} = (y_{1} - \\hat{\\beta}_{0} - \\hat{\\beta}_{1}x_{1})^{2} + (y_{2} - \\hat{\\beta}_{0} - \\hat{\\beta}_{1}x_{2})^{2} + \\ldots + (y_{n} - \\hat{\\beta}_{0} - \\hat{\\beta}_{1}x_{n})^{2}\\]\n\\[\\hat{\\beta}_{0} = \\bar{y} - \\hat{\\beta}_{1}\\bar{x}\\]\n\n\\(\\bar{x}\\), \\(\\bar{y}\\) = sample means of \\(x\\) and \\(y\\)\n\n\nVisualization of Fit\n\n\n\n\n\nContour and three-dimensional plots of the RSS on the Advertising data, using sales as the response and TV as the predictor. The red dots correspond to the least squares estimates \\(\\\\hat\\\\beta_0\\) and \\(\\\\hat\\\\beta_1\\), given by (3.4).\n\n\n\n\nLearning Objectives:\n\nPerform linear regression with a single predictor variable."
+    "text": "Simple Linear Regression: Math\n\nRSS = residual sum of squares\n\n\\[\\mathrm{RSS} = e^{2}_{1} + e^{2}_{2} + \\ldots + e^{2}_{n}\\]\n\\[\\mathrm{RSS} = (y_{1} - \\hat{\\beta}_{0} - \\hat{\\beta}_{1}x_{1})^{2} + (y_{2} - \\hat{\\beta}_{0} - \\hat{\\beta}_{1}x_{2})^{2} + \\ldots + (y_{n} - \\hat{\\beta}_{0} - \\hat{\\beta}_{1}x_{n})^{2}\\]\n\\[\\hat{\\beta}_{1} = \\frac{\\sum_{i=1}^{n}{(x_{i}-\\bar{x})(y_{i}-\\bar{y})}}{\\sum_{i=1}^{n}{(x_{i}-\\bar{x})^{2}}}\\]\n\\[\\hat{\\beta}_{0} = \\bar{y} - \\hat{\\beta}_{1}\\bar{x}\\]\n\n\\(\\bar{x}\\), \\(\\bar{y}\\) = sample means of \\(x\\) and \\(y\\)\n\n\nVisualization of Fit\n\n\n\n\n\nContour and three-dimensional plots of the RSS on the Advertising data, using sales as the response and TV as the predictor. The red dots correspond to the least squares estimates \\(\\\\hat\\\\beta_0\\) and \\(\\\\hat\\\\beta_1\\), given by (3.4).\n\n\n\n\nLearning Objectives:\n\nPerform linear regression with a single predictor variable."
   },
   {
     "objectID": "03_notes.html#assessing-accuracy-of-coefficient-estimates",
@@ -312,7 +312,196 @@
     "href": "08_main.html#learning-objectives",
     "title": "8. Tree-Based Methods",
     "section": "Learning Objectives",
-    "text": "Learning Objectives\n\nitem 1\nitem 2\nitem 3"
+    "text": "Learning Objectives\n\nUse decision trees o model relationships between predictors and an outcome\nCompare and contrast tree-based models with other model types\nUse tree-based ensemble methods to improve predictive models\nCompare and contrast the various methods of building tree ensembles: bagging, boosting, random forests, and Bayesian Additive Regression Trees (BART)\n\nSources: https://github.com/JauntyJJS/islr2-bookclub-cohort3-chapter8, https://hastie.su.domains/ISLR2/Slides/Ch8_Tree_Based_Methods.pdf"
+  },
+  {
+    "objectID": "08_notes.html#introduction-tree-based-methods",
+    "href": "08_notes.html#introduction-tree-based-methods",
+    "title": "Notes",
+    "section": "Introduction: Tree-based methods",
+    "text": "Introduction: Tree-based methods\n\nInvolve stratifying or segmenting the predictor space into a number of simple regions\nAre simple and useful for interpretation\nHowever, basic decision trees are NOT competitive with the best supervised learning approaches in terms of prediction accuracy\nThus, we also discuss bagging, random forests, and boosting (i.e., tree-based ensemble methods) to grow multiple trees which are then combined to yield a single consensus prediction\nThese can result in dramatic improvements in prediction accuracy (but some loss of interpretability)\nCan be applied to both regression and classification"
+  },
+  {
+    "objectID": "08_notes.html#regression-trees",
+    "href": "08_notes.html#regression-trees",
+    "title": "Notes",
+    "section": "Regression Trees",
+    "text": "Regression Trees\nFirst, let’s take a look at Hitters dataset.\n\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\n\nRows: 322 Columns: 21\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr  (4): Names, League, Division, NewLeague\ndbl (17): AtBat, Hits, HmRun, Runs, RBI, Walks, Years, CAtBat, CHits, CHmRun...\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\n# A tibble: 263 × 5\n   Names              Hits Years Salary log_Salary\n   &lt;chr&gt;             &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;      &lt;dbl&gt;\n 1 -Alan Ashby          81    14  475         6.16\n 2 -Alvin Davis        130     3  480         6.17\n 3 -Andre Dawson       141    11  500         6.21\n 4 -Andres Galarraga    87     2   91.5       4.52\n 5 -Alfredo Griffin    169    11  750         6.62\n 6 -Al Newman           37     2   70         4.25\n 7 -Argenis Salazar     73     3  100         4.61\n 8 -Andres Thomas       81     2   75         4.32\n 9 -Andre Thornton      92    13 1100         7.00\n10 -Alan Trammell      159    10  517.        6.25\n# ℹ 253 more rows\n\n\n\n\n\n\n\n\n\n\n\nFor the Hitters data, a regression tree for predicting the log salary of a baseball player based on:\n\nnumber of years that he has played in the major leagues\nnumber of hits that he made in the previous year"
+  },
+  {
+    "objectID": "08_notes.html#terminology",
+    "href": "08_notes.html#terminology",
+    "title": "Notes",
+    "section": "Terminology",
+    "text": "Terminology\n\n\n\n\n\n\n\n\n\n\nThe three-region partition for the Hitters data set from the regression tree\n\n\n\n\n\nOverall, the tree stratifies or segments the players into three regions of predictor space:\n\nR1 = {X | Years&lt; 4.5}\nR2 = {X | Years&gt;=4.5, Hits&lt;117.5}\nR3 = {X | Years&gt;=4.5, Hits&gt;=117.5}\n\nwhere R1, R2, and R3 are terminal nodes (leaves) and green lines (where the predictor space is split) are the internal nodes\nThe number in each leaf/terminal node is the mean of the response for the observations that fall there"
+  },
+  {
+    "objectID": "08_notes.html#interpretation-of-results-regression-tree-hitters-data",
+    "href": "08_notes.html#interpretation-of-results-regression-tree-hitters-data",
+    "title": "Notes",
+    "section": "Interpretation of results: regression tree (Hitters data)",
+    "text": "Interpretation of results: regression tree (Hitters data)\n\n\n\n\n\n\nYears is the most important factor in determining Salary: players with less experience earn lower salaries than more experienced players\nGiven that a player is less experienced, the number of Hits that he made in the previous year seems to play little role in his Salary\nBut among players who have been in the major leagues for 5 or more years, the number of Hits made in the previous year does affect Salary: players who made more Hits last year tend to have higher salaries\nThis is surely an over-simplification, but compared to a regression model, it is easy to display, interpret and explain"
+  },
+  {
+    "objectID": "08_notes.html#tree-building-process-regression",
+    "href": "08_notes.html#tree-building-process-regression",
+    "title": "Notes",
+    "section": "Tree-building process (regression)",
+    "text": "Tree-building process (regression)\n\nDivide the predictor space — that is, the set of possible values for \\(X_1,X_2, . . . ,X_p\\) — into \\(J\\) distinct and non-overlapping regions, \\(R_1,R_2, . . . ,R_J\\)\n\n\nRegions can have ANY shape - they don’t have to be boxes\n\n\nFor every observation that falls into the region \\(R_j\\), we make the same prediction: the mean of the response values in \\(R_j\\)\nThe goal is to find regions (here boxes) \\(R_1, . . . ,R_J\\) that minimize the \\(RSS\\), given by\n\n\\[\\mathrm{RSS}=\\sum_{j=1}^{J}\\sum_{i{\\in}R_j}^{}(y_i - \\hat{y}_{R_j})^2\\]\nwhere \\(\\hat{y}_{R_j}\\) is the mean response for the training observations within the \\(j\\)th box\n\nUnfortunately, it is computationally infeasible to consider every possible partition of the feature space into \\(J\\) boxes."
+  },
+  {
+    "objectID": "08_notes.html#recursive-binary-splitting",
+    "href": "08_notes.html#recursive-binary-splitting",
+    "title": "Notes",
+    "section": "Recursive binary splitting",
+    "text": "Recursive binary splitting\nSo, take a top-down, greedy approach known as recursive binary splitting:\n\ntop-down because it begins at the top of the tree and then successively splits the predictor space\ngreedy because at each step of the tree-building process, the best split is made at that particular step, rather than looking ahead and picking a split that will lead to a better tree in some future step\n\n\nFirst, select the predictor \\(X_j\\) and the cutpoint \\(s\\) such that splitting the predictor space into the regions \\({\\{X|X_j&lt;s\\}}\\) and \\({\\{X|X_j{\\ge}s}\\}\\) leads to the greatest possible reduction in RSS\nRepeat the process looking for the best predictor and best cutpoint to split data further (i.e., split one of the 2 previously identified regions - not the entire predictor space) minimizing the RSS within each of the resulting regions\nContinue until a stopping criterion is reached, e.g., no region contains more than five observations\nAgain, we predict the response for a given test observation using the mean of the training observations in the region to which that test observation belongs\n\nbut …\n\nThe previous method may result in a tree that overfits the data. Why?\nTree is too leafy (complex)\nA better strategy is to have a smaller tree with fewer splits, which will reduce variance and lead to better interpretation of results (at the cost of a little bias)\nSo we will prune"
+  },
+  {
+    "objectID": "08_notes.html#pruning-a-tree",
+    "href": "08_notes.html#pruning-a-tree",
+    "title": "Notes",
+    "section": "Pruning a tree",
+    "text": "Pruning a tree\n\nGrow a very large tree \\(T_0\\) as before\nApply cost-complexity pruning to \\(T_0\\) to obtain a sequence of BEST subtrees, as a function of \\(\\alpha\\)\n\nCost complexity pruning minimizes (Eq. 8.4) \\(\\sum_{m=1}^{|T|}\\sum_{x_i{\\in}R_m}(y_i-\\hat{y}_{R_m})^2 + \\alpha|T|\\)\nwhere\n\\(\\alpha\\) \\(\\geq\\) 0\n\\(|T|\\) is the number of terminal nodes the sub tree \\(|T|\\) holds\n\\(R_m\\) is the rectangle/region (i.e., the subset of predictor space) corresponding to the \\(m\\)th terminal node\n\\(\\hat{y}_{R_m}\\) is the mean response for the training observations in \\(R_m\\)\n\nthe tuning parameter \\(\\alpha\\) controls:\n\na trade-off between the subtree’s complexity (the number of terminal nodes)\nthe subtree’s fit to the training data\n\n\n\nChoose \\(\\alpha\\) using K-fold cross-validation\n\nrepeat steps 1) and 2) for each \\(K-1/K\\)th fraction of training data\naverage the results and pick \\(\\alpha\\) to minimize the average MSE\nrecall that in K-folds cross-validation (say K = 5): the model is estimated on 80% of the data five different times, the predictions are made for the remaining 20%, and the test MSEs are averaged\n\nReturn to the subtree from Step 2) that corresponds to the chosen value of \\(\\alpha\\)"
+  },
+  {
+    "objectID": "08_notes.html#an-example-tree-pruning-hitters-dataset",
+    "href": "08_notes.html#an-example-tree-pruning-hitters-dataset",
+    "title": "Notes",
+    "section": "An example: tree pruning (Hitters dataset)",
+    "text": "An example: tree pruning (Hitters dataset)\n\nResults of fitting and pruning a regression tree on the Hitters data using 9 of the features\nRandomly divided the data set in half (132 observations in training, 131 observations in the test set)\nBuilt large regression tree on training data and varied \\(\\alpha\\) in Eq. 8.4 to create subtrees with different numbers of terminal nodes\nFinally, performed 6-fold cross-validation to estimate the cross-validated MSE of the trees as a function of \\(\\alpha\\)\n\n\n\n\n\n\n\n\n\n\n\nTraining, cross-validation, and test MSE are shown as a function of the number of terminal nodes in the pruned tree. Standard error bands are displayed. The minimum cross-validation error occurs at a tree size of 3."
+  },
+  {
+    "objectID": "08_notes.html#classification-trees",
+    "href": "08_notes.html#classification-trees",
+    "title": "Notes",
+    "section": "Classification trees",
+    "text": "Classification trees\n\nVery similar to a regression tree except it predicts a qualitative (vs quantitative) response\nWe predict that each observation belongs to the most commonly occurring class of training observations in the region to which it belongs\nIn the classification setting, RSS cannot be used as a criterion for making the binary splits\nA natural alternative to RSS is the classification error rate, i.e., the fraction of the training observations in that region that do not belong to the most common class:\n\n\\[E = 1 - \\max_k(\\hat{p}_{mk})\\]\nwhere \\(\\hat{p}_{mk}\\) is the proportion of training observations in the \\(m\\)th region that are from the \\(k\\)th class\n\nHowever, this error rate is unsuited for tree-based classification because \\(E\\) does not change much as the tree grows (lacks sensitivity)\nSo, 2 other measures are preferable:\n\nThe Gini Index defined by \\[G = \\sum_{k=1}^{K}\\hat{p}_{mk}(1-\\hat{p}_{mk})\\] is a measure of total variance across the K classes\nThe Gini index takes on a small value if all of the \\(\\hat{p}_{mk}\\)’s are close to 0 or 1\nFor this reason the Gini index is referred to as a measure of node purity - a small value indicates that a node contains predominantly observations from a single class\nAn alternative to the Gini index is cross-entropy given by\n\n\\[D = - \\sum_{k=1}^{K}\\hat{p}_{mk}\\log(\\hat{p}_{mk})\\]\nThe Gini index and cross-entropy are very similar numerically"
+  },
+  {
+    "objectID": "08_notes.html#example-classification-tree-heart-dataset",
+    "href": "08_notes.html#example-classification-tree-heart-dataset",
+    "title": "Notes",
+    "section": "Example: classification tree (Heart dataset)",
+    "text": "Example: classification tree (Heart dataset)\n\nData contain a binary outcome HD (heart disease Y or N based on angiographic test) for 303 patients who presented with chest pain\n13 predictors including Age, Sex, Chol (a cholesterol measurement), and other heart and lung function measurements\nCross-validation yields a tree with six terminal nodes\n\n\n\n\n\n\nHeart data. Top: The unpruned tree. Bottom Left: Cross-validation error, training, and test error, for different sizes of the pruned tree. Bottom Right: The pruned tree corresponding to the minimal cross-validation error.\n\n\n\n\n\nComment: Classification trees can be constructed if categorical PREDICTORS are present e.g., the first split: Thal is categorical (the ‘a’ in Thal:a indicates the first level of the predictor, i.e. Normal levels)\nAdditionally, notice that some of the splits yield two terminal nodes that have the same predicted value (see red box)\nRegardless of the value of RestECG, a response value of Yes is predicted for those observations\nWhy is the split performed at all?\n\nBecause it leads to increased node purity: all 9 of the observations corresponding to the right-hand leaf have a response value of Yes, whereas 7/11 of those corresponding to the left-hand leaf have a response value of Yes\n\nWhy is node purity important?\n\nSuppose that we have a test observation that belongs to the region given by that right-hand leaf. Then we can be pretty certain that its response value is Yes. In contrast, if a test observation belongs to the region given by the left-hand leaf, then its response value is probably Yes, but we are much less certain\n\nEven though the split RestECG&lt;1 does not reduce the classification error, it improves the Gini index and the entropy, which are more sensitive to node purity"
+  },
+  {
+    "objectID": "08_notes.html#advantagesdisadvantages-of-decision-trees",
+    "href": "08_notes.html#advantagesdisadvantages-of-decision-trees",
+    "title": "Notes",
+    "section": "Advantages/Disadvantages of decision trees",
+    "text": "Advantages/Disadvantages of decision trees\n\nTrees can be displayed graphically and are very easy to explain to people\nThey mirror human decision-making\nCan handle qualitative predictors without the need for dummy variables\n\nbut,\n\nThey do not have the same level of predictive accuracy\nCan be very non-robust (i.e., a small change in the data can cause large change in the final estimated tree)\nTo improve performance, we can use an ensemble method, which combines many simple ‘buidling blocks’ (i.e., regression or classification trees) to obtain a single and potentially very powerful model\nensemble methods include: bagging, random forests, boosting, and Bayesian additive regression trees"
+  },
+  {
+    "objectID": "08_notes.html#bagging",
+    "href": "08_notes.html#bagging",
+    "title": "Notes",
+    "section": "Bagging",
+    "text": "Bagging\n\nAlso known as bootstrap aggregation is a general-purpose procedure for reducing the variance of a statistical learning method\nIt’s useful and frequently used in the context of decision trees\nRecall that given a set of \\(n\\) independent observations \\(Z_1,..., Z_n\\), each with variance \\(\\sigma^2\\), the variance of the mean \\(\\bar{Z}\\) of the observations is given by \\(\\sigma^2/n\\)\nSo, averaging a set of observations reduces variance\nBut, this is not practical because we generally do not have access to multiple training sets!\nWhat can we do?\nCue the bootstrap, i.e., take repeated samples from the single training set\nGenerate \\(B\\) different bootstrapped training data set\nThen train our method on the \\(b\\)th bootstrapped training set to get \\(\\hat{f}^{*b}\\), the prediction at a point x\nAverage all the predictions to obtain \\[\\hat{f}_{bag}(x) = \\frac{1}{B}\\sum_{b=1}^B\\hat{f}^{*b}(x)\\]\nIn the case of classification trees:\n\nfor each test observation:\n\nrecord the class predicted by each of the \\(B\\) trees\ntake a majority vote: the overall prediction is the most commonly occurring class among the \\(B\\) predictions\n\n\n\nComment: The number of trees \\(B\\) is not a critical parameter with bagging - a large \\(B\\) will not lead to overfitting"
+  },
+  {
+    "objectID": "08_notes.html#out-of-bag-error-estimation",
+    "href": "08_notes.html#out-of-bag-error-estimation",
+    "title": "Notes",
+    "section": "Out-of-bag error estimation",
+    "text": "Out-of-bag error estimation\n\nBut how do we estimate the test error of a bagged model?\nIt’s pretty straightforward:\n\nBecause trees are repeatedly fit to bootstrapped subsets of observations, on average each bagged tree uses about 2/3 of the observations\nThe leftover 1/3 not used to fit a given bagged tree are called out-of-bag (OOB) observations\nWe can predict the response for the \\(i\\)th observation using each of the trees in which that observation was OOB. Gives around B/3 predictions for the \\(i\\)th observation (which we then average)\nThis estimate is essentially the LOO cross-validation error for bagging (if \\(B\\) is large)"
+  },
+  {
+    "objectID": "08_notes.html#variable-importance-measures",
+    "href": "08_notes.html#variable-importance-measures",
+    "title": "Notes",
+    "section": "Variable importance measures",
+    "text": "Variable importance measures\n\nBagging results in improved accuracy over prediction using a single tre\nBut, it can be difficult to interpret the resulting model:\n\nwe can’t represent the statistical learning procedure using a single tree\nit’s not clear which variables are most important to the procedure (i.e., we have many trees each of which may give a differing view on the importance of a given predictor)\n\nSo, which predictors are important?\n\nAn overall summary of the importance of each predictor can be achieved by recording how much the average \\(RSS\\) or Gini index improves (or decreases) when each tree is split over a given predictor (averaged over all \\(B\\) trees)\n\na large value = important predictor\n\n\n\n\n\n\n\n\nA variable importance plot for the Heart data. Variable importance is computed using the mean decrease in Gini index, and expressed relative to the maximum."
+  },
+  {
+    "objectID": "08_notes.html#random-forests",
+    "href": "08_notes.html#random-forests",
+    "title": "Notes",
+    "section": "Random forests",
+    "text": "Random forests\n\nA problem with bagging is that bagged trees may be highly similar to each other.\nFor example, if there is a strong predictor in the data set, most of the bagged trees will use this strong predictor in the top split so that\n\nthe trees will look quite similar\npredictions from the bagged trees will be highly correlated\n\nAveraging many highly correlated quantities does not lead to as large a reduction in variance as averaging many uncorrelated quantities"
+  },
+  {
+    "objectID": "08_notes.html#random-forests-advantages-over-bagging",
+    "href": "08_notes.html#random-forests-advantages-over-bagging",
+    "title": "Notes",
+    "section": "Random forests: advantages over bagging",
+    "text": "Random forests: advantages over bagging\n\nRandom forests overcome this problem by forcing each split to consider only a subset of the predictors (typically a random sample \\(m \\approx \\sqrt{p}\\))\nThus at each split, the algorithm is NOT ALLOWED to consider a majority of the available predictors (essentially \\((p - m)/p\\) of the splits will not even consider the strong predictor, giving other predictors a chance)\nThis decorrelates the trees and makes the average of the resulting trees less variable (more reliable)\nOnly difference between bagging and random forests is the choice of predictor subset size \\(m\\) at each split: if a random forest is built using \\(m = p\\) that’s just bagging\nFor both, we build a number of decision trees on bootstrapped training samples"
+  },
+  {
+    "objectID": "08_notes.html#example-random-forests-versus-bagging-gene-expression-data",
+    "href": "08_notes.html#example-random-forests-versus-bagging-gene-expression-data",
+    "title": "Notes",
+    "section": "Example: Random forests versus bagging (gene expression data)",
+    "text": "Example: Random forests versus bagging (gene expression data)\n\nHigh-dimensional biological data set: contains gene expression measurements of 4,718 genes measured on tissue samples from 349 patients\nEach of the patient samples has a qualitative label with 15 different levels: Normal or one of 14 different cancer types\nWant to predict cancer type based on the 500 genes that have the largest variance in the training set\nRandomly divided the observations into training/test and applied random forests (or bagging) to the training set for 3 different values of \\(m\\) (the number of predictors available at each split)\n\n\n\n\n\n\nResults from random forests for the 15-class gene expression data set with p = 500 predictors. The test error is displayed as a function of the number of trees. Random forests (m &lt; p) lead to a slight improvement over bagging (m = p). A single classification tree has an error rate of 45.7%."
+  },
+  {
+    "objectID": "08_notes.html#boosting",
+    "href": "08_notes.html#boosting",
+    "title": "Notes",
+    "section": "Boosting",
+    "text": "Boosting\n\nYet another approach to improve prediction accuracy from a decision tree\nCan also be applied to many statistical learning methods for regression or classification\nRecall that in bagging each tree is built on a bootstrap training data set\nIn boosting, each tree is grown sequentially using information from previously grown trees:\n\ngiven the current model, we fit a decision tree to the residuals of the model (rather than the outcome Y) as the response\nwe then add this new decision tree into the fitted function (model) in order to update the residuals\nWhy? this way each tree is built on information that the previous trees were unable to ‘catch’"
+  },
+  {
+    "objectID": "08_notes.html#boosting-algorithm",
+    "href": "08_notes.html#boosting-algorithm",
+    "title": "Notes",
+    "section": "Boosting algorithm",
+    "text": "Boosting algorithm\n\n\n\n\n\nwhere:\n\\(\\hat{f}(x)\\) is the decision tree (model)\n\\(r\\) = residuals\n\\(d\\) = number of splits in each tree (controls the complexity of the boosted ensemble)\n\\(\\lambda\\) = shrinkage parameter (a small positive number that controls the rate at which boosting learns; typically 0.01 or 0.001 but right choice can depend on the problem)\n\nEach of the trees can be small, with just a few terminal nodes (determined by \\(d\\))\nBy fitting small trees to the residuals, we slowly improve our model (\\(\\hat{f}\\)) in areas where it doesn’t perform well\nThe shrinkage parameter \\(\\lambda\\) slows the process down further, allowing more and different shaped trees to ‘attack’ the residuals\nUnlike bagging and random forests, boosting can OVERFIT if \\(B\\) is too large. \\(B\\) is selected via cross-validation"
+  },
+  {
+    "objectID": "08_notes.html#example-boosting-versus-random-forests",
+    "href": "08_notes.html#example-boosting-versus-random-forests",
+    "title": "Notes",
+    "section": "Example: Boosting versus random forests",
+    "text": "Example: Boosting versus random forests\n\n\n\n\n\nResults from performing boosting and random forests on the 15-class gene expression data set in order to predict cancer versus normal. The test error is displayed as a function of the number of trees. For the two boosted models, lambda = 0.01. Depth-1 trees slightly outperform depth-2 trees, and both outperform the random forest, although the standard errors are around 0.02, making none of these differences significant. The test error rate for a single tree is 24 %.\n\n\n\n\n\nNotice that because the growth of a particular tree takes into account the other trees that have already been grown, smaller trees are typically sufficient in boosting (versus random forests)\nRandom forests and boosting are among the state-of-the-art methods for supervised learning (but, their results can be difficult to interpret)"
+  },
+  {
+    "objectID": "08_notes.html#bayesian-additive-regression-trees-bart",
+    "href": "08_notes.html#bayesian-additive-regression-trees-bart",
+    "title": "Notes",
+    "section": "Bayesian additive regression trees (BART)",
+    "text": "Bayesian additive regression trees (BART)\n\nRecall that in bagging and random forests, each tree is built on a random sample of data and/or predictors and each tree is built independently of the others\nBART is related to both - what is new is HOW the new trees are generated\nNOTE: only BART for regression is described in the book"
+  },
+  {
+    "objectID": "08_notes.html#bart-notation",
+    "href": "08_notes.html#bart-notation",
+    "title": "Notes",
+    "section": "BART notation",
+    "text": "BART notation\n\nLet \\(K\\) be the total number of regression trees and\n\\(B\\) be the number of iterations the BART algorithm will run for\nLet \\(\\hat{f}^b_k(x)\\) be the prediction at \\(x\\) for the \\(k\\)th regression tree used in the \\(b\\)th iteration of the BART algorithm\nAt the end of each iteration, the \\(K\\) trees from that iteration will be summed:\n\n\\[\\hat{f}^b(x) = \\sum_{k=1}^{K}\\hat{f}^b_k(x)\\] for \\(b=1,...,B\\)"
+  },
+  {
+    "objectID": "08_notes.html#bart-algorithm",
+    "href": "08_notes.html#bart-algorithm",
+    "title": "Notes",
+    "section": "BART algorithm",
+    "text": "BART algorithm\n\nIn the first iteration of the BART algorithm, all \\(K\\) trees are initialized to have 1 root node, with \\(\\hat{f}^1_k(x) = \\frac{1}{nK}\\sum_{i=1}^{n}y_i\\)\n\ni.e., the mean of the response values divided by the total number of trees\n\nThus, for the first iteration (\\(b = 1\\)), the prediction for all \\(K\\) trees is just the mean of the response\n\n\\(\\hat{f}^1(x) = \\sum_{k=1}^K\\hat{f}^1_k(x) = \\sum_{k=1}^K\\frac{1}{nK}\\sum_{i=1}^{n}y_i = \\frac{1}{n}\\sum_{i=1}^{n}y_i\\)"
+  },
+  {
+    "objectID": "08_notes.html#bart-algorithm-iteration-2-and-on",
+    "href": "08_notes.html#bart-algorithm-iteration-2-and-on",
+    "title": "Notes",
+    "section": "BART algorithm: iteration 2 and on",
+    "text": "BART algorithm: iteration 2 and on\n\nIn subsequent iterations, BART updates each of the \\(K\\) trees one at a time\nIn the \\(b\\)th iteration to update the \\(k\\)th tree, we subtract from each response value the predictions from all but the \\(k\\)th tree, to obtain a partial residual:\n\n\\(r_i = y_i - \\sum_{k'&lt;k}\\hat{f}^b_{k'}(x_i) - \\sum_{k'&gt;k}\\hat{f}^{b-1}_{k'}(x_i)\\)\nfor the \\(i\\)th observation, \\(i = 1, …, n\\)\n\nRather than fitting a new tree to this partial residual, BART chooses a perturbation to the tree from a previous iteration \\(\\hat{f}^{b-1}_{k}\\) favoring perturbations that improve the fit to the partial residual\nTo perturb trees:\n\nchange the structure of the tree by adding/pruning branches\nchange the prediction in each terminal node of the tree\n\nThe output of BART is a collection of prediction models:\n\n\\(\\hat{f}^b(x) = \\sum_{k=1}^{K}\\hat{f}^b_k(x)\\)\nfor \\(b = 1, 2,…, B\\)"
+  },
+  {
+    "objectID": "08_notes.html#bart-algorithm-figure",
+    "href": "08_notes.html#bart-algorithm-figure",
+    "title": "Notes",
+    "section": "BART algorithm: figure",
+    "text": "BART algorithm: figure\n\n\n\n\n\n\nComment: the first few prediction models obtained in the earlier iterations (known as the \\(burn-in\\) period; denoted by \\(L\\)) are typically thrown away since they tend to not provide very good results, like you throw away the first pancake of the batch"
+  },
+  {
+    "objectID": "08_notes.html#bart-additional-details",
+    "href": "08_notes.html#bart-additional-details",
+    "title": "Notes",
+    "section": "BART: additional details",
+    "text": "BART: additional details\n\nA key element of BART is that a fresh tree is NOT fit to the current partial residual: instead, we improve the fit to the current partial residual by slightly modifying the tree obtained in the previous iteration (Step 3(a)ii)\nThis guards against overfitting since it limits how “hard” the data is fit in each iteration\nAdditionally, the individual trees are typically pretty small\nBART, as the name suggests, can be viewed as a Bayesian approach to fitting an ensemble of trees:\n\neach time a tree is randomly perturbed to fit the residuals = drawing a new tree from a posterior distribution"
+  },
+  {
+    "objectID": "08_notes.html#to-apply-bart",
+    "href": "08_notes.html#to-apply-bart",
+    "title": "Notes",
+    "section": "To apply BART:",
+    "text": "To apply BART:\n\nWe must select the number of trees \\(K\\), the number of iterations \\(B\\) and the number of burn-in iterations \\(L\\)\nTypically, large values are chosen for \\(B\\) and \\(K\\) and a moderate value for \\(L\\): e.g. \\(K\\) = 200, \\(B\\) = 1,000 and \\(L\\) = 100\nBART has been shown to have impressive out-of-box performance - i.e., it performs well with minimal tuning"
   },
   {
     "objectID": "08_video.html#cohort-01",
