@@ -1,611 +1,1272 @@
 [
   {
-    "objectID": "index.html#welcome",
-    "href": "index.html#welcome",
+    "objectID": "index.html",
+    "href": "index.html",
     "title": "Introduction to Statistical Learning using Python",
-    "section": "Welcome",
-    "text": "Welcome\nThis is a companion for the book Introduction to Statistical Learning with Python.\nThis website is being developed by the R4DS Online Learning Community. Follow along and join the community to participate.\nThis companion follows the R4DS Online Learning Community Code of Conduct."
+    "section": "",
+    "text": "Welcome\nThis is a companion for the book Introduction to Statistical Learning with Python.\nThis website is being developed by the R4DS Online Learning Community. Follow along and join the community to participate.\nThis companion follows the R4DS Online Learning Community Code of Conduct.",
+    "crumbs": [
+      "Welcome"
+    ]
   },
   {
     "objectID": "index.html#book-club-meetings",
     "href": "index.html#book-club-meetings",
     "title": "Introduction to Statistical Learning using Python",
     "section": "Book club meetings",
-    "text": "Book club meetings\n\nEach week, a volunteer will present a chapter from the book.\n\nThis is the best way to learn the material.\n\nPresentations will usually consist of a review of the material, a discussion, and/or a demonstration of the principles presented in that chapter.\nMore information about how to present is available in the GitHub repo.\nPresentations will be recorded and will be available on the R4DS Online Learning Community YouTube Channel."
+    "text": "Book club meetings\n\nEach week, a volunteer will present a chapter from the book.\n\nThis is the best way to learn the material.\n\nPresentations will usually consist of a review of the material, a discussion, and/or a demonstration of the principles presented in that chapter.\nMore information about how to present is available in the GitHub repo.\nPresentations will be recorded and will be available on the R4DS Online Learning Community YouTube Channel.",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "01_main.html",
+    "href": "01_main.html",
+    "title": "1. Introduction",
+    "section": "",
+    "text": "Learning Objectives",
+    "crumbs": [
+      "1. Introduction"
+    ]
   },
   {
     "objectID": "01_main.html#learning-objectives",
     "href": "01_main.html#learning-objectives",
     "title": "1. Introduction",
-    "section": "Learning Objectives",
-    "text": "Learning Objectives\n\nRecognize various types of statistical learning.\nUnderstand why this book is useful for you.\nBe able to read mathematical notation used throughout this book.\nDescribe the overall layout of this book.\nBe able to find data used in examples throughout the book."
+    "section": "",
+    "text": "Recognize various types of statistical learning.\nUnderstand why this book is useful for you.\nBe able to read mathematical notation used throughout this book.\nDescribe the overall layout of this book.\nBe able to find data used in examples throughout the book.",
+    "crumbs": [
+      "1. Introduction"
+    ]
+  },
+  {
+    "objectID": "01_notes.html",
+    "href": "01_notes.html",
+    "title": "Notes",
+    "section": "",
+    "text": "What is statistical learning?\nStatistical learning is the theoretical foundation for machine learning framework. It makes connections between the fields of statistics, linear algebra and functional analysis.\nIn particular, the Statistical learning theory deals with the problem of finding a predictive function based on data and this is what is best known as supervised learning, in this book we will see more than just theory, as we will deal with unsupervised learning as well as making practical applications.",
+    "crumbs": [
+      "1. Introduction",
+      "Notes"
+    ]
   },
   {
     "objectID": "01_notes.html#what-is-statistical-learning",
     "href": "01_notes.html#what-is-statistical-learning",
     "title": "Notes",
-    "section": "What is statistical learning?",
-    "text": "What is statistical learning?\nStatistical learning is the theoretical foundation for machine learning framework. It makes connections between the fields of statistics, linear algebra and functional analysis.\nIn particular, the Statistical learning theory deals with the problem of finding a predictive function based on data and this is what is best known as supervised learning, in this book we will see more than just theory, as we will deal with unsupervised learning as well as making practical applications.\n\nSupervised: “Building a model to predict an output from inputs.”\n\nPredict wage from age, education, and year.\nPredict market direction from previous days' performance.\n\nUnsupervised: Inputs but no specific outputs, find relationships and structure.\n\nIdentify clusters within cancer cell lines."
+    "section": "",
+    "text": "Supervised: “Building a model to predict an output from inputs.”\n\nPredict wage from age, education, and year.\nPredict market direction from previous days' performance.\n\nUnsupervised: Inputs but no specific outputs, find relationships and structure.\n\nIdentify clusters within cancer cell lines.",
+    "crumbs": [
+      "1. Introduction",
+      "Notes"
+    ]
   },
   {
     "objectID": "01_notes.html#why-islp",
     "href": "01_notes.html#why-islp",
     "title": "Notes",
     "section": "Why ISLP?",
-    "text": "Why ISLP?\n\n“Facilitate the transition of statistical learning from an academic to a mainstream field.”\nMachine learning* is useful to everyone, let’s all learn enough to use it responsibly.\nPython “labs” make this make sense for this community!"
+    "text": "Why ISLP?\n\n“Facilitate the transition of statistical learning from an academic to a mainstream field.”\nMachine learning* is useful to everyone, let’s all learn enough to use it responsibly.\nPython “labs” make this make sense for this community!",
+    "crumbs": [
+      "1. Introduction",
+      "Notes"
+    ]
   },
   {
     "objectID": "01_notes.html#premises-of-islp",
     "href": "01_notes.html#premises-of-islp",
     "title": "Notes",
     "section": "Premises of ISLP",
-    "text": "Premises of ISLP\nFrom Page 9 of the Introduction:\n\n“Many statistical learning methods are relevant and useful in a wide range of academic and non-academic disciplines, beyond just the statistical sciences.”\n“Statistical learning should not be viewed as a series of black boxes.”\n“While it is important to know what job is performed by each cog, it is not necessary to have the skills to construct the machine inside the box!”\n“We presume that the reader is interested in applying statistical learning methods to real-world problems.”"
+    "text": "Premises of ISLP\nFrom Page 9 of the Introduction:\n\n“Many statistical learning methods are relevant and useful in a wide range of academic and non-academic disciplines, beyond just the statistical sciences.”\n“Statistical learning should not be viewed as a series of black boxes.”\n“While it is important to know what job is performed by each cog, it is not necessary to have the skills to construct the machine inside the box!”\n“We presume that the reader is interested in applying statistical learning methods to real-world problems.”",
+    "crumbs": [
+      "1. Introduction",
+      "Notes"
+    ]
   },
   {
     "objectID": "01_notes.html#notation",
     "href": "01_notes.html#notation",
     "title": "Notes",
     "section": "Notation",
-    "text": "Notation\n\nn = number of observations (rows)\np = number of features/variables (columns)\nWe’ll come back here if we need to as we go!\nSome symbols they assume we know:\n\n\\(\\in\\) = “is an element of”, “in”\n\\({\\rm I\\!R}\\) = “real numbers”"
+    "text": "Notation\n\nn = number of observations (rows)\np = number of features/variables (columns)\nWe’ll come back here if we need to as we go!\nSome symbols they assume we know:\n\n\\(\\in\\) = “is an element of”, “in”\n\\({\\rm I\\!R}\\) = “real numbers”",
+    "crumbs": [
+      "1. Introduction",
+      "Notes"
+    ]
   },
   {
     "objectID": "01_notes.html#what-have-we-gotten-ourselves-into",
     "href": "01_notes.html#what-have-we-gotten-ourselves-into",
     "title": "Notes",
     "section": "What have we gotten ourselves into?",
-    "text": "What have we gotten ourselves into?\nAn Introduction to Statistical Learning (ISL by James, Witten, Hastie and Tibshiraniis), is a collection of modern statistical methods for modeling and making predictions from real-world data.\nIt is a middle way between theoretical statistics and the practice of applying statistics to real-world problems.\nIt can be considered as a user manual, with self-contained Python labs, which lead you through the use of different methods for applying statistical analysis to different kinds of data.\n\n2: Terminology & main concepts\n3-4: Classic linear methods\n5: Resampling (so we can choose the best method)\n6: Modern updates to linear methods\n7+: Beyond Linearity (we can worry about details as we get there)"
+    "text": "What have we gotten ourselves into?\nAn Introduction to Statistical Learning (ISL by James, Witten, Hastie and Tibshiraniis), is a collection of modern statistical methods for modeling and making predictions from real-world data.\nIt is a middle way between theoretical statistics and the practice of applying statistics to real-world problems.\nIt can be considered as a user manual, with self-contained Python labs, which lead you through the use of different methods for applying statistical analysis to different kinds of data.\n\n2: Terminology & main concepts\n3-4: Classic linear methods\n5: Resampling (so we can choose the best method)\n6: Modern updates to linear methods\n7+: Beyond Linearity (we can worry about details as we get there)",
+    "crumbs": [
+      "1. Introduction",
+      "Notes"
+    ]
   },
   {
     "objectID": "01_notes.html#wheres-the-data",
     "href": "01_notes.html#wheres-the-data",
     "title": "Notes",
     "section": "Where’s the data?",
-    "text": "Where’s the data?\npip install ISLP\nWe’ll look at this data in more detail below."
+    "text": "Where’s the data?\npip install ISLP\nWe’ll look at this data in more detail below.",
+    "crumbs": [
+      "1. Introduction",
+      "Notes"
+    ]
   },
   {
     "objectID": "01_notes.html#some-useful-resources",
     "href": "01_notes.html#some-useful-resources",
     "title": "Notes",
     "section": "Some useful resources:",
-    "text": "Some useful resources:\n\nthe book page: statlearning.com\npdf of the book: ISLRv2_website\nISLP labs\ncourse on edX: statistical-learning\nyoutube channel: playlists\nexercise solutions: applied solutions\n\nSome more theoretical resources:\n\nThe Elements of Statistical Learning (ESL, by Hastie, Tibshirani, and Friedman) ESLII"
+    "text": "Some useful resources:\n\nthe book page: statlearning.com\npdf of the book: ISLRv2_website\nISLP labs\ncourse on edX: statistical-learning\nyoutube channel: playlists\nexercise solutions: applied solutions\n\nSome more theoretical resources:\n\nThe Elements of Statistical Learning (ESL, by Hastie, Tibshirani, and Friedman) ESLII",
+    "crumbs": [
+      "1. Introduction",
+      "Notes"
+    ]
   },
   {
     "objectID": "01_notes.html#what-is-covered-in-the-book",
     "href": "01_notes.html#what-is-covered-in-the-book",
     "title": "Notes",
     "section": "What is covered in the book?",
-    "text": "What is covered in the book?\nThe book provides a series of toolkits classified as supervised or unsupervised techniques for understanding data.\nThe second edition of the book (2021) contains additions within the most updated statistical analysis.\n\n\n\n\n\nEditions"
+    "text": "What is covered in the book?\nThe book provides a series of toolkits classified as supervised or unsupervised techniques for understanding data.\nThe second edition of the book (2021) contains additions within the most updated statistical analysis.\n\n\n\n\n\nEditions",
+    "crumbs": [
+      "1. Introduction",
+      "Notes"
+    ]
   },
   {
     "objectID": "01_notes.html#how-is-the-book-divided",
     "href": "01_notes.html#how-is-the-book-divided",
     "title": "Notes",
     "section": "How is the book divided?",
-    "text": "How is the book divided?\nThe book is divided into 13 chapters covering:\n\nIntroduction and Statistical Learning:\n\nSupervised Versus Unsupervised Learning\nRegression Versus Classification Problems\n\n\nLinear statistical learning\n\nLinear Regression:\n\nbasic concepts\nintroduction of K-nearest neighbor classifier\n\nClassification:\n\nlogistic regression\nlinear discriminant analysis\n\nResampling Methods:\n\ncross-validation\nthe bootstrap\n\nLinear Model Selection and Regularization: potential improvements over standard linear regression\n\nstepwise selection\nridge regression\nprincipal components regression\nthe lasso\n\n\nNon-linear statistical learning\n\nMoving Beyond Linearity:\n\nPolynomial Regression\nRegression Spline\nSmoothing Splines\nLocal Regression\nGeneralized Additive Models\n\nTree-Based Methods:\n\nDecision Trees\nBagging, Random Forests, Boosting, and Bayesian Additive Regression Trees\n\nSupport Vector Machines (linear and non-linear classification)\nDeep Learning (non-linear regression and classification)\nSurvival Analysis and Censored Data\nUnsupervised Learning:\n\nPrincipal components analysis\nK-means clustering\nHierarchical clustering\n\nMultiple Testing\n\nEach chapter includes 1 self-contained R lab on the topic"
+    "text": "How is the book divided?\nThe book is divided into 13 chapters covering:\n\nIntroduction and Statistical Learning:\n\nSupervised Versus Unsupervised Learning\nRegression Versus Classification Problems\n\n\nLinear statistical learning\n\nLinear Regression:\n\nbasic concepts\nintroduction of K-nearest neighbor classifier\n\nClassification:\n\nlogistic regression\nlinear discriminant analysis\n\nResampling Methods:\n\ncross-validation\nthe bootstrap\n\nLinear Model Selection and Regularization: potential improvements over standard linear regression\n\nstepwise selection\nridge regression\nprincipal components regression\nthe lasso\n\n\nNon-linear statistical learning\n\nMoving Beyond Linearity:\n\nPolynomial Regression\nRegression Spline\nSmoothing Splines\nLocal Regression\nGeneralized Additive Models\n\nTree-Based Methods:\n\nDecision Trees\nBagging, Random Forests, Boosting, and Bayesian Additive Regression Trees\n\nSupport Vector Machines (linear and non-linear classification)\nDeep Learning (non-linear regression and classification)\nSurvival Analysis and Censored Data\nUnsupervised Learning:\n\nPrincipal components analysis\nK-means clustering\nHierarchical clustering\n\nMultiple Testing\n\nEach chapter includes 1 self-contained R lab on the topic",
+    "crumbs": [
+      "1. Introduction",
+      "Notes"
+    ]
   },
   {
     "objectID": "01_notes.html#some-examples-of-the-problems-addressed-with-statistical-analysis",
     "href": "01_notes.html#some-examples-of-the-problems-addressed-with-statistical-analysis",
     "title": "Notes",
     "section": "Some examples of the problems addressed with statistical analysis",
-    "text": "Some examples of the problems addressed with statistical analysis\n\nIdentify the risk factors for some type of cancers\nPredict whether someone will have a hearth attack on the basis of demographic, diet, and clinical measurements\nEmail spam detection\nClassify a tissue sample into one of several cancer classes, based on a gene expression profile\nEstablish the relationship between salary and demographic variables in population survey data\n\n(source)"
+    "text": "Some examples of the problems addressed with statistical analysis\n\nIdentify the risk factors for some type of cancers\nPredict whether someone will have a hearth attack on the basis of demographic, diet, and clinical measurements\nEmail spam detection\nClassify a tissue sample into one of several cancer classes, based on a gene expression profile\nEstablish the relationship between salary and demographic variables in population survey data\n\n(source)",
+    "crumbs": [
+      "1. Introduction",
+      "Notes"
+    ]
   },
   {
     "objectID": "01_notes.html#datasets-provided-in-the-islp-package",
     "href": "01_notes.html#datasets-provided-in-the-islp-package",
     "title": "Notes",
     "section": "Datasets provided in the ISLP package",
-    "text": "Datasets provided in the ISLP package\nThe book provides the ISLP Python package with all the datasets needed the analysis.\n\n\n\n\n\nDatasets in ISLP package"
+    "text": "Datasets provided in the ISLP package\nThe book provides the ISLP Python package with all the datasets needed the analysis.\n\n\n\n\n\nDatasets in ISLP package",
+    "crumbs": [
+      "1. Introduction",
+      "Notes"
+    ]
+  },
+  {
+    "objectID": "01_video.html",
+    "href": "01_video.html",
+    "title": "Video",
+    "section": "",
+    "text": "Cohort 01",
+    "crumbs": [
+      "1. Introduction",
+      "Video"
+    ]
   },
   {
     "objectID": "01_video.html#cohort-01",
     "href": "01_video.html#cohort-01",
     "title": "Video",
-    "section": "Cohort 01",
-    "text": "Cohort 01\n\n\n\n\nLOG"
+    "section": "",
+    "text": "LOG",
+    "crumbs": [
+      "1. Introduction",
+      "Video"
+    ]
+  },
+  {
+    "objectID": "02_main.html",
+    "href": "02_main.html",
+    "title": "2. Statistical Learning",
+    "section": "",
+    "text": "Learning objectives",
+    "crumbs": [
+      "2. Statistical Learning"
+    ]
   },
   {
     "objectID": "02_main.html#learning-objectives",
     "href": "02_main.html#learning-objectives",
     "title": "2. Statistical Learning",
-    "section": "Learning objectives",
-    "text": "Learning objectives\n\nCompare supervised vs unsupervised learning.\nCompare regression vs classification problems.\nMeasure the accuracy of regression model fits.\nMeasure the accuracy of classification model fits.\nDescribe the trade-off between more accurate models and more interpretable models.\nCompare Parametric vs Nonparametric models\nUnderstand overfitting.\nDescribe how bias and variance contribute to the model error."
+    "section": "",
+    "text": "Compare supervised vs unsupervised learning.\nCompare regression vs classification problems.\nMeasure the accuracy of regression model fits.\nMeasure the accuracy of classification model fits.\nDescribe the trade-off between more accurate models and more interpretable models.\nCompare Parametric vs Nonparametric models\nUnderstand overfitting.\nDescribe how bias and variance contribute to the model error.",
+    "crumbs": [
+      "2. Statistical Learning"
+    ]
+  },
+  {
+    "objectID": "02_notes.html",
+    "href": "02_notes.html",
+    "title": "Notes",
+    "section": "",
+    "text": "What is Statistical Learning?\nIn this chapter will deal with developing an accurate model that can be used to predict some value.\nNotation:\nWe assume there is some relationship between \\(Y\\) and \\(X = \\left( X_1, \\cdots, X_p \\right)\\), which we write as:\n\\[Y = f(X) + \\epsilon\\]\n, where \\(\\epsilon\\) is a random error term which is independent from \\(X\\) and has mean zero; and, \\(f\\) represents the systematic information that \\(X\\) provides about \\(Y\\) .\nIncome data set\nIn essence, statistical learning deals with different approaches to estimate \\(f\\) .",
+    "crumbs": [
+      "2. Statistical Learning",
+      "Notes"
+    ]
   },
   {
     "objectID": "02_notes.html#what-is-statistical-learning",
     "href": "02_notes.html#what-is-statistical-learning",
     "title": "Notes",
-    "section": "What is Statistical Learning?",
-    "text": "What is Statistical Learning?\nIn this chapter will deal with developing an accurate model that can be used to predict some value.\nNotation:\n\nInput variables: \\(X_1, \\cdots, X_p\\)\nAlso known as predictors, features, independent variables.\nOutput variable: \\(Y\\)\nAlso known as response or dependent variable.\n\nWe assume there is some relationship between \\(Y\\) and \\(X = \\left( X_1, \\cdots, X_p \\right)\\), which we write as:\n\\[Y = f(X) + \\epsilon\\]\n, where \\(\\epsilon\\) is a random error term which is independent from \\(X\\) and has mean zero; and, \\(f\\) represents the systematic information that \\(X\\) provides about \\(Y\\) .\n\n\n\n\n\nIncome data set\n\n\n\n\nIn essence, statistical learning deals with different approaches to estimate \\(f\\) .\n\nWhy estimate \\(f\\)?\nTwo main reasons to estimate \\(f\\):\n\nPrediction\n\nPredict \\(Y\\) using a set of inputs \\(X\\) .\nRepresentation: \\(\\hat{Y}= \\hat{f}(X)\\), where \\(\\hat{f}\\) represents our estimate for \\(f\\), and \\(\\hat{Y}\\) our prediction for \\(Y\\) .*\nIn this setting, \\(\\hat{f}\\) is often treated as a black-box, meaning we don’t mind not knowing the exact form of \\(\\hat{f}\\), if it generates accurate predictions for \\(Y\\) .\n\\(\\hat{Y}\\)’s accuracy depends on:\n\nReducible error\n\nDue to \\(\\hat{f}\\) not being a perfect estimate for \\(f\\).\nCan be reduced by using a proper statistical learning technique.\n\nIrreducible error\n\nDue to \\(\\epsilon\\) and its variability.\n\\(\\epsilon\\) is independent from \\(X\\), so no matter how well we estimate \\(f\\), we can’t reduce this error.\n\n\nThe quantity \\(\\epsilon\\) may contain unmeasured variables useful for predicting \\(Y\\); or, may contain unmeasure variation, so no prediction model will be perfect.\nMathematical form, after choosing predictors \\(X\\) and an estimate \\(\\hat{f}\\):\n\n\\[\nE( Y - \\hat{Y} )^2 =\nE(f(X) + \\epsilon - \\hat{f}(X))^2 =\n\\underbrace{[f(X) - \\hat{f}(X)]^2}_{reducible} +\n\\underbrace{\\text{ Var}(\\epsilon)}_{irreducible}\\; .\n\\]\nIn practice, we almost always don’t know how \\(\\epsilon\\)’s variability affects our model, so, in this boook, we will focus on techniques for estimating \\(f\\) .\n\n\nInference\nIn this case, we are interested in understanding the association between \\(Y\\) and \\(X_1, \\cdots, X_p\\).\n\nFor example:\n\nWhich predictors are most associated with response?\nWhat is the relationship between the response and each predictor?\nCan such relationship be summarized via a linear equation, or is it more complex?\n\n\nThe exact form of \\(\\hat{f}\\) is required.\nLinear models allow for easier interpretability, but can lack in prediction accuracy; while, non-linear models can be more accurate, but less interpretable.\n\n\n\nHow do we estimate \\(f\\) ?\n\nFirst, let’s agree on some conventions:\n\n\\(n\\) : Number of observations.\n\\(x_{ij}\\): Value of the \\(j\\text{th}\\) predictor, for \\(i\\text{th}\\) observation.\n\\(y_i\\) : Response variable for \\(i\\text{th}\\) observation.\nTraining data:\n\nSet of observations.\nUsed to esmitate \\(f\\).\n\\(\\left\\{ (x_1, y_1), \\cdots, (x_n, y_n) \\right\\}\\), where \\(x_i = (x_{i1}, \\cdots, x_{ip})^T\\) .\n\n\nGoal: Find a function \\(\\hat{f}\\) such that \\(Y\\approx\\hat{f}(X)\\) for any observation \\((X,Y)\\) .\nMost statistical methods for achieving this goal can be characterized as either parametric or non-parametric.\n\n\nParametric methods\n\nSteps:\n\nMake an assumption about the form of \\(f\\).\nIt could be linear (\\(f(X) = \\beta_0 + \\beta_1 X_1 + \\cdot + \\beta_p X_p,\\) parameters \\(\\beta_0, \\cdots, \\beta_p\\) to be estimated) or not.\nThe model has been selected.\nNow, we need a procedure to fit the model using the training data.\nThe most common of such fitting procedures is called (ordinary) least squares.\n\nVia these steps, the problem of estimating \\(f\\) has been reduced to a problem of estimating a set of parameters.\nWe can make the models more flexible via considering a greater number of parameters, but, this can lead to overfitting the data, that is, following the errors/noise too closely, which will not yield accurate estimates of the response for observations outside of the original training data.\n\n\n\n\nNon-parametric methods\n\nNo assumptions about the form of \\(f\\) are made.\nInstead, we seek an estimate of \\(f\\) which that gets as close to the data point as possible.\nHas the potential to fit a wider range of possible forms for \\(f\\).\nTipically requires a very large number of observations (compared to paramatric approach) in order to accurately estimate \\(f\\).\n\n\n\n\nThe trade-off between prediction accuracy and model interpretability\nWe’ve seen that parametric models are usually restrictive; and, non-parametric models, flexible. However:\n\nRestrictive models are usually more interpretable, so they are useful for inference.\nFlexible models can be difficult to interpret, due to the complexity of \\(\\hat{f}\\).\n\nDespite this, we will often obtain more accurate predictions usinf a less flexible method, due to the potential for overfitting the data in highly flexible models.\n\n\nSupervised vs Unsupervised Learning\nIn supervised learning, we wish to fit a model that relates inputs/predictors to some output.\nIn unsupervised learning, we lack a reponse/variable to predict. Instead, we seek to understand the relationships between the variables or between the observations.\nThere are instances where a mix of such methods is required (semi-supervised learning problems), but such topic will not be covered in this book.\n\n\nRegression vs Classification problems\n\nIf the response is …\n\nQuantitative, then, it’s a regression problem.\nCategorical, then, it’s a classification problem.\n\nMost of the methods covered in this book can be applied regardless of the predictor variable type, but the categorical variables will require some pre-processing."
+    "section": "",
+    "text": "Input variables: \\(X_1, \\cdots, X_p\\)\nAlso known as predictors, features, independent variables.\nOutput variable: \\(Y\\)\nAlso known as response or dependent variable.\n\n\n\n\n\n\n\nWhy estimate \\(f\\)?\nTwo main reasons to estimate \\(f\\):\n\nPrediction\n\nPredict \\(Y\\) using a set of inputs \\(X\\) .\nRepresentation: \\(\\hat{Y}= \\hat{f}(X)\\), where \\(\\hat{f}\\) represents our estimate for \\(f\\), and \\(\\hat{Y}\\) our prediction for \\(Y\\) .*\nIn this setting, \\(\\hat{f}\\) is often treated as a black-box, meaning we don’t mind not knowing the exact form of \\(\\hat{f}\\), if it generates accurate predictions for \\(Y\\) .\n\\(\\hat{Y}\\)’s accuracy depends on:\n\nReducible error\n\nDue to \\(\\hat{f}\\) not being a perfect estimate for \\(f\\).\nCan be reduced by using a proper statistical learning technique.\n\nIrreducible error\n\nDue to \\(\\epsilon\\) and its variability.\n\\(\\epsilon\\) is independent from \\(X\\), so no matter how well we estimate \\(f\\), we can’t reduce this error.\n\n\nThe quantity \\(\\epsilon\\) may contain unmeasured variables useful for predicting \\(Y\\); or, may contain unmeasure variation, so no prediction model will be perfect.\nMathematical form, after choosing predictors \\(X\\) and an estimate \\(\\hat{f}\\):\n\n\\[\nE( Y - \\hat{Y} )^2 =\nE(f(X) + \\epsilon - \\hat{f}(X))^2 =\n\\underbrace{[f(X) - \\hat{f}(X)]^2}_{reducible} +\n\\underbrace{\\text{ Var}(\\epsilon)}_{irreducible}\\; .\n\\]\nIn practice, we almost always don’t know how \\(\\epsilon\\)’s variability affects our model, so, in this boook, we will focus on techniques for estimating \\(f\\) .\n\n\nInference\nIn this case, we are interested in understanding the association between \\(Y\\) and \\(X_1, \\cdots, X_p\\).\n\nFor example:\n\nWhich predictors are most associated with response?\nWhat is the relationship between the response and each predictor?\nCan such relationship be summarized via a linear equation, or is it more complex?\n\n\nThe exact form of \\(\\hat{f}\\) is required.\nLinear models allow for easier interpretability, but can lack in prediction accuracy; while, non-linear models can be more accurate, but less interpretable.\n\n\n\nHow do we estimate \\(f\\) ?\n\nFirst, let’s agree on some conventions:\n\n\\(n\\) : Number of observations.\n\\(x_{ij}\\): Value of the \\(j\\text{th}\\) predictor, for \\(i\\text{th}\\) observation.\n\\(y_i\\) : Response variable for \\(i\\text{th}\\) observation.\nTraining data:\n\nSet of observations.\nUsed to esmitate \\(f\\).\n\\(\\left\\{ (x_1, y_1), \\cdots, (x_n, y_n) \\right\\}\\), where \\(x_i = (x_{i1}, \\cdots, x_{ip})^T\\) .\n\n\nGoal: Find a function \\(\\hat{f}\\) such that \\(Y\\approx\\hat{f}(X)\\) for any observation \\((X,Y)\\) .\nMost statistical methods for achieving this goal can be characterized as either parametric or non-parametric.\n\n\nParametric methods\n\nSteps:\n\nMake an assumption about the form of \\(f\\).\nIt could be linear (\\(f(X) = \\beta_0 + \\beta_1 X_1 + \\cdot + \\beta_p X_p,\\) parameters \\(\\beta_0, \\cdots, \\beta_p\\) to be estimated) or not.\nThe model has been selected.\nNow, we need a procedure to fit the model using the training data.\nThe most common of such fitting procedures is called (ordinary) least squares.\n\nVia these steps, the problem of estimating \\(f\\) has been reduced to a problem of estimating a set of parameters.\nWe can make the models more flexible via considering a greater number of parameters, but, this can lead to overfitting the data, that is, following the errors/noise too closely, which will not yield accurate estimates of the response for observations outside of the original training data.\n\n\n\n\nNon-parametric methods\n\nNo assumptions about the form of \\(f\\) are made.\nInstead, we seek an estimate of \\(f\\) which that gets as close to the data point as possible.\nHas the potential to fit a wider range of possible forms for \\(f\\).\nTipically requires a very large number of observations (compared to paramatric approach) in order to accurately estimate \\(f\\).\n\n\n\n\nThe trade-off between prediction accuracy and model interpretability\nWe’ve seen that parametric models are usually restrictive; and, non-parametric models, flexible. However:\n\nRestrictive models are usually more interpretable, so they are useful for inference.\nFlexible models can be difficult to interpret, due to the complexity of \\(\\hat{f}\\).\n\nDespite this, we will often obtain more accurate predictions usinf a less flexible method, due to the potential for overfitting the data in highly flexible models.\n\n\nSupervised vs Unsupervised Learning\nIn supervised learning, we wish to fit a model that relates inputs/predictors to some output.\nIn unsupervised learning, we lack a reponse/variable to predict. Instead, we seek to understand the relationships between the variables or between the observations.\nThere are instances where a mix of such methods is required (semi-supervised learning problems), but such topic will not be covered in this book.\n\n\nRegression vs Classification problems\n\nIf the response is …\n\nQuantitative, then, it’s a regression problem.\nCategorical, then, it’s a classification problem.\n\nMost of the methods covered in this book can be applied regardless of the predictor variable type, but the categorical variables will require some pre-processing.",
+    "crumbs": [
+      "2. Statistical Learning",
+      "Notes"
+    ]
   },
   {
     "objectID": "02_notes.html#assessing-model-accuracy",
     "href": "02_notes.html#assessing-model-accuracy",
     "title": "Notes",
     "section": "Assessing model accuracy",
-    "text": "Assessing model accuracy\n\nThere is no best method for Statistical Learning, the method’s efficacy can depend on the data set.\nFor a specific data set, how do we select the best Statistics approach?\n\n\nMeasuring the quality of fit\n\nThe performance of a statistical learning method can be evaluated comparing the predictions of the model, with their true/real response.\nMost commonly used measure for this:\n\nMean squared error\n\\(\\text{ MSE } = \\dfrac{1}{n}\\displaystyle{ \\sum_{i=1}^{n}(y_i - \\hat{f}(x_i))^2 }\\)\nSmall MSE means that the predicted and the true responses are very close.\n\nWe want the model to accurately predict unseen data (testing data), not so much the training data, where the response is already known.\nThe best model will be the one which produces the lowest test MSE, not the lowest training MSE.\nIt’s not true that the model with lowest training MSE will also have the lowest test MSE.\n\n\n\n\n\n\nTraining MSE vs Test MSE\n\n\n\n\n\nFundamental property: For any data set and any statistical learning method used, as the flexibility of the statistical learning method increases:\n\nThe training MSE decreases monotonically.\nThe test MSE graph has a U-shape.\n\n\n\nAs model flexibility increases, training MSE will decrease, but the test MSE may not.\n\n\nSmall training MSE but big test MSE implies having overfitted the data.\nRegardless of overfitting or not, we almost always expect \\(\\text{training MSE } &lt; \\text{ testing MSE }\\), beacuse most statistical learning methods seek to minimize the training MSE.\nEstimating test MSE is very difficult, usually because lack of data. Later in this book, we’ll discuss approaches to estimate the mininum point for the test MSE curve.\n\n\n\nThe Bias-Variance Trade-off\n\nDefinition: The expected test MSE at \\(x_0\\) (\\(E(y_0 - \\hat{f}(x_0))^2\\)) refers to the averga test MSE that we would obtain after repeatedly estimating \\(f\\) using a large number of training sets, and tested each esimate at \\(x_0\\).\nDefinition: The variance of a statistical learning method which produces an estimate \\(\\hat{f}\\) refers to how the estimate function changes, for different training sets.\nDefinition: Bias refers to the error generated by approximating a possibly complicated model (like in real-life usually), by a much simpler one … (how \\(f\\) and the possibles \\(\\hat{f}\\) differ).\nAs a general rule, the more flexible a statistical method, the higher its variance and lower its bias.\nFor any given value \\(x_0\\), the following can be proved:\n\n\\[\nE(y_0 - \\hat{f}(x_0))^2 = \\text{Var}(\\hat{f}(x_0)) + \\text{Bias}(\\hat{f}(x_0))^2 + \\text{ Var }(\\epsilon)\n\\]\n\nDue to variance and squared bias being non negative, the previous equation implies that, to minimize the expected test error, we require a statistical learnig method which achieves low variance and low bias.\nThe tradeoff:\n\nExtremely low bias but high variance: For example, draw a line which passes over every single point in the training data.\nExtremely low variance but high bias: For example, fit a horizontal line to the data.\n\nThe challenge lies in finding a method for which both the variance and the squared bias are low.\n\n\nIn a real-life situation, \\(f\\) is usually unkwon, so it’s not possible to explicitly compute the test MSE, bias or variance of a statistical method.\nThe test MSE can be estimated using cross-validation, but we’ll discuss it later in this book.\n\n\n\nThe Classification setting\nLet’s see how the concepts recently discussed change when we the prediction is a categorical variable.\nThe most common approach for quantifying the accuracy of our estimate \\(\\hat{f}\\) is the training error rate, the proportion of mistakes made by applying \\(\\hat{f}\\) to the training observations:\n\\[\n\\dfrac{1}{n}\\displaystyle{ \\sum_{i=1}^{n} I(y_i \\neq \\hat{y}_i)}\n\\]\n, where \\(I\\) is \\(1\\) when \\(y_i = \\hat{y}_i\\), and \\(0\\) otherwise.\n\nThe test error rate is defined as \\(\\text{ Average}(I(y_i \\neq \\hat{y}_i))\\), where the average is computed by comparing the predictions \\(\\hat{y}_i\\) with the true response \\(y_i\\).\nA good classifier is one for which the test error is smallest."
+    "text": "Assessing model accuracy\n\nThere is no best method for Statistical Learning, the method’s efficacy can depend on the data set.\nFor a specific data set, how do we select the best Statistics approach?\n\n\nMeasuring the quality of fit\n\nThe performance of a statistical learning method can be evaluated comparing the predictions of the model, with their true/real response.\nMost commonly used measure for this:\n\nMean squared error\n\\(\\text{ MSE } = \\dfrac{1}{n}\\displaystyle{ \\sum_{i=1}^{n}(y_i - \\hat{f}(x_i))^2 }\\)\nSmall MSE means that the predicted and the true responses are very close.\n\nWe want the model to accurately predict unseen data (testing data), not so much the training data, where the response is already known.\nThe best model will be the one which produces the lowest test MSE, not the lowest training MSE.\nIt’s not true that the model with lowest training MSE will also have the lowest test MSE.\n\n\n\n\n\n\nTraining MSE vs Test MSE\n\n\n\n\n\nFundamental property: For any data set and any statistical learning method used, as the flexibility of the statistical learning method increases:\n\nThe training MSE decreases monotonically.\nThe test MSE graph has a U-shape.\n\n\n\nAs model flexibility increases, training MSE will decrease, but the test MSE may not.\n\n\nSmall training MSE but big test MSE implies having overfitted the data.\nRegardless of overfitting or not, we almost always expect \\(\\text{training MSE } &lt; \\text{ testing MSE }\\), beacuse most statistical learning methods seek to minimize the training MSE.\nEstimating test MSE is very difficult, usually because lack of data. Later in this book, we’ll discuss approaches to estimate the mininum point for the test MSE curve.\n\n\n\nThe Bias-Variance Trade-off\n\nDefinition: The expected test MSE at \\(x_0\\) (\\(E(y_0 - \\hat{f}(x_0))^2\\)) refers to the averga test MSE that we would obtain after repeatedly estimating \\(f\\) using a large number of training sets, and tested each esimate at \\(x_0\\).\nDefinition: The variance of a statistical learning method which produces an estimate \\(\\hat{f}\\) refers to how the estimate function changes, for different training sets.\nDefinition: Bias refers to the error generated by approximating a possibly complicated model (like in real-life usually), by a much simpler one … (how \\(f\\) and the possibles \\(\\hat{f}\\) differ).\nAs a general rule, the more flexible a statistical method, the higher its variance and lower its bias.\nFor any given value \\(x_0\\), the following can be proved:\n\n\\[\nE(y_0 - \\hat{f}(x_0))^2 = \\text{Var}(\\hat{f}(x_0)) + \\text{Bias}(\\hat{f}(x_0))^2 + \\text{ Var }(\\epsilon)\n\\]\n\nDue to variance and squared bias being non negative, the previous equation implies that, to minimize the expected test error, we require a statistical learnig method which achieves low variance and low bias.\nThe tradeoff:\n\nExtremely low bias but high variance: For example, draw a line which passes over every single point in the training data.\nExtremely low variance but high bias: For example, fit a horizontal line to the data.\n\nThe challenge lies in finding a method for which both the variance and the squared bias are low.\n\n\nIn a real-life situation, \\(f\\) is usually unkwon, so it’s not possible to explicitly compute the test MSE, bias or variance of a statistical method.\nThe test MSE can be estimated using cross-validation, but we’ll discuss it later in this book.\n\n\n\nThe Classification setting\nLet’s see how the concepts recently discussed change when we the prediction is a categorical variable.\nThe most common approach for quantifying the accuracy of our estimate \\(\\hat{f}\\) is the training error rate, the proportion of mistakes made by applying \\(\\hat{f}\\) to the training observations:\n\\[\n\\dfrac{1}{n}\\displaystyle{ \\sum_{i=1}^{n} I(y_i \\neq \\hat{y}_i)}\n\\]\n, where \\(I\\) is \\(1\\) when \\(y_i = \\hat{y}_i\\), and \\(0\\) otherwise.\n\nThe test error rate is defined as \\(\\text{ Average}(I(y_i \\neq \\hat{y}_i))\\), where the average is computed by comparing the predictions \\(\\hat{y}_i\\) with the true response \\(y_i\\).\nA good classifier is one for which the test error is smallest.",
+    "crumbs": [
+      "2. Statistical Learning",
+      "Notes"
+    ]
+  },
+  {
+    "objectID": "02_video.html",
+    "href": "02_video.html",
+    "title": "Video",
+    "section": "",
+    "text": "Cohort 01",
+    "crumbs": [
+      "2. Statistical Learning",
+      "Video"
+    ]
   },
   {
     "objectID": "02_video.html#cohort-01",
     "href": "02_video.html#cohort-01",
     "title": "Video",
-    "section": "Cohort 01",
-    "text": "Cohort 01\n\n\n\n\nLOG"
+    "section": "",
+    "text": "LOG",
+    "crumbs": [
+      "2. Statistical Learning",
+      "Video"
+    ]
+  },
+  {
+    "objectID": "02_exercises.html",
+    "href": "02_exercises.html",
+    "title": "Applied Exercises",
+    "section": "",
+    "text": "8. This exercise relates to the College data set, which can be found in the file College.csv on the book website. It contains a number of variables for 777 different universities and colleges in the US. The variables are\nBefore reading the data into Python, it can be viewed in Excel or a text editor.",
+    "crumbs": [
+      "2. Statistical Learning",
+      "Applied Exercises"
+    ]
   },
   {
     "objectID": "02_exercises.html#this-exercise-relates-to-the-college-data-set-which-can-be-found-in-the-file-college.csv-on-the-book-website.-it-contains-a-number-of-variables-for-777-different-universities-and-colleges-in-the-us.-the-variables-are",
     "href": "02_exercises.html#this-exercise-relates-to-the-college-data-set-which-can-be-found-in-the-file-college.csv-on-the-book-website.-it-contains-a-number-of-variables-for-777-different-universities-and-colleges-in-the-us.-the-variables-are",
     "title": "Applied Exercises",
-    "section": "8. This exercise relates to the College data set, which can be found in the file College.csv on the book website. It contains a number of variables for 777 different universities and colleges in the US. The variables are",
-    "text": "8. This exercise relates to the College data set, which can be found in the file College.csv on the book website. It contains a number of variables for 777 different universities and colleges in the US. The variables are\n\nPrivate : Public/private indicator\nApps : Number of applications received\nAccept : Number of applicants accepted\nEnroll : Number of new students enrolled\nTop10perc : New students from top 10 % of high school class\nTop25perc : New students from top 25 % of high school class\nF.Undergrad : Number of full-time undergraduates\nP.Undergrad : Number of part-time undergraduates\nOutstate : Out-of-state tuition\nRoom.Board : Room and board costs\nBooks : Estimated book costs\nPersonal : Estimated personal spending\nPhD : Percent of faculty with Ph.D.s\nTerminal : Percent of faculty with terminal degree\nS.F.Ratio : Student/faculty ratio\nperc.alumni : Percent of alumni who donate\nExpend : Instructional expenditure per student\nGrad.Rate : Graduation rate\n\nBefore reading the data into Python, it can be viewed in Excel or a text editor.\n\n(a) Use the pd.read_csv() function to read the data into Python. Call the loaded data college. Make sure that you have the directory set to the correct location for the data.\n\ncollege = pd.read_csv('ISLP_data/College.csv')\ncollege\n\n                         Unnamed: 0 Private   Apps  Accept  Enroll  Top10perc  \\\n0      Abilene Christian University     Yes   1660    1232     721         23   \n1                Adelphi University     Yes   2186    1924     512         16   \n2                    Adrian College     Yes   1428    1097     336         22   \n3               Agnes Scott College     Yes    417     349     137         60   \n4         Alaska Pacific University     Yes    193     146      55         16   \n..                              ...     ...    ...     ...     ...        ...   \n772         Worcester State College      No   2197    1515     543          4   \n773               Xavier University     Yes   1959    1805     695         24   \n774  Xavier University of Louisiana     Yes   2097    1915     695         34   \n775                 Yale University     Yes  10705    2453    1317         95   \n776    York College of Pennsylvania     Yes   2989    1855     691         28   \n\n     Top25perc  F.Undergrad  P.Undergrad  Outstate  Room.Board  Books  \\\n0           52         2885          537      7440        3300    450   \n1           29         2683         1227     12280        6450    750   \n2           50         1036           99     11250        3750    400   \n3           89          510           63     12960        5450    450   \n4           44          249          869      7560        4120    800   \n..         ...          ...          ...       ...         ...    ...   \n772         26         3089         2029      6797        3900    500   \n773         47         2849         1107     11520        4960    600   \n774         61         2793          166      6900        4200    617   \n775         99         5217           83     19840        6510    630   \n776         63         2988         1726      4990        3560    500   \n\n     Personal  PhD  Terminal  S.F.Ratio  perc.alumni  Expend  Grad.Rate  \n0        2200   70        78       18.1           12    7041         60  \n1        1500   29        30       12.2           16   10527         56  \n2        1165   53        66       12.9           30    8735         54  \n3         875   92        97        7.7           37   19016         59  \n4        1500   76        72       11.9            2   10922         15  \n..        ...  ...       ...        ...          ...     ...        ...  \n772      1200   60        60       21.0           14    4469         40  \n773      1250   73        75       13.3           31    9189         83  \n774       781   67        75       14.4           20    8323         49  \n775      2115   96        96        5.8           49   40386         99  \n776      1250   75        75       18.1           28    4509         99  \n\n[777 rows x 19 columns]\n\n\n\n\n(b) Look at the data used in the notebook by creating and running a new cell with just the code college in it. You should notice that the first column is just the name of each university in a column named something like Unnamed: 0. We don’t really want pandas to treat this as data. However, it may be handy to have these names for later. Try the following commands and similarly look at the resulting data frames:\n\n\ncollege2 = pd.read_csv('ISLP_data/College.csv', index_col=0)\n#college2\n\ncollege3 = college.rename({'Unnamed: 0': 'college'},\n  axis=1)\n#college3\n\ncollege3 = college3.set_index('college')\n#college3\n\nThis has used the first column in the file as an index for the data frame. This means that pandas has given each row a name corresponding to the appropriate university. Now you should see that the first data column is Private. Note that the names of the colleges appear on the left of the table. We also introduced a new python object above: a dictionary, which is specified by (key, value) pairs. Keep your modified version of the data with the following:\n\ncollege = college3\ncollege\n\n                               Private   Apps  Accept  Enroll  Top10perc  \\\ncollege                                                                    \nAbilene Christian University       Yes   1660    1232     721         23   \nAdelphi University                 Yes   2186    1924     512         16   \nAdrian College                     Yes   1428    1097     336         22   \nAgnes Scott College                Yes    417     349     137         60   \nAlaska Pacific University          Yes    193     146      55         16   \n...                                ...    ...     ...     ...        ...   \nWorcester State College             No   2197    1515     543          4   \nXavier University                  Yes   1959    1805     695         24   \nXavier University of Louisiana     Yes   2097    1915     695         34   \nYale University                    Yes  10705    2453    1317         95   \nYork College of Pennsylvania       Yes   2989    1855     691         28   \n\n                                Top25perc  F.Undergrad  P.Undergrad  Outstate  \\\ncollege                                                                         \nAbilene Christian University           52         2885          537      7440   \nAdelphi University                     29         2683         1227     12280   \nAdrian College                         50         1036           99     11250   \nAgnes Scott College                    89          510           63     12960   \nAlaska Pacific University              44          249          869      7560   \n...                                   ...          ...          ...       ...   \nWorcester State College                26         3089         2029      6797   \nXavier University                      47         2849         1107     11520   \nXavier University of Louisiana         61         2793          166      6900   \nYale University                        99         5217           83     19840   \nYork College of Pennsylvania           63         2988         1726      4990   \n\n                                Room.Board  Books  Personal  PhD  Terminal  \\\ncollege                                                                      \nAbilene Christian University          3300    450      2200   70        78   \nAdelphi University                    6450    750      1500   29        30   \nAdrian College                        3750    400      1165   53        66   \nAgnes Scott College                   5450    450       875   92        97   \nAlaska Pacific University             4120    800      1500   76        72   \n...                                    ...    ...       ...  ...       ...   \nWorcester State College               3900    500      1200   60        60   \nXavier University                     4960    600      1250   73        75   \nXavier University of Louisiana        4200    617       781   67        75   \nYale University                       6510    630      2115   96        96   \nYork College of Pennsylvania          3560    500      1250   75        75   \n\n                                S.F.Ratio  perc.alumni  Expend  Grad.Rate  \ncollege                                                                    \nAbilene Christian University         18.1           12    7041         60  \nAdelphi University                   12.2           16   10527         56  \nAdrian College                       12.9           30    8735         54  \nAgnes Scott College                   7.7           37   19016         59  \nAlaska Pacific University            11.9            2   10922         15  \n...                                   ...          ...     ...        ...  \nWorcester State College              21.0           14    4469         40  \nXavier University                    13.3           31    9189         83  \nXavier University of Louisiana       14.4           20    8323         49  \nYale University                       5.8           49   40386         99  \nYork College of Pennsylvania         18.1           28    4509         99  \n\n[777 rows x 18 columns]\n\n\n\n\n(c) Use the describe() method to produce a numerical summary of the variables in the data set.\n\ncollege.describe()\n\n               Apps        Accept       Enroll   Top10perc   Top25perc  \\\ncount    777.000000    777.000000   777.000000  777.000000  777.000000   \nmean    3001.638353   2018.804376   779.972973   27.558559   55.796654   \nstd     3870.201484   2451.113971   929.176190   17.640364   19.804778   \nmin       81.000000     72.000000    35.000000    1.000000    9.000000   \n25%      776.000000    604.000000   242.000000   15.000000   41.000000   \n50%     1558.000000   1110.000000   434.000000   23.000000   54.000000   \n75%     3624.000000   2424.000000   902.000000   35.000000   69.000000   \nmax    48094.000000  26330.000000  6392.000000   96.000000  100.000000   \n\n        F.Undergrad   P.Undergrad      Outstate   Room.Board        Books  \\\ncount    777.000000    777.000000    777.000000   777.000000   777.000000   \nmean    3699.907336    855.298584  10440.669241  4357.526384   549.380952   \nstd     4850.420531   1522.431887   4023.016484  1096.696416   165.105360   \nmin      139.000000      1.000000   2340.000000  1780.000000    96.000000   \n25%      992.000000     95.000000   7320.000000  3597.000000   470.000000   \n50%     1707.000000    353.000000   9990.000000  4200.000000   500.000000   \n75%     4005.000000    967.000000  12925.000000  5050.000000   600.000000   \nmax    31643.000000  21836.000000  21700.000000  8124.000000  2340.000000   \n\n          Personal         PhD    Terminal   S.F.Ratio  perc.alumni  \\\ncount   777.000000  777.000000  777.000000  777.000000   777.000000   \nmean   1340.642214   72.660232   79.702703   14.089704    22.743887   \nstd     677.071454   16.328155   14.722359    3.958349    12.391801   \nmin     250.000000    8.000000   24.000000    2.500000     0.000000   \n25%     850.000000   62.000000   71.000000   11.500000    13.000000   \n50%    1200.000000   75.000000   82.000000   13.600000    21.000000   \n75%    1700.000000   85.000000   92.000000   16.500000    31.000000   \nmax    6800.000000  103.000000  100.000000   39.800000    64.000000   \n\n             Expend  Grad.Rate  \ncount    777.000000  777.00000  \nmean    9660.171171   65.46332  \nstd     5221.768440   17.17771  \nmin     3186.000000   10.00000  \n25%     6751.000000   53.00000  \n50%     8377.000000   65.00000  \n75%    10830.000000   78.00000  \nmax    56233.000000  118.00000  \n\n\n\n\n(d) Use the pd.plotting.scatter_matrix() function to produce a scatterplot matrix of the first columns [Top10perc, Apps, Enroll]. Recall that you can reference a list C of columns of a data frame A using A[C].\n\n#fig, ax = subplots(figsize=(8, 8))\npd.plotting.scatter_matrix(college[['Top10perc','Apps','Enroll']])\n\narray([[&lt;AxesSubplot:xlabel='Top10perc', ylabel='Top10perc'&gt;,\n        &lt;AxesSubplot:xlabel='Apps', ylabel='Top10perc'&gt;,\n        &lt;AxesSubplot:xlabel='Enroll', ylabel='Top10perc'&gt;],\n       [&lt;AxesSubplot:xlabel='Top10perc', ylabel='Apps'&gt;,\n        &lt;AxesSubplot:xlabel='Apps', ylabel='Apps'&gt;,\n        &lt;AxesSubplot:xlabel='Enroll', ylabel='Apps'&gt;],\n       [&lt;AxesSubplot:xlabel='Top10perc', ylabel='Enroll'&gt;,\n        &lt;AxesSubplot:xlabel='Apps', ylabel='Enroll'&gt;,\n        &lt;AxesSubplot:xlabel='Enroll', ylabel='Enroll'&gt;]], dtype=object)\n\n#plt.show()\n\n\n\n\n\n\n(e) Use the boxplot() method of college to produce side-by-side boxplots of Outstate versus Private.\n\n\n(f) Create a new qualitative variable, called Elite, by binning the Top10perc variable into two groups based on whether or not the proportion of students coming from the top 10% of their high school classes exceeds 50%.\n\ncollege['Elite'] = pd.cut(college['Top10perc'],\n  [0,0.5,1],\n  labels=['No', 'Yes'])\n\nUse the value_counts() method of college['Elite'] to see how many elite universities there are. Finally, use the boxplot() method again to produce side-by-side boxplots of Outstate versus Elite.\n\ncollege['Elite'].value_counts()\n\nYes    3\nNo     0\nName: Elite, dtype: int64\n\n\n\n\n(g) Use the plot.hist() method of college to produce some histograms with difering numbers of bins for a few of the quantitative variables. The command plt.subplots(2, 2) may be useful: it will divide the plot window into four regions so that four plots can be made simultaneously. By changing the arguments you can divide the screen up in other combinations.\n\n\n(h) Continue exploring the data, and provide a brief summary of what you discover."
+    "section": "",
+    "text": "Private : Public/private indicator\nApps : Number of applications received\nAccept : Number of applicants accepted\nEnroll : Number of new students enrolled\nTop10perc : New students from top 10 % of high school class\nTop25perc : New students from top 25 % of high school class\nF.Undergrad : Number of full-time undergraduates\nP.Undergrad : Number of part-time undergraduates\nOutstate : Out-of-state tuition\nRoom.Board : Room and board costs\nBooks : Estimated book costs\nPersonal : Estimated personal spending\nPhD : Percent of faculty with Ph.D.s\nTerminal : Percent of faculty with terminal degree\nS.F.Ratio : Student/faculty ratio\nperc.alumni : Percent of alumni who donate\nExpend : Instructional expenditure per student\nGrad.Rate : Graduation rate\n\n\n\n(a) Use the pd.read_csv() function to read the data into Python. Call the loaded data college. Make sure that you have the directory set to the correct location for the data.\n\ncollege = pd.read_csv('ISLP_data/College.csv')\ncollege\n\n                         Unnamed: 0 Private   Apps  Accept  Enroll  Top10perc  \\\n0      Abilene Christian University     Yes   1660    1232     721         23   \n1                Adelphi University     Yes   2186    1924     512         16   \n2                    Adrian College     Yes   1428    1097     336         22   \n3               Agnes Scott College     Yes    417     349     137         60   \n4         Alaska Pacific University     Yes    193     146      55         16   \n..                              ...     ...    ...     ...     ...        ...   \n772         Worcester State College      No   2197    1515     543          4   \n773               Xavier University     Yes   1959    1805     695         24   \n774  Xavier University of Louisiana     Yes   2097    1915     695         34   \n775                 Yale University     Yes  10705    2453    1317         95   \n776    York College of Pennsylvania     Yes   2989    1855     691         28   \n\n     Top25perc  F.Undergrad  P.Undergrad  Outstate  Room.Board  Books  \\\n0           52         2885          537      7440        3300    450   \n1           29         2683         1227     12280        6450    750   \n2           50         1036           99     11250        3750    400   \n3           89          510           63     12960        5450    450   \n4           44          249          869      7560        4120    800   \n..         ...          ...          ...       ...         ...    ...   \n772         26         3089         2029      6797        3900    500   \n773         47         2849         1107     11520        4960    600   \n774         61         2793          166      6900        4200    617   \n775         99         5217           83     19840        6510    630   \n776         63         2988         1726      4990        3560    500   \n\n     Personal  PhD  Terminal  S.F.Ratio  perc.alumni  Expend  Grad.Rate  \n0        2200   70        78       18.1           12    7041         60  \n1        1500   29        30       12.2           16   10527         56  \n2        1165   53        66       12.9           30    8735         54  \n3         875   92        97        7.7           37   19016         59  \n4        1500   76        72       11.9            2   10922         15  \n..        ...  ...       ...        ...          ...     ...        ...  \n772      1200   60        60       21.0           14    4469         40  \n773      1250   73        75       13.3           31    9189         83  \n774       781   67        75       14.4           20    8323         49  \n775      2115   96        96        5.8           49   40386         99  \n776      1250   75        75       18.1           28    4509         99  \n\n[777 rows x 19 columns]\n\n\n\n\n(b) Look at the data used in the notebook by creating and running a new cell with just the code college in it. You should notice that the first column is just the name of each university in a column named something like Unnamed: 0. We don’t really want pandas to treat this as data. However, it may be handy to have these names for later. Try the following commands and similarly look at the resulting data frames:\n\n\ncollege2 = pd.read_csv('ISLP_data/College.csv', index_col=0)\n#college2\n\ncollege3 = college.rename({'Unnamed: 0': 'college'},\n  axis=1)\n#college3\n\ncollege3 = college3.set_index('college')\n#college3\n\nThis has used the first column in the file as an index for the data frame. This means that pandas has given each row a name corresponding to the appropriate university. Now you should see that the first data column is Private. Note that the names of the colleges appear on the left of the table. We also introduced a new python object above: a dictionary, which is specified by (key, value) pairs. Keep your modified version of the data with the following:\n\ncollege = college3\ncollege\n\n                               Private   Apps  Accept  Enroll  Top10perc  \\\ncollege                                                                    \nAbilene Christian University       Yes   1660    1232     721         23   \nAdelphi University                 Yes   2186    1924     512         16   \nAdrian College                     Yes   1428    1097     336         22   \nAgnes Scott College                Yes    417     349     137         60   \nAlaska Pacific University          Yes    193     146      55         16   \n...                                ...    ...     ...     ...        ...   \nWorcester State College             No   2197    1515     543          4   \nXavier University                  Yes   1959    1805     695         24   \nXavier University of Louisiana     Yes   2097    1915     695         34   \nYale University                    Yes  10705    2453    1317         95   \nYork College of Pennsylvania       Yes   2989    1855     691         28   \n\n                                Top25perc  F.Undergrad  P.Undergrad  Outstate  \\\ncollege                                                                         \nAbilene Christian University           52         2885          537      7440   \nAdelphi University                     29         2683         1227     12280   \nAdrian College                         50         1036           99     11250   \nAgnes Scott College                    89          510           63     12960   \nAlaska Pacific University              44          249          869      7560   \n...                                   ...          ...          ...       ...   \nWorcester State College                26         3089         2029      6797   \nXavier University                      47         2849         1107     11520   \nXavier University of Louisiana         61         2793          166      6900   \nYale University                        99         5217           83     19840   \nYork College of Pennsylvania           63         2988         1726      4990   \n\n                                Room.Board  Books  Personal  PhD  Terminal  \\\ncollege                                                                      \nAbilene Christian University          3300    450      2200   70        78   \nAdelphi University                    6450    750      1500   29        30   \nAdrian College                        3750    400      1165   53        66   \nAgnes Scott College                   5450    450       875   92        97   \nAlaska Pacific University             4120    800      1500   76        72   \n...                                    ...    ...       ...  ...       ...   \nWorcester State College               3900    500      1200   60        60   \nXavier University                     4960    600      1250   73        75   \nXavier University of Louisiana        4200    617       781   67        75   \nYale University                       6510    630      2115   96        96   \nYork College of Pennsylvania          3560    500      1250   75        75   \n\n                                S.F.Ratio  perc.alumni  Expend  Grad.Rate  \ncollege                                                                    \nAbilene Christian University         18.1           12    7041         60  \nAdelphi University                   12.2           16   10527         56  \nAdrian College                       12.9           30    8735         54  \nAgnes Scott College                   7.7           37   19016         59  \nAlaska Pacific University            11.9            2   10922         15  \n...                                   ...          ...     ...        ...  \nWorcester State College              21.0           14    4469         40  \nXavier University                    13.3           31    9189         83  \nXavier University of Louisiana       14.4           20    8323         49  \nYale University                       5.8           49   40386         99  \nYork College of Pennsylvania         18.1           28    4509         99  \n\n[777 rows x 18 columns]\n\n\n\n\n(c) Use the describe() method to produce a numerical summary of the variables in the data set.\n\ncollege.describe()\n\n               Apps        Accept       Enroll   Top10perc   Top25perc  \\\ncount    777.000000    777.000000   777.000000  777.000000  777.000000   \nmean    3001.638353   2018.804376   779.972973   27.558559   55.796654   \nstd     3870.201484   2451.113971   929.176190   17.640364   19.804778   \nmin       81.000000     72.000000    35.000000    1.000000    9.000000   \n25%      776.000000    604.000000   242.000000   15.000000   41.000000   \n50%     1558.000000   1110.000000   434.000000   23.000000   54.000000   \n75%     3624.000000   2424.000000   902.000000   35.000000   69.000000   \nmax    48094.000000  26330.000000  6392.000000   96.000000  100.000000   \n\n        F.Undergrad   P.Undergrad      Outstate   Room.Board        Books  \\\ncount    777.000000    777.000000    777.000000   777.000000   777.000000   \nmean    3699.907336    855.298584  10440.669241  4357.526384   549.380952   \nstd     4850.420531   1522.431887   4023.016484  1096.696416   165.105360   \nmin      139.000000      1.000000   2340.000000  1780.000000    96.000000   \n25%      992.000000     95.000000   7320.000000  3597.000000   470.000000   \n50%     1707.000000    353.000000   9990.000000  4200.000000   500.000000   \n75%     4005.000000    967.000000  12925.000000  5050.000000   600.000000   \nmax    31643.000000  21836.000000  21700.000000  8124.000000  2340.000000   \n\n          Personal         PhD    Terminal   S.F.Ratio  perc.alumni  \\\ncount   777.000000  777.000000  777.000000  777.000000   777.000000   \nmean   1340.642214   72.660232   79.702703   14.089704    22.743887   \nstd     677.071454   16.328155   14.722359    3.958349    12.391801   \nmin     250.000000    8.000000   24.000000    2.500000     0.000000   \n25%     850.000000   62.000000   71.000000   11.500000    13.000000   \n50%    1200.000000   75.000000   82.000000   13.600000    21.000000   \n75%    1700.000000   85.000000   92.000000   16.500000    31.000000   \nmax    6800.000000  103.000000  100.000000   39.800000    64.000000   \n\n             Expend  Grad.Rate  \ncount    777.000000  777.00000  \nmean    9660.171171   65.46332  \nstd     5221.768440   17.17771  \nmin     3186.000000   10.00000  \n25%     6751.000000   53.00000  \n50%     8377.000000   65.00000  \n75%    10830.000000   78.00000  \nmax    56233.000000  118.00000  \n\n\n\n\n(d) Use the pd.plotting.scatter_matrix() function to produce a scatterplot matrix of the first columns [Top10perc, Apps, Enroll]. Recall that you can reference a list C of columns of a data frame A using A[C].\n\n#fig, ax = subplots(figsize=(8, 8))\npd.plotting.scatter_matrix(college[['Top10perc','Apps','Enroll']])\n\narray([[&lt;AxesSubplot:xlabel='Top10perc', ylabel='Top10perc'&gt;,\n        &lt;AxesSubplot:xlabel='Apps', ylabel='Top10perc'&gt;,\n        &lt;AxesSubplot:xlabel='Enroll', ylabel='Top10perc'&gt;],\n       [&lt;AxesSubplot:xlabel='Top10perc', ylabel='Apps'&gt;,\n        &lt;AxesSubplot:xlabel='Apps', ylabel='Apps'&gt;,\n        &lt;AxesSubplot:xlabel='Enroll', ylabel='Apps'&gt;],\n       [&lt;AxesSubplot:xlabel='Top10perc', ylabel='Enroll'&gt;,\n        &lt;AxesSubplot:xlabel='Apps', ylabel='Enroll'&gt;,\n        &lt;AxesSubplot:xlabel='Enroll', ylabel='Enroll'&gt;]], dtype=object)\n\n#plt.show()\n\n\n\n\n\n\n\n\n\n\n(e) Use the boxplot() method of college to produce side-by-side boxplots of Outstate versus Private.\n\n\n(f) Create a new qualitative variable, called Elite, by binning the Top10perc variable into two groups based on whether or not the proportion of students coming from the top 10% of their high school classes exceeds 50%.\n\ncollege['Elite'] = pd.cut(college['Top10perc'],\n  [0,0.5,1],\n  labels=['No', 'Yes'])\n\nUse the value_counts() method of college['Elite'] to see how many elite universities there are. Finally, use the boxplot() method again to produce side-by-side boxplots of Outstate versus Elite.\n\ncollege['Elite'].value_counts()\n\nYes    3\nNo     0\nName: Elite, dtype: int64\n\n\n\n\n(g) Use the plot.hist() method of college to produce some histograms with difering numbers of bins for a few of the quantitative variables. The command plt.subplots(2, 2) may be useful: it will divide the plot window into four regions so that four plots can be made simultaneously. By changing the arguments you can divide the screen up in other combinations.\n\n\n(h) Continue exploring the data, and provide a brief summary of what you discover.",
+    "crumbs": [
+      "2. Statistical Learning",
+      "Applied Exercises"
+    ]
   },
   {
     "objectID": "02_exercises.html#this-exercise-involves-the-auto-data-set-studied-in-the-lab.-make-sure-that-the-missing-values-have-been-removed-from-the-data.",
     "href": "02_exercises.html#this-exercise-involves-the-auto-data-set-studied-in-the-lab.-make-sure-that-the-missing-values-have-been-removed-from-the-data.",
     "title": "Applied Exercises",
     "section": "9. This exercise involves the Auto data set studied in the lab. Make sure that the missing values have been removed from the data.",
-    "text": "9. This exercise involves the Auto data set studied in the lab. Make sure that the missing values have been removed from the data.\n\nAuto = pd.read_csv('ISLP_data/Auto.csv',\n                    na_values=['?'])\nAuto\n\n      mpg  cylinders  displacement  horsepower  weight  acceleration  year  \\\n0    18.0          8         307.0       130.0    3504          12.0    70   \n1    15.0          8         350.0       165.0    3693          11.5    70   \n2    18.0          8         318.0       150.0    3436          11.0    70   \n3    16.0          8         304.0       150.0    3433          12.0    70   \n4    17.0          8         302.0       140.0    3449          10.5    70   \n..    ...        ...           ...         ...     ...           ...   ...   \n392  27.0          4         140.0        86.0    2790          15.6    82   \n393  44.0          4          97.0        52.0    2130          24.6    82   \n394  32.0          4         135.0        84.0    2295          11.6    82   \n395  28.0          4         120.0        79.0    2625          18.6    82   \n396  31.0          4         119.0        82.0    2720          19.4    82   \n\n     origin                       name  \n0         1  chevrolet chevelle malibu  \n1         1          buick skylark 320  \n2         1         plymouth satellite  \n3         1              amc rebel sst  \n4         1                ford torino  \n..      ...                        ...  \n392       1            ford mustang gl  \n393       2                  vw pickup  \n394       1              dodge rampage  \n395       1                ford ranger  \n396       1                 chevy s-10  \n\n[397 rows x 9 columns]\n\n\n\n(a) Which of the predictors are quantitative, and which are qualitative?\nMpg, Displacement, Horsepower, Weight and Acceleration are quantitative. Cylinders, Year, Origin, and Name are qualitative.\n\nAuto.info()\n\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 397 entries, 0 to 396\nData columns (total 9 columns):\n #   Column        Non-Null Count  Dtype  \n---  ------        --------------  -----  \n 0   mpg           397 non-null    float64\n 1   cylinders     397 non-null    int64  \n 2   displacement  397 non-null    float64\n 3   horsepower    392 non-null    float64\n 4   weight        397 non-null    int64  \n 5   acceleration  397 non-null    float64\n 6   year          397 non-null    int64  \n 7   origin        397 non-null    int64  \n 8   name          397 non-null    object \ndtypes: float64(4), int64(4), object(1)\nmemory usage: 28.0+ KB\n\n\n\nAuto['cylinders'] = Auto['cylinders'].astype('object') \nAuto['cylinders']\n\n0      8\n1      8\n2      8\n3      8\n4      8\n      ..\n392    4\n393    4\n394    4\n395    4\n396    4\nName: cylinders, Length: 397, dtype: object\n\n\n\n\n(b) What is the range of each quantitative predictor? You can answer this using the min() and max() methods in numpy.\n\nmpg_min = Auto['mpg'].min( )\nmpg_max = Auto['mpg'].max( )\n\nprint('The min and max miles per gallon are', (mpg_min, mpg_max))\n\nThe min and max miles per gallon are (9.0, 46.6)\n\n\n\ndsp_min = Auto['displacement'].min( )\ndsp_max = Auto['displacement'].max( )\n\nprint('The min and max displacement are', (dsp_min, dsp_max))\n\nThe min and max displacement are (68.0, 455.0)\n\n\n\nhpwr_min = Auto['horsepower'].min( )\nhpwr_max = Auto['horsepower'].max( )\n\nprint('The min and max horsepower are', (hpwr_min, hpwr_max))\n\nThe min and max horsepower are (46.0, 230.0)\n\n\n\nwt_min = Auto['weight'].min( )\nwt_max = Auto['weight'].max( )\n\nprint('The min and max weights are', (wt_min, wt_max))\n\nThe min and max weights are (1613, 5140)\n\n\n\nacc_min = Auto['acceleration'].min( )\nacc_max = Auto['acceleration'].max( )\n\nprint('The min and max accelerations are', (acc_min, acc_max))\n\nThe min and max accelerations are (8.0, 24.8)\n\n\n\n\n(c) What is the mean and standard deviation of each quantitative predictor?\n\nmpg_mean = Auto['mpg'].mean( )\nmpg_sd = Auto['mpg'].std( )\n\nprint('The mean and standard deviation of miles per gallon are', mpg_mean,'and', mpg_sd)\n\nThe mean and standard deviation of miles per gallon are 23.515869017632248 and 7.825803928946562\n\n\n\ndsp_mean = Auto['displacement'].mean( )\ndsp_sd = Auto['displacement'].std( )\n\nprint('The mean and standard deviation of weight are', dsp_mean,'and', dsp_sd)\n\nThe mean and standard deviation of weight are 193.53274559193954 and 104.37958329992945\n\n\n\nhpwr_mean = Auto['horsepower'].mean( )\nhpwr_sd = Auto['horsepower'].std( )\n\nprint('The mean and standard deviation of horsepower are', hpwr_mean,'and', hpwr_sd)\n\nThe mean and standard deviation of horsepower are 104.46938775510205 and 38.49115993282855\n\n\n\nwt_mean = Auto['weight'].mean( )\nwt_sd = Auto['weight'].std( )\n\nprint('The mean and standard deviation of weight are', wt_mean,'and', wt_sd)\n\nThe mean and standard deviation of weight are 2970.2619647355164 and 847.9041194897246\n\n\n\nacc_mean = Auto['acceleration'].mean( )\nacc_sd = Auto['acceleration'].std( )\n\nprint('The mean and standard deviation of acceleration are', acc_mean,'and', acc_sd)\n\nThe mean and standard deviation of acceleration are 15.555667506297214 and 2.7499952929761515\n\n\n\n\n(d) Now remove the 10th through 85th observations. What is the range, mean, and standard deviation of each predictor in the subset of the data that remains?\n\nAuto_new = Auto.drop(Auto.index[10:85])\nAuto_new\n\n      mpg cylinders  displacement  horsepower  weight  acceleration  year  \\\n0    18.0         8         307.0       130.0    3504          12.0    70   \n1    15.0         8         350.0       165.0    3693          11.5    70   \n2    18.0         8         318.0       150.0    3436          11.0    70   \n3    16.0         8         304.0       150.0    3433          12.0    70   \n4    17.0         8         302.0       140.0    3449          10.5    70   \n..    ...       ...           ...         ...     ...           ...   ...   \n392  27.0         4         140.0        86.0    2790          15.6    82   \n393  44.0         4          97.0        52.0    2130          24.6    82   \n394  32.0         4         135.0        84.0    2295          11.6    82   \n395  28.0         4         120.0        79.0    2625          18.6    82   \n396  31.0         4         119.0        82.0    2720          19.4    82   \n\n     origin                       name  \n0         1  chevrolet chevelle malibu  \n1         1          buick skylark 320  \n2         1         plymouth satellite  \n3         1              amc rebel sst  \n4         1                ford torino  \n..      ...                        ...  \n392       1            ford mustang gl  \n393       2                  vw pickup  \n394       1              dodge rampage  \n395       1                ford ranger  \n396       1                 chevy s-10  \n\n[322 rows x 9 columns]\n\n\n\nmpg_min = Auto_new['mpg'].min( )\nmpg_max = Auto_new['mpg'].max( )\n\nprint('The min and max miles per gallon of the subsetted data are', (mpg_min, mpg_max))\n\nThe min and max miles per gallon of the subsetted data are (11.0, 46.6)\n\nmpg_mean = Auto_new['mpg'].mean( )\nmpg_sd = Auto_new['mpg'].std( )\n\nprint('The mean and standard deviation of miles per gallon of the subsetted data are', mpg_mean,'and', mpg_sd)\n\nThe mean and standard deviation of miles per gallon of the subsetted data are 24.40931677018633 and 7.913357147165568\n\n\n\ndsp_min = Auto_new['displacement'].min( )\ndsp_max = Auto_new['displacement'].max( )\n\nprint('The min and max displacement of the subsetted data are', (dsp_min, dsp_max))\n\nThe min and max displacement of the subsetted data are (68.0, 455.0)\n\ndsp_mean = Auto_new['displacement'].mean( )\ndsp_sd = Auto_new['displacement'].std( )\n\nprint('The mean and standard deviation of weight of the subsetted data are', dsp_mean,'and', dsp_sd)\n\nThe mean and standard deviation of weight of the subsetted data are 187.6801242236025 and 100.12092459330134\n\n\n\nhpwr_min = Auto['horsepower'].min( )\nhpwr_max = Auto['horsepower'].max( )\n\nprint('The min and max horsepower of the subsetted data are', (hpwr_min, hpwr_max))\n\nThe min and max horsepower of the subsetted data are (46.0, 230.0)\n\nhpwr_mean = Auto['horsepower'].mean( )\nhpwr_sd = Auto['horsepower'].std( )\n\nprint('The mean and standard deviation of horsepower of the subsetted data are', hpwr_mean,'and', hpwr_sd)\n\nThe mean and standard deviation of horsepower of the subsetted data are 104.46938775510205 and 38.49115993282855\n\n\n\nwt_min = Auto['weight'].min( )\nwt_max = Auto['weight'].max( )\n\nprint('The min and max weights of the subsetted data are', (wt_min, wt_max))\n\nThe min and max weights of the subsetted data are (1613, 5140)\n\nwt_mean = Auto['weight'].mean( )\nwt_sd = Auto['weight'].std( )\n\nprint('The mean and standard deviation of weight of the subsetted data are', wt_mean,'and', wt_sd)\n\nThe mean and standard deviation of weight of the subsetted data are 2970.2619647355164 and 847.9041194897246\n\n\n\nacc_min = Auto['acceleration'].min( )\nacc_max = Auto['acceleration'].max( )\n\nprint('The min and max accelerations of the subsetted data are', (acc_min, acc_max))\n\nThe min and max accelerations of the subsetted data are (8.0, 24.8)\n\nacc_mean = Auto['acceleration'].mean( )\nacc_sd = Auto['acceleration'].std( )\n\nprint('The mean and standard deviation of acceleration of the subsetted data are', acc_mean,'and', acc_sd)\n\nThe mean and standard deviation of acceleration of the subsetted data are 15.555667506297214 and 2.7499952929761515\n\n\n\n\n(e) Using the full data set, investigate the predictors graphically, using scatterplots or other tools of your choice. Create some plots highlighting the relationships among the predictors. Comment on your findings.\n\n\n(f) Suppose that we wish to predict gas mileage (mpg) on the basis of the other variables. Do your plots suggest that any of the other variables might be useful in predicting mpg? Justify your answer."
+    "text": "9. This exercise involves the Auto data set studied in the lab. Make sure that the missing values have been removed from the data.\n\nAuto = pd.read_csv('ISLP_data/Auto.csv',\n                    na_values=['?'])\nAuto\n\n      mpg  cylinders  displacement  horsepower  weight  acceleration  year  \\\n0    18.0          8         307.0       130.0    3504          12.0    70   \n1    15.0          8         350.0       165.0    3693          11.5    70   \n2    18.0          8         318.0       150.0    3436          11.0    70   \n3    16.0          8         304.0       150.0    3433          12.0    70   \n4    17.0          8         302.0       140.0    3449          10.5    70   \n..    ...        ...           ...         ...     ...           ...   ...   \n392  27.0          4         140.0        86.0    2790          15.6    82   \n393  44.0          4          97.0        52.0    2130          24.6    82   \n394  32.0          4         135.0        84.0    2295          11.6    82   \n395  28.0          4         120.0        79.0    2625          18.6    82   \n396  31.0          4         119.0        82.0    2720          19.4    82   \n\n     origin                       name  \n0         1  chevrolet chevelle malibu  \n1         1          buick skylark 320  \n2         1         plymouth satellite  \n3         1              amc rebel sst  \n4         1                ford torino  \n..      ...                        ...  \n392       1            ford mustang gl  \n393       2                  vw pickup  \n394       1              dodge rampage  \n395       1                ford ranger  \n396       1                 chevy s-10  \n\n[397 rows x 9 columns]\n\n\n\n(a) Which of the predictors are quantitative, and which are qualitative?\nMpg, Displacement, Horsepower, Weight and Acceleration are quantitative. Cylinders, Year, Origin, and Name are qualitative.\n\nAuto.info()\n\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 397 entries, 0 to 396\nData columns (total 9 columns):\n #   Column        Non-Null Count  Dtype  \n---  ------        --------------  -----  \n 0   mpg           397 non-null    float64\n 1   cylinders     397 non-null    int64  \n 2   displacement  397 non-null    float64\n 3   horsepower    392 non-null    float64\n 4   weight        397 non-null    int64  \n 5   acceleration  397 non-null    float64\n 6   year          397 non-null    int64  \n 7   origin        397 non-null    int64  \n 8   name          397 non-null    object \ndtypes: float64(4), int64(4), object(1)\nmemory usage: 28.0+ KB\n\n\n\nAuto['cylinders'] = Auto['cylinders'].astype('object') \nAuto['cylinders']\n\n0      8\n1      8\n2      8\n3      8\n4      8\n      ..\n392    4\n393    4\n394    4\n395    4\n396    4\nName: cylinders, Length: 397, dtype: object\n\n\n\n\n(b) What is the range of each quantitative predictor? You can answer this using the min() and max() methods in numpy.\n\nmpg_min = Auto['mpg'].min( )\nmpg_max = Auto['mpg'].max( )\n\nprint('The min and max miles per gallon are', (mpg_min, mpg_max))\n\nThe min and max miles per gallon are (9.0, 46.6)\n\n\n\ndsp_min = Auto['displacement'].min( )\ndsp_max = Auto['displacement'].max( )\n\nprint('The min and max displacement are', (dsp_min, dsp_max))\n\nThe min and max displacement are (68.0, 455.0)\n\n\n\nhpwr_min = Auto['horsepower'].min( )\nhpwr_max = Auto['horsepower'].max( )\n\nprint('The min and max horsepower are', (hpwr_min, hpwr_max))\n\nThe min and max horsepower are (46.0, 230.0)\n\n\n\nwt_min = Auto['weight'].min( )\nwt_max = Auto['weight'].max( )\n\nprint('The min and max weights are', (wt_min, wt_max))\n\nThe min and max weights are (1613, 5140)\n\n\n\nacc_min = Auto['acceleration'].min( )\nacc_max = Auto['acceleration'].max( )\n\nprint('The min and max accelerations are', (acc_min, acc_max))\n\nThe min and max accelerations are (8.0, 24.8)\n\n\n\n\n(c) What is the mean and standard deviation of each quantitative predictor?\n\nmpg_mean = Auto['mpg'].mean( )\nmpg_sd = Auto['mpg'].std( )\n\nprint('The mean and standard deviation of miles per gallon are', mpg_mean,'and', mpg_sd)\n\nThe mean and standard deviation of miles per gallon are 23.515869017632248 and 7.825803928946562\n\n\n\ndsp_mean = Auto['displacement'].mean( )\ndsp_sd = Auto['displacement'].std( )\n\nprint('The mean and standard deviation of weight are', dsp_mean,'and', dsp_sd)\n\nThe mean and standard deviation of weight are 193.53274559193954 and 104.37958329992945\n\n\n\nhpwr_mean = Auto['horsepower'].mean( )\nhpwr_sd = Auto['horsepower'].std( )\n\nprint('The mean and standard deviation of horsepower are', hpwr_mean,'and', hpwr_sd)\n\nThe mean and standard deviation of horsepower are 104.46938775510205 and 38.49115993282855\n\n\n\nwt_mean = Auto['weight'].mean( )\nwt_sd = Auto['weight'].std( )\n\nprint('The mean and standard deviation of weight are', wt_mean,'and', wt_sd)\n\nThe mean and standard deviation of weight are 2970.2619647355164 and 847.9041194897246\n\n\n\nacc_mean = Auto['acceleration'].mean( )\nacc_sd = Auto['acceleration'].std( )\n\nprint('The mean and standard deviation of acceleration are', acc_mean,'and', acc_sd)\n\nThe mean and standard deviation of acceleration are 15.555667506297214 and 2.7499952929761515\n\n\n\n\n(d) Now remove the 10th through 85th observations. What is the range, mean, and standard deviation of each predictor in the subset of the data that remains?\n\nAuto_new = Auto.drop(Auto.index[10:85])\nAuto_new\n\n      mpg cylinders  displacement  horsepower  weight  acceleration  year  \\\n0    18.0         8         307.0       130.0    3504          12.0    70   \n1    15.0         8         350.0       165.0    3693          11.5    70   \n2    18.0         8         318.0       150.0    3436          11.0    70   \n3    16.0         8         304.0       150.0    3433          12.0    70   \n4    17.0         8         302.0       140.0    3449          10.5    70   \n..    ...       ...           ...         ...     ...           ...   ...   \n392  27.0         4         140.0        86.0    2790          15.6    82   \n393  44.0         4          97.0        52.0    2130          24.6    82   \n394  32.0         4         135.0        84.0    2295          11.6    82   \n395  28.0         4         120.0        79.0    2625          18.6    82   \n396  31.0         4         119.0        82.0    2720          19.4    82   \n\n     origin                       name  \n0         1  chevrolet chevelle malibu  \n1         1          buick skylark 320  \n2         1         plymouth satellite  \n3         1              amc rebel sst  \n4         1                ford torino  \n..      ...                        ...  \n392       1            ford mustang gl  \n393       2                  vw pickup  \n394       1              dodge rampage  \n395       1                ford ranger  \n396       1                 chevy s-10  \n\n[322 rows x 9 columns]\n\n\n\nmpg_min = Auto_new['mpg'].min( )\nmpg_max = Auto_new['mpg'].max( )\n\nprint('The min and max miles per gallon of the subsetted data are', (mpg_min, mpg_max))\n\nThe min and max miles per gallon of the subsetted data are (11.0, 46.6)\n\nmpg_mean = Auto_new['mpg'].mean( )\nmpg_sd = Auto_new['mpg'].std( )\n\nprint('The mean and standard deviation of miles per gallon of the subsetted data are', mpg_mean,'and', mpg_sd)\n\nThe mean and standard deviation of miles per gallon of the subsetted data are 24.40931677018633 and 7.913357147165568\n\n\n\ndsp_min = Auto_new['displacement'].min( )\ndsp_max = Auto_new['displacement'].max( )\n\nprint('The min and max displacement of the subsetted data are', (dsp_min, dsp_max))\n\nThe min and max displacement of the subsetted data are (68.0, 455.0)\n\ndsp_mean = Auto_new['displacement'].mean( )\ndsp_sd = Auto_new['displacement'].std( )\n\nprint('The mean and standard deviation of weight of the subsetted data are', dsp_mean,'and', dsp_sd)\n\nThe mean and standard deviation of weight of the subsetted data are 187.6801242236025 and 100.12092459330134\n\n\n\nhpwr_min = Auto['horsepower'].min( )\nhpwr_max = Auto['horsepower'].max( )\n\nprint('The min and max horsepower of the subsetted data are', (hpwr_min, hpwr_max))\n\nThe min and max horsepower of the subsetted data are (46.0, 230.0)\n\nhpwr_mean = Auto['horsepower'].mean( )\nhpwr_sd = Auto['horsepower'].std( )\n\nprint('The mean and standard deviation of horsepower of the subsetted data are', hpwr_mean,'and', hpwr_sd)\n\nThe mean and standard deviation of horsepower of the subsetted data are 104.46938775510205 and 38.49115993282855\n\n\n\nwt_min = Auto['weight'].min( )\nwt_max = Auto['weight'].max( )\n\nprint('The min and max weights of the subsetted data are', (wt_min, wt_max))\n\nThe min and max weights of the subsetted data are (1613, 5140)\n\nwt_mean = Auto['weight'].mean( )\nwt_sd = Auto['weight'].std( )\n\nprint('The mean and standard deviation of weight of the subsetted data are', wt_mean,'and', wt_sd)\n\nThe mean and standard deviation of weight of the subsetted data are 2970.2619647355164 and 847.9041194897246\n\n\n\nacc_min = Auto['acceleration'].min( )\nacc_max = Auto['acceleration'].max( )\n\nprint('The min and max accelerations of the subsetted data are', (acc_min, acc_max))\n\nThe min and max accelerations of the subsetted data are (8.0, 24.8)\n\nacc_mean = Auto['acceleration'].mean( )\nacc_sd = Auto['acceleration'].std( )\n\nprint('The mean and standard deviation of acceleration of the subsetted data are', acc_mean,'and', acc_sd)\n\nThe mean and standard deviation of acceleration of the subsetted data are 15.555667506297214 and 2.7499952929761515\n\n\n\n\n(e) Using the full data set, investigate the predictors graphically, using scatterplots or other tools of your choice. Create some plots highlighting the relationships among the predictors. Comment on your findings.\n\n\n(f) Suppose that we wish to predict gas mileage (mpg) on the basis of the other variables. Do your plots suggest that any of the other variables might be useful in predicting mpg? Justify your answer.",
+    "crumbs": [
+      "2. Statistical Learning",
+      "Applied Exercises"
+    ]
   },
   {
     "objectID": "02_exercises.html#this-exercise-involves-the-boston-housing-data-set.",
     "href": "02_exercises.html#this-exercise-involves-the-boston-housing-data-set.",
     "title": "Applied Exercises",
     "section": "10. This exercise involves the Boston housing data set.",
-    "text": "10. This exercise involves the Boston housing data set.\n\n(a) To begin, load in the Boston data set, which is part of the ISLP library.\n\nBoston = load_data(\"Boston\")\nBoston\n\n        crim    zn  indus  chas    nox     rm   age     dis  rad  tax  \\\n0    0.00632  18.0   2.31     0  0.538  6.575  65.2  4.0900    1  296   \n1    0.02731   0.0   7.07     0  0.469  6.421  78.9  4.9671    2  242   \n2    0.02729   0.0   7.07     0  0.469  7.185  61.1  4.9671    2  242   \n3    0.03237   0.0   2.18     0  0.458  6.998  45.8  6.0622    3  222   \n4    0.06905   0.0   2.18     0  0.458  7.147  54.2  6.0622    3  222   \n..       ...   ...    ...   ...    ...    ...   ...     ...  ...  ...   \n501  0.06263   0.0  11.93     0  0.573  6.593  69.1  2.4786    1  273   \n502  0.04527   0.0  11.93     0  0.573  6.120  76.7  2.2875    1  273   \n503  0.06076   0.0  11.93     0  0.573  6.976  91.0  2.1675    1  273   \n504  0.10959   0.0  11.93     0  0.573  6.794  89.3  2.3889    1  273   \n505  0.04741   0.0  11.93     0  0.573  6.030  80.8  2.5050    1  273   \n\n     ptratio  lstat  medv  \n0       15.3   4.98  24.0  \n1       17.8   9.14  21.6  \n2       17.8   4.03  34.7  \n3       18.7   2.94  33.4  \n4       18.7   5.33  36.2  \n..       ...    ...   ...  \n501     21.0   9.67  22.4  \n502     21.0   9.08  20.6  \n503     21.0   5.64  23.9  \n504     21.0   6.48  22.0  \n505     21.0   7.88  11.9  \n\n[506 rows x 13 columns]\n\n\n\n\n(b) How many rows are in this data set? How many columns? What do the rows and columns represent?\n\n\n(c) Make some pairwise scatterplots of the predictors (columns) in this data set. Describe your fndings.\n\n\n(d) Are any of the predictors associated with per capita crime rate? If so, explain the relationship.\n\n\n(e) Do any of the suburbs of Boston appear to have particularly high crime rates? Tax rates? Pupil-teacher ratios? Comment on the range of each predictor.\n\n\n(f) How many of the suburbs in this data set bound the Charles river?\n\n\n(g) What is the median pupil-teacher ratio among the towns in this data set?\n\n\n(h) Which suburb of Boston has lowest median value of owneroccupied homes? What are the values of the other predictors for that suburb, and how do those values compare to the overall ranges for those predictors? Comment on your fndings.\n\n\n(i) In this data set, how many of the suburbs average more than seven rooms per dwelling? More than eight rooms per dwelling? Comment on the suburbs that average more than eight rooms per dwelling."
+    "text": "10. This exercise involves the Boston housing data set.\n\n(a) To begin, load in the Boston data set, which is part of the ISLP library.\n\nBoston = load_data(\"Boston\")\nBoston\n\n        crim    zn  indus  chas    nox     rm   age     dis  rad  tax  \\\n0    0.00632  18.0   2.31     0  0.538  6.575  65.2  4.0900    1  296   \n1    0.02731   0.0   7.07     0  0.469  6.421  78.9  4.9671    2  242   \n2    0.02729   0.0   7.07     0  0.469  7.185  61.1  4.9671    2  242   \n3    0.03237   0.0   2.18     0  0.458  6.998  45.8  6.0622    3  222   \n4    0.06905   0.0   2.18     0  0.458  7.147  54.2  6.0622    3  222   \n..       ...   ...    ...   ...    ...    ...   ...     ...  ...  ...   \n501  0.06263   0.0  11.93     0  0.573  6.593  69.1  2.4786    1  273   \n502  0.04527   0.0  11.93     0  0.573  6.120  76.7  2.2875    1  273   \n503  0.06076   0.0  11.93     0  0.573  6.976  91.0  2.1675    1  273   \n504  0.10959   0.0  11.93     0  0.573  6.794  89.3  2.3889    1  273   \n505  0.04741   0.0  11.93     0  0.573  6.030  80.8  2.5050    1  273   \n\n     ptratio  lstat  medv  \n0       15.3   4.98  24.0  \n1       17.8   9.14  21.6  \n2       17.8   4.03  34.7  \n3       18.7   2.94  33.4  \n4       18.7   5.33  36.2  \n..       ...    ...   ...  \n501     21.0   9.67  22.4  \n502     21.0   9.08  20.6  \n503     21.0   5.64  23.9  \n504     21.0   6.48  22.0  \n505     21.0   7.88  11.9  \n\n[506 rows x 13 columns]\n\n\n\n\n(b) How many rows are in this data set? How many columns? What do the rows and columns represent?\n\n\n(c) Make some pairwise scatterplots of the predictors (columns) in this data set. Describe your fndings.\n\n\n(d) Are any of the predictors associated with per capita crime rate? If so, explain the relationship.\n\n\n(e) Do any of the suburbs of Boston appear to have particularly high crime rates? Tax rates? Pupil-teacher ratios? Comment on the range of each predictor.\n\n\n(f) How many of the suburbs in this data set bound the Charles river?\n\n\n(g) What is the median pupil-teacher ratio among the towns in this data set?\n\n\n(h) Which suburb of Boston has lowest median value of owneroccupied homes? What are the values of the other predictors for that suburb, and how do those values compare to the overall ranges for those predictors? Comment on your fndings.\n\n\n(i) In this data set, how many of the suburbs average more than seven rooms per dwelling? More than eight rooms per dwelling? Comment on the suburbs that average more than eight rooms per dwelling.",
+    "crumbs": [
+      "2. Statistical Learning",
+      "Applied Exercises"
+    ]
+  },
+  {
+    "objectID": "03_main.html",
+    "href": "03_main.html",
+    "title": "3. Linear Regression",
+    "section": "",
+    "text": "Learning Objectives",
+    "crumbs": [
+      "3. Linear Regression"
+    ]
   },
   {
     "objectID": "03_main.html#learning-objectives",
     "href": "03_main.html#learning-objectives",
     "title": "3. Linear Regression",
-    "section": "Learning Objectives",
-    "text": "Learning Objectives\n\nPerform linear regression with a single predictor variable.\nEstimate the standard error of regression coefficients.\nEvaluate the goodness of fit of a regression.\nPerform linear regression with multiple predictor variables.\nEvaluate the relative importance of variables in a multiple linear regression.\nInclude interaction effects in a multiple linear regression.\nPerform linear regression with qualitative predictor variables.\nModel non-linear relationships using polynomial regression.\nIdentify non-linearity in a data set.\nCompare and contrast linear regression with KNN regression."
+    "section": "",
+    "text": "Perform linear regression with a single predictor variable.\nEstimate the standard error of regression coefficients.\nEvaluate the goodness of fit of a regression.\nPerform linear regression with multiple predictor variables.\nEvaluate the relative importance of variables in a multiple linear regression.\nInclude interaction effects in a multiple linear regression.\nPerform linear regression with qualitative predictor variables.\nModel non-linear relationships using polynomial regression.\nIdentify non-linearity in a data set.\nCompare and contrast linear regression with KNN regression.",
+    "crumbs": [
+      "3. Linear Regression"
+    ]
+  },
+  {
+    "objectID": "03_notes.html",
+    "href": "03_notes.html",
+    "title": "Notes",
+    "section": "",
+    "text": "Questions to Answer\nRecall the Advertising data from Chapter 2. Here are a few important questions that we might seek to address:",
+    "crumbs": [
+      "3. Linear Regression",
+      "Notes"
+    ]
   },
   {
     "objectID": "03_notes.html#questions-to-answer",
     "href": "03_notes.html#questions-to-answer",
     "title": "Notes",
-    "section": "Questions to Answer",
-    "text": "Questions to Answer\nRecall the Advertising data from Chapter 2. Here are a few important questions that we might seek to address:\n\nIs there a relationship between advertising budget and sales?\nHow strong is the relationship between advertising budget and sales? Does knowledge of the advertising budget provide a lot of information about product sales?\nWhich media are associated with sales?\nHow large is the association between each medium and sales? For every dollar spent on advertising in a particular medium, by what amount will sales increase?\nHow accurately can we predict future sales?\nIs the relationship linear? If there is approximately a straight-line relationship between advertising expenditure in the various media and sales, then linear regression is an appropriate tool. If not, then it may still be possible to transform the predictor or the response so that linear regression can be used.\nIs there synergy among the advertising media? Or, in stats terms, is there an interaction effect?"
+    "section": "",
+    "text": "Is there a relationship between advertising budget and sales?\nHow strong is the relationship between advertising budget and sales? Does knowledge of the advertising budget provide a lot of information about product sales?\nWhich media are associated with sales?\nHow large is the association between each medium and sales? For every dollar spent on advertising in a particular medium, by what amount will sales increase?\nHow accurately can we predict future sales?\nIs the relationship linear? If there is approximately a straight-line relationship between advertising expenditure in the various media and sales, then linear regression is an appropriate tool. If not, then it may still be possible to transform the predictor or the response so that linear regression can be used.\nIs there synergy among the advertising media? Or, in stats terms, is there an interaction effect?",
+    "crumbs": [
+      "3. Linear Regression",
+      "Notes"
+    ]
   },
   {
     "objectID": "03_notes.html#simple-linear-regression-definition",
     "href": "03_notes.html#simple-linear-regression-definition",
     "title": "Notes",
     "section": "Simple Linear Regression: Definition",
-    "text": "Simple Linear Regression: Definition\nSimple linear regression: Very straightforward approach to predicting response \\(Y\\) on predictor \\(X\\).\n\\[Y \\approx \\beta_{0} + \\beta_{1}X\\]\n\nRead “\\(\\approx\\)” as “is approximately modeled by.”\n\\(\\beta_{0}\\) = intercept\n\\(\\beta_{1}\\) = slope\n\n\\[\\hat{y} = \\hat{\\beta}_{0} + \\hat{\\beta}_{1}x\\]\n\n\\(\\hat{\\beta}_{0}\\) = our approximation of intercept\n\\(\\hat{\\beta}_{1}\\) = our approximation of slope\n\\(x\\) = sample of \\(X\\)\n\\(\\hat{y}\\) = our prediction of \\(Y\\) from \\(x\\)\nhat symbol denotes “estimated value”\nLinear regression is a simple approach to supervised learning"
+    "text": "Simple Linear Regression: Definition\nSimple linear regression: Very straightforward approach to predicting response \\(Y\\) on predictor \\(X\\).\n\\[Y \\approx \\beta_{0} + \\beta_{1}X\\]\n\nRead “\\(\\approx\\)” as “is approximately modeled by.”\n\\(\\beta_{0}\\) = intercept\n\\(\\beta_{1}\\) = slope\n\n\\[\\hat{y} = \\hat{\\beta}_{0} + \\hat{\\beta}_{1}x\\]\n\n\\(\\hat{\\beta}_{0}\\) = our approximation of intercept\n\\(\\hat{\\beta}_{1}\\) = our approximation of slope\n\\(x\\) = sample of \\(X\\)\n\\(\\hat{y}\\) = our prediction of \\(Y\\) from \\(x\\)\nhat symbol denotes “estimated value”\nLinear regression is a simple approach to supervised learning",
+    "crumbs": [
+      "3. Linear Regression",
+      "Notes"
+    ]
   },
   {
     "objectID": "03_notes.html#simple-linear-regression-visualization",
     "href": "03_notes.html#simple-linear-regression-visualization",
     "title": "Notes",
     "section": "Simple Linear Regression: Visualization",
-    "text": "Simple Linear Regression: Visualization\n\n\n\n\n\nFor the Advertising data, the least squares fit for the regression of sales onto TV is shown. The fit is found by minimizing the residual sum of squares. Each grey line segment represents a residual. In this case a linear fit captures the essence of the relationship, although it overestimates the trend in the left of the plot."
+    "text": "Simple Linear Regression: Visualization\n\n\n\n\n\nFor the Advertising data, the least squares fit for the regression of sales onto TV is shown. The fit is found by minimizing the residual sum of squares. Each grey line segment represents a residual. In this case a linear fit captures the essence of the relationship, although it overestimates the trend in the left of the plot.",
+    "crumbs": [
+      "3. Linear Regression",
+      "Notes"
+    ]
   },
   {
     "objectID": "03_notes.html#simple-linear-regression-math",
     "href": "03_notes.html#simple-linear-regression-math",
     "title": "Notes",
     "section": "Simple Linear Regression: Math",
-    "text": "Simple Linear Regression: Math\n\nRSS = residual sum of squares\n\n\\[\\mathrm{RSS} = e^{2}_{1} + e^{2}_{2} + \\ldots + e^{2}_{n}\\]\n\\[\\mathrm{RSS} = (y_{1} - \\hat{\\beta}_{0} - \\hat{\\beta}_{1}x_{1})^{2} + (y_{2} - \\hat{\\beta}_{0} - \\hat{\\beta}_{1}x_{2})^{2} + \\ldots + (y_{n} - \\hat{\\beta}_{0} - \\hat{\\beta}_{1}x_{n})^{2}\\]\n\\[\\hat{\\beta}_{1} = \\frac{\\sum_{i=1}^{n}{(x_{i}-\\bar{x})(y_{i}-\\bar{y})}}{\\sum_{i=1}^{n}{(x_{i}-\\bar{x})^{2}}}\\]\n\\[\\hat{\\beta}_{0} = \\bar{y} - \\hat{\\beta}_{1}\\bar{x}\\]\n\n\\(\\bar{x}\\), \\(\\bar{y}\\) = sample means of \\(x\\) and \\(y\\)\n\n\nVisualization of Fit\n\n\n\n\n\nContour and three-dimensional plots of the RSS on the Advertising data, using sales as the response and TV as the predictor. The red dots correspond to the least squares estimates \\(\\\\hat\\\\beta_0\\) and \\(\\\\hat\\\\beta_1\\), given by (3.4).\n\n\n\n\nLearning Objectives:\n\nPerform linear regression with a single predictor variable."
+    "text": "Simple Linear Regression: Math\n\nRSS = residual sum of squares\n\n\\[\\mathrm{RSS} = e^{2}_{1} + e^{2}_{2} + \\ldots + e^{2}_{n}\\]\n\\[\\mathrm{RSS} = (y_{1} - \\hat{\\beta}_{0} - \\hat{\\beta}_{1}x_{1})^{2} + (y_{2} - \\hat{\\beta}_{0} - \\hat{\\beta}_{1}x_{2})^{2} + \\ldots + (y_{n} - \\hat{\\beta}_{0} - \\hat{\\beta}_{1}x_{n})^{2}\\]\n\\[\\hat{\\beta}_{1} = \\frac{\\sum_{i=1}^{n}{(x_{i}-\\bar{x})(y_{i}-\\bar{y})}}{\\sum_{i=1}^{n}{(x_{i}-\\bar{x})^{2}}}\\]\n\\[\\hat{\\beta}_{0} = \\bar{y} - \\hat{\\beta}_{1}\\bar{x}\\]\n\n\\(\\bar{x}\\), \\(\\bar{y}\\) = sample means of \\(x\\) and \\(y\\)\n\n\nVisualization of Fit\n\n\n\n\n\nContour and three-dimensional plots of the RSS on the Advertising data, using sales as the response and TV as the predictor. The red dots correspond to the least squares estimates \\(\\\\hat\\\\beta_0\\) and \\(\\\\hat\\\\beta_1\\), given by (3.4).\n\n\n\n\nLearning Objectives:\n\nPerform linear regression with a single predictor variable.",
+    "crumbs": [
+      "3. Linear Regression",
+      "Notes"
+    ]
   },
   {
     "objectID": "03_notes.html#assessing-accuracy-of-coefficient-estimates",
     "href": "03_notes.html#assessing-accuracy-of-coefficient-estimates",
     "title": "Notes",
     "section": "Assessing Accuracy of Coefficient Estimates",
-    "text": "Assessing Accuracy of Coefficient Estimates\n\\[Y = \\beta_{0} + \\beta_{1}X + \\epsilon\\]\n\nRSE = residual standard error\nEstimate of \\(\\sigma\\)\n\n\\[\\mathrm{RSE} = \\sqrt{\\frac{\\mathrm{RSS}}{n - 2}}\\]\n\\[\\mathrm{SE}(\\hat\\beta_0)^2 = \\sigma^2 \\left[\\frac{1}{n} + \\frac{\\bar{x}^2}{\\sum_{i=1}^n (x_i - \\bar{x})^2}\\right],\\ \\ \\mathrm{SE}(\\hat\\beta_1)^2 = \\frac{\\sigma^2}{\\sum_{i=1}^n (x_i - \\bar{x})^2}\\]\n\n95% confidence interval: a range of values such that with 95% probability, the range will contain the true unknown value of the parameter\n\nIf we take repeated samples and construct the confidence interval for each sample, 95% of the intervals will contain the true unknown value of the parameter\n\n\n\\[\\hat\\beta_1 \\pm 2\\ \\cdot \\ \\mathrm{SE}(\\hat\\beta_1)\\]\n\\[\\hat\\beta_0 \\pm 2\\ \\cdot \\ \\mathrm{SE}(\\hat\\beta_0)\\]\nLearning Objectives:\n\nEstimate the standard error of regression coefficients."
+    "text": "Assessing Accuracy of Coefficient Estimates\n\\[Y = \\beta_{0} + \\beta_{1}X + \\epsilon\\]\n\nRSE = residual standard error\nEstimate of \\(\\sigma\\)\n\n\\[\\mathrm{RSE} = \\sqrt{\\frac{\\mathrm{RSS}}{n - 2}}\\]\n\\[\\mathrm{SE}(\\hat\\beta_0)^2 = \\sigma^2 \\left[\\frac{1}{n} + \\frac{\\bar{x}^2}{\\sum_{i=1}^n (x_i - \\bar{x})^2}\\right],\\ \\ \\mathrm{SE}(\\hat\\beta_1)^2 = \\frac{\\sigma^2}{\\sum_{i=1}^n (x_i - \\bar{x})^2}\\]\n\n95% confidence interval: a range of values such that with 95% probability, the range will contain the true unknown value of the parameter\n\nIf we take repeated samples and construct the confidence interval for each sample, 95% of the intervals will contain the true unknown value of the parameter\n\n\n\\[\\hat\\beta_1 \\pm 2\\ \\cdot \\ \\mathrm{SE}(\\hat\\beta_1)\\]\n\\[\\hat\\beta_0 \\pm 2\\ \\cdot \\ \\mathrm{SE}(\\hat\\beta_0)\\]\nLearning Objectives:\n\nEstimate the standard error of regression coefficients.",
+    "crumbs": [
+      "3. Linear Regression",
+      "Notes"
+    ]
   },
   {
     "objectID": "03_notes.html#assessing-the-accuracy-of-the-model",
     "href": "03_notes.html#assessing-the-accuracy-of-the-model",
     "title": "Notes",
     "section": "Assessing the Accuracy of the Model",
-    "text": "Assessing the Accuracy of the Model\n\nRSE can be considered a measure of the lack of fit of the model. a\n\\(R^2\\) statistic (also called coefficient of determination) provides an alternative that is in the form of a proportion of the variance explained, ranges from 0 to 1, a good value depends on the application.\n\n\\[R^2 = 1 - \\frac{RSS}{TSS}\\]\nwhere TSS is the total sum of squarse:\n\\[TSS = \\Sigma (y_i - \\bar{y})^2\\]\nQuiz: Can \\(R^2\\) be negative?\nAnswer"
+    "text": "Assessing the Accuracy of the Model\n\nRSE can be considered a measure of the lack of fit of the model. a\n\\(R^2\\) statistic (also called coefficient of determination) provides an alternative that is in the form of a proportion of the variance explained, ranges from 0 to 1, a good value depends on the application.\n\n\\[R^2 = 1 - \\frac{RSS}{TSS}\\]\nwhere TSS is the total sum of squarse:\n\\[TSS = \\Sigma (y_i - \\bar{y})^2\\]\nQuiz: Can \\(R^2\\) be negative?\nAnswer",
+    "crumbs": [
+      "3. Linear Regression",
+      "Notes"
+    ]
   },
   {
     "objectID": "03_notes.html#multiple-linear-regression",
     "href": "03_notes.html#multiple-linear-regression",
     "title": "Notes",
     "section": "Multiple Linear Regression",
-    "text": "Multiple Linear Regression\nMultiple linear regression extends simple linear regression for p predictors:\n\\[Y = \\beta_{0} + \\beta_{1}X_1 + \\beta_{2}X_2 + ... +\\beta_{p}X_p + \\epsilon_i\\]\n\n\\(\\beta_{j}\\) is the average effect on \\(Y\\) from \\(X_{j}\\) holding all other predictors fixed.\nFit is once again choosing the \\(\\beta_{j}\\) that minimizes the RSS.\nExample in book shows that although fitting sales against newspaper alone indicated a significant slope (0.055 +- 0.017), when you include radio in a multiple regression, newspaper no longer has any significant effect. (-0.001 +- 0.006)\n\n\nImportant Questions\n\nIs at least one of the predictors \\(X_1\\), \\(X_2\\), … , \\(X_p\\) useful in predicting the response?\nF statistic close to 1 when there is no relationship, otherwise greater then 1.\n\n\\[F = \\frac{(TSS-RSS)/p}{RSS/(n-p-1)}\\]\n\nDo all the predictors help to explain \\(Y\\) , or is only a subset of the predictors useful?\np-values can help identify important predictors, but it is possible to be mislead by this especially with large number of predictors. Variable selection methods include Forward selection, backward selection and mixed. Topic is continued in Chapter 6.\nHow well does the model fit the data?\n\\(R^2\\) still gives proportion of the variance explained, so look for values “close” to 1. Can also look at RSE which is generalized for multiple regression as:\n\n\\[RSE = \\sqrt{\\frac{1}{n-p-1}RSS}\\]\n\nGiven a set of predictor values, what response value should we predict, and how accurate is our prediction?\nThree sets of uncertainty in predictions:\n\nUncertainty in the estimates of \\(\\beta_i\\)\nModel bias\nIrreducible error \\(\\epsilon\\)"
+    "text": "Multiple Linear Regression\nMultiple linear regression extends simple linear regression for p predictors:\n\\[Y = \\beta_{0} + \\beta_{1}X_1 + \\beta_{2}X_2 + ... +\\beta_{p}X_p + \\epsilon_i\\]\n\n\\(\\beta_{j}\\) is the average effect on \\(Y\\) from \\(X_{j}\\) holding all other predictors fixed.\nFit is once again choosing the \\(\\beta_{j}\\) that minimizes the RSS.\nExample in book shows that although fitting sales against newspaper alone indicated a significant slope (0.055 +- 0.017), when you include radio in a multiple regression, newspaper no longer has any significant effect. (-0.001 +- 0.006)\n\n\nImportant Questions\n\nIs at least one of the predictors \\(X_1\\), \\(X_2\\), … , \\(X_p\\) useful in predicting the response?\nF statistic close to 1 when there is no relationship, otherwise greater then 1.\n\n\\[F = \\frac{(TSS-RSS)/p}{RSS/(n-p-1)}\\]\n\nDo all the predictors help to explain \\(Y\\) , or is only a subset of the predictors useful?\np-values can help identify important predictors, but it is possible to be mislead by this especially with large number of predictors. Variable selection methods include Forward selection, backward selection and mixed. Topic is continued in Chapter 6.\nHow well does the model fit the data?\n\\(R^2\\) still gives proportion of the variance explained, so look for values “close” to 1. Can also look at RSE which is generalized for multiple regression as:\n\n\\[RSE = \\sqrt{\\frac{1}{n-p-1}RSS}\\]\n\nGiven a set of predictor values, what response value should we predict, and how accurate is our prediction?\nThree sets of uncertainty in predictions:\n\nUncertainty in the estimates of \\(\\beta_i\\)\nModel bias\nIrreducible error \\(\\epsilon\\)",
+    "crumbs": [
+      "3. Linear Regression",
+      "Notes"
+    ]
   },
   {
     "objectID": "03_notes.html#qualitative-predictors",
     "href": "03_notes.html#qualitative-predictors",
     "title": "Notes",
     "section": "Qualitative Predictors",
-    "text": "Qualitative Predictors\n\nDummy variables: if there are \\(k\\) levels, introduce \\(k-1\\) dummy variables which are equal to one (“one hot”) when the underlying qualitative predictor takes that value. For example if there are 3 levels, introduce two new dummy variables and fit the model:\n\n\\[y_i = \\beta_0 + \\beta_1 x_{i1} + \\beta_2 x_{i2} + \\epsilon_i\\]\n\n\n\nQualitative Predicitor\n\\(x_{i1}\\)\n\\(x_{i2}\\)\n\n\n\n\nlevel 0 (baseline)\n0\n0\n\n\nlevel 1\n1\n0\n\n\nlevel 2\n0\n1\n\n\n\n\nCoefficients are interpreted the average effect relative to the baseline.\nAlternative is to use index variables, a different coefficient for each level:\n\n\\[y_i = \\beta_{0 1} + \\beta_{0 2} +\\beta_{0 3} + \\epsilon_i\\]"
+    "text": "Qualitative Predictors\n\nDummy variables: if there are \\(k\\) levels, introduce \\(k-1\\) dummy variables which are equal to one (“one hot”) when the underlying qualitative predictor takes that value. For example if there are 3 levels, introduce two new dummy variables and fit the model:\n\n\\[y_i = \\beta_0 + \\beta_1 x_{i1} + \\beta_2 x_{i2} + \\epsilon_i\\]\n\n\n\nQualitative Predicitor\n\\(x_{i1}\\)\n\\(x_{i2}\\)\n\n\n\n\nlevel 0 (baseline)\n0\n0\n\n\nlevel 1\n1\n0\n\n\nlevel 2\n0\n1\n\n\n\n\nCoefficients are interpreted the average effect relative to the baseline.\nAlternative is to use index variables, a different coefficient for each level:\n\n\\[y_i = \\beta_{0 1} + \\beta_{0 2} +\\beta_{0 3} + \\epsilon_i\\]",
+    "crumbs": [
+      "3. Linear Regression",
+      "Notes"
+    ]
   },
   {
     "objectID": "03_notes.html#extensions",
     "href": "03_notes.html#extensions",
     "title": "Notes",
     "section": "Extensions",
-    "text": "Extensions\n\nInteraction / Synergy effects\nInclude a product term to account for synergy where one changes in one variable changes the association of the Y with another:\n\n\\[Y = \\beta_{0} + \\beta_{1}X_1 + \\beta_{2}X_2 +  \\beta_{3}X_1 X_2 + \\epsilon_i\\]\n\nNon-linear relationships (e.g. polynomial fits)\n\n\\[Y = \\beta_{0} + \\beta_{1}X + \\beta_{2}X^2 + ... \\beta_{n}X^n + \\epsilon_i\\]"
+    "text": "Extensions\n\nInteraction / Synergy effects\nInclude a product term to account for synergy where one changes in one variable changes the association of the Y with another:\n\n\\[Y = \\beta_{0} + \\beta_{1}X_1 + \\beta_{2}X_2 +  \\beta_{3}X_1 X_2 + \\epsilon_i\\]\n\nNon-linear relationships (e.g. polynomial fits)\n\n\\[Y = \\beta_{0} + \\beta_{1}X + \\beta_{2}X^2 + ... \\beta_{n}X^n + \\epsilon_i\\]",
+    "crumbs": [
+      "3. Linear Regression",
+      "Notes"
+    ]
   },
   {
     "objectID": "03_notes.html#potential-problems",
     "href": "03_notes.html#potential-problems",
     "title": "Notes",
     "section": "Potential Problems",
-    "text": "Potential Problems\n\nNon-linear relationships\nResidual plots are useful tool to see if any remaining trends exist. If so consider fitting transformation of the data.\nCorrelation of Error Terms\nLinear regression assumes that the error terms \\(\\epsilon_i\\) are uncorrelated. Residuals may indicate that this is not correct (obvious tracking in the data). One could also look at the autocorrelation of the residuals. What to do about it?\nNon-constant variance of error terms\nAgain this can be revealed by examining the residuals. Consider transformation of the predictors to remove non-constant variance. The figure below shows residuals demonstrating non-constant variance, and shows this being mitigated to a great extent by log transforming the data.\n\n\n\n\n\n\nFigure 3.11\n\n\n\n\n\nOutliers\n\nOutliers are points with for which \\(y_i\\) is far from value predicted by the model (including irreducible error). See point labeled ‘20’ in figure 3.13.\nDetect outliers by plotting studentized residuals (residual \\(e_i\\) divided by the estimated error) and look for residuals larger then 3 standard deviations in absolute value.\nAn outlier may not effect the fit much but can have dramatic effect on the RSE.\nOften outliers are mistakes in data collection and can be removed, but could also be an indicator of a deficient model.\n\nHigh Leverage Points\n\nThese are points with unusual values of \\(x_i\\). Examples is point labeled ‘41’ in figure 3.13.\nThese points can have large impact on the fit, as in the example, including point 41 pulls slope up significantly.\nUse leverage statistic to identify high leverage points, which can be hard to identify in multiple regression.\n\n\n\n\n\n\n\nFigure 3.13\n\n\n\n\n\nCollinearity\n\nTwo or more predictor variables are closely related to one another.\nSimple collinearity can be identified by looking at correlations between predictors.\nCauses the standard error to grow (and p-values to grow)\nOften can be dealt with by removing one of the highly correlated predictors or combining them.\nMulticollinearity (involving 3 or more predictors) is not so easy to identify. Use Variance inflation factor, which is the ratio of the variance of \\(\\hat{\\beta_j}\\) when fitting the full model to fitting the parameter on its own. Can be computed using the formula:\n\n\n\\[VIF(\\hat{\\beta_j}) = \\frac{1}{1-R^2_{X_j|X_{-j}}}\\]\nwhere \\(R^2_{X_j|X_{-j}}\\) is the \\(R^2\\) from a regression of \\(X_j\\) onto all the other predictors."
+    "text": "Potential Problems\n\nNon-linear relationships\nResidual plots are useful tool to see if any remaining trends exist. If so consider fitting transformation of the data.\nCorrelation of Error Terms\nLinear regression assumes that the error terms \\(\\epsilon_i\\) are uncorrelated. Residuals may indicate that this is not correct (obvious tracking in the data). One could also look at the autocorrelation of the residuals. What to do about it?\nNon-constant variance of error terms\nAgain this can be revealed by examining the residuals. Consider transformation of the predictors to remove non-constant variance. The figure below shows residuals demonstrating non-constant variance, and shows this being mitigated to a great extent by log transforming the data.\n\n\n\n\n\n\nFigure 3.11\n\n\n\n\n\nOutliers\n\nOutliers are points with for which \\(y_i\\) is far from value predicted by the model (including irreducible error). See point labeled ‘20’ in figure 3.13.\nDetect outliers by plotting studentized residuals (residual \\(e_i\\) divided by the estimated error) and look for residuals larger then 3 standard deviations in absolute value.\nAn outlier may not effect the fit much but can have dramatic effect on the RSE.\nOften outliers are mistakes in data collection and can be removed, but could also be an indicator of a deficient model.\n\nHigh Leverage Points\n\nThese are points with unusual values of \\(x_i\\). Examples is point labeled ‘41’ in figure 3.13.\nThese points can have large impact on the fit, as in the example, including point 41 pulls slope up significantly.\nUse leverage statistic to identify high leverage points, which can be hard to identify in multiple regression.\n\n\n\n\n\n\n\nFigure 3.13\n\n\n\n\n\nCollinearity\n\nTwo or more predictor variables are closely related to one another.\nSimple collinearity can be identified by looking at correlations between predictors.\nCauses the standard error to grow (and p-values to grow)\nOften can be dealt with by removing one of the highly correlated predictors or combining them.\nMulticollinearity (involving 3 or more predictors) is not so easy to identify. Use Variance inflation factor, which is the ratio of the variance of \\(\\hat{\\beta_j}\\) when fitting the full model to fitting the parameter on its own. Can be computed using the formula:\n\n\n\\[VIF(\\hat{\\beta_j}) = \\frac{1}{1-R^2_{X_j|X_{-j}}}\\]\nwhere \\(R^2_{X_j|X_{-j}}\\) is the \\(R^2\\) from a regression of \\(X_j\\) onto all the other predictors.",
+    "crumbs": [
+      "3. Linear Regression",
+      "Notes"
+    ]
   },
   {
     "objectID": "03_notes.html#answers-to-the-marketing-plan-questions",
     "href": "03_notes.html#answers-to-the-marketing-plan-questions",
     "title": "Notes",
     "section": "Answers to the Marketing Plan questions",
-    "text": "Answers to the Marketing Plan questions\n\nIs there a relationship between advertising budget and sales?\nTool: Multiple regression, look at F-statistic.\nHow strong is the relationship between advertising budget and sales?\nTool: \\(R^2\\) and RSE\nWhich media are associated with sales?\nTool: p-values for each predictor’s t-statistic. Explored further in chapter 6.\nHow large is the association between each medium and sales?\nTool: Confidence intervals on \\(\\hat{\\beta_j}\\)\nHow accurately can we predict future sales?\nTool:: Prediction intervals for individual response, confidence intervals for average response.\nIs the relationship linear?\nTool: Residual Plots\nIs there synergy among the advertising media?\nTool: Interaction terms and associated p-vales."
+    "text": "Answers to the Marketing Plan questions\n\nIs there a relationship between advertising budget and sales?\nTool: Multiple regression, look at F-statistic.\nHow strong is the relationship between advertising budget and sales?\nTool: \\(R^2\\) and RSE\nWhich media are associated with sales?\nTool: p-values for each predictor’s t-statistic. Explored further in chapter 6.\nHow large is the association between each medium and sales?\nTool: Confidence intervals on \\(\\hat{\\beta_j}\\)\nHow accurately can we predict future sales?\nTool:: Prediction intervals for individual response, confidence intervals for average response.\nIs the relationship linear?\nTool: Residual Plots\nIs there synergy among the advertising media?\nTool: Interaction terms and associated p-vales.",
+    "crumbs": [
+      "3. Linear Regression",
+      "Notes"
+    ]
   },
   {
     "objectID": "03_notes.html#comparison-of-linear-regression-with-k-nearest-neighbors",
     "href": "03_notes.html#comparison-of-linear-regression-with-k-nearest-neighbors",
     "title": "Notes",
     "section": "Comparison of Linear Regression with K-Nearest Neighbors",
-    "text": "Comparison of Linear Regression with K-Nearest Neighbors\n\nThis section examines the K-nearest neighbor (KNN) method (a non-parameteric method).\nThis is essentially a k-point moving average.\nThis serves to illustrate the Bias-Variance trade-off nicely."
+    "text": "Comparison of Linear Regression with K-Nearest Neighbors\n\nThis section examines the K-nearest neighbor (KNN) method (a non-parameteric method).\nThis is essentially a k-point moving average.\nThis serves to illustrate the Bias-Variance trade-off nicely.",
+    "crumbs": [
+      "3. Linear Regression",
+      "Notes"
+    ]
+  },
+  {
+    "objectID": "03_video.html",
+    "href": "03_video.html",
+    "title": "Video",
+    "section": "",
+    "text": "Cohort 01",
+    "crumbs": [
+      "3. Linear Regression",
+      "Video"
+    ]
   },
   {
     "objectID": "03_video.html#cohort-01",
     "href": "03_video.html#cohort-01",
     "title": "Video",
-    "section": "Cohort 01",
-    "text": "Cohort 01\n\n\n\n\nLOG"
+    "section": "",
+    "text": "LOG",
+    "crumbs": [
+      "3. Linear Regression",
+      "Video"
+    ]
+  },
+  {
+    "objectID": "04_main.html",
+    "href": "04_main.html",
+    "title": "4. Classification",
+    "section": "",
+    "text": "Learning Objectives",
+    "crumbs": [
+      "4. Classification"
+    ]
   },
   {
     "objectID": "04_main.html#learning-objectives",
     "href": "04_main.html#learning-objectives",
     "title": "4. Classification",
-    "section": "Learning Objectives",
-    "text": "Learning Objectives\n\nitem 1\nitem 2\nitem 3"
+    "section": "",
+    "text": "item 1\nitem 2\nitem 3",
+    "crumbs": [
+      "4. Classification"
+    ]
+  },
+  {
+    "objectID": "04_video.html",
+    "href": "04_video.html",
+    "title": "Video",
+    "section": "",
+    "text": "Cohort 01",
+    "crumbs": [
+      "4. Classification",
+      "Video"
+    ]
   },
   {
     "objectID": "04_video.html#cohort-01",
     "href": "04_video.html#cohort-01",
     "title": "Video",
-    "section": "Cohort 01",
-    "text": "Cohort 01\n\n\n\n\nLOG"
+    "section": "",
+    "text": "LOG",
+    "crumbs": [
+      "4. Classification",
+      "Video"
+    ]
+  },
+  {
+    "objectID": "05_main.html",
+    "href": "05_main.html",
+    "title": "5. Resampling Methods",
+    "section": "",
+    "text": "Learning Objectives",
+    "crumbs": [
+      "5. Resampling Methods"
+    ]
   },
   {
     "objectID": "05_main.html#learning-objectives",
     "href": "05_main.html#learning-objectives",
     "title": "5. Resampling Methods",
-    "section": "Learning Objectives",
-    "text": "Learning Objectives\n\nitem 1\nitem 2\nitem 3"
+    "section": "",
+    "text": "item 1\nitem 2\nitem 3",
+    "crumbs": [
+      "5. Resampling Methods"
+    ]
+  },
+  {
+    "objectID": "05_video.html",
+    "href": "05_video.html",
+    "title": "Video",
+    "section": "",
+    "text": "Cohort 01",
+    "crumbs": [
+      "5. Resampling Methods",
+      "Video"
+    ]
   },
   {
     "objectID": "05_video.html#cohort-01",
     "href": "05_video.html#cohort-01",
     "title": "Video",
-    "section": "Cohort 01",
-    "text": "Cohort 01\n\n\n\n\nLOG"
+    "section": "",
+    "text": "LOG",
+    "crumbs": [
+      "5. Resampling Methods",
+      "Video"
+    ]
+  },
+  {
+    "objectID": "06_main.html",
+    "href": "06_main.html",
+    "title": "6. Linear Model Selection and Regularization",
+    "section": "",
+    "text": "Learning Objectives",
+    "crumbs": [
+      "6. Linear Model Selection and Regularization"
+    ]
   },
   {
     "objectID": "06_main.html#learning-objectives",
     "href": "06_main.html#learning-objectives",
     "title": "6. Linear Model Selection and Regularization",
-    "section": "Learning Objectives",
-    "text": "Learning Objectives\n\nitem 1\nitem 2\nitem 3"
+    "section": "",
+    "text": "item 1\nitem 2\nitem 3",
+    "crumbs": [
+      "6. Linear Model Selection and Regularization"
+    ]
+  },
+  {
+    "objectID": "06_video.html",
+    "href": "06_video.html",
+    "title": "Video",
+    "section": "",
+    "text": "Cohort 01",
+    "crumbs": [
+      "6. Linear Model Selection and Regularization",
+      "Video"
+    ]
   },
   {
     "objectID": "06_video.html#cohort-01",
     "href": "06_video.html#cohort-01",
     "title": "Video",
-    "section": "Cohort 01",
-    "text": "Cohort 01\n\n\n\n\nLOG"
+    "section": "",
+    "text": "LOG",
+    "crumbs": [
+      "6. Linear Model Selection and Regularization",
+      "Video"
+    ]
+  },
+  {
+    "objectID": "07_main.html",
+    "href": "07_main.html",
+    "title": "7. Moving Beyond Linearity",
+    "section": "",
+    "text": "Learning Objectives",
+    "crumbs": [
+      "7. Moving Beyond Linearity"
+    ]
   },
   {
     "objectID": "07_main.html#learning-objectives",
     "href": "07_main.html#learning-objectives",
     "title": "7. Moving Beyond Linearity",
-    "section": "Learning Objectives",
-    "text": "Learning Objectives\n\nitem 1\nitem 2\nitem 3"
+    "section": "",
+    "text": "item 1\nitem 2\nitem 3",
+    "crumbs": [
+      "7. Moving Beyond Linearity"
+    ]
+  },
+  {
+    "objectID": "07_video.html",
+    "href": "07_video.html",
+    "title": "Video",
+    "section": "",
+    "text": "Cohort 01",
+    "crumbs": [
+      "7. Moving Beyond Linearity",
+      "Video"
+    ]
   },
   {
     "objectID": "07_video.html#cohort-01",
     "href": "07_video.html#cohort-01",
     "title": "Video",
-    "section": "Cohort 01",
-    "text": "Cohort 01\n\n\n\n\nLOG"
+    "section": "",
+    "text": "LOG",
+    "crumbs": [
+      "7. Moving Beyond Linearity",
+      "Video"
+    ]
+  },
+  {
+    "objectID": "08_main.html",
+    "href": "08_main.html",
+    "title": "8. Tree-Based Methods",
+    "section": "",
+    "text": "Learning Objectives\nSources: https://github.com/JauntyJJS/islr2-bookclub-cohort3-chapter8, https://hastie.su.domains/ISLR2/Slides/Ch8_Tree_Based_Methods.pdf",
+    "crumbs": [
+      "8. Tree-Based Methods"
+    ]
   },
   {
     "objectID": "08_main.html#learning-objectives",
     "href": "08_main.html#learning-objectives",
     "title": "8. Tree-Based Methods",
-    "section": "Learning Objectives",
-    "text": "Learning Objectives\n\nUse decision trees o model relationships between predictors and an outcome\nCompare and contrast tree-based models with other model types\nUse tree-based ensemble methods to improve predictive models\nCompare and contrast the various methods of building tree ensembles: bagging, boosting, random forests, and Bayesian Additive Regression Trees (BART)\n\nSources: https://github.com/JauntyJJS/islr2-bookclub-cohort3-chapter8, https://hastie.su.domains/ISLR2/Slides/Ch8_Tree_Based_Methods.pdf"
+    "section": "",
+    "text": "Use decision trees o model relationships between predictors and an outcome\nCompare and contrast tree-based models with other model types\nUse tree-based ensemble methods to improve predictive models\nCompare and contrast the various methods of building tree ensembles: bagging, boosting, random forests, and Bayesian Additive Regression Trees (BART)",
+    "crumbs": [
+      "8. Tree-Based Methods"
+    ]
+  },
+  {
+    "objectID": "08_notes.html",
+    "href": "08_notes.html",
+    "title": "Notes",
+    "section": "",
+    "text": "Introduction: Tree-based methods",
+    "crumbs": [
+      "8. Tree-Based Methods",
+      "Notes"
+    ]
   },
   {
     "objectID": "08_notes.html#introduction-tree-based-methods",
     "href": "08_notes.html#introduction-tree-based-methods",
     "title": "Notes",
-    "section": "Introduction: Tree-based methods",
-    "text": "Introduction: Tree-based methods\n\nInvolve stratifying or segmenting the predictor space into a number of simple regions\nAre simple and useful for interpretation\nHowever, basic decision trees are NOT competitive with the best supervised learning approaches in terms of prediction accuracy\nThus, we also discuss bagging, random forests, and boosting (i.e., tree-based ensemble methods) to grow multiple trees which are then combined to yield a single consensus prediction\nThese can result in dramatic improvements in prediction accuracy (but some loss of interpretability)\nCan be applied to both regression and classification"
+    "section": "",
+    "text": "Involve stratifying or segmenting the predictor space into a number of simple regions\nAre simple and useful for interpretation\nHowever, basic decision trees are NOT competitive with the best supervised learning approaches in terms of prediction accuracy\nThus, we also discuss bagging, random forests, and boosting (i.e., tree-based ensemble methods) to grow multiple trees which are then combined to yield a single consensus prediction\nThese can result in dramatic improvements in prediction accuracy (but some loss of interpretability)\nCan be applied to both regression and classification",
+    "crumbs": [
+      "8. Tree-Based Methods",
+      "Notes"
+    ]
   },
   {
     "objectID": "08_notes.html#regression-trees",
     "href": "08_notes.html#regression-trees",
     "title": "Notes",
     "section": "Regression Trees",
-    "text": "Regression Trees\nFirst, let’s take a look at Hitters dataset.\n\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\n\nRows: 322 Columns: 21\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr  (4): Names, League, Division, NewLeague\ndbl (17): AtBat, Hits, HmRun, Runs, RBI, Walks, Years, CAtBat, CHits, CHmRun...\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\n# A tibble: 263 × 5\n   Names              Hits Years Salary log_Salary\n   &lt;chr&gt;             &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;      &lt;dbl&gt;\n 1 -Alan Ashby          81    14  475         6.16\n 2 -Alvin Davis        130     3  480         6.17\n 3 -Andre Dawson       141    11  500         6.21\n 4 -Andres Galarraga    87     2   91.5       4.52\n 5 -Alfredo Griffin    169    11  750         6.62\n 6 -Al Newman           37     2   70         4.25\n 7 -Argenis Salazar     73     3  100         4.61\n 8 -Andres Thomas       81     2   75         4.32\n 9 -Andre Thornton      92    13 1100         7.00\n10 -Alan Trammell      159    10  517.        6.25\n# ℹ 253 more rows\n\n\n\n\n\n\n\n\n\n\n\nFor the Hitters data, a regression tree for predicting the log salary of a baseball player based on:\n\nnumber of years that he has played in the major leagues\nnumber of hits that he made in the previous year"
+    "text": "Regression Trees\nFirst, let’s take a look at Hitters dataset.\n\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\n\nRows: 322 Columns: 21\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr  (4): Names, League, Division, NewLeague\ndbl (17): AtBat, Hits, HmRun, Runs, RBI, Walks, Years, CAtBat, CHits, CHmRun...\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\n# A tibble: 263 × 5\n   Names              Hits Years Salary log_Salary\n   &lt;chr&gt;             &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;      &lt;dbl&gt;\n 1 -Alan Ashby          81    14  475         6.16\n 2 -Alvin Davis        130     3  480         6.17\n 3 -Andre Dawson       141    11  500         6.21\n 4 -Andres Galarraga    87     2   91.5       4.52\n 5 -Alfredo Griffin    169    11  750         6.62\n 6 -Al Newman           37     2   70         4.25\n 7 -Argenis Salazar     73     3  100         4.61\n 8 -Andres Thomas       81     2   75         4.32\n 9 -Andre Thornton      92    13 1100         7.00\n10 -Alan Trammell      159    10  517.        6.25\n# ℹ 253 more rows\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFor the Hitters data, a regression tree for predicting the log salary of a baseball player based on:\n\nnumber of years that he has played in the major leagues\nnumber of hits that he made in the previous year",
+    "crumbs": [
+      "8. Tree-Based Methods",
+      "Notes"
+    ]
   },
   {
     "objectID": "08_notes.html#terminology",
     "href": "08_notes.html#terminology",
     "title": "Notes",
     "section": "Terminology",
-    "text": "Terminology\n\n\n\n\n\n\n\n\n\n\nThe three-region partition for the Hitters data set from the regression tree\n\n\n\n\n\nOverall, the tree stratifies or segments the players into three regions of predictor space:\n\nR1 = {X | Years&lt; 4.5}\nR2 = {X | Years&gt;=4.5, Hits&lt;117.5}\nR3 = {X | Years&gt;=4.5, Hits&gt;=117.5}\n\nwhere R1, R2, and R3 are terminal nodes (leaves) and green lines (where the predictor space is split) are the internal nodes\nThe number in each leaf/terminal node is the mean of the response for the observations that fall there"
+    "text": "Terminology\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe three-region partition for the Hitters data set from the regression tree\n\n\n\n\n\nOverall, the tree stratifies or segments the players into three regions of predictor space:\n\nR1 = {X | Years&lt; 4.5}\nR2 = {X | Years&gt;=4.5, Hits&lt;117.5}\nR3 = {X | Years&gt;=4.5, Hits&gt;=117.5}\n\nwhere R1, R2, and R3 are terminal nodes (leaves) and green lines (where the predictor space is split) are the internal nodes\nThe number in each leaf/terminal node is the mean of the response for the observations that fall there",
+    "crumbs": [
+      "8. Tree-Based Methods",
+      "Notes"
+    ]
   },
   {
     "objectID": "08_notes.html#interpretation-of-results-regression-tree-hitters-data",
     "href": "08_notes.html#interpretation-of-results-regression-tree-hitters-data",
     "title": "Notes",
     "section": "Interpretation of results: regression tree (Hitters data)",
-    "text": "Interpretation of results: regression tree (Hitters data)\n\n\n\n\n\n\nYears is the most important factor in determining Salary: players with less experience earn lower salaries than more experienced players\nGiven that a player is less experienced, the number of Hits that he made in the previous year seems to play little role in his Salary\nBut among players who have been in the major leagues for 5 or more years, the number of Hits made in the previous year does affect Salary: players who made more Hits last year tend to have higher salaries\nThis is surely an over-simplification, but compared to a regression model, it is easy to display, interpret and explain"
+    "text": "Interpretation of results: regression tree (Hitters data)\n\n\n\n\n\n\n\n\n\n\nYears is the most important factor in determining Salary: players with less experience earn lower salaries than more experienced players\nGiven that a player is less experienced, the number of Hits that he made in the previous year seems to play little role in his Salary\nBut among players who have been in the major leagues for 5 or more years, the number of Hits made in the previous year does affect Salary: players who made more Hits last year tend to have higher salaries\nThis is surely an over-simplification, but compared to a regression model, it is easy to display, interpret and explain",
+    "crumbs": [
+      "8. Tree-Based Methods",
+      "Notes"
+    ]
   },
   {
     "objectID": "08_notes.html#tree-building-process-regression",
     "href": "08_notes.html#tree-building-process-regression",
     "title": "Notes",
     "section": "Tree-building process (regression)",
-    "text": "Tree-building process (regression)\n\nDivide the predictor space — that is, the set of possible values for \\(X_1,X_2, . . . ,X_p\\) — into \\(J\\) distinct and non-overlapping regions, \\(R_1,R_2, . . . ,R_J\\)\n\n\nRegions can have ANY shape - they don’t have to be boxes\n\n\nFor every observation that falls into the region \\(R_j\\), we make the same prediction: the mean of the response values in \\(R_j\\)\nThe goal is to find regions (here boxes) \\(R_1, . . . ,R_J\\) that minimize the \\(RSS\\), given by\n\n\\[\\mathrm{RSS}=\\sum_{j=1}^{J}\\sum_{i{\\in}R_j}^{}(y_i - \\hat{y}_{R_j})^2\\]\nwhere \\(\\hat{y}_{R_j}\\) is the mean response for the training observations within the \\(j\\)th box\n\nUnfortunately, it is computationally infeasible to consider every possible partition of the feature space into \\(J\\) boxes."
+    "text": "Tree-building process (regression)\n\nDivide the predictor space — that is, the set of possible values for \\(X_1,X_2, . . . ,X_p\\) — into \\(J\\) distinct and non-overlapping regions, \\(R_1,R_2, . . . ,R_J\\)\n\n\nRegions can have ANY shape - they don’t have to be boxes\n\n\nFor every observation that falls into the region \\(R_j\\), we make the same prediction: the mean of the response values in \\(R_j\\)\nThe goal is to find regions (here boxes) \\(R_1, . . . ,R_J\\) that minimize the \\(RSS\\), given by\n\n\\[\\mathrm{RSS}=\\sum_{j=1}^{J}\\sum_{i{\\in}R_j}^{}(y_i - \\hat{y}_{R_j})^2\\]\nwhere \\(\\hat{y}_{R_j}\\) is the mean response for the training observations within the \\(j\\)th box\n\nUnfortunately, it is computationally infeasible to consider every possible partition of the feature space into \\(J\\) boxes.",
+    "crumbs": [
+      "8. Tree-Based Methods",
+      "Notes"
+    ]
   },
   {
     "objectID": "08_notes.html#recursive-binary-splitting",
     "href": "08_notes.html#recursive-binary-splitting",
     "title": "Notes",
     "section": "Recursive binary splitting",
-    "text": "Recursive binary splitting\nSo, take a top-down, greedy approach known as recursive binary splitting:\n\ntop-down because it begins at the top of the tree and then successively splits the predictor space\ngreedy because at each step of the tree-building process, the best split is made at that particular step, rather than looking ahead and picking a split that will lead to a better tree in some future step\n\n\nFirst, select the predictor \\(X_j\\) and the cutpoint \\(s\\) such that splitting the predictor space into the regions \\({\\{X|X_j&lt;s\\}}\\) and \\({\\{X|X_j{\\ge}s}\\}\\) leads to the greatest possible reduction in RSS\nRepeat the process looking for the best predictor and best cutpoint to split data further (i.e., split one of the 2 previously identified regions - not the entire predictor space) minimizing the RSS within each of the resulting regions\nContinue until a stopping criterion is reached, e.g., no region contains more than five observations\nAgain, we predict the response for a given test observation using the mean of the training observations in the region to which that test observation belongs\n\nbut …\n\nThe previous method may result in a tree that overfits the data. Why?\nTree is too leafy (complex)\nA better strategy is to have a smaller tree with fewer splits, which will reduce variance and lead to better interpretation of results (at the cost of a little bias)\nSo we will prune"
+    "text": "Recursive binary splitting\nSo, take a top-down, greedy approach known as recursive binary splitting:\n\ntop-down because it begins at the top of the tree and then successively splits the predictor space\ngreedy because at each step of the tree-building process, the best split is made at that particular step, rather than looking ahead and picking a split that will lead to a better tree in some future step\n\n\nFirst, select the predictor \\(X_j\\) and the cutpoint \\(s\\) such that splitting the predictor space into the regions \\({\\{X|X_j&lt;s\\}}\\) and \\({\\{X|X_j{\\ge}s}\\}\\) leads to the greatest possible reduction in RSS\nRepeat the process looking for the best predictor and best cutpoint to split data further (i.e., split one of the 2 previously identified regions - not the entire predictor space) minimizing the RSS within each of the resulting regions\nContinue until a stopping criterion is reached, e.g., no region contains more than five observations\nAgain, we predict the response for a given test observation using the mean of the training observations in the region to which that test observation belongs\n\nbut …\n\nThe previous method may result in a tree that overfits the data. Why?\nTree is too leafy (complex)\nA better strategy is to have a smaller tree with fewer splits, which will reduce variance and lead to better interpretation of results (at the cost of a little bias)\nSo we will prune",
+    "crumbs": [
+      "8. Tree-Based Methods",
+      "Notes"
+    ]
   },
   {
     "objectID": "08_notes.html#pruning-a-tree",
     "href": "08_notes.html#pruning-a-tree",
     "title": "Notes",
     "section": "Pruning a tree",
-    "text": "Pruning a tree\n\nGrow a very large tree \\(T_0\\) as before\nApply cost-complexity pruning to \\(T_0\\) to obtain a sequence of BEST subtrees, as a function of \\(\\alpha\\)\n\nCost complexity pruning minimizes (Eq. 8.4) \\(\\sum_{m=1}^{|T|}\\sum_{x_i{\\in}R_m}(y_i-\\hat{y}_{R_m})^2 + \\alpha|T|\\)\nwhere\n\\(\\alpha\\) \\(\\geq\\) 0\n\\(|T|\\) is the number of terminal nodes the sub tree \\(|T|\\) holds\n\\(R_m\\) is the rectangle/region (i.e., the subset of predictor space) corresponding to the \\(m\\)th terminal node\n\\(\\hat{y}_{R_m}\\) is the mean response for the training observations in \\(R_m\\)\n\nthe tuning parameter \\(\\alpha\\) controls:\n\na trade-off between the subtree’s complexity (the number of terminal nodes)\nthe subtree’s fit to the training data\n\n\n\nChoose \\(\\alpha\\) using K-fold cross-validation\n\nrepeat steps 1) and 2) for each \\(K-1/K\\)th fraction of training data\naverage the results and pick \\(\\alpha\\) to minimize the average MSE\nrecall that in K-folds cross-validation (say K = 5): the model is estimated on 80% of the data five different times, the predictions are made for the remaining 20%, and the test MSEs are averaged\n\nReturn to the subtree from Step 2) that corresponds to the chosen value of \\(\\alpha\\)"
+    "text": "Pruning a tree\n\nGrow a very large tree \\(T_0\\) as before\nApply cost-complexity pruning to \\(T_0\\) to obtain a sequence of BEST subtrees, as a function of \\(\\alpha\\)\n\nCost complexity pruning minimizes (Eq. 8.4) \\(\\sum_{m=1}^{|T|}\\sum_{x_i{\\in}R_m}(y_i-\\hat{y}_{R_m})^2 + \\alpha|T|\\)\nwhere\n\\(\\alpha\\) \\(\\geq\\) 0\n\\(|T|\\) is the number of terminal nodes the sub tree \\(|T|\\) holds\n\\(R_m\\) is the rectangle/region (i.e., the subset of predictor space) corresponding to the \\(m\\)th terminal node\n\\(\\hat{y}_{R_m}\\) is the mean response for the training observations in \\(R_m\\)\n\nthe tuning parameter \\(\\alpha\\) controls:\n\na trade-off between the subtree’s complexity (the number of terminal nodes)\nthe subtree’s fit to the training data\n\n\n\nChoose \\(\\alpha\\) using K-fold cross-validation\n\nrepeat steps 1) and 2) for each \\(K-1/K\\)th fraction of training data\naverage the results and pick \\(\\alpha\\) to minimize the average MSE\nrecall that in K-folds cross-validation (say K = 5): the model is estimated on 80% of the data five different times, the predictions are made for the remaining 20%, and the test MSEs are averaged\n\nReturn to the subtree from Step 2) that corresponds to the chosen value of \\(\\alpha\\)",
+    "crumbs": [
+      "8. Tree-Based Methods",
+      "Notes"
+    ]
   },
   {
     "objectID": "08_notes.html#an-example-tree-pruning-hitters-dataset",
     "href": "08_notes.html#an-example-tree-pruning-hitters-dataset",
     "title": "Notes",
     "section": "An example: tree pruning (Hitters dataset)",
-    "text": "An example: tree pruning (Hitters dataset)\n\nResults of fitting and pruning a regression tree on the Hitters data using 9 of the features\nRandomly divided the data set in half (132 observations in training, 131 observations in the test set)\nBuilt large regression tree on training data and varied \\(\\alpha\\) in Eq. 8.4 to create subtrees with different numbers of terminal nodes\nFinally, performed 6-fold cross-validation to estimate the cross-validated MSE of the trees as a function of \\(\\alpha\\)\n\n\n\n\n\n\n\n\n\n\n\nTraining, cross-validation, and test MSE are shown as a function of the number of terminal nodes in the pruned tree. Standard error bands are displayed. The minimum cross-validation error occurs at a tree size of 3."
+    "text": "An example: tree pruning (Hitters dataset)\n\nResults of fitting and pruning a regression tree on the Hitters data using 9 of the features\nRandomly divided the data set in half (132 observations in training, 131 observations in the test set)\nBuilt large regression tree on training data and varied \\(\\alpha\\) in Eq. 8.4 to create subtrees with different numbers of terminal nodes\nFinally, performed 6-fold cross-validation to estimate the cross-validated MSE of the trees as a function of \\(\\alpha\\)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTraining, cross-validation, and test MSE are shown as a function of the number of terminal nodes in the pruned tree. Standard error bands are displayed. The minimum cross-validation error occurs at a tree size of 3.",
+    "crumbs": [
+      "8. Tree-Based Methods",
+      "Notes"
+    ]
   },
   {
     "objectID": "08_notes.html#classification-trees",
     "href": "08_notes.html#classification-trees",
     "title": "Notes",
     "section": "Classification trees",
-    "text": "Classification trees\n\nVery similar to a regression tree except it predicts a qualitative (vs quantitative) response\nWe predict that each observation belongs to the most commonly occurring class of training observations in the region to which it belongs\nIn the classification setting, RSS cannot be used as a criterion for making the binary splits\nA natural alternative to RSS is the classification error rate, i.e., the fraction of the training observations in that region that do not belong to the most common class:\n\n\\[E = 1 - \\max_k(\\hat{p}_{mk})\\]\nwhere \\(\\hat{p}_{mk}\\) is the proportion of training observations in the \\(m\\)th region that are from the \\(k\\)th class\n\nHowever, this error rate is unsuited for tree-based classification because \\(E\\) does not change much as the tree grows (lacks sensitivity)\nSo, 2 other measures are preferable:\n\nThe Gini Index defined by \\[G = \\sum_{k=1}^{K}\\hat{p}_{mk}(1-\\hat{p}_{mk})\\] is a measure of total variance across the K classes\nThe Gini index takes on a small value if all of the \\(\\hat{p}_{mk}\\)’s are close to 0 or 1\nFor this reason the Gini index is referred to as a measure of node purity - a small value indicates that a node contains predominantly observations from a single class\nAn alternative to the Gini index is cross-entropy given by\n\n\\[D = - \\sum_{k=1}^{K}\\hat{p}_{mk}\\log(\\hat{p}_{mk})\\]\nThe Gini index and cross-entropy are very similar numerically"
+    "text": "Classification trees\n\nVery similar to a regression tree except it predicts a qualitative (vs quantitative) response\nWe predict that each observation belongs to the most commonly occurring class of training observations in the region to which it belongs\nIn the classification setting, RSS cannot be used as a criterion for making the binary splits\nA natural alternative to RSS is the classification error rate, i.e., the fraction of the training observations in that region that do not belong to the most common class:\n\n\\[E = 1 - \\max_k(\\hat{p}_{mk})\\]\nwhere \\(\\hat{p}_{mk}\\) is the proportion of training observations in the \\(m\\)th region that are from the \\(k\\)th class\n\nHowever, this error rate is unsuited for tree-based classification because \\(E\\) does not change much as the tree grows (lacks sensitivity)\nSo, 2 other measures are preferable:\n\nThe Gini Index defined by \\[G = \\sum_{k=1}^{K}\\hat{p}_{mk}(1-\\hat{p}_{mk})\\] is a measure of total variance across the K classes\nThe Gini index takes on a small value if all of the \\(\\hat{p}_{mk}\\)’s are close to 0 or 1\nFor this reason the Gini index is referred to as a measure of node purity - a small value indicates that a node contains predominantly observations from a single class\nAn alternative to the Gini index is cross-entropy given by\n\n\\[D = - \\sum_{k=1}^{K}\\hat{p}_{mk}\\log(\\hat{p}_{mk})\\]\nThe Gini index and cross-entropy are very similar numerically",
+    "crumbs": [
+      "8. Tree-Based Methods",
+      "Notes"
+    ]
   },
   {
     "objectID": "08_notes.html#example-classification-tree-heart-dataset",
     "href": "08_notes.html#example-classification-tree-heart-dataset",
     "title": "Notes",
     "section": "Example: classification tree (Heart dataset)",
-    "text": "Example: classification tree (Heart dataset)\n\nData contain a binary outcome HD (heart disease Y or N based on angiographic test) for 303 patients who presented with chest pain\n13 predictors including Age, Sex, Chol (a cholesterol measurement), and other heart and lung function measurements\nCross-validation yields a tree with six terminal nodes\n\n\n\n\n\n\nHeart data. Top: The unpruned tree. Bottom Left: Cross-validation error, training, and test error, for different sizes of the pruned tree. Bottom Right: The pruned tree corresponding to the minimal cross-validation error.\n\n\n\n\n\nComment: Classification trees can be constructed if categorical PREDICTORS are present e.g., the first split: Thal is categorical (the ‘a’ in Thal:a indicates the first level of the predictor, i.e. Normal levels)\nAdditionally, notice that some of the splits yield two terminal nodes that have the same predicted value (see red box)\nRegardless of the value of RestECG, a response value of Yes is predicted for those observations\nWhy is the split performed at all?\n\nBecause it leads to increased node purity: all 9 of the observations corresponding to the right-hand leaf have a response value of Yes, whereas 7/11 of those corresponding to the left-hand leaf have a response value of Yes\n\nWhy is node purity important?\n\nSuppose that we have a test observation that belongs to the region given by that right-hand leaf. Then we can be pretty certain that its response value is Yes. In contrast, if a test observation belongs to the region given by the left-hand leaf, then its response value is probably Yes, but we are much less certain\n\nEven though the split RestECG&lt;1 does not reduce the classification error, it improves the Gini index and the entropy, which are more sensitive to node purity"
+    "text": "Example: classification tree (Heart dataset)\n\nData contain a binary outcome HD (heart disease Y or N based on angiographic test) for 303 patients who presented with chest pain\n13 predictors including Age, Sex, Chol (a cholesterol measurement), and other heart and lung function measurements\nCross-validation yields a tree with six terminal nodes\n\n\n\n\n\n\nHeart data. Top: The unpruned tree. Bottom Left: Cross-validation error, training, and test error, for different sizes of the pruned tree. Bottom Right: The pruned tree corresponding to the minimal cross-validation error.\n\n\n\n\n\nComment: Classification trees can be constructed if categorical PREDICTORS are present e.g., the first split: Thal is categorical (the ‘a’ in Thal:a indicates the first level of the predictor, i.e. Normal levels)\nAdditionally, notice that some of the splits yield two terminal nodes that have the same predicted value (see red box)\nRegardless of the value of RestECG, a response value of Yes is predicted for those observations\nWhy is the split performed at all?\n\nBecause it leads to increased node purity: all 9 of the observations corresponding to the right-hand leaf have a response value of Yes, whereas 7/11 of those corresponding to the left-hand leaf have a response value of Yes\n\nWhy is node purity important?\n\nSuppose that we have a test observation that belongs to the region given by that right-hand leaf. Then we can be pretty certain that its response value is Yes. In contrast, if a test observation belongs to the region given by the left-hand leaf, then its response value is probably Yes, but we are much less certain\n\nEven though the split RestECG&lt;1 does not reduce the classification error, it improves the Gini index and the entropy, which are more sensitive to node purity",
+    "crumbs": [
+      "8. Tree-Based Methods",
+      "Notes"
+    ]
   },
   {
     "objectID": "08_notes.html#advantagesdisadvantages-of-decision-trees",
     "href": "08_notes.html#advantagesdisadvantages-of-decision-trees",
     "title": "Notes",
     "section": "Advantages/Disadvantages of decision trees",
-    "text": "Advantages/Disadvantages of decision trees\n\nTrees can be displayed graphically and are very easy to explain to people\nThey mirror human decision-making\nCan handle qualitative predictors without the need for dummy variables\n\nbut,\n\nThey do not have the same level of predictive accuracy\nCan be very non-robust (i.e., a small change in the data can cause large change in the final estimated tree)\nTo improve performance, we can use an ensemble method, which combines many simple ‘buidling blocks’ (i.e., regression or classification trees) to obtain a single and potentially very powerful model\nensemble methods include: bagging, random forests, boosting, and Bayesian additive regression trees"
+    "text": "Advantages/Disadvantages of decision trees\n\nTrees can be displayed graphically and are very easy to explain to people\nThey mirror human decision-making\nCan handle qualitative predictors without the need for dummy variables\n\nbut,\n\nThey do not have the same level of predictive accuracy\nCan be very non-robust (i.e., a small change in the data can cause large change in the final estimated tree)\nTo improve performance, we can use an ensemble method, which combines many simple ‘buidling blocks’ (i.e., regression or classification trees) to obtain a single and potentially very powerful model\nensemble methods include: bagging, random forests, boosting, and Bayesian additive regression trees",
+    "crumbs": [
+      "8. Tree-Based Methods",
+      "Notes"
+    ]
   },
   {
     "objectID": "08_notes.html#bagging",
     "href": "08_notes.html#bagging",
     "title": "Notes",
     "section": "Bagging",
-    "text": "Bagging\n\nAlso known as bootstrap aggregation is a general-purpose procedure for reducing the variance of a statistical learning method\nIt’s useful and frequently used in the context of decision trees\nRecall that given a set of \\(n\\) independent observations \\(Z_1,..., Z_n\\), each with variance \\(\\sigma^2\\), the variance of the mean \\(\\bar{Z}\\) of the observations is given by \\(\\sigma^2/n\\)\nSo, averaging a set of observations reduces variance\nBut, this is not practical because we generally do not have access to multiple training sets!\nWhat can we do?\nCue the bootstrap, i.e., take repeated samples from the single training set\nGenerate \\(B\\) different bootstrapped training data set\nThen train our method on the \\(b\\)th bootstrapped training set to get \\(\\hat{f}^{*b}\\), the prediction at a point x\nAverage all the predictions to obtain \\[\\hat{f}_{bag}(x) = \\frac{1}{B}\\sum_{b=1}^B\\hat{f}^{*b}(x)\\]\nIn the case of classification trees:\n\nfor each test observation:\n\nrecord the class predicted by each of the \\(B\\) trees\ntake a majority vote: the overall prediction is the most commonly occurring class among the \\(B\\) predictions\n\n\n\nComment: The number of trees \\(B\\) is not a critical parameter with bagging - a large \\(B\\) will not lead to overfitting"
+    "text": "Bagging\n\nAlso known as bootstrap aggregation is a general-purpose procedure for reducing the variance of a statistical learning method\nIt’s useful and frequently used in the context of decision trees\nRecall that given a set of \\(n\\) independent observations \\(Z_1,..., Z_n\\), each with variance \\(\\sigma^2\\), the variance of the mean \\(\\bar{Z}\\) of the observations is given by \\(\\sigma^2/n\\)\nSo, averaging a set of observations reduces variance\nBut, this is not practical because we generally do not have access to multiple training sets!\nWhat can we do?\nCue the bootstrap, i.e., take repeated samples from the single training set\nGenerate \\(B\\) different bootstrapped training data set\nThen train our method on the \\(b\\)th bootstrapped training set to get \\(\\hat{f}^{*b}\\), the prediction at a point x\nAverage all the predictions to obtain \\[\\hat{f}_{bag}(x) = \\frac{1}{B}\\sum_{b=1}^B\\hat{f}^{*b}(x)\\]\nIn the case of classification trees:\n\nfor each test observation:\n\nrecord the class predicted by each of the \\(B\\) trees\ntake a majority vote: the overall prediction is the most commonly occurring class among the \\(B\\) predictions\n\n\n\nComment: The number of trees \\(B\\) is not a critical parameter with bagging - a large \\(B\\) will not lead to overfitting",
+    "crumbs": [
+      "8. Tree-Based Methods",
+      "Notes"
+    ]
   },
   {
     "objectID": "08_notes.html#out-of-bag-error-estimation",
     "href": "08_notes.html#out-of-bag-error-estimation",
     "title": "Notes",
     "section": "Out-of-bag error estimation",
-    "text": "Out-of-bag error estimation\n\nBut how do we estimate the test error of a bagged model?\nIt’s pretty straightforward:\n\nBecause trees are repeatedly fit to bootstrapped subsets of observations, on average each bagged tree uses about 2/3 of the observations\nThe leftover 1/3 not used to fit a given bagged tree are called out-of-bag (OOB) observations\nWe can predict the response for the \\(i\\)th observation using each of the trees in which that observation was OOB. Gives around B/3 predictions for the \\(i\\)th observation (which we then average)\nThis estimate is essentially the LOO cross-validation error for bagging (if \\(B\\) is large)"
+    "text": "Out-of-bag error estimation\n\nBut how do we estimate the test error of a bagged model?\nIt’s pretty straightforward:\n\nBecause trees are repeatedly fit to bootstrapped subsets of observations, on average each bagged tree uses about 2/3 of the observations\nThe leftover 1/3 not used to fit a given bagged tree are called out-of-bag (OOB) observations\nWe can predict the response for the \\(i\\)th observation using each of the trees in which that observation was OOB. Gives around B/3 predictions for the \\(i\\)th observation (which we then average)\nThis estimate is essentially the LOO cross-validation error for bagging (if \\(B\\) is large)",
+    "crumbs": [
+      "8. Tree-Based Methods",
+      "Notes"
+    ]
   },
   {
     "objectID": "08_notes.html#variable-importance-measures",
     "href": "08_notes.html#variable-importance-measures",
     "title": "Notes",
     "section": "Variable importance measures",
-    "text": "Variable importance measures\n\nBagging results in improved accuracy over prediction using a single tre\nBut, it can be difficult to interpret the resulting model:\n\nwe can’t represent the statistical learning procedure using a single tree\nit’s not clear which variables are most important to the procedure (i.e., we have many trees each of which may give a differing view on the importance of a given predictor)\n\nSo, which predictors are important?\n\nAn overall summary of the importance of each predictor can be achieved by recording how much the average \\(RSS\\) or Gini index improves (or decreases) when each tree is split over a given predictor (averaged over all \\(B\\) trees)\n\na large value = important predictor\n\n\n\n\n\n\n\n\nA variable importance plot for the Heart data. Variable importance is computed using the mean decrease in Gini index, and expressed relative to the maximum."
+    "text": "Variable importance measures\n\nBagging results in improved accuracy over prediction using a single tre\nBut, it can be difficult to interpret the resulting model:\n\nwe can’t represent the statistical learning procedure using a single tree\nit’s not clear which variables are most important to the procedure (i.e., we have many trees each of which may give a differing view on the importance of a given predictor)\n\nSo, which predictors are important?\n\nAn overall summary of the importance of each predictor can be achieved by recording how much the average \\(RSS\\) or Gini index improves (or decreases) when each tree is split over a given predictor (averaged over all \\(B\\) trees)\n\na large value = important predictor\n\n\n\n\n\n\n\n\nA variable importance plot for the Heart data. Variable importance is computed using the mean decrease in Gini index, and expressed relative to the maximum.",
+    "crumbs": [
+      "8. Tree-Based Methods",
+      "Notes"
+    ]
   },
   {
     "objectID": "08_notes.html#random-forests",
     "href": "08_notes.html#random-forests",
     "title": "Notes",
     "section": "Random forests",
-    "text": "Random forests\n\nA problem with bagging is that bagged trees may be highly similar to each other.\nFor example, if there is a strong predictor in the data set, most of the bagged trees will use this strong predictor in the top split so that\n\nthe trees will look quite similar\npredictions from the bagged trees will be highly correlated\n\nAveraging many highly correlated quantities does not lead to as large a reduction in variance as averaging many uncorrelated quantities"
+    "text": "Random forests\n\nA problem with bagging is that bagged trees may be highly similar to each other.\nFor example, if there is a strong predictor in the data set, most of the bagged trees will use this strong predictor in the top split so that\n\nthe trees will look quite similar\npredictions from the bagged trees will be highly correlated\n\nAveraging many highly correlated quantities does not lead to as large a reduction in variance as averaging many uncorrelated quantities",
+    "crumbs": [
+      "8. Tree-Based Methods",
+      "Notes"
+    ]
   },
   {
     "objectID": "08_notes.html#random-forests-advantages-over-bagging",
     "href": "08_notes.html#random-forests-advantages-over-bagging",
     "title": "Notes",
     "section": "Random forests: advantages over bagging",
-    "text": "Random forests: advantages over bagging\n\nRandom forests overcome this problem by forcing each split to consider only a subset of the predictors (typically a random sample \\(m \\approx \\sqrt{p}\\))\nThus at each split, the algorithm is NOT ALLOWED to consider a majority of the available predictors (essentially \\((p - m)/p\\) of the splits will not even consider the strong predictor, giving other predictors a chance)\nThis decorrelates the trees and makes the average of the resulting trees less variable (more reliable)\nOnly difference between bagging and random forests is the choice of predictor subset size \\(m\\) at each split: if a random forest is built using \\(m = p\\) that’s just bagging\nFor both, we build a number of decision trees on bootstrapped training samples"
+    "text": "Random forests: advantages over bagging\n\nRandom forests overcome this problem by forcing each split to consider only a subset of the predictors (typically a random sample \\(m \\approx \\sqrt{p}\\))\nThus at each split, the algorithm is NOT ALLOWED to consider a majority of the available predictors (essentially \\((p - m)/p\\) of the splits will not even consider the strong predictor, giving other predictors a chance)\nThis decorrelates the trees and makes the average of the resulting trees less variable (more reliable)\nOnly difference between bagging and random forests is the choice of predictor subset size \\(m\\) at each split: if a random forest is built using \\(m = p\\) that’s just bagging\nFor both, we build a number of decision trees on bootstrapped training samples",
+    "crumbs": [
+      "8. Tree-Based Methods",
+      "Notes"
+    ]
   },
   {
     "objectID": "08_notes.html#example-random-forests-versus-bagging-gene-expression-data",
     "href": "08_notes.html#example-random-forests-versus-bagging-gene-expression-data",
     "title": "Notes",
     "section": "Example: Random forests versus bagging (gene expression data)",
-    "text": "Example: Random forests versus bagging (gene expression data)\n\nHigh-dimensional biological data set: contains gene expression measurements of 4,718 genes measured on tissue samples from 349 patients\nEach of the patient samples has a qualitative label with 15 different levels: Normal or one of 14 different cancer types\nWant to predict cancer type based on the 500 genes that have the largest variance in the training set\nRandomly divided the observations into training/test and applied random forests (or bagging) to the training set for 3 different values of \\(m\\) (the number of predictors available at each split)\n\n\n\n\n\n\nResults from random forests for the 15-class gene expression data set with p = 500 predictors. The test error is displayed as a function of the number of trees. Random forests (m &lt; p) lead to a slight improvement over bagging (m = p). A single classification tree has an error rate of 45.7%."
+    "text": "Example: Random forests versus bagging (gene expression data)\n\nHigh-dimensional biological data set: contains gene expression measurements of 4,718 genes measured on tissue samples from 349 patients\nEach of the patient samples has a qualitative label with 15 different levels: Normal or one of 14 different cancer types\nWant to predict cancer type based on the 500 genes that have the largest variance in the training set\nRandomly divided the observations into training/test and applied random forests (or bagging) to the training set for 3 different values of \\(m\\) (the number of predictors available at each split)\n\n\n\n\n\n\nResults from random forests for the 15-class gene expression data set with p = 500 predictors. The test error is displayed as a function of the number of trees. Random forests (m &lt; p) lead to a slight improvement over bagging (m = p). A single classification tree has an error rate of 45.7%.",
+    "crumbs": [
+      "8. Tree-Based Methods",
+      "Notes"
+    ]
   },
   {
     "objectID": "08_notes.html#boosting",
     "href": "08_notes.html#boosting",
     "title": "Notes",
     "section": "Boosting",
-    "text": "Boosting\n\nYet another approach to improve prediction accuracy from a decision tree\nCan also be applied to many statistical learning methods for regression or classification\nRecall that in bagging each tree is built on a bootstrap training data set\nIn boosting, each tree is grown sequentially using information from previously grown trees:\n\ngiven the current model, we fit a decision tree to the residuals of the model (rather than the outcome Y) as the response\nwe then add this new decision tree into the fitted function (model) in order to update the residuals\nWhy? this way each tree is built on information that the previous trees were unable to ‘catch’"
+    "text": "Boosting\n\nYet another approach to improve prediction accuracy from a decision tree\nCan also be applied to many statistical learning methods for regression or classification\nRecall that in bagging each tree is built on a bootstrap training data set\nIn boosting, each tree is grown sequentially using information from previously grown trees:\n\ngiven the current model, we fit a decision tree to the residuals of the model (rather than the outcome Y) as the response\nwe then add this new decision tree into the fitted function (model) in order to update the residuals\nWhy? this way each tree is built on information that the previous trees were unable to ‘catch’",
+    "crumbs": [
+      "8. Tree-Based Methods",
+      "Notes"
+    ]
   },
   {
     "objectID": "08_notes.html#boosting-algorithm",
     "href": "08_notes.html#boosting-algorithm",
     "title": "Notes",
     "section": "Boosting algorithm",
-    "text": "Boosting algorithm\n\n\n\n\n\nwhere:\n\\(\\hat{f}(x)\\) is the decision tree (model)\n\\(r\\) = residuals\n\\(d\\) = number of splits in each tree (controls the complexity of the boosted ensemble)\n\\(\\lambda\\) = shrinkage parameter (a small positive number that controls the rate at which boosting learns; typically 0.01 or 0.001 but right choice can depend on the problem)\n\nEach of the trees can be small, with just a few terminal nodes (determined by \\(d\\))\nBy fitting small trees to the residuals, we slowly improve our model (\\(\\hat{f}\\)) in areas where it doesn’t perform well\nThe shrinkage parameter \\(\\lambda\\) slows the process down further, allowing more and different shaped trees to ‘attack’ the residuals\nUnlike bagging and random forests, boosting can OVERFIT if \\(B\\) is too large. \\(B\\) is selected via cross-validation"
+    "text": "Boosting algorithm\n\n\n\n\n\n\n\n\n\nwhere:\n\\(\\hat{f}(x)\\) is the decision tree (model)\n\\(r\\) = residuals\n\\(d\\) = number of splits in each tree (controls the complexity of the boosted ensemble)\n\\(\\lambda\\) = shrinkage parameter (a small positive number that controls the rate at which boosting learns; typically 0.01 or 0.001 but right choice can depend on the problem)\n\nEach of the trees can be small, with just a few terminal nodes (determined by \\(d\\))\nBy fitting small trees to the residuals, we slowly improve our model (\\(\\hat{f}\\)) in areas where it doesn’t perform well\nThe shrinkage parameter \\(\\lambda\\) slows the process down further, allowing more and different shaped trees to ‘attack’ the residuals\nUnlike bagging and random forests, boosting can OVERFIT if \\(B\\) is too large. \\(B\\) is selected via cross-validation",
+    "crumbs": [
+      "8. Tree-Based Methods",
+      "Notes"
+    ]
   },
   {
     "objectID": "08_notes.html#example-boosting-versus-random-forests",
     "href": "08_notes.html#example-boosting-versus-random-forests",
     "title": "Notes",
     "section": "Example: Boosting versus random forests",
-    "text": "Example: Boosting versus random forests\n\n\n\n\n\nResults from performing boosting and random forests on the 15-class gene expression data set in order to predict cancer versus normal. The test error is displayed as a function of the number of trees. For the two boosted models, lambda = 0.01. Depth-1 trees slightly outperform depth-2 trees, and both outperform the random forest, although the standard errors are around 0.02, making none of these differences significant. The test error rate for a single tree is 24 %.\n\n\n\n\n\nNotice that because the growth of a particular tree takes into account the other trees that have already been grown, smaller trees are typically sufficient in boosting (versus random forests)\nRandom forests and boosting are among the state-of-the-art methods for supervised learning (but, their results can be difficult to interpret)"
+    "text": "Example: Boosting versus random forests\n\n\n\n\n\nResults from performing boosting and random forests on the 15-class gene expression data set in order to predict cancer versus normal. The test error is displayed as a function of the number of trees. For the two boosted models, lambda = 0.01. Depth-1 trees slightly outperform depth-2 trees, and both outperform the random forest, although the standard errors are around 0.02, making none of these differences significant. The test error rate for a single tree is 24 %.\n\n\n\n\n\nNotice that because the growth of a particular tree takes into account the other trees that have already been grown, smaller trees are typically sufficient in boosting (versus random forests)\nRandom forests and boosting are among the state-of-the-art methods for supervised learning (but, their results can be difficult to interpret)",
+    "crumbs": [
+      "8. Tree-Based Methods",
+      "Notes"
+    ]
   },
   {
     "objectID": "08_notes.html#bayesian-additive-regression-trees-bart",
     "href": "08_notes.html#bayesian-additive-regression-trees-bart",
     "title": "Notes",
     "section": "Bayesian additive regression trees (BART)",
-    "text": "Bayesian additive regression trees (BART)\n\nRecall that in bagging and random forests, each tree is built on a random sample of data and/or predictors and each tree is built independently of the others\nBART is related to both - what is new is HOW the new trees are generated\nNOTE: only BART for regression is described in the book"
+    "text": "Bayesian additive regression trees (BART)\n\nRecall that in bagging and random forests, each tree is built on a random sample of data and/or predictors and each tree is built independently of the others\nBART is related to both - what is new is HOW the new trees are generated\nNOTE: only BART for regression is described in the book",
+    "crumbs": [
+      "8. Tree-Based Methods",
+      "Notes"
+    ]
   },
   {
     "objectID": "08_notes.html#bart-notation",
     "href": "08_notes.html#bart-notation",
     "title": "Notes",
     "section": "BART notation",
-    "text": "BART notation\n\nLet \\(K\\) be the total number of regression trees and\n\\(B\\) be the number of iterations the BART algorithm will run for\nLet \\(\\hat{f}^b_k(x)\\) be the prediction at \\(x\\) for the \\(k\\)th regression tree used in the \\(b\\)th iteration of the BART algorithm\nAt the end of each iteration, the \\(K\\) trees from that iteration will be summed:\n\n\\[\\hat{f}^b(x) = \\sum_{k=1}^{K}\\hat{f}^b_k(x)\\] for \\(b=1,...,B\\)"
+    "text": "BART notation\n\nLet \\(K\\) be the total number of regression trees and\n\\(B\\) be the number of iterations the BART algorithm will run for\nLet \\(\\hat{f}^b_k(x)\\) be the prediction at \\(x\\) for the \\(k\\)th regression tree used in the \\(b\\)th iteration of the BART algorithm\nAt the end of each iteration, the \\(K\\) trees from that iteration will be summed:\n\n\\[\\hat{f}^b(x) = \\sum_{k=1}^{K}\\hat{f}^b_k(x)\\] for \\(b=1,...,B\\)",
+    "crumbs": [
+      "8. Tree-Based Methods",
+      "Notes"
+    ]
   },
   {
     "objectID": "08_notes.html#bart-algorithm",
     "href": "08_notes.html#bart-algorithm",
     "title": "Notes",
     "section": "BART algorithm",
-    "text": "BART algorithm\n\nIn the first iteration of the BART algorithm, all \\(K\\) trees are initialized to have 1 root node, with \\(\\hat{f}^1_k(x) = \\frac{1}{nK}\\sum_{i=1}^{n}y_i\\)\n\ni.e., the mean of the response values divided by the total number of trees\n\nThus, for the first iteration (\\(b = 1\\)), the prediction for all \\(K\\) trees is just the mean of the response\n\n\\(\\hat{f}^1(x) = \\sum_{k=1}^K\\hat{f}^1_k(x) = \\sum_{k=1}^K\\frac{1}{nK}\\sum_{i=1}^{n}y_i = \\frac{1}{n}\\sum_{i=1}^{n}y_i\\)"
+    "text": "BART algorithm\n\nIn the first iteration of the BART algorithm, all \\(K\\) trees are initialized to have 1 root node, with \\(\\hat{f}^1_k(x) = \\frac{1}{nK}\\sum_{i=1}^{n}y_i\\)\n\ni.e., the mean of the response values divided by the total number of trees\n\nThus, for the first iteration (\\(b = 1\\)), the prediction for all \\(K\\) trees is just the mean of the response\n\n\\(\\hat{f}^1(x) = \\sum_{k=1}^K\\hat{f}^1_k(x) = \\sum_{k=1}^K\\frac{1}{nK}\\sum_{i=1}^{n}y_i = \\frac{1}{n}\\sum_{i=1}^{n}y_i\\)",
+    "crumbs": [
+      "8. Tree-Based Methods",
+      "Notes"
+    ]
   },
   {
     "objectID": "08_notes.html#bart-algorithm-iteration-2-and-on",
     "href": "08_notes.html#bart-algorithm-iteration-2-and-on",
     "title": "Notes",
     "section": "BART algorithm: iteration 2 and on",
-    "text": "BART algorithm: iteration 2 and on\n\nIn subsequent iterations, BART updates each of the \\(K\\) trees one at a time\nIn the \\(b\\)th iteration to update the \\(k\\)th tree, we subtract from each response value the predictions from all but the \\(k\\)th tree, to obtain a partial residual:\n\n\\(r_i = y_i - \\sum_{k'&lt;k}\\hat{f}^b_{k'}(x_i) - \\sum_{k'&gt;k}\\hat{f}^{b-1}_{k'}(x_i)\\)\nfor the \\(i\\)th observation, \\(i = 1, …, n\\)\n\nRather than fitting a new tree to this partial residual, BART chooses a perturbation to the tree from a previous iteration \\(\\hat{f}^{b-1}_{k}\\) favoring perturbations that improve the fit to the partial residual\nTo perturb trees:\n\nchange the structure of the tree by adding/pruning branches\nchange the prediction in each terminal node of the tree\n\nThe output of BART is a collection of prediction models:\n\n\\(\\hat{f}^b(x) = \\sum_{k=1}^{K}\\hat{f}^b_k(x)\\)\nfor \\(b = 1, 2,…, B\\)"
+    "text": "BART algorithm: iteration 2 and on\n\nIn subsequent iterations, BART updates each of the \\(K\\) trees one at a time\nIn the \\(b\\)th iteration to update the \\(k\\)th tree, we subtract from each response value the predictions from all but the \\(k\\)th tree, to obtain a partial residual:\n\n\\(r_i = y_i - \\sum_{k'&lt;k}\\hat{f}^b_{k'}(x_i) - \\sum_{k'&gt;k}\\hat{f}^{b-1}_{k'}(x_i)\\)\nfor the \\(i\\)th observation, \\(i = 1, …, n\\)\n\nRather than fitting a new tree to this partial residual, BART chooses a perturbation to the tree from a previous iteration \\(\\hat{f}^{b-1}_{k}\\) favoring perturbations that improve the fit to the partial residual\nTo perturb trees:\n\nchange the structure of the tree by adding/pruning branches\nchange the prediction in each terminal node of the tree\n\nThe output of BART is a collection of prediction models:\n\n\\(\\hat{f}^b(x) = \\sum_{k=1}^{K}\\hat{f}^b_k(x)\\)\nfor \\(b = 1, 2,…, B\\)",
+    "crumbs": [
+      "8. Tree-Based Methods",
+      "Notes"
+    ]
   },
   {
     "objectID": "08_notes.html#bart-algorithm-figure",
     "href": "08_notes.html#bart-algorithm-figure",
     "title": "Notes",
     "section": "BART algorithm: figure",
-    "text": "BART algorithm: figure\n\n\n\n\n\n\nComment: the first few prediction models obtained in the earlier iterations (known as the \\(burn-in\\) period; denoted by \\(L\\)) are typically thrown away since they tend to not provide very good results, like you throw away the first pancake of the batch"
+    "text": "BART algorithm: figure\n\n\n\n\n\n\n\n\n\n\nComment: the first few prediction models obtained in the earlier iterations (known as the \\(burn-in\\) period; denoted by \\(L\\)) are typically thrown away since they tend to not provide very good results, like you throw away the first pancake of the batch",
+    "crumbs": [
+      "8. Tree-Based Methods",
+      "Notes"
+    ]
   },
   {
     "objectID": "08_notes.html#bart-additional-details",
     "href": "08_notes.html#bart-additional-details",
     "title": "Notes",
     "section": "BART: additional details",
-    "text": "BART: additional details\n\nA key element of BART is that a fresh tree is NOT fit to the current partial residual: instead, we improve the fit to the current partial residual by slightly modifying the tree obtained in the previous iteration (Step 3(a)ii)\nThis guards against overfitting since it limits how “hard” the data is fit in each iteration\nAdditionally, the individual trees are typically pretty small\nBART, as the name suggests, can be viewed as a Bayesian approach to fitting an ensemble of trees:\n\neach time a tree is randomly perturbed to fit the residuals = drawing a new tree from a posterior distribution"
+    "text": "BART: additional details\n\nA key element of BART is that a fresh tree is NOT fit to the current partial residual: instead, we improve the fit to the current partial residual by slightly modifying the tree obtained in the previous iteration (Step 3(a)ii)\nThis guards against overfitting since it limits how “hard” the data is fit in each iteration\nAdditionally, the individual trees are typically pretty small\nBART, as the name suggests, can be viewed as a Bayesian approach to fitting an ensemble of trees:\n\neach time a tree is randomly perturbed to fit the residuals = drawing a new tree from a posterior distribution",
+    "crumbs": [
+      "8. Tree-Based Methods",
+      "Notes"
+    ]
   },
   {
     "objectID": "08_notes.html#to-apply-bart",
     "href": "08_notes.html#to-apply-bart",
     "title": "Notes",
     "section": "To apply BART:",
-    "text": "To apply BART:\n\nWe must select the number of trees \\(K\\), the number of iterations \\(B\\) and the number of burn-in iterations \\(L\\)\nTypically, large values are chosen for \\(B\\) and \\(K\\) and a moderate value for \\(L\\): e.g. \\(K\\) = 200, \\(B\\) = 1,000 and \\(L\\) = 100\nBART has been shown to have impressive out-of-box performance - i.e., it performs well with minimal tuning"
+    "text": "To apply BART:\n\nWe must select the number of trees \\(K\\), the number of iterations \\(B\\) and the number of burn-in iterations \\(L\\)\nTypically, large values are chosen for \\(B\\) and \\(K\\) and a moderate value for \\(L\\): e.g. \\(K\\) = 200, \\(B\\) = 1,000 and \\(L\\) = 100\nBART has been shown to have impressive out-of-box performance - i.e., it performs well with minimal tuning",
+    "crumbs": [
+      "8. Tree-Based Methods",
+      "Notes"
+    ]
+  },
+  {
+    "objectID": "08_video.html",
+    "href": "08_video.html",
+    "title": "Video",
+    "section": "",
+    "text": "Cohort 01",
+    "crumbs": [
+      "8. Tree-Based Methods",
+      "Video"
+    ]
   },
   {
     "objectID": "08_video.html#cohort-01",
     "href": "08_video.html#cohort-01",
     "title": "Video",
-    "section": "Cohort 01",
-    "text": "Cohort 01\n\n\n\n\nLOG"
+    "section": "",
+    "text": "LOG",
+    "crumbs": [
+      "8. Tree-Based Methods",
+      "Video"
+    ]
+  },
+  {
+    "objectID": "09_main.html",
+    "href": "09_main.html",
+    "title": "9. Support Vector Machines",
+    "section": "",
+    "text": "Learning Objectives",
+    "crumbs": [
+      "9. Support Vector Machines"
+    ]
   },
   {
     "objectID": "09_main.html#learning-objectives",
     "href": "09_main.html#learning-objectives",
     "title": "9. Support Vector Machines",
-    "section": "Learning Objectives",
-    "text": "Learning Objectives\n\nitem 1\nitem 2\nitem 3"
+    "section": "",
+    "text": "item 1\nitem 2\nitem 3",
+    "crumbs": [
+      "9. Support Vector Machines"
+    ]
+  },
+  {
+    "objectID": "09_video.html",
+    "href": "09_video.html",
+    "title": "Video",
+    "section": "",
+    "text": "Cohort 01",
+    "crumbs": [
+      "9. Support Vector Machines",
+      "Video"
+    ]
   },
   {
     "objectID": "09_video.html#cohort-01",
     "href": "09_video.html#cohort-01",
     "title": "Video",
-    "section": "Cohort 01",
-    "text": "Cohort 01\n\n\n\n\nLOG"
+    "section": "",
+    "text": "LOG",
+    "crumbs": [
+      "9. Support Vector Machines",
+      "Video"
+    ]
+  },
+  {
+    "objectID": "10_main.html",
+    "href": "10_main.html",
+    "title": "10. Deep Learning",
+    "section": "",
+    "text": "Learning Objectives",
+    "crumbs": [
+      "10. Deep Learning"
+    ]
   },
   {
     "objectID": "10_main.html#learning-objectives",
     "href": "10_main.html#learning-objectives",
     "title": "10. Deep Learning",
-    "section": "Learning Objectives",
-    "text": "Learning Objectives\n\nitem 1\nitem 2\nitem 3"
+    "section": "",
+    "text": "item 1\nitem 2\nitem 3",
+    "crumbs": [
+      "10. Deep Learning"
+    ]
+  },
+  {
+    "objectID": "10_video.html",
+    "href": "10_video.html",
+    "title": "Video",
+    "section": "",
+    "text": "Cohort 01",
+    "crumbs": [
+      "10. Deep Learning",
+      "Video"
+    ]
   },
   {
     "objectID": "10_video.html#cohort-01",
     "href": "10_video.html#cohort-01",
     "title": "Video",
-    "section": "Cohort 01",
-    "text": "Cohort 01\n\n\n\n\nLOG"
+    "section": "",
+    "text": "LOG",
+    "crumbs": [
+      "10. Deep Learning",
+      "Video"
+    ]
+  },
+  {
+    "objectID": "11_main.html",
+    "href": "11_main.html",
+    "title": "11. Survival Analysis and Censored Data",
+    "section": "",
+    "text": "Learning Objectives",
+    "crumbs": [
+      "11. Survival Analysis and Censored Data"
+    ]
   },
   {
     "objectID": "11_main.html#learning-objectives",
     "href": "11_main.html#learning-objectives",
     "title": "11. Survival Analysis and Censored Data",
-    "section": "Learning Objectives",
-    "text": "Learning Objectives\n\nitem 1\nitem 2\nitem 3"
+    "section": "",
+    "text": "item 1\nitem 2\nitem 3",
+    "crumbs": [
+      "11. Survival Analysis and Censored Data"
+    ]
+  },
+  {
+    "objectID": "11_video.html",
+    "href": "11_video.html",
+    "title": "Video",
+    "section": "",
+    "text": "Cohort 01",
+    "crumbs": [
+      "11. Survival Analysis and Censored Data",
+      "Video"
+    ]
   },
   {
     "objectID": "11_video.html#cohort-01",
     "href": "11_video.html#cohort-01",
     "title": "Video",
-    "section": "Cohort 01",
-    "text": "Cohort 01\n\n\n\n\nLOG"
+    "section": "",
+    "text": "LOG",
+    "crumbs": [
+      "11. Survival Analysis and Censored Data",
+      "Video"
+    ]
+  },
+  {
+    "objectID": "12_main.html",
+    "href": "12_main.html",
+    "title": "12. Unsupervised Learning",
+    "section": "",
+    "text": "Learning Objectives",
+    "crumbs": [
+      "12. Unsupervised Learning"
+    ]
   },
   {
     "objectID": "12_main.html#learning-objectives",
     "href": "12_main.html#learning-objectives",
     "title": "12. Unsupervised Learning",
-    "section": "Learning Objectives",
-    "text": "Learning Objectives\n\nitem 1\nitem 2\nitem 3"
+    "section": "",
+    "text": "item 1\nitem 2\nitem 3",
+    "crumbs": [
+      "12. Unsupervised Learning"
+    ]
+  },
+  {
+    "objectID": "12_video.html",
+    "href": "12_video.html",
+    "title": "Video",
+    "section": "",
+    "text": "Cohort 01",
+    "crumbs": [
+      "12. Unsupervised Learning",
+      "Video"
+    ]
   },
   {
     "objectID": "12_video.html#cohort-01",
     "href": "12_video.html#cohort-01",
     "title": "Video",
-    "section": "Cohort 01",
-    "text": "Cohort 01\n\n\n\n\nLOG"
+    "section": "",
+    "text": "LOG",
+    "crumbs": [
+      "12. Unsupervised Learning",
+      "Video"
+    ]
+  },
+  {
+    "objectID": "13_main.html",
+    "href": "13_main.html",
+    "title": "13. Multiple Testing",
+    "section": "",
+    "text": "Learning Objectives",
+    "crumbs": [
+      "13. Multiple Testing"
+    ]
   },
   {
     "objectID": "13_main.html#learning-objectives",
     "href": "13_main.html#learning-objectives",
     "title": "13. Multiple Testing",
-    "section": "Learning Objectives",
-    "text": "Learning Objectives\n\nitem 1\nitem 2\nitem 3"
+    "section": "",
+    "text": "item 1\nitem 2\nitem 3",
+    "crumbs": [
+      "13. Multiple Testing"
+    ]
+  },
+  {
+    "objectID": "13_video.html",
+    "href": "13_video.html",
+    "title": "Video",
+    "section": "",
+    "text": "Cohort 01",
+    "crumbs": [
+      "13. Multiple Testing",
+      "Video"
+    ]
   },
   {
     "objectID": "13_video.html#cohort-01",
     "href": "13_video.html#cohort-01",
     "title": "Video",
-    "section": "Cohort 01",
-    "text": "Cohort 01\n\n\n\n\nLOG"
+    "section": "",
+    "text": "LOG",
+    "crumbs": [
+      "13. Multiple Testing",
+      "Video"
+    ]
   },
   {
-    "objectID": "how-to.html#set-up-quarto",
-    "href": "how-to.html#set-up-quarto",
+    "objectID": "how-to.html",
+    "href": "how-to.html",
     "title": "How to add to the book",
-    "section": "Set up Quarto",
-    "text": "Set up Quarto\nThis book is made with Quarto. Please see the Get Started chapter of the Quarto documentation to learn how to install and run Quarto in your IDE."
+    "section": "",
+    "text": "Set up Quarto\nThis book is made with Quarto. Please see the Get Started chapter of the Quarto documentation to learn how to install and run Quarto in your IDE.",
+    "crumbs": [
+      "Appendices",
+      "How to add to the book"
+    ]
   },
   {
     "objectID": "how-to.html#add-to-book",
     "href": "how-to.html#add-to-book",
     "title": "How to add to the book",
     "section": "Add to book",
-    "text": "Add to book\nOnce you have everything set up, forked the repo, and cloned to your computer, you can add a new chapter to the book.\nCreate a new file in the repository folder. For example, to create a new file called 01_exercises.qmd, navigate to the folder then create one using touch 01_exercises.qmd. If you are using VSCode, you can use the Quarto plug-in. You can use plain .md files, Quarto .qmd, or Jupyter .ipynb files in this book. Check out the files under Examples to see the various options.\nWrite in what you would like in the file.\nThen, in the _quarto.yml file, under chapters, add a part with your chapter. The file listed after part is the first page of chapter; the ones under chapters will be subpages.\n  - part: 01_main.qmd\n      chapters: \n      - 01_notes.qmd\n      - 01_video.qmd\n      - 01_exercises.qmd"
+    "text": "Add to book\nOnce you have everything set up, forked the repo, and cloned to your computer, you can add a new chapter to the book.\nCreate a new file in the repository folder. For example, to create a new file called 01_exercises.qmd, navigate to the folder then create one using touch 01_exercises.qmd. If you are using VSCode, you can use the Quarto plug-in. You can use plain .md files, Quarto .qmd, or Jupyter .ipynb files in this book. Check out the files under Examples to see the various options.\nWrite in what you would like in the file.\nThen, in the _quarto.yml file, under chapters, add a part with your chapter. The file listed after part is the first page of chapter; the ones under chapters will be subpages.\n  - part: 01_main.qmd\n      chapters: \n      - 01_notes.qmd\n      - 01_video.qmd\n      - 01_exercises.qmd",
+    "crumbs": [
+      "Appendices",
+      "How to add to the book"
+    ]
   },
   {
     "objectID": "how-to.html#render-the-book",
     "href": "how-to.html#render-the-book",
     "title": "How to add to the book",
     "section": "Render the book",
-    "text": "Render the book\nOnce you have added and edited your files, don’t forget to render the book. Run this in the terminal:\nquarto render --to html"
+    "text": "Render the book\nOnce you have added and edited your files, don’t forget to render the book. Run this in the terminal:\nquarto render --to html",
+    "crumbs": [
+      "Appendices",
+      "How to add to the book"
+    ]
   },
   {
     "objectID": "how-to.html#push-up-to-github",
     "href": "how-to.html#push-up-to-github",
     "title": "How to add to the book",
     "section": "Push up to GitHub",
-    "text": "Push up to GitHub\nPush your changes to your forked repo and then create a pull request for the R4DS admins to merge your changes.\ngit add .\ngit commit -m \"Message here\"\ngit push"
+    "text": "Push up to GitHub\nPush your changes to your forked repo and then create a pull request for the R4DS admins to merge your changes.\ngit add .\ngit commit -m \"Message here\"\ngit push",
+    "crumbs": [
+      "Appendices",
+      "How to add to the book"
+    ]
   }
 ]
