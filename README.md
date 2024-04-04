@@ -1,14 +1,14 @@
-# R4DS Introduction to Statistical Learning Using Python Book Club
+# DSLC Introduction to Statistical Learning Using Python Book Club
 
-Welcome to the R4DS Introduction to Statistical Learning Using Python Book Club!
+Welcome to the DSLC Introduction to Statistical Learning Using Python Book Club!
 
 We are working together to read [_Introduction to Statistical Learning Using Python_](https://www.statlearning.com) by Gareth James, Daniela Witten, Trevor Hastie, Rob Tibshirani, and Jonathan Taylor (Springer Science+Business Media, LLC, part of Springer Nature, copyright 2023, 978-3-031-38747-0).
-Join the [#book_club-islp](https://rfordatascience.slack.com/archives/C05K1HJEXFA) channel on the [R4DS Slack](https://r4ds.io/join) to participate.
+Join the [#book_club-islp](https://dslcio.slack.com/archives/C05K1HJEXFA) channel on the [DSLC Slack](https://dslc.io/join) to participate.
 As we read, we are producing [notes about the book](https://r4ds.github.io/bookclub-islp/).
 
 ## Meeting Schedule
 
-If you would like to present, please see the sign-up sheet for your cohort (linked below, and pinned in the [#book_club-islp](https://rfordatascience.slack.com/archives/C05K1HJEXFA) channel on Slack)!
+If you would like to present, please see the sign-up sheet for your cohort (linked below, and pinned in the [#book_club-islp](https://dslcio.slack.com/archives/C05K1HJEXFA) channel on Slack)!
 
 - [Cohort 1](https://docs.google.com/spreadsheets/d/1mBCB3LM4GkCGvJuAGF12rUyyW1srk6fLjSzQvT0KuC0/edit?usp=sharing) (started 2023-08-13): [Sundays, 11am CST/CDT](https://www.timeanddate.com/worldclock/converter.html?iso=20240225T170000&p1=24&p2=1440) | [meeting videos](https://youtube.com/playlist?list=PL3x6DOfs2NGgqCo62O0lDTcJLvGpyG8_g)
 
@@ -50,7 +50,7 @@ quarto render --to html
 Once you are ready to finalize your changes:
 
 1. Commit your changes.
-2. Push your changes to your forked repo and then create a pull request for the R4DS admins to merge your changes.
+2. Push your changes to your forked repo and then create a pull request for the DSLC admins to merge your changes.
 3. (If they request changes, make them)
 4. When your PR has been accepted ("merged"), close out your branch and prepare your local repository for future work.
 

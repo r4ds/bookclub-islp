@@ -32,7 +32,7 @@ quarto render --to html
 
 ## Push up to GitHub
 
-Push your changes to your forked repo and then create a pull request for the R4DS admins to merge your changes.
+Push your changes to your forked repo and then create a pull request for the DSLC admins to merge your changes.
 
 ``` bash
 git add .

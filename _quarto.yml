@@ -4,7 +4,7 @@ project:
 
 book:
   title: "Introduction to Statistical Learning using Python"
-  subtitle: "The R4DS Online Learning Community"
+  subtitle: "The Data Science Learning Community"
   site-url: https://hastie.su.domains/ISLP/ISLP_website.pdf
   repo-url: https://github.com/r4ds/bookclub-islp
   sharing: [twitter, facebook, linkedin]

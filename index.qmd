@@ -2,9 +2,9 @@
 
 This is a companion for the book [Introduction to Statistical Learning with Python](https://www.statlearning.com/).
 
-This website is being developed by the [R4DS Online Learning Community](https://rfordatasci.com/). Follow along and [join the community](https://r4ds.io/join) to participate.
+This website is being developed by the [Data Science Learning Community](https://dslc.io/). Follow along and [join the community](https://dslc.io/join) to participate.
 
-This companion follows the [R4DS Online Learning Community Code of Conduct](https://r4ds.io/conduct).
+This companion follows the [Data Science Learning Community Code of Conduct](https://dslc.io/conduct).
 
 ## Book club meetings {.unnumbered}
 
@@ -14,4 +14,4 @@ This companion follows the [R4DS Online Learning Community Code of Conduct](http
 
 - More information about how to present is available in the GitHub repo.
 
-- Presentations will be recorded and will be available on the [R4DS Online Learning Community YouTube Channel](https://r4ds.io/youtube).
+- Presentations will be recorded and will be available on the [Data Science Learning Community YouTube Channel](https://dslc.io/youtube).
