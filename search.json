@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Introduction to Statistical Learning using Python",
     "section": "",
-    "text": "Welcome\nThis is a companion for the book Introduction to Statistical Learning with Python.\nThis website is being developed by the R4DS Online Learning Community. Follow along and join the community to participate.\nThis companion follows the R4DS Online Learning Community Code of Conduct.",
+    "text": "Welcome\nThis is a companion for the book Introduction to Statistical Learning with Python.\nThis website is being developed by the Data Science Learning Community. Follow along and join the community to participate.\nThis companion follows the Data Science Learning Community Code of Conduct.",
     "crumbs": [
       "Welcome"
     ]
@@ -14,7 +14,7 @@
     "href": "index.html#book-club-meetings",
     "title": "Introduction to Statistical Learning using Python",
     "section": "Book club meetings",
-    "text": "Book club meetings\n\nEach week, a volunteer will present a chapter from the book.\n\nThis is the best way to learn the material.\n\nPresentations will usually consist of a review of the material, a discussion, and/or a demonstration of the principles presented in that chapter.\nMore information about how to present is available in the GitHub repo.\nPresentations will be recorded and will be available on the R4DS Online Learning Community YouTube Channel.",
+    "text": "Book club meetings\n\nEach week, a volunteer will present a chapter from the book.\n\nThis is the best way to learn the material.\n\nPresentations will usually consist of a review of the material, a discussion, and/or a demonstration of the principles presented in that chapter.\nMore information about how to present is available in the GitHub repo.\nPresentations will be recorded and will be available on the Data Science Learning Community YouTube Channel.",
     "crumbs": [
       "Welcome"
     ]
@@ -1263,7 +1263,7 @@
     "href": "how-to.html#push-up-to-github",
     "title": "How to add to the book",
     "section": "Push up to GitHub",
-    "text": "Push up to GitHub\nPush your changes to your forked repo and then create a pull request for the R4DS admins to merge your changes.\ngit add .\ngit commit -m \"Message here\"\ngit push",
+    "text": "Push up to GitHub\nPush your changes to your forked repo and then create a pull request for the DSLC admins to merge your changes.\ngit add .\ngit commit -m \"Message here\"\ngit push",
     "crumbs": [
       "Appendices",
       "How to add to the book"

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -588,7 +588,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Introduction to Statistical Learning using Python</h1>
-<p class="subtitle lead">The R4DS Online Learning Community</p>
+<p class="subtitle lead">The Data Science Learning Community</p>
 </div>
 
 
@@ -608,8 +608,8 @@ ul.task-list li input[type="checkbox"] {
 <section id="welcome" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="welcome">Welcome</h2>
 <p>This is a companion for the book <a href="https://www.statlearning.com/">Introduction to Statistical Learning with Python</a>.</p>
-<p>This website is being developed by the <a href="https://rfordatasci.com/">R4DS Online Learning Community</a>. Follow along and <a href="https://r4ds.io/join">join the community</a> to participate.</p>
-<p>This companion follows the <a href="https://r4ds.io/conduct">R4DS Online Learning Community Code of Conduct</a>.</p>
+<p>This website is being developed by the <a href="https://dslc.io/">Data Science Learning Community</a>. Follow along and <a href="https://dslc.io/join">join the community</a> to participate.</p>
+<p>This companion follows the <a href="https://dslc.io/conduct">Data Science Learning Community Code of Conduct</a>.</p>
 </section>
 <section id="book-club-meetings" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="book-club-meetings">Book club meetings</h2>
@@ -620,7 +620,7 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 <li><p>Presentations will usually consist of a review of the material, a discussion, and/or a demonstration of the principles presented in that chapter.</p></li>
 <li><p>More information about how to present is available in the GitHub repo.</p></li>
-<li><p>Presentations will be recorded and will be available on the <a href="https://r4ds.io/youtube">R4DS Online Learning Community YouTube Channel</a>.</p></li>
+<li><p>Presentations will be recorded and will be available on the <a href="https://dslc.io/youtube">Data Science Learning Community YouTube Channel</a>.</p></li>
 </ul>
 
 
@@ -706,6 +706,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/hastie\.su\.domains\/ISLP\/ISLP_website\.pdf");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -740,7 +758,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
