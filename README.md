@@ -10,7 +10,7 @@ As we read, we are producing [notes about the book](https://r4ds.github.io/bookc
 
 If you would like to present, please see the sign-up sheet for your cohort (linked below, and pinned in the [#book_club-islp](https://dslcio.slack.com/archives/C05K1HJEXFA) channel on Slack)!
 
-- [Cohort 1](https://docs.google.com/spreadsheets/d/1mBCB3LM4GkCGvJuAGF12rUyyW1srk6fLjSzQvT0KuC0/edit?usp=sharing) (started 2023-08-13): [Sundays, 11am CST/CDT](https://www.timeanddate.com/worldclock/converter.html?iso=20240225T170000&p1=24&p2=1440) | [meeting videos](https://youtube.com/playlist?list=PL3x6DOfs2NGgqCo62O0lDTcJLvGpyG8_g)
+- Cohort 1 (started 2023-08-13, ended 2024-04-14): [meeting videos](https://youtube.com/playlist?list=PL3x6DOfs2NGgqCo62O0lDTcJLvGpyG8_g)
 
 <hr>
 
