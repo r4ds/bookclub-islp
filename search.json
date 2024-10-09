@@ -20,26 +20,6 @@
     ]
   },
   {
-    "objectID": "01_main.html",
-    "href": "01_main.html",
-    "title": "1. Introduction",
-    "section": "",
-    "text": "Learning Objectives",
-    "crumbs": [
-      "1. Introduction"
-    ]
-  },
-  {
-    "objectID": "01_main.html#learning-objectives",
-    "href": "01_main.html#learning-objectives",
-    "title": "1. Introduction",
-    "section": "",
-    "text": "Recognize various types of statistical learning.\nUnderstand why this book is useful for you.\nBe able to read mathematical notation used throughout this book.\nDescribe the overall layout of this book.\nBe able to find data used in examples throughout the book.",
-    "crumbs": [
-      "1. Introduction"
-    ]
-  },
-  {
     "objectID": "01_notes.html",
     "href": "01_notes.html",
     "title": "Notes",
@@ -194,26 +174,6 @@
     ]
   },
   {
-    "objectID": "02_main.html",
-    "href": "02_main.html",
-    "title": "2. Statistical Learning",
-    "section": "",
-    "text": "Learning objectives",
-    "crumbs": [
-      "2. Statistical Learning"
-    ]
-  },
-  {
-    "objectID": "02_main.html#learning-objectives",
-    "href": "02_main.html#learning-objectives",
-    "title": "2. Statistical Learning",
-    "section": "",
-    "text": "Compare supervised vs unsupervised learning.\nCompare regression vs classification problems.\nMeasure the accuracy of regression model fits.\nMeasure the accuracy of classification model fits.\nDescribe the trade-off between more accurate models and more interpretable models.\nCompare Parametric vs Nonparametric models\nUnderstand overfitting.\nDescribe how bias and variance contribute to the model error.",
-    "crumbs": [
-      "2. Statistical Learning"
-    ]
-  },
-  {
     "objectID": "02_notes.html",
     "href": "02_notes.html",
     "title": "Notes",
@@ -310,26 +270,6 @@
     "crumbs": [
       "2. Statistical Learning",
       "Applied Exercises"
-    ]
-  },
-  {
-    "objectID": "03_main.html",
-    "href": "03_main.html",
-    "title": "3. Linear Regression",
-    "section": "",
-    "text": "Learning Objectives",
-    "crumbs": [
-      "3. Linear Regression"
-    ]
-  },
-  {
-    "objectID": "03_main.html#learning-objectives",
-    "href": "03_main.html#learning-objectives",
-    "title": "3. Linear Regression",
-    "section": "",
-    "text": "Perform linear regression with a single predictor variable.\nEstimate the standard error of regression coefficients.\nEvaluate the goodness of fit of a regression.\nPerform linear regression with multiple predictor variables.\nEvaluate the relative importance of variables in a multiple linear regression.\nInclude interaction effects in a multiple linear regression.\nPerform linear regression with qualitative predictor variables.\nModel non-linear relationships using polynomial regression.\nIdentify non-linearity in a data set.\nCompare and contrast linear regression with KNN regression.",
-    "crumbs": [
-      "3. Linear Regression"
     ]
   },
   {
@@ -498,26 +438,6 @@
     ]
   },
   {
-    "objectID": "04_main.html",
-    "href": "04_main.html",
-    "title": "4. Classification",
-    "section": "",
-    "text": "Learning Objectives",
-    "crumbs": [
-      "4. Classification"
-    ]
-  },
-  {
-    "objectID": "04_main.html#learning-objectives",
-    "href": "04_main.html#learning-objectives",
-    "title": "4. Classification",
-    "section": "",
-    "text": "item 1\nitem 2\nitem 3",
-    "crumbs": [
-      "4. Classification"
-    ]
-  },
-  {
     "objectID": "04_video.html",
     "href": "04_video.html",
     "title": "Video",
@@ -537,26 +457,6 @@
     "crumbs": [
       "4. Classification",
       "Video"
-    ]
-  },
-  {
-    "objectID": "05_main.html",
-    "href": "05_main.html",
-    "title": "5. Resampling Methods",
-    "section": "",
-    "text": "Learning Objectives",
-    "crumbs": [
-      "5. Resampling Methods"
-    ]
-  },
-  {
-    "objectID": "05_main.html#learning-objectives",
-    "href": "05_main.html#learning-objectives",
-    "title": "5. Resampling Methods",
-    "section": "",
-    "text": "item 1\nitem 2\nitem 3",
-    "crumbs": [
-      "5. Resampling Methods"
     ]
   },
   {
@@ -582,26 +482,6 @@
     ]
   },
   {
-    "objectID": "06_main.html",
-    "href": "06_main.html",
-    "title": "6. Linear Model Selection and Regularization",
-    "section": "",
-    "text": "Learning Objectives",
-    "crumbs": [
-      "6. Linear Model Selection and Regularization"
-    ]
-  },
-  {
-    "objectID": "06_main.html#learning-objectives",
-    "href": "06_main.html#learning-objectives",
-    "title": "6. Linear Model Selection and Regularization",
-    "section": "",
-    "text": "item 1\nitem 2\nitem 3",
-    "crumbs": [
-      "6. Linear Model Selection and Regularization"
-    ]
-  },
-  {
     "objectID": "06_video.html",
     "href": "06_video.html",
     "title": "Video",
@@ -624,26 +504,6 @@
     ]
   },
   {
-    "objectID": "07_main.html",
-    "href": "07_main.html",
-    "title": "7. Moving Beyond Linearity",
-    "section": "",
-    "text": "Learning Objectives",
-    "crumbs": [
-      "7. Moving Beyond Linearity"
-    ]
-  },
-  {
-    "objectID": "07_main.html#learning-objectives",
-    "href": "07_main.html#learning-objectives",
-    "title": "7. Moving Beyond Linearity",
-    "section": "",
-    "text": "item 1\nitem 2\nitem 3",
-    "crumbs": [
-      "7. Moving Beyond Linearity"
-    ]
-  },
-  {
     "objectID": "07_video.html",
     "href": "07_video.html",
     "title": "Video",
@@ -663,26 +523,6 @@
     "crumbs": [
       "7. Moving Beyond Linearity",
       "Video"
-    ]
-  },
-  {
-    "objectID": "08_main.html",
-    "href": "08_main.html",
-    "title": "8. Tree-Based Methods",
-    "section": "",
-    "text": "Learning Objectives\nSources: https://github.com/JauntyJJS/islr2-bookclub-cohort3-chapter8, https://hastie.su.domains/ISLR2/Slides/Ch8_Tree_Based_Methods.pdf",
-    "crumbs": [
-      "8. Tree-Based Methods"
-    ]
-  },
-  {
-    "objectID": "08_main.html#learning-objectives",
-    "href": "08_main.html#learning-objectives",
-    "title": "8. Tree-Based Methods",
-    "section": "",
-    "text": "Use decision trees o model relationships between predictors and an outcome\nCompare and contrast tree-based models with other model types\nUse tree-based ensemble methods to improve predictive models\nCompare and contrast the various methods of building tree ensembles: bagging, boosting, random forests, and Bayesian Additive Regression Trees (BART)",
-    "crumbs": [
-      "8. Tree-Based Methods"
     ]
   },
   {
@@ -1016,26 +856,6 @@
     ]
   },
   {
-    "objectID": "09_main.html",
-    "href": "09_main.html",
-    "title": "9. Support Vector Machines",
-    "section": "",
-    "text": "Learning Objectives",
-    "crumbs": [
-      "9. Support Vector Machines"
-    ]
-  },
-  {
-    "objectID": "09_main.html#learning-objectives",
-    "href": "09_main.html#learning-objectives",
-    "title": "9. Support Vector Machines",
-    "section": "",
-    "text": "item 1\nitem 2\nitem 3",
-    "crumbs": [
-      "9. Support Vector Machines"
-    ]
-  },
-  {
     "objectID": "09_video.html",
     "href": "09_video.html",
     "title": "Video",
@@ -1055,26 +875,6 @@
     "crumbs": [
       "9. Support Vector Machines",
       "Video"
-    ]
-  },
-  {
-    "objectID": "10_main.html",
-    "href": "10_main.html",
-    "title": "10. Deep Learning",
-    "section": "",
-    "text": "Learning Objectives",
-    "crumbs": [
-      "10. Deep Learning"
-    ]
-  },
-  {
-    "objectID": "10_main.html#learning-objectives",
-    "href": "10_main.html#learning-objectives",
-    "title": "10. Deep Learning",
-    "section": "",
-    "text": "item 1\nitem 2\nitem 3",
-    "crumbs": [
-      "10. Deep Learning"
     ]
   },
   {
@@ -1100,26 +900,6 @@
     ]
   },
   {
-    "objectID": "11_main.html",
-    "href": "11_main.html",
-    "title": "11. Survival Analysis and Censored Data",
-    "section": "",
-    "text": "Learning Objectives",
-    "crumbs": [
-      "11. Survival Analysis and Censored Data"
-    ]
-  },
-  {
-    "objectID": "11_main.html#learning-objectives",
-    "href": "11_main.html#learning-objectives",
-    "title": "11. Survival Analysis and Censored Data",
-    "section": "",
-    "text": "item 1\nitem 2\nitem 3",
-    "crumbs": [
-      "11. Survival Analysis and Censored Data"
-    ]
-  },
-  {
     "objectID": "11_video.html",
     "href": "11_video.html",
     "title": "Video",
@@ -1142,26 +922,6 @@
     ]
   },
   {
-    "objectID": "12_main.html",
-    "href": "12_main.html",
-    "title": "12. Unsupervised Learning",
-    "section": "",
-    "text": "Learning Objectives",
-    "crumbs": [
-      "12. Unsupervised Learning"
-    ]
-  },
-  {
-    "objectID": "12_main.html#learning-objectives",
-    "href": "12_main.html#learning-objectives",
-    "title": "12. Unsupervised Learning",
-    "section": "",
-    "text": "item 1\nitem 2\nitem 3",
-    "crumbs": [
-      "12. Unsupervised Learning"
-    ]
-  },
-  {
     "objectID": "12_video.html",
     "href": "12_video.html",
     "title": "Video",
@@ -1181,26 +941,6 @@
     "crumbs": [
       "12. Unsupervised Learning",
       "Video"
-    ]
-  },
-  {
-    "objectID": "13_main.html",
-    "href": "13_main.html",
-    "title": "13. Multiple Testing",
-    "section": "",
-    "text": "Learning Objectives",
-    "crumbs": [
-      "13. Multiple Testing"
-    ]
-  },
-  {
-    "objectID": "13_main.html#learning-objectives",
-    "href": "13_main.html#learning-objectives",
-    "title": "13. Multiple Testing",
-    "section": "",
-    "text": "item 1\nitem 2\nitem 3",
-    "crumbs": [
-      "13. Multiple Testing"
     ]
   },
   {
@@ -1267,6 +1007,266 @@
     "crumbs": [
       "Appendices",
       "How to add to the book"
+    ]
+  },
+  {
+    "objectID": "01_main.html",
+    "href": "01_main.html",
+    "title": "1. Introduction",
+    "section": "",
+    "text": "Learning Objectives",
+    "crumbs": [
+      "1. Introduction"
+    ]
+  },
+  {
+    "objectID": "01_main.html#learning-objectives",
+    "href": "01_main.html#learning-objectives",
+    "title": "1. Introduction",
+    "section": "",
+    "text": "Recognize various types of statistical learning.\nUnderstand why this book is useful for you.\nBe able to read mathematical notation used throughout this book.\nDescribe the overall layout of this book.\nBe able to find data used in examples throughout the book.",
+    "crumbs": [
+      "1. Introduction"
+    ]
+  },
+  {
+    "objectID": "02_main.html",
+    "href": "02_main.html",
+    "title": "2. Statistical Learning",
+    "section": "",
+    "text": "Learning objectives",
+    "crumbs": [
+      "2. Statistical Learning"
+    ]
+  },
+  {
+    "objectID": "02_main.html#learning-objectives",
+    "href": "02_main.html#learning-objectives",
+    "title": "2. Statistical Learning",
+    "section": "",
+    "text": "Compare supervised vs unsupervised learning.\nCompare regression vs classification problems.\nMeasure the accuracy of regression model fits.\nMeasure the accuracy of classification model fits.\nDescribe the trade-off between more accurate models and more interpretable models.\nCompare Parametric vs Nonparametric models\nUnderstand overfitting.\nDescribe how bias and variance contribute to the model error.",
+    "crumbs": [
+      "2. Statistical Learning"
+    ]
+  },
+  {
+    "objectID": "03_main.html",
+    "href": "03_main.html",
+    "title": "3. Linear Regression",
+    "section": "",
+    "text": "Learning Objectives",
+    "crumbs": [
+      "3. Linear Regression"
+    ]
+  },
+  {
+    "objectID": "03_main.html#learning-objectives",
+    "href": "03_main.html#learning-objectives",
+    "title": "3. Linear Regression",
+    "section": "",
+    "text": "Perform linear regression with a single predictor variable.\nEstimate the standard error of regression coefficients.\nEvaluate the goodness of fit of a regression.\nPerform linear regression with multiple predictor variables.\nEvaluate the relative importance of variables in a multiple linear regression.\nInclude interaction effects in a multiple linear regression.\nPerform linear regression with qualitative predictor variables.\nModel non-linear relationships using polynomial regression.\nIdentify non-linearity in a data set.\nCompare and contrast linear regression with KNN regression.",
+    "crumbs": [
+      "3. Linear Regression"
+    ]
+  },
+  {
+    "objectID": "04_main.html",
+    "href": "04_main.html",
+    "title": "4. Classification",
+    "section": "",
+    "text": "Learning Objectives",
+    "crumbs": [
+      "4. Classification"
+    ]
+  },
+  {
+    "objectID": "04_main.html#learning-objectives",
+    "href": "04_main.html#learning-objectives",
+    "title": "4. Classification",
+    "section": "",
+    "text": "item 1\nitem 2\nitem 3",
+    "crumbs": [
+      "4. Classification"
+    ]
+  },
+  {
+    "objectID": "05_main.html",
+    "href": "05_main.html",
+    "title": "5. Resampling Methods",
+    "section": "",
+    "text": "Learning Objectives",
+    "crumbs": [
+      "5. Resampling Methods"
+    ]
+  },
+  {
+    "objectID": "05_main.html#learning-objectives",
+    "href": "05_main.html#learning-objectives",
+    "title": "5. Resampling Methods",
+    "section": "",
+    "text": "item 1\nitem 2\nitem 3",
+    "crumbs": [
+      "5. Resampling Methods"
+    ]
+  },
+  {
+    "objectID": "06_main.html",
+    "href": "06_main.html",
+    "title": "6. Linear Model Selection and Regularization",
+    "section": "",
+    "text": "Learning Objectives",
+    "crumbs": [
+      "6. Linear Model Selection and Regularization"
+    ]
+  },
+  {
+    "objectID": "06_main.html#learning-objectives",
+    "href": "06_main.html#learning-objectives",
+    "title": "6. Linear Model Selection and Regularization",
+    "section": "",
+    "text": "item 1\nitem 2\nitem 3",
+    "crumbs": [
+      "6. Linear Model Selection and Regularization"
+    ]
+  },
+  {
+    "objectID": "07_main.html",
+    "href": "07_main.html",
+    "title": "7. Moving Beyond Linearity",
+    "section": "",
+    "text": "Learning Objectives",
+    "crumbs": [
+      "7. Moving Beyond Linearity"
+    ]
+  },
+  {
+    "objectID": "07_main.html#learning-objectives",
+    "href": "07_main.html#learning-objectives",
+    "title": "7. Moving Beyond Linearity",
+    "section": "",
+    "text": "item 1\nitem 2\nitem 3",
+    "crumbs": [
+      "7. Moving Beyond Linearity"
+    ]
+  },
+  {
+    "objectID": "08_main.html",
+    "href": "08_main.html",
+    "title": "8. Tree-Based Methods",
+    "section": "",
+    "text": "Learning Objectives\nSources: https://github.com/JauntyJJS/islr2-bookclub-cohort3-chapter8, https://hastie.su.domains/ISLR2/Slides/Ch8_Tree_Based_Methods.pdf",
+    "crumbs": [
+      "8. Tree-Based Methods"
+    ]
+  },
+  {
+    "objectID": "08_main.html#learning-objectives",
+    "href": "08_main.html#learning-objectives",
+    "title": "8. Tree-Based Methods",
+    "section": "",
+    "text": "Use decision trees o model relationships between predictors and an outcome\nCompare and contrast tree-based models with other model types\nUse tree-based ensemble methods to improve predictive models\nCompare and contrast the various methods of building tree ensembles: bagging, boosting, random forests, and Bayesian Additive Regression Trees (BART)",
+    "crumbs": [
+      "8. Tree-Based Methods"
+    ]
+  },
+  {
+    "objectID": "09_main.html",
+    "href": "09_main.html",
+    "title": "9. Support Vector Machines",
+    "section": "",
+    "text": "Learning Objectives",
+    "crumbs": [
+      "9. Support Vector Machines"
+    ]
+  },
+  {
+    "objectID": "09_main.html#learning-objectives",
+    "href": "09_main.html#learning-objectives",
+    "title": "9. Support Vector Machines",
+    "section": "",
+    "text": "item 1\nitem 2\nitem 3",
+    "crumbs": [
+      "9. Support Vector Machines"
+    ]
+  },
+  {
+    "objectID": "10_main.html",
+    "href": "10_main.html",
+    "title": "10. Deep Learning",
+    "section": "",
+    "text": "Learning Objectives",
+    "crumbs": [
+      "10. Deep Learning"
+    ]
+  },
+  {
+    "objectID": "10_main.html#learning-objectives",
+    "href": "10_main.html#learning-objectives",
+    "title": "10. Deep Learning",
+    "section": "",
+    "text": "item 1\nitem 2\nitem 3",
+    "crumbs": [
+      "10. Deep Learning"
+    ]
+  },
+  {
+    "objectID": "11_main.html",
+    "href": "11_main.html",
+    "title": "11. Survival Analysis and Censored Data",
+    "section": "",
+    "text": "Learning Objectives",
+    "crumbs": [
+      "11. Survival Analysis and Censored Data"
+    ]
+  },
+  {
+    "objectID": "11_main.html#learning-objectives",
+    "href": "11_main.html#learning-objectives",
+    "title": "11. Survival Analysis and Censored Data",
+    "section": "",
+    "text": "item 1\nitem 2\nitem 3",
+    "crumbs": [
+      "11. Survival Analysis and Censored Data"
+    ]
+  },
+  {
+    "objectID": "12_main.html",
+    "href": "12_main.html",
+    "title": "12. Unsupervised Learning",
+    "section": "",
+    "text": "Learning Objectives",
+    "crumbs": [
+      "12. Unsupervised Learning"
+    ]
+  },
+  {
+    "objectID": "12_main.html#learning-objectives",
+    "href": "12_main.html#learning-objectives",
+    "title": "12. Unsupervised Learning",
+    "section": "",
+    "text": "item 1\nitem 2\nitem 3",
+    "crumbs": [
+      "12. Unsupervised Learning"
+    ]
+  },
+  {
+    "objectID": "13_main.html",
+    "href": "13_main.html",
+    "title": "13. Multiple Testing",
+    "section": "",
+    "text": "Learning Objectives",
+    "crumbs": [
+      "13. Multiple Testing"
+    ]
+  },
+  {
+    "objectID": "13_main.html#learning-objectives",
+    "href": "13_main.html#learning-objectives",
+    "title": "13. Multiple Testing",
+    "section": "",
+    "text": "item 1\nitem 2\nitem 3",
+    "crumbs": [
+      "13. Multiple Testing"
     ]
   }
 ]
