@@ -2,7 +2,7 @@
 
 Welcome to the DSLC Introduction to Statistical Learning Using Python Book Club!
 
-We are working together to read [_Introduction to Statistical Learning Using Python_](https://www.statlearning.com) by Gareth James, Daniela Witten, Trevor Hastie, Rob Tibshirani, and Jonathan Taylor (Springer Science+Business Media, LLC, part of Springer Nature, copyright 2023, 978-3-031-38747-0).
+We are working together to read [_An Introduction to Statistical Learning with Applications in Python_](https://www.statlearning.com) by Gareth James, Daniela Witten, Trevor Hastie, Rob Tibshirani, and Jonathan Taylor (Springer Science+Business Media, LLC, part of Springer Nature, copyright 2023, 978-3-031-38747-0).
 Join the [#book_club-islp](https://dslcio.slack.com/archives/C05K1HJEXFA) channel on the [DSLC Slack](https://dslc.io/join) to participate.
 As we read, we are producing [notes about the book](https://r4ds.github.io/bookclub-islp/).
 
@@ -11,6 +11,7 @@ As we read, we are producing [notes about the book](https://r4ds.github.io/bookc
 If you would like to present, please see the sign-up sheet for your cohort (linked below, and pinned in the [#book_club-islp](https://dslcio.slack.com/archives/C05K1HJEXFA) channel on Slack)!
 
 - Cohort 1 (started 2023-08-13, ended 2024-04-14): [meeting videos](https://youtube.com/playlist?list=PL3x6DOfs2NGgqCo62O0lDTcJLvGpyG8_g)
+- [Cohort 2](https://docs.google.com/spreadsheets/d/1DgMfX7ReGoVxHkMl_jrJ_o6YTAL_ZNppYAODjfgFKTg/edit?usp=sharing) (started 2024-10-21): [Mondays, 1pm America/Chicago](https://www.timeanddate.com/worldclock/converter.html?iso=20241021T180000&p1=24&p2=1440) | [meeting videos](https://www.youtube.com/playlist?list=PL3x6DOfs2NGjM52UUBY61QkouibiO3YNP)
 
 <hr>
 
