@@ -87,8 +87,10 @@ format:
     fontsize: 16pt
     css: style.css
     include-in-header: sidebars-toggle.html
-    code-tools: true
     code-block-border-left: true
+    code-block-bg: true
+    code-line-numbers: true
+    code-tools: true
     link-external-icon: true
     link-external-newwindow: true
 

@@ -1,44 +1,29 @@
 # Notes {.unnumbered}
 
-## DSLC Code of Conduct
+## What is statistical learning?
 
-In the interest of fostering an open and welcoming environment, we as learners, mentors, and administrators pledge to making participation in our community a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, gender identity and expression, level of experience, nationality, personal appearance, race, religion, or sexual identity and orientation.
+Before we dive into the book, let's take a step back and think about what statistics is.
 
-Examples of behavior that contributes to creating a positive environment include:
+> "... what is statistics? In order to understand statistics, to compress them, you need to understand what it is about the world that creates those statistics..."
 
--   Using welcoming and inclusive language
--   Being respectful of differing viewpoints and experiences
--   Gracefully accepting constructive criticism
--   Focusing on what is best for the community
--   Showing empathy towards other community members
+[Ilya Sutskever on Dwarkesh](https://www.youtube.com/watch?v=YEUclZdj_Sc&ab_channel=DwarkeshPatel)
 
-Examples of unacceptable behavior by participants include:
+First and foremost, the statistical learning tools in this book are a set of tools for understanding and working with data. And data is a means to understand the world.
 
--   The use of sexualized language or imagery and unwelcome sexual attention or advances
--   Trolling, insulting/derogatory comments, and personal or political attacks
--   Public or private harassment
--   Publishing others’ private information, such as a physical or electronic address, without explicit - permission
--   Other conduct which could reasonably be considered inappropriate in a professional setting
+The book focuses on two types of statistical learning - supervised learning, and unsupervised learning.
+
+-   **Supervised:** Building a model to learn - from labelled data - how to predict the right output for a given input:
+    -   Predict `wage` from `age`, `education`, and `year`.
+    -   Predict `market direction` from `previous days' performance`.
+-   **Unsupervised:** find relationships and structure in data without learning from labelled data.
+    -   Identify *clusters* within cancer cell lines
+    -   *Reduce dimensions* of high-dimensional data.
 
 ## Pre-reqs
 
 From the book:
 
 > "We expect that the reader will have had at least one elementary course in statistics... Background in linear regression is also useful, though not required... The mathematical level of this book is modest, and a detailed knowledge of matrix operations is not required... Previous exposure to a programming language, such as MATLAB or R, is useful but not required."
-
-## What is statistical learning?
-
-First and foremost, a set of tools for understanding and working with data.
-
-[**Statistical learning**](https://en.wikipedia.org/wiki/Statistical_learning_theory) is the theoretical foundation for machine learning framework. It makes connections between the fields of statistics, linear algebra and functional analysis.
-
-In particular, the **Statistical learning theory** deals with the problem of finding a predictive function based on data and this is what is best known as **supervised learning**, in this book we will see more than just theory, as we will deal with **unsupervised learning** as well as making practical applications.
-
--   **Supervised:** "Building a model to **predict an *output* from *inputs* and labels.**"
-    -   Predict `wage` from `age`, `education`, and `year`.
-    -   Predict `market direction` from `previous days' performance`.
--   **Unsupervised:** unlabelled data, **find relationships and structure.**
-    -   Identify `clusters` within `cancer cell lines`.
 
 ## Why ISLP?
 
@@ -68,7 +53,9 @@ From Page 9 of the Introduction:
 
 ### Notation - Matrices & Vectors
 
-Matrices are generally written as the `pmatrix` in LaTeX: $$
+Matrices are generally written as the `pmatrix` in LaTeX:
+
+$$
 \mathbf{X} = \begin{pmatrix} x_{11} & x_{12} & \cdots & x_{1p} \\ x_{21} & x_{22} & \cdots & x_{2p} \\ \vdots & \vdots & \ddots & \vdots \\ x_{n1} & x_{n2} & \cdots & x_{np} \end{pmatrix}
 $$
 
@@ -83,7 +70,13 @@ x_{n1} & x_{n2} & \cdots & x_{np}
 \end{pmatrix}
 ```
 
-And vectors (matrices with 1 column) are written: $$
+::: callout-tip
+Use a verbatim code chunk when you want to print the output as-is!
+:::
+
+And vectors (matrices with 1 column) are written:
+
+$$
 \begin{pmatrix}
 x_{i_{1}} \\
 x_{{i_{2}}}  \\
@@ -119,9 +112,23 @@ It can be considered as a user manual, with self-contained Python labs, which le
 
 ## Where's the data?
 
-``` python
+::: panel-tabset
+## pip
+
+``` bash
 pip install ISLP
 ```
+
+## uv
+
+``` bash
+uv pip install ISLP
+```
+
+## manual download
+
+[Book website](https://www.statlearning.com/resources-python)
+:::
 
 We'll look at this data in more detail below.
 
@@ -133,6 +140,7 @@ We'll look at this data in more detail below.
 -   course on edX: [statistical-learning](https://www.edx.org/course/statistical-learning)
 -   youtube channel: [playlists](https://www.youtube.com/channel/UCB2p-jaoolkv0h22m4I9l9Q/playlists)
 -   exercise solutions: [applied solutions](https://botlnec.github.io/islp/)
+-   [Repo](https://github.com/r4ds/bookclub-islp) for the bookclub
 
 **Some more theoretical resources:**
 

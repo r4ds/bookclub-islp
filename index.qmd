@@ -8,10 +8,33 @@ This companion follows the [Data Science Learning Community Code of Conduct](htt
 
 ## Book club meetings {.unnumbered}
 
-- Each week, a volunteer will present a chapter from the book.
-  - This is the best way to learn the material.
-- Presentations will usually consist of a review of the material, a discussion, and/or a demonstration of the principles presented in that chapter.
+-   Each week, a volunteer will present a chapter from the book.
 
-- More information about how to present is available in the GitHub repo.
+    -   This is the best way to learn the material.
 
-- Presentations will be recorded and will be available on the [Data Science Learning Community YouTube Channel](https://dslc.io/youtube).
+-   Presentations will usually consist of a review of the material, a discussion, and/or a demonstration of the principles presented in that chapter.
+
+-   More information about how to present is available in the GitHub repo.
+
+-   Presentations will be recorded and will be available on the [Data Science Learning Community YouTube Channel](https://dslc.io/youtube).
+
+## DSLC Code of Conduct
+
+In the interest of fostering an open and welcoming environment, we as learners, mentors, and administrators pledge to making participation in our community a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, gender identity and expression, level of experience, nationality, personal appearance, race, religion, or sexual identity and orientation.
+
+Examples of behavior that contributes to creating a positive environment include:
+
+-   Using welcoming and inclusive language
+-   Being respectful of differing viewpoints and experiences
+-   Gracefully accepting constructive criticism
+-   Focusing on what is best for the community
+-   Showing empathy towards other community members
+
+Examples of unacceptable behavior by participants include:
+
+-   The use of sexualized language or imagery and unwelcome sexual attention or advances
+-   Trolling, insulting/derogatory comments, and personal or political attacks
+-   Public or private harassment
+-   Publishing others’ private information, such as a physical or electronic address, without explicit - permission
+-   Other conduct which could reasonably be considered inappropriate in a professional setting
+

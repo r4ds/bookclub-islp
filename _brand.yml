@@ -5,16 +5,10 @@ color:
     coral: "#E76F51"
     lily: "#6C5B7B"
     slate: "#2C3E50"
-    mist: "#EDF2F7"
-    stone: "#A0AEC0"
   background: "#FAF9F7"
   foreground: slate
-  primary: purple
-  secondary: midnight
-  success: "#4CAF50"
-  info: lily
-  warning: coral
-  danger: "#E53E3E"
+  primary: midnight
+  secondary: purple
 
 typography:
   fonts:
