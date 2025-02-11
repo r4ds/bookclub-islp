@@ -1,42 +1,107 @@
-# Notes {-}
+# Notes {.unnumbered}
+
+## DSLC Code of Conduct
+
+In the interest of fostering an open and welcoming environment, we as learners, mentors, and administrators pledge to making participation in our community a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, gender identity and expression, level of experience, nationality, personal appearance, race, religion, or sexual identity and orientation.
+
+Examples of behavior that contributes to creating a positive environment include:
+
+-   Using welcoming and inclusive language
+-   Being respectful of differing viewpoints and experiences
+-   Gracefully accepting constructive criticism
+-   Focusing on what is best for the community
+-   Showing empathy towards other community members
+
+Examples of unacceptable behavior by participants include:
+
+-   The use of sexualized language or imagery and unwelcome sexual attention or advances
+-   Trolling, insulting/derogatory comments, and personal or political attacks
+-   Public or private harassment
+-   Publishing others’ private information, such as a physical or electronic address, without explicit - permission
+-   Other conduct which could reasonably be considered inappropriate in a professional setting
+
+## Pre-reqs
+
+From the book:
+
+> "We expect that the reader will have had at least one elementary course in statistics... Background in linear regression is also useful, though not required... The mathematical level of this book is modest, and a detailed knowledge of matrix operations is not required... Previous exposure to a programming language, such as MATLAB or R, is useful but not required."
 
 ## What is statistical learning?
 
-[**Statistical learning**](https://en.wikipedia.org/wiki/Statistical_learning_theory) is the theoretical foundation for machine learning framework. It makes connections between the fields of statistics, linear algebra and functional analysis. 
+First and foremost, a set of tools for understanding and working with data.
+
+[**Statistical learning**](https://en.wikipedia.org/wiki/Statistical_learning_theory) is the theoretical foundation for machine learning framework. It makes connections between the fields of statistics, linear algebra and functional analysis.
 
 In particular, the **Statistical learning theory** deals with the problem of finding a predictive function based on data and this is what is best known as **supervised learning**, in this book we will see more than just theory, as we will deal with **unsupervised learning** as well as making practical applications.
 
-
-- **Supervised:** "Building a model to **predict an *output* from *inputs*.**"
-  - Predict `wage` from `age`, `education`, and `year`.
-  - Predict `market direction` from `previous days' performance`.
-- **Unsupervised:** Inputs but no specific outputs, **find relationships and structure.**
-  - Identify `clusters` within `cancer cell lines`.
-
+-   **Supervised:** "Building a model to **predict an *output* from *inputs* and labels.**"
+    -   Predict `wage` from `age`, `education`, and `year`.
+    -   Predict `market direction` from `previous days' performance`.
+-   **Unsupervised:** unlabelled data, **find relationships and structure.**
+    -   Identify `clusters` within `cancer cell lines`.
 
 ## Why ISLP?
 
-- "Facilitate the transition of statistical learning from an academic to a mainstream field."
-- Machine learning* is useful to everyone, let's all learn enough to use it responsibly.
-- Python "labs" make this make sense for this community!
+-   "Facilitate the transition of statistical learning from an academic to a mainstream field."
+-   Machine learning\* is useful to everyone, let's all learn enough to use it responsibly.
+-   Python "labs" make this make sense for this community!
 
 ## Premises of ISLP
 
 From Page 9 of the Introduction:
 
-- "Many statistical learning methods are relevant and useful in a wide range of academic and non-academic disciplines, beyond just the statistical sciences."
-- "Statistical learning should not be viewed as a series of black boxes."
-- "While it is important to know what job is performed by each cog, it is not necessary to have the skills to construct the machine inside the box!"
-- "We presume that the reader is interested in applying statistical learning methods to real-world problems."
+-   "Many statistical learning methods are relevant and useful in a wide range of academic and non-academic disciplines, beyond just the statistical sciences."
+-   "Statistical learning should not be viewed as a series of black boxes."
+-   "While it is important to know what job is performed by each cog, it is not necessary to have the skills to construct the machine inside the box!"
+-   "We presume that the reader is interested in applying statistical learning methods to real-world problems."
 
 ## Notation
 
-- *n* = number of observations (rows)
-- *p* = number of features/variables (columns)
-- We'll come back here if we need to as we go!
-- Some symbols they assume we know:
-  - $\in$ = "is an element of", "in"
-  - ${\rm I\!R}$ = "real numbers"
+-   $n$ = the number of distinct data points or observations
+-   $p$ = the number of variables used for predictions
+-   $x_{ij}$ = the value of the $j$th variable for the $i$th observation
+-   $\mathbf{x}$ = a vecotr (bolded lower case)
+-   $\mathbf{X}$ = an $n \cdot p$ matrix, whose $(i, j)$th element is $x_{ij}$
+-   $\mathbf{X^T}$ = the transpose of the matrix (column and row indices switched)
+-   $X$ = random variable (non bolded capital)
+-   $\mathbf{AB}$ = the matrix multiplication of $A \cdot B$ - [primer](https://en.wikipedia.org/wiki/Matrix_multiplication)
+
+### Notation - Matrices & Vectors
+
+Matrices are generally written as the `pmatrix` in LaTeX: $$
+\mathbf{X} = \begin{pmatrix} x_{11} & x_{12} & \cdots & x_{1p} \\ x_{21} & x_{22} & \cdots & x_{2p} \\ \vdots & \vdots & \ddots & \vdots \\ x_{n1} & x_{n2} & \cdots & x_{np} \end{pmatrix}
+$$
+
+I include how to write that in LaTeX here:
+
+``` verbatim
+ \mathbf{X} =
+\begin{pmatrix} x_{11} & x_{12} & \cdots & x_{1p} \\ 
+x_{21} & x_{22} & \cdots & x_{2p} \\ 
+\vdots & \vdots & \ddots & \vdots \\ 
+x_{n1} & x_{n2} & \cdots & x_{np} 
+\end{pmatrix}
+```
+
+And vectors (matrices with 1 column) are written: $$
+\begin{pmatrix}
+x_{i_{1}} \\
+x_{{i_{2}}}  \\
+\vdots  \\
+x_{ip}
+\end{pmatrix}
+$$
+
+I include the raw LaTeX here:
+
+``` verbatim
+\begin{pmatrix}
+x_{i_{1}} \\
+x_{{i_{2}}}  \\
+\vdots  \\
+x_{ip}
+\end{pmatrix}
+```
 
 ## What have we gotten ourselves into?
 
@@ -46,15 +111,15 @@ It is a middle way between theoretical statistics and the practice of applying s
 
 It can be considered as a user manual, with self-contained Python labs, which lead you through the use of different methods for applying statistical analysis to different kinds of data.
 
-- 2: Terminology & main concepts
-- 3-4: Classic linear methods
-- 5: Resampling (so we can choose the best method)
-- 6: Modern updates to linear methods
-- 7+: Beyond Linearity (we can worry about details as we get there)
+-   2: Terminology & main concepts
+-   3-4: Classic linear methods
+-   5: Resampling (so we can choose the best method)
+-   6: Modern updates to linear methods
+-   7+: Beyond Linearity (we can worry about details as we get there)
 
 ## Where's the data?
 
-```python
+``` python
 pip install ISLP
 ```
 
@@ -62,24 +127,22 @@ We'll look at this data in more detail below.
 
 ## Some useful resources:
 
-- the book page: [statlearning.com](https://www.statlearning.com/)
-- pdf of the book: [ISLRv2_website](https://hastie.su.domains/ISLP/ISLP_website.pdf)
-- ISLP [labs](https://github.com/intro-stat-learning/ISLP_labs/tree/v2)
-- course on edX: [statistical-learning](https://www.edx.org/course/statistical-learning)
-- youtube channel: [playlists](https://www.youtube.com/channel/UCB2p-jaoolkv0h22m4I9l9Q/playlists)
-- exercise solutions: [applied solutions](https://botlnec.github.io/islp/)
+-   the book page: [statlearning.com](https://www.statlearning.com/)
+-   pdf of the book: [ISLRv2_website](https://hastie.su.domains/ISLP/ISLP_website.pdf)
+-   ISLP [labs](https://github.com/intro-stat-learning/ISLP_labs/tree/v2)
+-   course on edX: [statistical-learning](https://www.edx.org/course/statistical-learning)
+-   youtube channel: [playlists](https://www.youtube.com/channel/UCB2p-jaoolkv0h22m4I9l9Q/playlists)
+-   exercise solutions: [applied solutions](https://botlnec.github.io/islp/)
 
 **Some more theoretical resources:**
 
-- The Elements of Statistical Learning (ESL, by Hastie, Tibshirani, and Friedman) [ESLII](https://web.stanford.edu/~hastie/Papers/ESLII.pdf)
-
+-   The Elements of Statistical Learning (ESL, by Hastie, Tibshirani, and Friedman) [ESLII](https://web.stanford.edu/~hastie/Papers/ESLII.pdf)
 
 ## What is covered in the book?
 
 The book provides a series of toolkits classified as **supervised or unsupervised** techniques for understanding data.
 
 The second edition of the book (2021) contains additions within the most updated statistical analysis.
-
 
 ```{r}
 #| label: 01-contents
@@ -89,75 +152,71 @@ The second edition of the book (2021) contains additions within the most updated
 knitr::include_graphics("images/01-contents.png")
 ```
 
-
 ## How is the book divided?
 
 The book is divided into 13 chapters covering:
 
-- Introduction and Statistical Learning:
-  - Supervised Versus Unsupervised Learning
-  - Regression Versus Classification Problems
+-   Introduction and Statistical Learning:
+    -   Supervised Versus Unsupervised Learning
+    -   Regression Versus Classification Problems
 
 **Linear statistical learning**
 
-- Linear Regression:
-  - basic concepts
-  - introduction of K-nearest neighbor classifier
-      
-- Classification:
-  - logistic regression
-  - linear discriminant analysis
-
-- Resampling Methods:
-  - cross-validation
-  - the bootstrap
-    
-- Linear Model Selection and Regularization: 
-potential improvements over standard linear regression
-  - stepwise selection
-  - ridge regression
-  - principal components regression
-  - the lasso
+-   Linear Regression:
+    -   basic concepts
+    -   introduction of K-nearest neighbor classifier
+-   Classification:
+    -   logistic regression
+    -   linear discriminant analysis
+-   Resampling Methods:
+    -   cross-validation
+    -   the bootstrap
+-   Linear Model Selection and Regularization: potential improvements over standard linear regression
+    -   stepwise selection
+    -   ridge regression
+    -   principal components regression
+    -   the lasso
 
 **Non-linear statistical learning**
 
-- Moving Beyond Linearity:
-  - Polynomial Regression
-  - Regression Spline
-  - Smoothing Splines
-  - Local Regression
-  - Generalized Additive Models
-    
-- Tree-Based Methods:
-  - Decision Trees
-  - Bagging, Random Forests, Boosting, and Bayesian Additive Regression Trees
-    
-- Support Vector Machines (linear and non-linear classification)
+-   Moving Beyond Linearity:
 
-- Deep Learning (non-linear regression and classification)
+    -   Polynomial Regression
+    -   Regression Spline
+    -   Smoothing Splines
+    -   Local Regression
+    -   Generalized Additive Models
 
-- Survival Analysis and Censored Data
+-   Tree-Based Methods:
 
-- Unsupervised Learning:
-  - Principal components analysis
-  - K-means clustering
-  - Hierarchical clustering
-    
-- Multiple Testing
+    -   Decision Trees
+    -   Bagging, Random Forests, Boosting, and Bayesian Additive Regression Trees
 
+-   Support Vector Machines (linear and non-linear classification)
 
-**Each chapter includes 1 self-contained R lab on the topic**
+-   Deep Learning (non-linear regression and classification)
+
+-   Survival Analysis and Censored Data
+
+-   Unsupervised Learning:
+
+    -   Principal components analysis
+    -   K-means clustering
+    -   Hierarchical clustering
+
+-   Multiple Testing
+
+**Each chapter includes 1 self-contained R lab on the topic *and* exercises**
 
 ## Some examples of the problems addressed with statistical analysis
 
-- Identify the risk factors for some type of cancers
-- Predict whether someone will have a hearth attack on the basis of demographic, diet, and clinical measurements
-- Email spam detection
-- Classify a tissue sample into one of several cancer classes, based on a gene expression profile
-- Establish the relationship between salary and demographic variables in population survey data
+-   Identify the risk factors for some type of cancers
+-   Predict whether someone will have a hearth attack on the basis of demographic, diet, and clinical measurements
+-   Email spam detection
+-   Classify a tissue sample into one of several cancer classes, based on a gene expression profile
+-   Establish the relationship between salary and demographic variables in population survey data
 
 ([source](https://web.stanford.edu/~hastie/ISLR2/Slides/Ch1_Inroduction.pdf))
-
 
 ## Datasets provided in the ISLP package
 

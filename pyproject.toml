@@ -1,0 +1,24 @@
+[project]
+name = "bookclub-islp"
+version = "0.1.0"
+description = "Python Environment for working through Introduction to Statistical Learning with Python, via the Data Science Learnign Community"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "islp>=0.4.0",
+    "jupyter>=1.1.1",
+    "jupyterlab>=4.3.5",
+    "quarto>=0.1.0",
+    "numpy>=1.7.1",
+    "scipy>=0.9",
+    "pandas>=0.20",
+    "lxml", # pandas needs this for html
+    "scikit-learn>=1.2",
+    "joblib",
+    "statsmodels>=0.13",
+    "lifelines",
+    "pygam", # for GAM in Ch7
+    "torch",
+    "pytorch_lightning",
+    "torchmetrics"
+]
