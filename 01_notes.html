@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.40">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -71,10 +71,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-e6f626c662a91eeead3924920b920f6f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -616,13 +616,36 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="true">
- <span class="menu-text">Appendices</span></a>
+            <a href="./examples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Examples</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_quarto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Quarto Document</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">NumPy</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./how-to.html" class="sidebar-item-text sidebar-link">
@@ -642,9 +665,13 @@ window.Quarto = {
    
   <ul>
   <li><a href="#what-is-statistical-learning" id="toc-what-is-statistical-learning" class="nav-link active" data-scroll-target="#what-is-statistical-learning">What is statistical learning?</a></li>
+  <li><a href="#pre-reqs" id="toc-pre-reqs" class="nav-link" data-scroll-target="#pre-reqs">Pre-reqs</a></li>
   <li><a href="#why-islp" id="toc-why-islp" class="nav-link" data-scroll-target="#why-islp">Why ISLP?</a></li>
   <li><a href="#premises-of-islp" id="toc-premises-of-islp" class="nav-link" data-scroll-target="#premises-of-islp">Premises of ISLP</a></li>
-  <li><a href="#notation" id="toc-notation" class="nav-link" data-scroll-target="#notation">Notation</a></li>
+  <li><a href="#notation" id="toc-notation" class="nav-link" data-scroll-target="#notation">Notation</a>
+  <ul class="collapse">
+  <li><a href="#notation---matrices-vectors" id="toc-notation---matrices-vectors" class="nav-link" data-scroll-target="#notation---matrices-vectors">Notation - Matrices &amp; Vectors</a></li>
+  </ul></li>
   <li><a href="#what-have-we-gotten-ourselves-into" id="toc-what-have-we-gotten-ourselves-into" class="nav-link" data-scroll-target="#what-have-we-gotten-ourselves-into">What have we gotten ourselves into?</a></li>
   <li><a href="#wheres-the-data" id="toc-wheres-the-data" class="nav-link" data-scroll-target="#wheres-the-data">Where’s the data?</a></li>
   <li><a href="#some-useful-resources" id="toc-some-useful-resources" class="nav-link" data-scroll-target="#some-useful-resources">Some useful resources:</a></li>
@@ -660,7 +687,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01_main.html">1. Introduction</a></li><li class="breadcrumb-item"><a href="./01_notes.html">Notes</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Notes</h1>
+<div class="quarto-title-block"><div><h1 class="title">Notes</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -679,19 +706,32 @@ window.Quarto = {
 
 <section id="what-is-statistical-learning" class="level2">
 <h2 class="anchored" data-anchor-id="what-is-statistical-learning">What is statistical learning?</h2>
-<p><a href="https://en.wikipedia.org/wiki/Statistical_learning_theory"><strong>Statistical learning</strong></a> is the theoretical foundation for machine learning framework. It makes connections between the fields of statistics, linear algebra and functional analysis.</p>
-<p>In particular, the <strong>Statistical learning theory</strong> deals with the problem of finding a predictive function based on data and this is what is best known as <strong>supervised learning</strong>, in this book we will see more than just theory, as we will deal with <strong>unsupervised learning</strong> as well as making practical applications.</p>
+<p>Before we dive into the book, let’s take a step back and think about what statistics is.</p>
+<blockquote class="blockquote">
+<p>“… what is statistics? In order to understand statistics, to compress them, you need to understand what it is about the world that creates those statistics…”</p>
+</blockquote>
+<p><a href="https://www.youtube.com/watch?v=YEUclZdj_Sc&amp;ab_channel=DwarkeshPatel">Ilya Sutskever on Dwarkesh</a></p>
+<p>First and foremost, the statistical learning tools in this book are a set of tools for understanding and working with data. And data is a means to understand the world.</p>
+<p>The book focuses on two types of statistical learning - supervised learning, and unsupervised learning.</p>
 <ul>
-<li><strong>Supervised:</strong> “Building a model to <strong>predict an <em>output</em> from <em>inputs</em>.</strong>”
+<li><strong>Supervised:</strong> Building a model to learn - from labelled data - how to predict the right output for a given input:
 <ul>
 <li>Predict <code>wage</code> from <code>age</code>, <code>education</code>, and <code>year</code>.</li>
 <li>Predict <code>market direction</code> from <code>previous days' performance</code>.</li>
 </ul></li>
-<li><strong>Unsupervised:</strong> Inputs but no specific outputs, <strong>find relationships and structure.</strong>
+<li><strong>Unsupervised:</strong> find relationships and structure in data without learning from labelled data.
 <ul>
-<li>Identify <code>clusters</code> within <code>cancer cell lines</code>.</li>
+<li>Identify <em>clusters</em> within cancer cell lines</li>
+<li><em>Reduce dimensions</em> of high-dimensional data.</li>
 </ul></li>
 </ul>
+</section>
+<section id="pre-reqs" class="level2">
+<h2 class="anchored" data-anchor-id="pre-reqs">Pre-reqs</h2>
+<p>From the book:</p>
+<blockquote class="blockquote">
+<p>“We expect that the reader will have had at least one elementary course in statistics… Background in linear regression is also useful, though not required… The mathematical level of this book is modest, and a detailed knowledge of matrix operations is not required… Previous exposure to a programming language, such as MATLAB or R, is useful but not required.”</p>
+</blockquote>
 </section>
 <section id="why-islp" class="level2">
 <h2 class="anchored" data-anchor-id="why-islp">Why ISLP?</h2>
@@ -714,15 +754,58 @@ window.Quarto = {
 <section id="notation" class="level2">
 <h2 class="anchored" data-anchor-id="notation">Notation</h2>
 <ul>
-<li><em>n</em> = number of observations (rows)</li>
-<li><em>p</em> = number of features/variables (columns)</li>
-<li>We’ll come back here if we need to as we go!</li>
-<li>Some symbols they assume we know:
-<ul>
-<li><span class="math inline">\(\in\)</span> = “is an element of”, “in”</li>
-<li><span class="math inline">\({\rm I\!R}\)</span> = “real numbers”</li>
-</ul></li>
+<li><span class="math inline">\(n\)</span> = the number of distinct data points or observations</li>
+<li><span class="math inline">\(p\)</span> = the number of variables used for predictions</li>
+<li><span class="math inline">\(x_{ij}\)</span> = the value of the <span class="math inline">\(j\)</span>th variable for the <span class="math inline">\(i\)</span>th observation</li>
+<li><span class="math inline">\(\mathbf{x}\)</span> = a vecotr (bolded lower case)</li>
+<li><span class="math inline">\(\mathbf{X}\)</span> = an <span class="math inline">\(n \cdot p\)</span> matrix, whose <span class="math inline">\((i, j)\)</span>th element is <span class="math inline">\(x_{ij}\)</span></li>
+<li><span class="math inline">\(\mathbf{X^T}\)</span> = the transpose of the matrix (column and row indices switched)</li>
+<li><span class="math inline">\(X\)</span> = random variable (non bolded capital)</li>
+<li><span class="math inline">\(\mathbf{AB}\)</span> = the matrix multiplication of <span class="math inline">\(A \cdot B\)</span> - <a href="https://en.wikipedia.org/wiki/Matrix_multiplication">primer</a></li>
 </ul>
+<section id="notation---matrices-vectors" class="level3">
+<h3 class="anchored" data-anchor-id="notation---matrices-vectors">Notation - Matrices &amp; Vectors</h3>
+<p>Matrices are generally written as the <code>pmatrix</code> in LaTeX:</p>
+<p><span class="math display">\[
+\mathbf{X} = \begin{pmatrix} x_{11} &amp; x_{12} &amp; \cdots &amp; x_{1p} \\ x_{21} &amp; x_{22} &amp; \cdots &amp; x_{2p} \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ x_{n1} &amp; x_{n2} &amp; \cdots &amp; x_{np} \end{pmatrix}
+\]</span></p>
+<p>I include how to write that in LaTeX here:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource verbatim number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href="#cb1-1"></a> \mathbf{X} =</span>
+<span id="cb1-2"><a href="#cb1-2"></a>\begin{pmatrix} x_{11} &amp; x_{12} &amp; \cdots &amp; x_{1p} \\ </span>
+<span id="cb1-3"><a href="#cb1-3"></a>x_{21} &amp; x_{22} &amp; \cdots &amp; x_{2p} \\ </span>
+<span id="cb1-4"><a href="#cb1-4"></a>\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ </span>
+<span id="cb1-5"><a href="#cb1-5"></a>x_{n1} &amp; x_{n2} &amp; \cdots &amp; x_{np} </span>
+<span id="cb1-6"><a href="#cb1-6"></a>\end{pmatrix}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Use a verbatim code chunk when you want to print the output as-is!</p>
+</div>
+</div>
+<p>And vectors (matrices with 1 column) are written:</p>
+<p><span class="math display">\[
+\begin{pmatrix}
+x_{i_{1}} \\
+x_{{i_{2}}}  \\
+\vdots  \\
+x_{ip}
+\end{pmatrix}
+\]</span></p>
+<p>I include the raw LaTeX here:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource verbatim number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href="#cb2-1"></a>\begin{pmatrix}</span>
+<span id="cb2-2"><a href="#cb2-2"></a>x_{i_{1}} \\</span>
+<span id="cb2-3"><a href="#cb2-3"></a>x_{{i_{2}}}  \\</span>
+<span id="cb2-4"><a href="#cb2-4"></a>\vdots  \\</span>
+<span id="cb2-5"><a href="#cb2-5"></a>x_{ip}</span>
+<span id="cb2-6"><a href="#cb2-6"></a>\end{pmatrix}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
 </section>
 <section id="what-have-we-gotten-ourselves-into" class="level2">
 <h2 class="anchored" data-anchor-id="what-have-we-gotten-ourselves-into">What have we gotten ourselves into?</h2>
@@ -739,7 +822,20 @@ window.Quarto = {
 </section>
 <section id="wheres-the-data" class="level2">
 <h2 class="anchored" data-anchor-id="wheres-the-data">Where’s the data?</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pip install ISLP</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">pip</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">uv</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">manual download</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="ex">pip</span> install ISLP</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1"></a><span class="ex">uv</span> pip install ISLP</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<p><a href="https://www.statlearning.com/resources-python">Book website</a></p>
+</div>
+</div>
+</div>
 <p>We’ll look at this data in more detail below.</p>
 </section>
 <section id="some-useful-resources" class="level2">
@@ -751,6 +847,7 @@ window.Quarto = {
 <li>course on edX: <a href="https://www.edx.org/course/statistical-learning">statistical-learning</a></li>
 <li>youtube channel: <a href="https://www.youtube.com/channel/UCB2p-jaoolkv0h22m4I9l9Q/playlists">playlists</a></li>
 <li>exercise solutions: <a href="https://botlnec.github.io/islp/">applied solutions</a></li>
+<li><a href="https://github.com/r4ds/bookclub-islp">Repo</a> for the bookclub</li>
 </ul>
 <p><strong>Some more theoretical resources:</strong></p>
 <ul>
@@ -833,7 +930,7 @@ window.Quarto = {
 </ul></li>
 <li><p>Multiple Testing</p></li>
 </ul>
-<p><strong>Each chapter includes 1 self-contained R lab on the topic</strong></p>
+<p><strong>Each chapter includes 1 self-contained R lab on the topic <em>and</em> exercises</strong></p>
 </section>
 <section id="some-examples-of-the-problems-addressed-with-statistical-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="some-examples-of-the-problems-addressed-with-statistical-analysis">Some examples of the problems addressed with statistical analysis</h2>
@@ -860,6 +957,8 @@ window.Quarto = {
 </div>
 </div>
 
+
+<!-- -->
 
 </section>
 
@@ -946,13 +1045,62 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
     });
     clipboardModal.on('success', onCopySuccess);
+  }
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
@@ -970,6 +1118,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         if (link.dataset.originalHref !== undefined) {
           link.href = link.dataset.originalHref;
         }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+          // default icon
+          link.classList.add("external");
       }
     }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
@@ -1058,7 +1213,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -1295,7 +1449,248 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         <span class="nav-page-text">Video</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
-</nav>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb5" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu"># Notes {.unnumbered}</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a></span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="fu">## What is statistical learning?</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a></span>
+<span id="cb5-5"><a href="#cb5-5"></a>Before we dive into the book, let's take a step back and think about what statistics is.</span>
+<span id="cb5-6"><a href="#cb5-6"></a></span>
+<span id="cb5-7"><a href="#cb5-7"></a><span class="at">&gt; "... what is statistics? In order to understand statistics, to compress them, you need to understand what it is about the world that creates those statistics..."</span></span>
+<span id="cb5-8"><a href="#cb5-8"></a></span>
+<span id="cb5-9"><a href="#cb5-9"></a><span class="co">[</span><span class="ot">Ilya Sutskever on Dwarkesh</span><span class="co">](https://www.youtube.com/watch?v=YEUclZdj_Sc&amp;ab_channel=DwarkeshPatel)</span></span>
+<span id="cb5-10"><a href="#cb5-10"></a></span>
+<span id="cb5-11"><a href="#cb5-11"></a>First and foremost, the statistical learning tools in this book are a set of tools for understanding and working with data. And data is a means to understand the world.</span>
+<span id="cb5-12"><a href="#cb5-12"></a></span>
+<span id="cb5-13"><a href="#cb5-13"></a>The book focuses on two types of statistical learning - supervised learning, and unsupervised learning.</span>
+<span id="cb5-14"><a href="#cb5-14"></a></span>
+<span id="cb5-15"><a href="#cb5-15"></a><span class="ss">-   </span>**Supervised:** Building a model to learn - from labelled data - how to predict the right output for a given input:</span>
+<span id="cb5-16"><a href="#cb5-16"></a><span class="ss">    -   </span>Predict <span class="in">`wage`</span> from <span class="in">`age`</span>, <span class="in">`education`</span>, and <span class="in">`year`</span>.</span>
+<span id="cb5-17"><a href="#cb5-17"></a><span class="ss">    -   </span>Predict <span class="in">`market direction`</span> from <span class="in">`previous days' performance`</span>.</span>
+<span id="cb5-18"><a href="#cb5-18"></a><span class="ss">-   </span>**Unsupervised:** find relationships and structure in data without learning from labelled data.</span>
+<span id="cb5-19"><a href="#cb5-19"></a><span class="ss">    -   </span>Identify *clusters* within cancer cell lines</span>
+<span id="cb5-20"><a href="#cb5-20"></a><span class="ss">    -   </span>*Reduce dimensions* of high-dimensional data.</span>
+<span id="cb5-21"><a href="#cb5-21"></a></span>
+<span id="cb5-22"><a href="#cb5-22"></a><span class="fu">## Pre-reqs</span></span>
+<span id="cb5-23"><a href="#cb5-23"></a></span>
+<span id="cb5-24"><a href="#cb5-24"></a>From the book:</span>
+<span id="cb5-25"><a href="#cb5-25"></a></span>
+<span id="cb5-26"><a href="#cb5-26"></a><span class="at">&gt; "We expect that the reader will have had at least one elementary course in statistics... Background in linear regression is also useful, though not required... The mathematical level of this book is modest, and a detailed knowledge of matrix operations is not required... Previous exposure to a programming language, such as MATLAB or R, is useful but not required."</span></span>
+<span id="cb5-27"><a href="#cb5-27"></a></span>
+<span id="cb5-28"><a href="#cb5-28"></a><span class="fu">## Why ISLP?</span></span>
+<span id="cb5-29"><a href="#cb5-29"></a></span>
+<span id="cb5-30"><a href="#cb5-30"></a><span class="ss">-   </span>"Facilitate the transition of statistical learning from an academic to a mainstream field."</span>
+<span id="cb5-31"><a href="#cb5-31"></a><span class="ss">-   </span>Machine learning<span class="sc">\*</span> is useful to everyone, let's all learn enough to use it responsibly.</span>
+<span id="cb5-32"><a href="#cb5-32"></a><span class="ss">-   </span>Python "labs" make this make sense for this community!</span>
+<span id="cb5-33"><a href="#cb5-33"></a></span>
+<span id="cb5-34"><a href="#cb5-34"></a><span class="fu">## Premises of ISLP</span></span>
+<span id="cb5-35"><a href="#cb5-35"></a></span>
+<span id="cb5-36"><a href="#cb5-36"></a>From Page 9 of the Introduction:</span>
+<span id="cb5-37"><a href="#cb5-37"></a></span>
+<span id="cb5-38"><a href="#cb5-38"></a><span class="ss">-   </span>"Many statistical learning methods are relevant and useful in a wide range of academic and non-academic disciplines, beyond just the statistical sciences."</span>
+<span id="cb5-39"><a href="#cb5-39"></a><span class="ss">-   </span>"Statistical learning should not be viewed as a series of black boxes."</span>
+<span id="cb5-40"><a href="#cb5-40"></a><span class="ss">-   </span>"While it is important to know what job is performed by each cog, it is not necessary to have the skills to construct the machine inside the box!"</span>
+<span id="cb5-41"><a href="#cb5-41"></a><span class="ss">-   </span>"We presume that the reader is interested in applying statistical learning methods to real-world problems."</span>
+<span id="cb5-42"><a href="#cb5-42"></a></span>
+<span id="cb5-43"><a href="#cb5-43"></a><span class="fu">## Notation</span></span>
+<span id="cb5-44"><a href="#cb5-44"></a></span>
+<span id="cb5-45"><a href="#cb5-45"></a><span class="ss">-   </span>$n$ = the number of distinct data points or observations</span>
+<span id="cb5-46"><a href="#cb5-46"></a><span class="ss">-   </span>$p$ = the number of variables used for predictions</span>
+<span id="cb5-47"><a href="#cb5-47"></a><span class="ss">-   </span>$x_{ij}$ = the value of the $j$th variable for the $i$th observation</span>
+<span id="cb5-48"><a href="#cb5-48"></a><span class="ss">-   </span>$\mathbf{x}$ = a vecotr (bolded lower case)</span>
+<span id="cb5-49"><a href="#cb5-49"></a><span class="ss">-   </span>$\mathbf{X}$ = an $n \cdot p$ matrix, whose $(i, j)$th element is $x_{ij}$</span>
+<span id="cb5-50"><a href="#cb5-50"></a><span class="ss">-   </span>$\mathbf{X^T}$ = the transpose of the matrix (column and row indices switched)</span>
+<span id="cb5-51"><a href="#cb5-51"></a><span class="ss">-   </span>$X$ = random variable (non bolded capital)</span>
+<span id="cb5-52"><a href="#cb5-52"></a><span class="ss">-   </span>$\mathbf{AB}$ = the matrix multiplication of $A \cdot B$ - <span class="co">[</span><span class="ot">primer</span><span class="co">](https://en.wikipedia.org/wiki/Matrix_multiplication)</span></span>
+<span id="cb5-53"><a href="#cb5-53"></a></span>
+<span id="cb5-54"><a href="#cb5-54"></a><span class="fu">### Notation - Matrices &amp; Vectors</span></span>
+<span id="cb5-55"><a href="#cb5-55"></a></span>
+<span id="cb5-56"><a href="#cb5-56"></a>Matrices are generally written as the <span class="in">`pmatrix`</span> in LaTeX:</span>
+<span id="cb5-57"><a href="#cb5-57"></a></span>
+<span id="cb5-58"><a href="#cb5-58"></a>$$</span>
+<span id="cb5-59"><a href="#cb5-59"></a>\mathbf{X} = \begin{pmatrix} x_{11} &amp; x_{12} &amp; \cdots &amp; x_{1p} <span class="sc">\\</span> x_{21} &amp; x_{22} &amp; \cdots &amp; x_{2p} <span class="sc">\\</span> \vdots &amp; \vdots &amp; \ddots &amp; \vdots <span class="sc">\\</span> x_{n1} &amp; x_{n2} &amp; \cdots &amp; x_{np} \end{pmatrix}</span>
+<span id="cb5-60"><a href="#cb5-60"></a>$$</span>
+<span id="cb5-61"><a href="#cb5-61"></a></span>
+<span id="cb5-62"><a href="#cb5-62"></a>I include how to write that in LaTeX here:</span>
+<span id="cb5-63"><a href="#cb5-63"></a></span>
+<span id="cb5-64"><a href="#cb5-64"></a><span class="in">``` verbatim</span></span>
+<span id="cb5-65"><a href="#cb5-65"></a><span class="in"> \mathbf{X} =</span></span>
+<span id="cb5-66"><a href="#cb5-66"></a><span class="in">\begin{pmatrix} x_{11} &amp; x_{12} &amp; \cdots &amp; x_{1p} \\ </span></span>
+<span id="cb5-67"><a href="#cb5-67"></a><span class="in">x_{21} &amp; x_{22} &amp; \cdots &amp; x_{2p} \\ </span></span>
+<span id="cb5-68"><a href="#cb5-68"></a><span class="in">\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ </span></span>
+<span id="cb5-69"><a href="#cb5-69"></a><span class="in">x_{n1} &amp; x_{n2} &amp; \cdots &amp; x_{np} </span></span>
+<span id="cb5-70"><a href="#cb5-70"></a><span class="in">\end{pmatrix}</span></span>
+<span id="cb5-71"><a href="#cb5-71"></a><span class="in">```</span></span>
+<span id="cb5-72"><a href="#cb5-72"></a></span>
+<span id="cb5-73"><a href="#cb5-73"></a>::: callout-tip</span>
+<span id="cb5-74"><a href="#cb5-74"></a>Use a verbatim code chunk when you want to print the output as-is!</span>
+<span id="cb5-75"><a href="#cb5-75"></a>:::</span>
+<span id="cb5-76"><a href="#cb5-76"></a></span>
+<span id="cb5-77"><a href="#cb5-77"></a>And vectors (matrices with 1 column) are written:</span>
+<span id="cb5-78"><a href="#cb5-78"></a></span>
+<span id="cb5-79"><a href="#cb5-79"></a>$$</span>
+<span id="cb5-80"><a href="#cb5-80"></a>\begin{pmatrix}</span>
+<span id="cb5-81"><a href="#cb5-81"></a>x_{i_{1}} <span class="sc">\\</span></span>
+<span id="cb5-82"><a href="#cb5-82"></a>x_{{i_{2}}}  <span class="sc">\\</span></span>
+<span id="cb5-83"><a href="#cb5-83"></a>\vdots  <span class="sc">\\</span></span>
+<span id="cb5-84"><a href="#cb5-84"></a>x_{ip}</span>
+<span id="cb5-85"><a href="#cb5-85"></a>\end{pmatrix}</span>
+<span id="cb5-86"><a href="#cb5-86"></a>$$</span>
+<span id="cb5-87"><a href="#cb5-87"></a></span>
+<span id="cb5-88"><a href="#cb5-88"></a>I include the raw LaTeX here:</span>
+<span id="cb5-89"><a href="#cb5-89"></a></span>
+<span id="cb5-90"><a href="#cb5-90"></a><span class="in">``` verbatim</span></span>
+<span id="cb5-91"><a href="#cb5-91"></a><span class="in">\begin{pmatrix}</span></span>
+<span id="cb5-92"><a href="#cb5-92"></a><span class="in">x_{i_{1}} \\</span></span>
+<span id="cb5-93"><a href="#cb5-93"></a><span class="in">x_{{i_{2}}}  \\</span></span>
+<span id="cb5-94"><a href="#cb5-94"></a><span class="in">\vdots  \\</span></span>
+<span id="cb5-95"><a href="#cb5-95"></a><span class="in">x_{ip}</span></span>
+<span id="cb5-96"><a href="#cb5-96"></a><span class="in">\end{pmatrix}</span></span>
+<span id="cb5-97"><a href="#cb5-97"></a><span class="in">```</span></span>
+<span id="cb5-98"><a href="#cb5-98"></a></span>
+<span id="cb5-99"><a href="#cb5-99"></a><span class="fu">## What have we gotten ourselves into?</span></span>
+<span id="cb5-100"><a href="#cb5-100"></a></span>
+<span id="cb5-101"><a href="#cb5-101"></a>**An Introduction to Statistical Learning (ISL by James, Witten, Hastie and Tibshiraniis)**, is a collection of modern statistical methods for modeling and making predictions from real-world data.</span>
+<span id="cb5-102"><a href="#cb5-102"></a></span>
+<span id="cb5-103"><a href="#cb5-103"></a>It is a middle way between theoretical statistics and the practice of applying statistics to real-world problems.</span>
+<span id="cb5-104"><a href="#cb5-104"></a></span>
+<span id="cb5-105"><a href="#cb5-105"></a>It can be considered as a user manual, with self-contained Python labs, which lead you through the use of different methods for applying statistical analysis to different kinds of data.</span>
+<span id="cb5-106"><a href="#cb5-106"></a></span>
+<span id="cb5-107"><a href="#cb5-107"></a><span class="ss">-   </span>2: Terminology &amp; main concepts</span>
+<span id="cb5-108"><a href="#cb5-108"></a><span class="ss">-   </span>3-4: Classic linear methods</span>
+<span id="cb5-109"><a href="#cb5-109"></a><span class="ss">-   </span>5: Resampling (so we can choose the best method)</span>
+<span id="cb5-110"><a href="#cb5-110"></a><span class="ss">-   </span>6: Modern updates to linear methods</span>
+<span id="cb5-111"><a href="#cb5-111"></a><span class="ss">-   </span>7+: Beyond Linearity (we can worry about details as we get there)</span>
+<span id="cb5-112"><a href="#cb5-112"></a></span>
+<span id="cb5-113"><a href="#cb5-113"></a><span class="fu">## Where's the data?</span></span>
+<span id="cb5-114"><a href="#cb5-114"></a></span>
+<span id="cb5-115"><a href="#cb5-115"></a>::: panel-tabset</span>
+<span id="cb5-116"><a href="#cb5-116"></a><span class="fu">## pip</span></span>
+<span id="cb5-117"><a href="#cb5-117"></a></span>
+<span id="cb5-118"><a href="#cb5-118"></a><span class="in">``` bash</span></span>
+<span id="cb5-119"><a href="#cb5-119"></a><span class="ex">pip</span> install ISLP</span>
+<span id="cb5-120"><a href="#cb5-120"></a><span class="in">```</span></span>
+<span id="cb5-121"><a href="#cb5-121"></a></span>
+<span id="cb5-122"><a href="#cb5-122"></a><span class="fu">## uv</span></span>
+<span id="cb5-123"><a href="#cb5-123"></a></span>
+<span id="cb5-124"><a href="#cb5-124"></a><span class="in">``` bash</span></span>
+<span id="cb5-125"><a href="#cb5-125"></a><span class="ex">uv</span> pip install ISLP</span>
+<span id="cb5-126"><a href="#cb5-126"></a><span class="in">```</span></span>
+<span id="cb5-127"><a href="#cb5-127"></a></span>
+<span id="cb5-128"><a href="#cb5-128"></a><span class="fu">## manual download</span></span>
+<span id="cb5-129"><a href="#cb5-129"></a></span>
+<span id="cb5-130"><a href="#cb5-130"></a><span class="co">[</span><span class="ot">Book website</span><span class="co">](https://www.statlearning.com/resources-python)</span></span>
+<span id="cb5-131"><a href="#cb5-131"></a>:::</span>
+<span id="cb5-132"><a href="#cb5-132"></a></span>
+<span id="cb5-133"><a href="#cb5-133"></a>We'll look at this data in more detail below.</span>
+<span id="cb5-134"><a href="#cb5-134"></a></span>
+<span id="cb5-135"><a href="#cb5-135"></a><span class="fu">## Some useful resources:</span></span>
+<span id="cb5-136"><a href="#cb5-136"></a></span>
+<span id="cb5-137"><a href="#cb5-137"></a><span class="ss">-   </span>the book page: <span class="co">[</span><span class="ot">statlearning.com</span><span class="co">](https://www.statlearning.com/)</span></span>
+<span id="cb5-138"><a href="#cb5-138"></a><span class="ss">-   </span>pdf of the book: <span class="co">[</span><span class="ot">ISLRv2_website</span><span class="co">](https://hastie.su.domains/ISLP/ISLP_website.pdf)</span></span>
+<span id="cb5-139"><a href="#cb5-139"></a><span class="ss">-   </span>ISLP <span class="co">[</span><span class="ot">labs</span><span class="co">](https://github.com/intro-stat-learning/ISLP_labs/tree/v2)</span></span>
+<span id="cb5-140"><a href="#cb5-140"></a><span class="ss">-   </span>course on edX: <span class="co">[</span><span class="ot">statistical-learning</span><span class="co">](https://www.edx.org/course/statistical-learning)</span></span>
+<span id="cb5-141"><a href="#cb5-141"></a><span class="ss">-   </span>youtube channel: <span class="co">[</span><span class="ot">playlists</span><span class="co">](https://www.youtube.com/channel/UCB2p-jaoolkv0h22m4I9l9Q/playlists)</span></span>
+<span id="cb5-142"><a href="#cb5-142"></a><span class="ss">-   </span>exercise solutions: <span class="co">[</span><span class="ot">applied solutions</span><span class="co">](https://botlnec.github.io/islp/)</span></span>
+<span id="cb5-143"><a href="#cb5-143"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Repo</span><span class="co">](https://github.com/r4ds/bookclub-islp)</span> for the bookclub</span>
+<span id="cb5-144"><a href="#cb5-144"></a></span>
+<span id="cb5-145"><a href="#cb5-145"></a>**Some more theoretical resources:**</span>
+<span id="cb5-146"><a href="#cb5-146"></a></span>
+<span id="cb5-147"><a href="#cb5-147"></a><span class="ss">-   </span>The Elements of Statistical Learning (ESL, by Hastie, Tibshirani, and Friedman) <span class="co">[</span><span class="ot">ESLII</span><span class="co">](https://web.stanford.edu/~hastie/Papers/ESLII.pdf)</span></span>
+<span id="cb5-148"><a href="#cb5-148"></a></span>
+<span id="cb5-149"><a href="#cb5-149"></a><span class="fu">## What is covered in the book?</span></span>
+<span id="cb5-150"><a href="#cb5-150"></a></span>
+<span id="cb5-151"><a href="#cb5-151"></a>The book provides a series of toolkits classified as **supervised or unsupervised** techniques for understanding data.</span>
+<span id="cb5-152"><a href="#cb5-152"></a></span>
+<span id="cb5-153"><a href="#cb5-153"></a>The second edition of the book (2021) contains additions within the most updated statistical analysis.</span>
+<span id="cb5-154"><a href="#cb5-154"></a></span>
+<span id="cb5-157"><a href="#cb5-157"></a><span class="in">```{r}</span></span>
+<span id="cb5-158"><a href="#cb5-158"></a><span class="co">#| label: 01-contents</span></span>
+<span id="cb5-159"><a href="#cb5-159"></a><span class="co">#| echo: false</span></span>
+<span id="cb5-160"><a href="#cb5-160"></a><span class="co">#| fig-cap: Editions</span></span>
+<span id="cb5-161"><a href="#cb5-161"></a><span class="co">#| out-width: 100%</span></span>
+<span id="cb5-162"><a href="#cb5-162"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"images/01-contents.png"</span>)</span>
+<span id="cb5-163"><a href="#cb5-163"></a><span class="in">```</span></span>
+<span id="cb5-164"><a href="#cb5-164"></a></span>
+<span id="cb5-165"><a href="#cb5-165"></a><span class="fu">## How is the book divided?</span></span>
+<span id="cb5-166"><a href="#cb5-166"></a></span>
+<span id="cb5-167"><a href="#cb5-167"></a>The book is divided into 13 chapters covering:</span>
+<span id="cb5-168"><a href="#cb5-168"></a></span>
+<span id="cb5-169"><a href="#cb5-169"></a><span class="ss">-   </span>Introduction and Statistical Learning:</span>
+<span id="cb5-170"><a href="#cb5-170"></a><span class="ss">    -   </span>Supervised Versus Unsupervised Learning</span>
+<span id="cb5-171"><a href="#cb5-171"></a><span class="ss">    -   </span>Regression Versus Classification Problems</span>
+<span id="cb5-172"><a href="#cb5-172"></a></span>
+<span id="cb5-173"><a href="#cb5-173"></a>**Linear statistical learning**</span>
+<span id="cb5-174"><a href="#cb5-174"></a></span>
+<span id="cb5-175"><a href="#cb5-175"></a><span class="ss">-   </span>Linear Regression:</span>
+<span id="cb5-176"><a href="#cb5-176"></a><span class="ss">    -   </span>basic concepts</span>
+<span id="cb5-177"><a href="#cb5-177"></a><span class="ss">    -   </span>introduction of K-nearest neighbor classifier</span>
+<span id="cb5-178"><a href="#cb5-178"></a><span class="ss">-   </span>Classification:</span>
+<span id="cb5-179"><a href="#cb5-179"></a><span class="ss">    -   </span>logistic regression</span>
+<span id="cb5-180"><a href="#cb5-180"></a><span class="ss">    -   </span>linear discriminant analysis</span>
+<span id="cb5-181"><a href="#cb5-181"></a><span class="ss">-   </span>Resampling Methods:</span>
+<span id="cb5-182"><a href="#cb5-182"></a><span class="ss">    -   </span>cross-validation</span>
+<span id="cb5-183"><a href="#cb5-183"></a><span class="ss">    -   </span>the bootstrap</span>
+<span id="cb5-184"><a href="#cb5-184"></a><span class="ss">-   </span>Linear Model Selection and Regularization: potential improvements over standard linear regression</span>
+<span id="cb5-185"><a href="#cb5-185"></a><span class="ss">    -   </span>stepwise selection</span>
+<span id="cb5-186"><a href="#cb5-186"></a><span class="ss">    -   </span>ridge regression</span>
+<span id="cb5-187"><a href="#cb5-187"></a><span class="ss">    -   </span>principal components regression</span>
+<span id="cb5-188"><a href="#cb5-188"></a><span class="ss">    -   </span>the lasso</span>
+<span id="cb5-189"><a href="#cb5-189"></a></span>
+<span id="cb5-190"><a href="#cb5-190"></a>**Non-linear statistical learning**</span>
+<span id="cb5-191"><a href="#cb5-191"></a></span>
+<span id="cb5-192"><a href="#cb5-192"></a><span class="ss">-   </span>Moving Beyond Linearity:</span>
+<span id="cb5-193"><a href="#cb5-193"></a></span>
+<span id="cb5-194"><a href="#cb5-194"></a><span class="ss">    -   </span>Polynomial Regression</span>
+<span id="cb5-195"><a href="#cb5-195"></a><span class="ss">    -   </span>Regression Spline</span>
+<span id="cb5-196"><a href="#cb5-196"></a><span class="ss">    -   </span>Smoothing Splines</span>
+<span id="cb5-197"><a href="#cb5-197"></a><span class="ss">    -   </span>Local Regression</span>
+<span id="cb5-198"><a href="#cb5-198"></a><span class="ss">    -   </span>Generalized Additive Models</span>
+<span id="cb5-199"><a href="#cb5-199"></a></span>
+<span id="cb5-200"><a href="#cb5-200"></a><span class="ss">-   </span>Tree-Based Methods:</span>
+<span id="cb5-201"><a href="#cb5-201"></a></span>
+<span id="cb5-202"><a href="#cb5-202"></a><span class="ss">    -   </span>Decision Trees</span>
+<span id="cb5-203"><a href="#cb5-203"></a><span class="ss">    -   </span>Bagging, Random Forests, Boosting, and Bayesian Additive Regression Trees</span>
+<span id="cb5-204"><a href="#cb5-204"></a></span>
+<span id="cb5-205"><a href="#cb5-205"></a><span class="ss">-   </span>Support Vector Machines (linear and non-linear classification)</span>
+<span id="cb5-206"><a href="#cb5-206"></a></span>
+<span id="cb5-207"><a href="#cb5-207"></a><span class="ss">-   </span>Deep Learning (non-linear regression and classification)</span>
+<span id="cb5-208"><a href="#cb5-208"></a></span>
+<span id="cb5-209"><a href="#cb5-209"></a><span class="ss">-   </span>Survival Analysis and Censored Data</span>
+<span id="cb5-210"><a href="#cb5-210"></a></span>
+<span id="cb5-211"><a href="#cb5-211"></a><span class="ss">-   </span>Unsupervised Learning:</span>
+<span id="cb5-212"><a href="#cb5-212"></a></span>
+<span id="cb5-213"><a href="#cb5-213"></a><span class="ss">    -   </span>Principal components analysis</span>
+<span id="cb5-214"><a href="#cb5-214"></a><span class="ss">    -   </span>K-means clustering</span>
+<span id="cb5-215"><a href="#cb5-215"></a><span class="ss">    -   </span>Hierarchical clustering</span>
+<span id="cb5-216"><a href="#cb5-216"></a></span>
+<span id="cb5-217"><a href="#cb5-217"></a><span class="ss">-   </span>Multiple Testing</span>
+<span id="cb5-218"><a href="#cb5-218"></a></span>
+<span id="cb5-219"><a href="#cb5-219"></a>**Each chapter includes 1 self-contained R lab on the topic *and* exercises**</span>
+<span id="cb5-220"><a href="#cb5-220"></a></span>
+<span id="cb5-221"><a href="#cb5-221"></a><span class="fu">## Some examples of the problems addressed with statistical analysis</span></span>
+<span id="cb5-222"><a href="#cb5-222"></a></span>
+<span id="cb5-223"><a href="#cb5-223"></a><span class="ss">-   </span>Identify the risk factors for some type of cancers</span>
+<span id="cb5-224"><a href="#cb5-224"></a><span class="ss">-   </span>Predict whether someone will have a hearth attack on the basis of demographic, diet, and clinical measurements</span>
+<span id="cb5-225"><a href="#cb5-225"></a><span class="ss">-   </span>Email spam detection</span>
+<span id="cb5-226"><a href="#cb5-226"></a><span class="ss">-   </span>Classify a tissue sample into one of several cancer classes, based on a gene expression profile</span>
+<span id="cb5-227"><a href="#cb5-227"></a><span class="ss">-   </span>Establish the relationship between salary and demographic variables in population survey data</span>
+<span id="cb5-228"><a href="#cb5-228"></a></span>
+<span id="cb5-229"><a href="#cb5-229"></a>(<span class="co">[</span><span class="ot">source</span><span class="co">](https://web.stanford.edu/~hastie/ISLR2/Slides/Ch1_Inroduction.pdf)</span>)</span>
+<span id="cb5-230"><a href="#cb5-230"></a></span>
+<span id="cb5-231"><a href="#cb5-231"></a><span class="fu">## Datasets provided in the ISLP package</span></span>
+<span id="cb5-232"><a href="#cb5-232"></a></span>
+<span id="cb5-233"><a href="#cb5-233"></a>The book provides the ISLP Python package with all the datasets needed the analysis.</span>
+<span id="cb5-234"><a href="#cb5-234"></a></span>
+<span id="cb5-237"><a href="#cb5-237"></a><span class="in">```{r}</span></span>
+<span id="cb5-238"><a href="#cb5-238"></a><span class="co">#| label: 01-datasets</span></span>
+<span id="cb5-239"><a href="#cb5-239"></a><span class="co">#| echo: false</span></span>
+<span id="cb5-240"><a href="#cb5-240"></a><span class="co">#| fig-cap: "Datasets in ISLP package"</span></span>
+<span id="cb5-241"><a href="#cb5-241"></a><span class="co">#| out-width: 100%</span></span>
+<span id="cb5-242"><a href="#cb5-242"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"images/01-datasets.png"</span>)</span>
+<span id="cb5-243"><a href="#cb5-243"></a><span class="in">```</span></span>
+</code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 
 
