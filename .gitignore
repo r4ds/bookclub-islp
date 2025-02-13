@@ -13,3 +13,5 @@ docs
 .vdoc.r
 
 !sidebars-toggle.html
+
+uv.lock

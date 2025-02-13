@@ -75,19 +75,28 @@ book:
         - 13_notes.qmd
         - 13_video.qmd
         - 13_exercises.qmd
-    # - part: examples.md
-    #   chapters:
-    #     - example_quarto.qmd
-    #     - example_python.ipynb
+    - part: examples.md
+      chapters:
+        - example_quarto.qmd
+        - example_python.ipynb
   appendices:
     - how-to.qmd
 
 format:
   html:
-    theme: cosmo
     fontsize: 16pt
     css: style.css
     include-in-header: sidebars-toggle.html
+    code-block-border-left: true
+    code-block-bg: true
+    code-line-numbers: true
+    code-tools: true
+    link-external-icon: true
+    link-external-newwindow: true
+
+
+brand:
+  _brand.yml
 
 execute:
   freeze: true
