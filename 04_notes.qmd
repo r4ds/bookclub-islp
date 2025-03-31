@@ -1,1 +1,77 @@
 # Notes {-}
+
+## What is classification?
+> Predicting classification a qualitative response for an observation can be referred to as classifying that observation, since it involves assigning the observation to a category, or class.
+
+### Why not linear regression?
+
+- Linear regression should not be used to predict a qualitative or categorical variable with more than 2 levels that does not have a natural ordering
+- Linear regression should not be used to predict a qualitative or categorical variable with more than 2 levels that does not have a reasonably similar gap between each level. 
+- If your qualitative outcome variable only has 2 levels you could recode it as a dummy variable with 0/1 coding. This is not recommmended because the probability estimates will probably not be meaningful, for example have negative probabilities. 
+- A linear regression model to predict the relationship between `default` and `balance` leads to negative probabilities of default for bank balances close to zero.
+
+Examples of categorical variables that are not appropriate as outcome variables for linear regression?
+
+## Logistic Regression
+> Rather than modeling this response Y directly, logistic regression models the probability that Y belongs to a particular category
+
+
+```{r}
+#| label: fig4-2
+#| echo: false
+#| fig-cap: Classification using the `Default` data.Left: Estimated probability of `default` using linear regression. Some estimated probabilities are negative! The orange ticks indicate the 0/1 values coded for `default` (`No` or `Yes`). Right: Predicted probabilities of `default` using logistic regression. All probabilities lie between 0 and 1.
+#| out-width: 100%
+knitr::include_graphics("images/04-fig4_2.png")
+```
+
+
+- logistic regression uses a logistic function which gives probability estimates between 0 and 1 for all values of X. 
+- a logistic function will always produce an S-shaped curve, probabilities will come close to but never below zero and close but never above one.
+- probability of response Y can be predicted based on any value of X. 
+
+### Maximum Likelihood
+Using maximum likelihood, the regression coefficients are chosen based on the probability estimates being as close as possible to the observed response of Y for each case in the training data.
+> The estimates $\hat{\beta_0}$ and $\hat{\beta_1}$ are chosen to maximize this likelihood function.
+
+```{r}
+#| label: tab4-1
+#| echo: false
+#| fig-cap: For the `Default` data, estimated coefficients of the logistic regression model that predicts the probability of `default` using `balance`. A one-unit increase in `balance` is associated with an increase in the log odds of `default` by 0.0055 units.
+#| out-width: 100%
+knitr::include_graphics("images/04-tab4_1.png")
+```
+
+### Making Predictions
+
+We can input those coefficients into the model and predict the probabillity of `default` based on any `balance`. 
+
+### Qualitative predictors
+Instead of a quantitative predictor like credit balance, we could use a qualitative, or categorical, variable, like whether or not someone is a student, to predict whether or not someone will default. 
+
+## Multiple Logistic Regression
+predicting a binary response using multiple predictors
+
+### confounding
+
+## Multinomial  Logistic Regression
+predicting a categorical variable with more than two levels
+
+### Softmax coding
+
+## Generative Models for Classification
+>  model the distribution of the predictors X separately in each of the response classes (i.e. for each value of Y ).
+
+pi-k = overall or prior probability that a randomly chosen observation comes from kth class
+
+density function - fk(x) is relatively large if there is a high probability that an observation in the kth class has X~x, and fk(x) is small if it is very unlikely that an observation in the kth class has X~x.
+
+pk(x) is the probability that the observation belongs to the kth class, given the predictor value for that observation.
+
+Goal is to estimate fk(x) to approximate the Bayes classifier which will allow 
+
+### Linear Discriminant Analysis
+obtain an estimate for density in order to estimate the 
+
+### Quadratic Discriminant Analysis
+
+### Naive Bayes
