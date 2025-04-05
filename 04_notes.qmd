@@ -99,18 +99,54 @@ $p_k(X)$ is the probability that the observation belongs to the kth class, given
 
 ## Comparison of classification methods
 
+### Analytic comparison
+
+
+### Empirical comparison
+
+6 scenarios to empirically compaire the performance of logistic regression, linear discriminant analysis (LDA), quadratic discriminant analysis (QDA), naive Bayes, and K Nearest Neighbors (KNN). Each of the 6 different scenarios was a binary classification problem with 2 quantitative predictors. 
+
+Linear Bayes decision boundaries
+
+**Scenario 1:** 20 training observations for each class, uncorrelated normal distribution predictors
+
+**Scenario 2:** Similar to scenario 1, but predictors had a correlation of -0.5.
+
+**Scenario 3:** Substantial negative correlation, and predictors were generated from the t-distribution with 50 trainings observations for each class. 
+
+
+```{r}
+#| label: fig4-11
+#| echo: false
+#| fig-cap: Figure 4.11 Boxplots of the test error rates for each of the linear scenarios described in the main text.
+#| out-width: 100%
+knitr::include_graphics("images/04-fig4_11.png")
+```
+
+
+Non-linear Bayes decision boundaries
+
+**Scenario 4:** normal distribution,  correlation of 0.5 between the predictors in the first class, and correlation of 0.5 between the predictors in the second class
+
+**Scenario 5:** normal distribution with uncorrelated predictors, responses were sampled from the logistic function applied to a complicated non-linear function of the predictors
+
+**Scenario 6:** normal distribution with a different diagonal covariance matrix for each class and a very small sample size of 6 in each class
+
+
+```{r}
+#| label: fig4-12
+#| echo: false
+#| fig-cap: Figure 4.12 Boxplots of the test error rates for each of the non-linear scenarios described in the main text.
+#| out-width: 100%
+knitr::include_graphics("images/04-fig4_12.png")
+```
 
 
 
 ## Poisson Regression
 
-**Poisson distribution** is typically used to model counts. In a poisson distribution, 
-
-When $Y$ is neither quantitative (sales) nor qualitative (whether or not someone will default on a loan). 
-Similarly to predicting the probability of qualitative variables, negative predictions of count data are not meaningful. 
-
-
 ### Why not linear regression?
+Similarly to predicting the probability of qualitative variables, negative predictions of count data are not meaningful. 
 
 ```{r}
 #| label: fig4-13
@@ -134,7 +170,20 @@ knitr::include_graphics("images/04-fig4_14.png")
 Left: On the Bikeshare dataset, the number of bikers is displayed on the y-axis, and the hour of the day is displayed on the x-axis. For the most part, as the mean number of bikers increases, so does the variance in the number of bikers, violating the assumption of homoscedasticity. A smoothing spline fit is shown in green. Right: The log of the number of bikers is now displayed on the y-axis.
 
 
+### Poisson distribution
+**Poisson distribution** is typically used to model counts. When $Y$ is neither quantitative (sales) nor qualitative (whether or not someone will default on a loan). In a poisson distribution, the variance is the same as the mean. 
 
+> the larger the mean of $Y$, the larger its variance. 
+
+### Poisson regression
+
+>  rather  than modeling the number of bikers, $Y$, as a Poisson distribution with a fixed mean value like $\lambda$ = 5, we would like to allow the mean to vary as a function of the covariates.
 
 
 ## Generalized Linear Models
+
+Linear, logistic and Poisson are three examples of regression models that are known as a generalizede linear model (GLM).
+
+Each of them uses predictors $X$ to predict a response $Y$. 
+
+>  In general, we can perform a regression by modeling the response $Y$ as coming from a particular member of the exponential family, and then transforming the mean of the response so that the transformed mean is a linear function of the predictors
