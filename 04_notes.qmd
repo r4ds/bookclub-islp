@@ -67,7 +67,7 @@ $$p(X) = \frac{e^{\beta_{0} + \beta_{1}X_1 + ... + \beta_{p}X_p}}{1 + e^{\beta_{
 #| echo: false
 #| fig-cap: Figure 4.3
 #| out-width: 100%
-knitr::include_graphics("images/04-tab4_1.png")
+knitr::include_graphics("images/04-fig4_3.png")
 ```
 
 Confounding in the Default data. Left: Default rates are shown for students (orange) and non-students (blue). The solid lines display  default rate as a function of balance, while the horizontal broken lines display the overall default rates. Right: Boxplots of balance for students (orange) and non-students (blue) are shown.
@@ -101,6 +101,40 @@ $p_k(X)$ is the probability that the observation belongs to the kth class, given
 
 
 
+
+## Poisson Regression
+
+**Poisson distribution** is typically used to model counts. In a poisson distribution, 
+
+When $Y$ is neither quantitative (sales) nor qualitative (whether or not someone will default on a loan). 
+Similarly to predicting the probability of qualitative variables, negative predictions of count data are not meaningful. 
+
+
+### Why not linear regression?
+
+```{r}
+#| label: fig4-13
+#| echo: false
+#| fig-cap: Figure 4.13 
+#| out-width: 100%
+knitr::include_graphics("images/04-fig4_13.png")
+```
+
+Left: The coefficients associated with the month of the year. Bike usage is highest in the spring and fall, and lowest in the winter. Right: The coefficients associated with the hour of the day. Bike usage is highest during peak commute times, and lowest overnight.
+
+```{r}
+#| label: fig4-14
+#| echo: false
+#| fig-cap: Figure 4.14
+#| out-width: 100%
+knitr::include_graphics("images/04-fig4_14.png")
+```
+
+
+Left: On the Bikeshare dataset, the number of bikers is displayed on the y-axis, and the hour of the day is displayed on the x-axis. For the most part, as the mean number of bikers increases, so does the variance in the number of bikers, violating the assumption of homoscedasticity. A smoothing spline fit is shown in green. Right: The log of the number of bikers is now displayed on the y-axis.
+
+
+
+
+
 ## Generalized Linear Models
-
-
