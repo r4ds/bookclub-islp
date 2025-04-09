@@ -18,14 +18,14 @@
 Examples of categorical variables that are not appropriate as outcome variables for linear regression?
 
 ## Logistic Regression
-> Rather than modeling this response Y directly, logistic regression models the probability that $Y$ belongs to a particular category
+> Rather than modeling this response $Y$ directly, logistic regression models the probability that $Y$ belongs to a particular category
 
 
 ```{r}
 #| label: fig4-2
 #| echo: false
 #| fig-cap: Figure 4.2
-#| #| out-width: 100%
+#| out-width: 100%
 knitr::include_graphics("images/04-fig4_2.png")
 ```
 
@@ -36,6 +36,11 @@ Classification using the `Default` data. Left: Estimated probability of `default
 - probability of response $Y$ can be predicted based on any value of $X$. 
 - ${\beta_1}$ in linear regression is the average change in $Y$ associated with a one-unit increase in $X$. By contrast, in a logistic regression model, increasing $X$ by one unit changes the log odds by ${\beta_1}$
 - regardless of the value of $X$, if ${\beta_1}$ is positive then increasing $X$ will be associated with increasing $p(X)$, and if ${\beta_1}$ is negative then increasing $X$ will be associated with decreasing $p(X)$.
+
+
+$$p(X) = β_0 + β_1X \space \Longrightarrow {Linear \space regression}$$
+$$p (X) =  \frac{e^{\beta_{0} + \beta_{1}X}}{1 + e^{\beta_{0} + \beta_{1}X}} \space \Longrightarrow {Logistic \space function}$$
+$$odds = \frac{p (X)}{1 - p (X)} =  e^{\beta_{0} + \beta_{1}X} \Longrightarrow {odds \space value [0, ∞]}$$
 
 ### Maximum Likelihood
 Using maximum likelihood, the regression coefficients are chosen based on the probability estimates being as close as possible to the observed response of $Y$ for each case in the training data.
