@@ -40,10 +40,11 @@ Classification using the `Default` data. Left: Estimated probability of `default
 
 $$p(X) = β_0 + β_1X \space \Longrightarrow {Linear \space regression}$$
 $$p (X) =  \frac{e^{\beta_{0} + \beta_{1}X}}{1 + e^{\beta_{0} + \beta_{1}X}} \space \Longrightarrow {Logistic \space function}$$
-$$odds = \frac{p (X)}{1 - p (X)} =  e^{\beta_{0} + \beta_{1}X} \Longrightarrow {odds \space value [0, ∞]}$$
+
 
 ### Maximum Likelihood
 Using maximum likelihood, the regression coefficients are chosen based on the probability estimates being as close as possible to the observed response of $Y$ for each case in the training data.
+
 > The estimates $\hat{\beta_0}$ and $\hat{\beta_1}$ are chosen to maximize this likelihood function.
 
 ```{r}
@@ -57,6 +58,11 @@ knitr::include_graphics("images/04-tab4_1.png")
 ### Making Predictions
 
 Once we have our estimated coefficients we can input any value of $X$ into the model and predict the probability of $Y$. Using the bank example, we can predict `default` based on any `balance`. 
+
+
+$$\hat{p}(X) = \frac{e^{\hat{\beta}_{0} + \hat{\beta}_{1}X}}{1 + e^{\hat{\beta}_{0} + \hat{\beta}_{1}X}} 
+= \frac{e^{-10.6513 + 0.0055 \times 1000}}{1 + e^{-10.6513 + 0.0055 \times 1000}} 
+= 0.00576$$
 
 ### Qualitative predictors
 Instead of a quantitative predictor like credit balance, we could use a qualitative, or categorical, variable, like whether or not someone is a student, to predict whether or not someone will default. 
@@ -88,7 +94,19 @@ Confounding in the Default data. Left: Default rates are shown for students (ora
 ## Generative Models for Classification
 >  model the distribution of the predictors X separately in each of the response classes (i.e. for each value of Y ).
 
-$\pi_k$ = overall or prior probability that a randomly chosen observation comes from kth class
+
+**Why not logistic regression?**
+
+- When there is substantial separation between the two classes, the parameter estimates for the logistic regression model are surprisingly unstable. 
+
+- If the distribution of the predictors X is approximately normal in each of the classes and the sample size is small, then the generative modelling may be more accurate than logistic regression.
+
+- Generative modelling can be naturally extended to the case of more than two response classes. 
+
+
+
+
+$\pi_k$ = overall or prior probability that a randomly chosen observation comes from the prior kth class
 
 $f_k(X) \equiv \Pr(X \mid Y = k)$ = the density function of $X$ for an observation that comes from the $k$th class. It is relatively large if there is a high probability that an observation in the $k$th class has $X \approx x$, and $f_k(X)$ is small if it is very unlikely that an observation in the $k$th class has $X \approx x$.
 
@@ -97,7 +115,7 @@ $p_k(X)$ is the probability that the observation belongs to the kth class, given
 
 ### 3 classifiers to approximate the Bayes classifier
 
-- Linear Discriminant Analysis
+- Linear Discriminant Analysis (LDA)
 - Quadratic Discriminant Analysis
 - Naive Bayes
 
