@@ -115,19 +115,16 @@ $p_k(X)$ is the probability that the observation belongs to the kth class, given
 
 ### 3 classifiers to approximate the Bayes classifier
 
-- Linear Discriminant Analysis (LDA)
-- Quadratic Discriminant Analysis
-- Naive Bayes
+- Linear Discriminant Analysis (LDA) - normal distribution, covariance matrix that is common to all $K$ classes
+- Quadratic Discriminant Analysis (QDA) - normal distribution, covariance matrix that is NOT common to all $K$ classes
+- Naive Bayes - uncorrelated predictors, small n, no distribution assumption
 
 
 ## Comparison of classification methods
 
-### Analytic comparison
-
-
 ### Empirical comparison
 
-6 scenarios to empirically compaire the performance of logistic regression, linear discriminant analysis (LDA), quadratic discriminant analysis (QDA), naive Bayes, and K Nearest Neighbors (KNN). Each of the 6 different scenarios was a binary classification problem with 2 quantitative predictors. 
+6 scenarios to empirically compare the performance of logistic regression, linear discriminant analysis (LDA), quadratic discriminant analysis (QDA), naive Bayes, and K Nearest Neighbors (KNN). Each of the 6 different scenarios was a binary classification problem with 2 quantitative predictors. 
 
 Linear Bayes decision boundaries
 
@@ -205,8 +202,9 @@ Left: On the Bikeshare dataset, the number of bikers is displayed on the y-axis,
 
 ## Generalized Linear Models
 
-Linear, logistic and Poisson are three examples of regression models that are known as a generalizede linear model (GLM).
+Linear, logistic and Poisson are three examples of regression models that are known as a generalized linear model (GLM).
 
 Each of them uses predictors $X$ to predict a response $Y$. 
 
->  In general, we can perform a regression by modeling the response $Y$ as coming from a particular member of the exponential family, and then transforming the mean of the response so that the transformed mean is a linear function of the predictors
+>  In general, we can perform a regression by modeling the response $Y$ as coming from a particular member of the exponential family, and then transforming the mean of the response so that the transformed mean is a linear function of the predictors... Any regression approach that follows this very general recipe is
+known as a **generalized linear model**
