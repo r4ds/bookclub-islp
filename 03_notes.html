@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.40">
+<meta name="generator" content="quarto-1.7.31">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -21,8 +21,9 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 /* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -33,7 +34,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -66,15 +67,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="./">
 <link href="./03_video.html" rel="next">
 <link href="./03_main.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-e6f626c662a91eeead3924920b920f6f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-9e1954d45f3dd01da8ddd802a33ecb74.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -177,7 +179,7 @@ window.Quarto = {
 <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -1195,294 +1197,300 @@ window.Quarto = {
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-  const viewSource = window.document.getElementById('quarto-view-source') ||
-                     window.document.getElementById('quarto-code-tools-source');
-  if (viewSource) {
-    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
-    viewSource.addEventListener("click", function(e) {
-      if (sourceUrl) {
-        // rstudio viewer pane
-        if (/\bcapabilities=\b/.test(window.location)) {
-          window.open(sourceUrl);
-        } else {
-          window.location.href = sourceUrl;
-        }
-      } else {
-        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
-        modal.show();
-      }
-      return false;
-    });
-  }
-  function toggleCodeHandler(show) {
-    return function(e) {
-      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
-      for (let i=0; i<detailsSrc.length; i++) {
-        const details = detailsSrc[i].parentElement;
-        if (show) {
-          details.open = true;
-        } else {
-          details.removeAttribute("open");
-        }
-      }
-      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
-      const fromCls = show ? "hidden" : "unhidden";
-      const toCls = show ? "unhidden" : "hidden";
-      for (let i=0; i<cellCodeDivs.length; i++) {
-        const codeDiv = cellCodeDivs[i];
-        if (codeDiv.classList.contains(fromCls)) {
-          codeDiv.classList.remove(fromCls);
-          codeDiv.classList.add(toCls);
-        } 
-      }
-      return false;
-    }
-  }
-  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
-  if (hideAllCode) {
-    hideAllCode.addEventListener("click", toggleCodeHandler(false));
-  }
-  const showAllCode = window.document.getElementById("quarto-show-all-code");
-  if (showAllCode) {
-    showAllCode.addEventListener("click", toggleCodeHandler(true));
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/hastie\.su\.domains\/ISLP\/ISLP_website\.pdf");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-          // target, if specified
-          link.setAttribute("target", "_blank");
-          if (link.getAttribute("rel") === null) {
-            link.setAttribute("rel", "noopener");
-          }
-          // default icon
-          link.classList.add("external");
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
         }
       }
+      return false;
     }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
         }
-        return container.innerHTML
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/hastie\.su\.domains\/ISLP\/ISLP_website\.pdf");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+            // default icon
+            link.classList.add("external");
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -1490,185 +1498,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./03_main.html" class="pagination-link" aria-label="3. Linear Regression">
@@ -1800,283 +1784,557 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-121"><a href="#cb1-121"></a><span class="ss">- </span>Residual standard error (RSE): will be used later to find $SE$</span>
 <span id="cb1-122"><a href="#cb1-122"></a></span>
 <span id="cb1-123"><a href="#cb1-123"></a>$$\mathrm{RSE} = \sqrt{\frac{\mathrm{RSS}}{n - 2}}$$</span>
-<span id="cb1-124"><a href="#cb1-124"></a></span>
-<span id="cb1-125"><a href="#cb1-125"></a>where $n$ is the sample size</span>
-<span id="cb1-126"><a href="#cb1-126"></a><span class="ss">- </span>Standard error assoicated with $\hat{\beta}_{0}$ and $\hat{\beta}_{1}$:</span>
-<span id="cb1-127"><a href="#cb1-127"></a>$$\mathrm{SE}(\hat\beta_0)^2 = \sigma^2 \left[\frac{1}{n} + \frac{\bar{x}^2}{\sum_{i=1}^n (x_i - \bar{x})^2}\right]$$</span>
-<span id="cb1-128"><a href="#cb1-128"></a></span>
-<span id="cb1-129"><a href="#cb1-129"></a>$$\mathrm{SE}(\hat\beta_1)^2 = \frac{\sigma^2}{\sum_{i=1}^n (x_i - \bar{x})^2}$$</span>
-<span id="cb1-130"><a href="#cb1-130"></a></span>
+<span id="cb1-124"><a href="#cb1-124"></a><span class="ss">- </span>We can think of the residual standard error as the average amount the response will deviate from the true regression line.</span>
+<span id="cb1-125"><a href="#cb1-125"></a></span>
+<span id="cb1-126"><a href="#cb1-126"></a>where $n$ is the sample size</span>
+<span id="cb1-127"><a href="#cb1-127"></a><span class="ss">- </span>Standard error asscociated with $\hat{\beta}_{0}$ and $\hat{\beta}_{1}$:</span>
+<span id="cb1-128"><a href="#cb1-128"></a>$$\mathrm{SE}(\hat\beta_0)^2 = \sigma^2 \left[\frac{1}{n} + \frac{\bar{x}^2}{\sum_{i=1}^n (x_i - \bar{x})^2}\right]$$</span>
+<span id="cb1-129"><a href="#cb1-129"></a></span>
+<span id="cb1-130"><a href="#cb1-130"></a>$$\mathrm{SE}(\hat\beta_1)^2 = \frac{\sigma^2}{\sum_{i=1}^n (x_i - \bar{x})^2}$$</span>
 <span id="cb1-131"><a href="#cb1-131"></a></span>
-<span id="cb1-132"><a href="#cb1-132"></a><span class="ss">- </span>**95% confidence interval:** </span>
-<span id="cb1-133"><a href="#cb1-133"></a><span class="ss">    - </span>a range of values such that with 95% probability, the range will contain the true unknown value of the parameter</span>
-<span id="cb1-134"><a href="#cb1-134"></a><span class="ss">    - </span>"95" is just a common number</span>
-<span id="cb1-135"><a href="#cb1-135"></a></span>
-<span id="cb1-136"><a href="#cb1-136"></a><span class="ss">- </span>The 95% CI limits are formed by:</span>
-<span id="cb1-137"><a href="#cb1-137"></a></span>
-<span id="cb1-138"><a href="#cb1-138"></a>$$\hat\beta_1 \pm 2\ \cdot \ \mathrm{SE}(\hat\beta_1)$$</span>
-<span id="cb1-139"><a href="#cb1-139"></a></span>
-<span id="cb1-140"><a href="#cb1-140"></a>$$\hat\beta_0 \pm 2\ \cdot \ \mathrm{SE}(\hat\beta_0)$$</span>
-<span id="cb1-141"><a href="#cb1-141"></a></span>
+<span id="cb1-132"><a href="#cb1-132"></a></span>
+<span id="cb1-133"><a href="#cb1-133"></a><span class="ss">- </span>**95% confidence interval:** </span>
+<span id="cb1-134"><a href="#cb1-134"></a><span class="ss">    - </span>a range of values such that with 95% probability, the range will contain the true unknown value of the parameter</span>
+<span id="cb1-135"><a href="#cb1-135"></a><span class="ss">    - </span>"95" is just a common number</span>
+<span id="cb1-136"><a href="#cb1-136"></a></span>
+<span id="cb1-137"><a href="#cb1-137"></a><span class="ss">- </span>The 95% CI limits are formed by:</span>
+<span id="cb1-138"><a href="#cb1-138"></a></span>
+<span id="cb1-139"><a href="#cb1-139"></a>$$\hat\beta_1 \pm 2\ \cdot \ \mathrm{SE}(\hat\beta_1)$$</span>
+<span id="cb1-140"><a href="#cb1-140"></a></span>
+<span id="cb1-141"><a href="#cb1-141"></a>$$\hat\beta_0 \pm 2\ \cdot \ \mathrm{SE}(\hat\beta_0)$$</span>
 <span id="cb1-142"><a href="#cb1-142"></a></span>
-<span id="cb1-143"><a href="#cb1-143"></a><span class="ss">- </span>Figure below can be read: "*there's approximately 95% chance that the shaded area will contain the true value of $\beta$*"</span>
-<span id="cb1-144"><a href="#cb1-144"></a></span>
-<span id="cb1-145"><a href="#cb1-145"></a><span class="al">![Source: https://mathblog.com/statistics/definitions/confidence-interval/95-ci/](images/03-95-percent-confidence-interval.jpg)</span></span>
-<span id="cb1-146"><a href="#cb1-146"></a></span>
-<span id="cb1-147"><a href="#cb1-147"></a><span class="fu">#### Using SE in hypothesis testing</span></span>
-<span id="cb1-148"><a href="#cb1-148"></a><span class="ss">- </span>For any estimated coefficient $\hat{\beta}$:</span>
-<span id="cb1-149"><a href="#cb1-149"></a><span class="ss">    1. </span>Formulate a null hypothesis $H_0$ vs. alternative hypothesis $H_a$ about $\hat{\beta}$</span>
-<span id="cb1-150"><a href="#cb1-150"></a><span class="ss">    2. </span>Estimate $SE$ </span>
-<span id="cb1-151"><a href="#cb1-151"></a><span class="ss">    3. </span>Compute *t-statistic*: $$t = \frac{\hat{\beta}}{SE(\hat{\beta})}$$</span>
-<span id="cb1-152"><a href="#cb1-152"></a><span class="ss">    4. </span>Use t-statistic to find the p-value = $Pr(|t|)$</span>
-<span id="cb1-153"><a href="#cb1-153"></a><span class="ss">    5. </span>p-value is used to decide whether we reject null hypothesis or not</span>
-<span id="cb1-154"><a href="#cb1-154"></a><span class="ss">- </span>$H_0$  is rejected if p-value &lt; $\alpha$</span>
-<span id="cb1-155"><a href="#cb1-155"></a><span class="ss">    - </span>$\alpha$ significance level: the common choice is 0.05, but this cutoff vary based on context</span>
-<span id="cb1-156"><a href="#cb1-156"></a><span class="ss">    - </span>if the p-value of some coefficient &lt; $\alpha$, then we say it has **significant** effect on $Y$</span>
-<span id="cb1-157"><a href="#cb1-157"></a><span class="ss">    - </span>otherwise, we say it has **insignificant** effect on $Y$</span>
-<span id="cb1-158"><a href="#cb1-158"></a></span>
-<span id="cb1-159"><a href="#cb1-159"></a><span class="al">![Table 3.1](images/03-table3_1.png)</span></span>
-<span id="cb1-160"><a href="#cb1-160"></a></span>
-<span id="cb1-161"><a href="#cb1-161"></a><span class="ss">- </span>e.g. $H_0$ : There is no relationship between ad. on TV and the increase in sales </span>
-<span id="cb1-162"><a href="#cb1-162"></a><span class="ss">    - </span>$\rightarrow$ slope is approximately 0 </span>
-<span id="cb1-163"><a href="#cb1-163"></a><span class="ss">    - </span>$\rightarrow$ $H_0$: $\beta_1$ = 0</span>
-<span id="cb1-164"><a href="#cb1-164"></a></span>
-<span id="cb1-165"><a href="#cb1-165"></a><span class="ss">- </span>Easy to do using Python or R</span>
-<span id="cb1-166"><a href="#cb1-166"></a><span class="ss">- </span>More details in chapter 13</span>
-<span id="cb1-167"><a href="#cb1-167"></a></span>
+<span id="cb1-143"><a href="#cb1-143"></a></span>
+<span id="cb1-144"><a href="#cb1-144"></a><span class="ss">- </span>Figure below can be read: "*there's approximately 95% chance that the shaded area will contain the true value of $\beta$*"</span>
+<span id="cb1-145"><a href="#cb1-145"></a></span>
+<span id="cb1-146"><a href="#cb1-146"></a><span class="al">![Source: https://mathblog.com/statistics/definitions/confidence-interval/95-ci/](images/03-95-percent-confidence-interval.jpg)</span></span>
+<span id="cb1-147"><a href="#cb1-147"></a></span>
+<span id="cb1-148"><a href="#cb1-148"></a><span class="fu">#### Using SE in hypothesis testing</span></span>
+<span id="cb1-149"><a href="#cb1-149"></a><span class="ss">- </span>For any estimated coefficient $\hat{\beta}$:</span>
+<span id="cb1-150"><a href="#cb1-150"></a><span class="ss">    1. </span>Formulate a null hypothesis $H_0$ vs. alternative hypothesis $H_a$ about $\hat{\beta}$</span>
+<span id="cb1-151"><a href="#cb1-151"></a><span class="ss">    2. </span>Estimate $SE$ </span>
+<span id="cb1-152"><a href="#cb1-152"></a><span class="ss">    3. </span>Compute *t-statistic*: $$t = \frac{\hat{\beta}}{SE(\hat{\beta})}$$</span>
+<span id="cb1-153"><a href="#cb1-153"></a><span class="ss">    4. </span>Use t-statistic to find the p-value = $Pr(|t|)$</span>
+<span id="cb1-154"><a href="#cb1-154"></a><span class="ss">    5. </span>p-value is used to decide whether we reject null hypothesis or not</span>
+<span id="cb1-155"><a href="#cb1-155"></a><span class="ss">- </span>$H_0$  is rejected if p-value &lt; $\alpha$</span>
+<span id="cb1-156"><a href="#cb1-156"></a><span class="ss">    - </span>$\alpha$ significance level: the common choice is 0.05, but this cutoff vary based on context</span>
+<span id="cb1-157"><a href="#cb1-157"></a><span class="ss">    - </span>if the p-value of some coefficient &lt; $\alpha$, then we say it has **significant** effect on $Y$</span>
+<span id="cb1-158"><a href="#cb1-158"></a><span class="ss">    - </span>otherwise, we say it has **insignificant** effect on $Y$</span>
+<span id="cb1-159"><a href="#cb1-159"></a></span>
+<span id="cb1-160"><a href="#cb1-160"></a><span class="al">![Table 3.1](images/03-table3_1.png)</span></span>
+<span id="cb1-161"><a href="#cb1-161"></a></span>
+<span id="cb1-162"><a href="#cb1-162"></a><span class="ss">- </span>e.g. $H_0$ : There is no relationship between ad. on TV and the increase in sales </span>
+<span id="cb1-163"><a href="#cb1-163"></a><span class="ss">    - </span>$\rightarrow$ slope is approximately 0 </span>
+<span id="cb1-164"><a href="#cb1-164"></a><span class="ss">    - </span>$\rightarrow$ $H_0$: $\beta_1$ = 0</span>
+<span id="cb1-165"><a href="#cb1-165"></a></span>
+<span id="cb1-166"><a href="#cb1-166"></a><span class="ss">- </span>Easy to do using Python or R</span>
+<span id="cb1-167"><a href="#cb1-167"></a><span class="ss">- </span>More details in chapter 13</span>
 <span id="cb1-168"><a href="#cb1-168"></a></span>
-<span id="cb1-169"><a href="#cb1-169"></a><span class="fu">### Assessing the Accuracy of the Model</span></span>
-<span id="cb1-170"><a href="#cb1-170"></a><span class="at">&gt; i.e. Model Evaluation</span></span>
-<span id="cb1-171"><a href="#cb1-171"></a></span>
-<span id="cb1-172"><a href="#cb1-172"></a></span>
-<span id="cb1-173"><a href="#cb1-173"></a><span class="ss">- </span>Accuracy of the model = Quality of a linear regression fit</span>
-<span id="cb1-174"><a href="#cb1-174"></a><span class="ss">- </span>There are four quantities for that:</span>
-<span id="cb1-175"><a href="#cb1-175"></a><span class="ss">    1. </span>**Residual standard error** ($RSE$)</span>
-<span id="cb1-176"><a href="#cb1-176"></a><span class="ss">    2. </span>$R^2$ **statistic** </span>
-<span id="cb1-177"><a href="#cb1-177"></a><span class="ss">    3. </span>Pearson correlation coefficient ($r=Cor(X,Y)$)</span>
-<span id="cb1-178"><a href="#cb1-178"></a><span class="ss">    4. </span>$F$-**statistic** (discussed in next section)</span>
-<span id="cb1-179"><a href="#cb1-179"></a></span>
-<span id="cb1-180"><a href="#cb1-180"></a><span class="ss">- </span>**RSE**: </span>
-<span id="cb1-181"><a href="#cb1-181"></a>$$\mathrm{RSE} = \sqrt{\frac{\mathrm{RSS}}{n - 2}}$$</span>
-<span id="cb1-182"><a href="#cb1-182"></a><span class="ss">    - </span>**Interpretation:** *absolute measure of the lack of fit of the model*</span>
-<span id="cb1-183"><a href="#cb1-183"></a><span class="ss">    - </span>**small value** = model fits the data well</span>
-<span id="cb1-184"><a href="#cb1-184"></a><span class="ss">    - </span>measured in the unit of $Y$ (e.g. RSE = 3.2 units sold)</span>
-<span id="cb1-185"><a href="#cb1-185"></a><span class="ss">- </span>*$R^2$* statistic (a.k.a coefficient of determination): </span>
-<span id="cb1-186"><a href="#cb1-186"></a>$$R^2 = 1 - \frac{RSS}{TSS}$$</span>
-<span id="cb1-187"><a href="#cb1-187"></a>where TSS is the **total sum of squares**:</span>
-<span id="cb1-188"><a href="#cb1-188"></a>$$TSS = \Sigma (y_i - \bar{y})^2$$</span>
-<span id="cb1-189"><a href="#cb1-189"></a><span class="ss">    - </span>**Interpretation:** *proportion of the variance in $Y$ explained by using some predictor $X$* </span>
-<span id="cb1-190"><a href="#cb1-190"></a><span class="ss">    - </span>a *good value* depends on the application.</span>
-<span id="cb1-191"><a href="#cb1-191"></a><span class="ss">    - </span>ranges from 0 to 1 (<span class="co">[</span><span class="ot">can be negative in extreme cases?</span><span class="co">](https://www.graphpad.com/support/faq/how-can-rsup2sup-be-negative/)</span>)</span>
-<span id="cb1-192"><a href="#cb1-192"></a></span>
-<span id="cb1-193"><a href="#cb1-193"></a><span class="ss">- </span>Pearson correlation coefficient ($r=Cor(X,Y)$)</span>
-<span id="cb1-194"><a href="#cb1-194"></a>$$r = Cor(X,Y) = \frac{\sum{(x_i - \bar{x})(y_i - \bar{y})}}{\sqrt{\sum{(x_i - \bar{x})^2} \sum{(y_i - \bar{y})^2}}}$$</span>
-<span id="cb1-195"><a href="#cb1-195"></a><span class="ss">    - </span>$R^2=r^2$ in simple linear regression</span>
-<span id="cb1-196"><a href="#cb1-196"></a></span>
-<span id="cb1-197"><a href="#cb1-197"></a></span>
-<span id="cb1-198"><a href="#cb1-198"></a><span class="fu">## Multiple Linear Regression</span></span>
-<span id="cb1-199"><a href="#cb1-199"></a></span>
-<span id="cb1-200"><a href="#cb1-200"></a><span class="fu">### Definition</span></span>
+<span id="cb1-169"><a href="#cb1-169"></a><span class="fu">### Computing Standard Errors</span></span>
+<span id="cb1-170"><a href="#cb1-170"></a></span>
+<span id="cb1-171"><a href="#cb1-171"></a><span class="ss">- </span>In Python, the fitted model object has attributes and methods to generate these quantities.</span>
+<span id="cb1-174"><a href="#cb1-174"></a><span class="in">```{python}</span></span>
+<span id="cb1-175"><a href="#cb1-175"></a><span class="co">#| label: standard error</span></span>
+<span id="cb1-176"><a href="#cb1-176"></a><span class="co">#| eval: false </span></span>
+<span id="cb1-177"><a href="#cb1-177"></a><span class="im">from</span> ISLP.models <span class="im">import</span> summarize</span>
+<span id="cb1-178"><a href="#cb1-178"></a>summarize(results)</span>
+<span id="cb1-179"><a href="#cb1-179"></a><span class="in">```</span></span>
+<span id="cb1-180"><a href="#cb1-180"></a></span>
+<span id="cb1-181"><a href="#cb1-181"></a><span class="ss">- </span><span class="in">`conf_int()`</span> method creates confidence intervals</span>
+<span id="cb1-184"><a href="#cb1-184"></a><span class="in">```{python}</span></span>
+<span id="cb1-185"><a href="#cb1-185"></a><span class="co">#| label: conf. int</span></span>
+<span id="cb1-186"><a href="#cb1-186"></a><span class="co">#| eval: false</span></span>
+<span id="cb1-187"><a href="#cb1-187"></a>results.conf_int(alpha <span class="op">=</span> <span class="fl">0.05</span>)</span>
+<span id="cb1-188"><a href="#cb1-188"></a><span class="in">```</span></span>
+<span id="cb1-189"><a href="#cb1-189"></a></span>
+<span id="cb1-190"><a href="#cb1-190"></a><span class="ss"> - </span>Prediction intervals are substantially wider!</span>
+<span id="cb1-193"><a href="#cb1-193"></a><span class="in">```{python}</span></span>
+<span id="cb1-194"><a href="#cb1-194"></a><span class="co">#| label: prediction intervals</span></span>
+<span id="cb1-195"><a href="#cb1-195"></a><span class="co">#| eval: FALSE</span></span>
+<span id="cb1-196"><a href="#cb1-196"></a>new_df <span class="op">=</span> pd.DataFrame({<span class="st">'lstat'</span>:[<span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">15</span>]})</span>
+<span id="cb1-197"><a href="#cb1-197"></a>newX <span class="op">=</span> design.transform(new_df)</span>
+<span id="cb1-198"><a href="#cb1-198"></a>new_predictions <span class="op">=</span> results.get_prediction(newX)</span>
+<span id="cb1-199"><a href="#cb1-199"></a>new_predictions.conf_int(alpha <span class="op">=</span> <span class="fl">0.05</span>, obs <span class="op">=</span> <span class="va">True</span>)</span>
+<span id="cb1-200"><a href="#cb1-200"></a><span class="in">```</span></span>
 <span id="cb1-201"><a href="#cb1-201"></a></span>
-<span id="cb1-202"><a href="#cb1-202"></a>**Multiple linear regression** extends simple linear regression for *p* predictors:</span>
-<span id="cb1-203"><a href="#cb1-203"></a></span>
-<span id="cb1-204"><a href="#cb1-204"></a>$$Y = \beta_{0} + \beta_{1}X_1 + \beta_{2}X_2 + ... +\beta_{p}X_p + \epsilon_i$$</span>
+<span id="cb1-202"><a href="#cb1-202"></a><span class="fu">### Assessing the Accuracy of the Model</span></span>
+<span id="cb1-203"><a href="#cb1-203"></a><span class="at">&gt; i.e. Model Evaluation</span></span>
+<span id="cb1-204"><a href="#cb1-204"></a></span>
 <span id="cb1-205"><a href="#cb1-205"></a></span>
-<span id="cb1-206"><a href="#cb1-206"></a><span class="ss">- </span>$\beta_{j}$ is the *average* effect on $Y$ from $X_{j}$ holding all other predictors fixed.</span>
-<span id="cb1-207"><a href="#cb1-207"></a><span class="ss">    - </span>But this is not the case in reality! (e.g. using weight and height as predictors in some model)</span>
-<span id="cb1-208"><a href="#cb1-208"></a><span class="ss">- </span>For $p=2$ predictors, the model represents a plane in the 3D space instead of a line</span>
-<span id="cb1-209"><a href="#cb1-209"></a><span class="al">![Figure 3.4 in ISLP](images\03-fig3_4.png)</span></span>
-<span id="cb1-210"><a href="#cb1-210"></a>$$\hat{y} = \hat{\beta_{0}} + \hat{\beta_{1}}x_1 + \hat{\beta_{2}}x_2 + ... + \hat{\beta_{p}}x_p$$</span>
-<span id="cb1-211"><a href="#cb1-211"></a></span>
-<span id="cb1-212"><a href="#cb1-212"></a><span class="ss">- </span>As in the simple case, we aim to choose the set of coefficients $\hat{\beta_{0}}, \hat{\beta_{1}}, ..., \hat{\beta_{p}}$ that minimizes the $RSS$ when making predictions using $\hat{y}$</span>
-<span id="cb1-213"><a href="#cb1-213"></a></span>
-<span id="cb1-214"><a href="#cb1-214"></a><span class="ss">- </span>In this section, we assume predictors are **independent** of each others</span>
-<span id="cb1-215"><a href="#cb1-215"></a></span>
-<span id="cb1-216"><a href="#cb1-216"></a><span class="ss">- </span>Important notes (<span class="co">[</span><span class="ot">from lecture 3</span><span class="co">](https://www.youtube.com/watch?v=o9hoLdylWKo&amp;list=PLoROMvodv4rPP6braWoRt5UCXYZ71GZIQ&amp;index=15)</span>)</span>
-<span id="cb1-217"><a href="#cb1-217"></a><span class="ss">    - </span>Ideal scenario (i.e. balanced design): Predictors are uncorrelated</span>
-<span id="cb1-218"><a href="#cb1-218"></a><span class="ss">    - </span>Correlations amongst predictors cause problems</span>
-<span id="cb1-219"><a href="#cb1-219"></a><span class="ss">        - </span>When a change on some predictor $X_j$ changes everything else, coefficient intepretations become hazardous</span>
-<span id="cb1-220"><a href="#cb1-220"></a><span class="ss">        - </span>Makes thing complicated when discussing **causality**</span>
-<span id="cb1-221"><a href="#cb1-221"></a>    </span>
-<span id="cb1-222"><a href="#cb1-222"></a></span>
-<span id="cb1-223"><a href="#cb1-223"></a><span class="fu">### Important Questions in MLR</span></span>
-<span id="cb1-224"><a href="#cb1-224"></a></span>
-<span id="cb1-225"><a href="#cb1-225"></a><span class="at">&gt; More variables/predictors $\rightarrow$ More things to assess!</span></span>
+<span id="cb1-206"><a href="#cb1-206"></a><span class="ss">- </span>Accuracy of the model = Quality of a linear regression fit</span>
+<span id="cb1-207"><a href="#cb1-207"></a><span class="ss">- </span>There are four quantities for that:</span>
+<span id="cb1-208"><a href="#cb1-208"></a><span class="ss">    1. </span>**Residual standard error** ($RSE$)</span>
+<span id="cb1-209"><a href="#cb1-209"></a><span class="ss">    2. </span>$R^2$ **statistic** </span>
+<span id="cb1-210"><a href="#cb1-210"></a><span class="ss">    3. </span>Pearson correlation coefficient ($r=Cor(X,Y)$)</span>
+<span id="cb1-211"><a href="#cb1-211"></a><span class="ss">    4. </span>$F$-**statistic** (discussed in next section)</span>
+<span id="cb1-212"><a href="#cb1-212"></a></span>
+<span id="cb1-213"><a href="#cb1-213"></a><span class="ss">- </span>**RSE**: </span>
+<span id="cb1-214"><a href="#cb1-214"></a>$$\mathrm{RSE} = \sqrt{\frac{\mathrm{RSS}}{n - 2}}$$</span>
+<span id="cb1-215"><a href="#cb1-215"></a><span class="ss">    - </span>**Interpretation:** *absolute measure of the lack of fit of the model*</span>
+<span id="cb1-216"><a href="#cb1-216"></a><span class="ss">    - </span>**small value** = model fits the data well</span>
+<span id="cb1-217"><a href="#cb1-217"></a><span class="ss">    - </span>measured in the unit of $Y$ (e.g. RSE = 3.2 units sold)</span>
+<span id="cb1-218"><a href="#cb1-218"></a><span class="ss">- </span>*$R^2$* statistic (a.k.a coefficient of determination): </span>
+<span id="cb1-219"><a href="#cb1-219"></a>$$RSE = \sqrt{\frac{1}{n-p-1}\text{RSS}}$$</span>
+<span id="cb1-220"><a href="#cb1-220"></a>$$R^2 = 1 - \frac{RSS}{TSS}$$</span>
+<span id="cb1-221"><a href="#cb1-221"></a>where TSS is the **total sum of squares**:</span>
+<span id="cb1-222"><a href="#cb1-222"></a>$$TSS = \Sigma (y_i - \bar{y})^2$$</span>
+<span id="cb1-223"><a href="#cb1-223"></a><span class="ss">    - </span>**Interpretation:** *proportion of the variance in $Y$ explained by using some predictor $X$* </span>
+<span id="cb1-224"><a href="#cb1-224"></a><span class="ss">    - </span>a *good value* depends on the application.</span>
+<span id="cb1-225"><a href="#cb1-225"></a><span class="ss">    - </span>ranges from 0 to 1 (<span class="co">[</span><span class="ot">can be negative in extreme cases?</span><span class="co">](https://www.graphpad.com/support/faq/how-can-rsup2sup-be-negative/)</span>)</span>
 <span id="cb1-226"><a href="#cb1-226"></a></span>
-<span id="cb1-227"><a href="#cb1-227"></a><span class="ss">1. </span>**Relationship between the resposne and predictors:** *Is at least one of the predictors $X_1$, $X_2$,  ... , $X_p$ useful in predicting the response?*</span>
-<span id="cb1-228"><a href="#cb1-228"></a>    a. formulate a null hypothesis $H_0: \beta_1 = \beta_2 = ... = \beta_p = 0$ </span>
-<span id="cb1-229"><a href="#cb1-229"></a>    b. compute $F$-statistic $$F = \frac{(TSS-RSS)/p}{RSS/(n-p-1)}$$ </span>
-<span id="cb1-230"><a href="#cb1-230"></a>    c. use it to find p-value (all of that can be don using computers)</span>
-<span id="cb1-231"><a href="#cb1-231"></a></span>
-<span id="cb1-232"><a href="#cb1-232"></a></span>
+<span id="cb1-227"><a href="#cb1-227"></a>-$R^2$ has diminished usefulness in the multivariate context</span>
+<span id="cb1-228"><a href="#cb1-228"></a><span class="ss">- </span>RSE is more appropriate, because it adjusts for the ratio between the number of predictors and the explained variance.</span>
+<span id="cb1-229"><a href="#cb1-229"></a></span>
+<span id="cb1-230"><a href="#cb1-230"></a><span class="ss">- </span>Pearson correlation coefficient ($r=Cor(X,Y)$)</span>
+<span id="cb1-231"><a href="#cb1-231"></a>$$r = Cor(X,Y) = \frac{\sum{(x_i - \bar{x})(y_i - \bar{y})}}{\sqrt{\sum{(x_i - \bar{x})^2} \sum{(y_i - \bar{y})^2}}}$$</span>
+<span id="cb1-232"><a href="#cb1-232"></a><span class="ss">    - </span>$R^2=r^2$ in simple linear regression</span>
 <span id="cb1-233"><a href="#cb1-233"></a></span>
 <span id="cb1-234"><a href="#cb1-234"></a></span>
-<span id="cb1-235"><a href="#cb1-235"></a><span class="ss">2. </span>**Deciding on important variables to include in the model:** *Do all the predictors help to explain $Y$ , or is only a subset of the predictors useful?*</span>
+<span id="cb1-235"><a href="#cb1-235"></a><span class="fu">## Multiple Linear Regression</span></span>
 <span id="cb1-236"><a href="#cb1-236"></a></span>
-<span id="cb1-237"><a href="#cb1-237"></a><span class="ss">    - </span>a.k.a. Model Selection Problem</span>
-<span id="cb1-238"><a href="#cb1-238"></a><span class="ss">    - </span>**Option 1**: test all possibilities and choose the best subset (inefficient with many variables w/ $2^p$ possible models)</span>
-<span id="cb1-239"><a href="#cb1-239"></a><span class="ss">    - </span>**Option 2**: use a **variable selection** algorithm (Forward - Backward - Mixed)</span>
-<span id="cb1-240"><a href="#cb1-240"></a><span class="ss">        - </span>Discussed in detail in Chapter 6</span>
-<span id="cb1-241"><a href="#cb1-241"></a></span>
-<span id="cb1-242"><a href="#cb1-242"></a><span class="ss">3. </span>**Model evaluation:** *How well does the model fit the data?*</span>
-<span id="cb1-243"><a href="#cb1-243"></a></span>
-<span id="cb1-244"><a href="#cb1-244"></a><span class="ss">    - </span>**$R^2$** still gives *proportion of the variance explained*</span>
-<span id="cb1-245"><a href="#cb1-245"></a><span class="ss">        - </span>Adding predictors w/ no association to $Y$ can reducde $R^2$ but results in overfitting</span>
-<span id="cb1-246"><a href="#cb1-246"></a><span class="ss">    - </span>Can also look at **RSE** which is generalized for multiple regression as: $$RSE = \sqrt{\frac{1}{n-p-1}RSS}$$</span>
-<span id="cb1-247"><a href="#cb1-247"></a></span>
-<span id="cb1-248"><a href="#cb1-248"></a><span class="ss">4. </span>**Making and assising predictions:** *Given a set of predictor values, what response value should we predict,</span>
-<span id="cb1-249"><a href="#cb1-249"></a>and how accurate is our prediction?* </span>
+<span id="cb1-237"><a href="#cb1-237"></a><span class="fu">### Definition</span></span>
+<span id="cb1-238"><a href="#cb1-238"></a></span>
+<span id="cb1-239"><a href="#cb1-239"></a>**Multiple linear regression** extends simple linear regression for *p* predictors:</span>
+<span id="cb1-240"><a href="#cb1-240"></a></span>
+<span id="cb1-241"><a href="#cb1-241"></a>$$Y = \beta_{0} + \beta_{1}X_1 + \beta_{2}X_2 + ... +\beta_{p}X_p + \epsilon_i$$</span>
+<span id="cb1-242"><a href="#cb1-242"></a></span>
+<span id="cb1-243"><a href="#cb1-243"></a><span class="ss">- </span>$\beta_{j}$ is the *average* effect on $Y$ from $X_{j}$ holding all other predictors fixed.</span>
+<span id="cb1-244"><a href="#cb1-244"></a><span class="ss">    - </span>But this is not the case in reality! (e.g. using weight and height as predictors in some model)</span>
+<span id="cb1-245"><a href="#cb1-245"></a><span class="ss">- </span>For $p=2$ predictors, the model represents a plane in the 3D space instead of a line</span>
+<span id="cb1-246"><a href="#cb1-246"></a><span class="al">![Figure 3.4 in ISLP](images\03-fig3_4.png)</span></span>
+<span id="cb1-247"><a href="#cb1-247"></a>$$\hat{y} = \hat{\beta_{0}} + \hat{\beta_{1}}x_1 + \hat{\beta_{2}}x_2 + ... + \hat{\beta_{p}}x_p$$</span>
+<span id="cb1-248"><a href="#cb1-248"></a></span>
+<span id="cb1-249"><a href="#cb1-249"></a><span class="ss">- </span>As in the simple case, we aim to choose the set of coefficients $\hat{\beta_{0}}, \hat{\beta_{1}}, ..., \hat{\beta_{p}}$ that minimizes the $RSS$ when making predictions using $\hat{y}$</span>
 <span id="cb1-250"><a href="#cb1-250"></a></span>
-<span id="cb1-251"><a href="#cb1-251"></a>    Three sets of uncertainty in predictions:</span>
-<span id="cb1-252"><a href="#cb1-252"></a>    </span>
-<span id="cb1-253"><a href="#cb1-253"></a><span class="ss">    - </span>Uncertainty in $\hat{\beta_i}$ the estimates of $\beta_i$ (use **confidence interval**)</span>
-<span id="cb1-254"><a href="#cb1-254"></a><span class="ss">    - </span>Model bias (i.e. inductive bias): casued by our assumptions</span>
-<span id="cb1-255"><a href="#cb1-255"></a><span class="ss">    - </span>Irreducible error $\epsilon$ (use **prediction interval**): even if we know the true $\beta_i$, there is still $\epsilon$!</span>
-<span id="cb1-256"><a href="#cb1-256"></a><span class="ss">        - </span>PI is wider than CI because it incorporates all all kinds of errors.</span>
-<span id="cb1-257"><a href="#cb1-257"></a></span>
-<span id="cb1-258"><a href="#cb1-258"></a><span class="fu">## Qualitative Predictors</span></span>
-<span id="cb1-259"><a href="#cb1-259"></a><span class="at">&gt; a.k.a. *categorical predictors* or *factor variables*</span></span>
-<span id="cb1-260"><a href="#cb1-260"></a></span>
-<span id="cb1-261"><a href="#cb1-261"></a><span class="ss">- </span>**Dummy variables** (a.k.a. one-hot encoding): if there are $k$ levels, introduce $k-1$ dummy variables which are equal to one when the underlying qualitative predictor takes that value. </span>
-<span id="cb1-262"><a href="#cb1-262"></a><span class="ss">- </span>For example if there are 3 levels, introduce 2 new dummy variables ($x_1$ and $x_2$) and fit the model:</span>
+<span id="cb1-251"><a href="#cb1-251"></a><span class="ss">- </span>In this section, we assume predictors are **independent** of each others</span>
+<span id="cb1-252"><a href="#cb1-252"></a></span>
+<span id="cb1-253"><a href="#cb1-253"></a><span class="ss">- </span>Important notes (<span class="co">[</span><span class="ot">from lecture 3</span><span class="co">](https://www.youtube.com/watch?v=o9hoLdylWKo&amp;list=PLoROMvodv4rPP6braWoRt5UCXYZ71GZIQ&amp;index=15)</span>)</span>
+<span id="cb1-254"><a href="#cb1-254"></a><span class="ss">    - </span>Ideal scenario (i.e. balanced design): Predictors are uncorrelated</span>
+<span id="cb1-255"><a href="#cb1-255"></a><span class="ss">    - </span>Correlations amongst predictors cause problems</span>
+<span id="cb1-256"><a href="#cb1-256"></a><span class="ss">        - </span>When a change on some predictor $X_j$ changes everything else, coefficient intepretations become hazardous</span>
+<span id="cb1-257"><a href="#cb1-257"></a><span class="ss">        - </span>Makes thing complicated when discussing **causality**</span>
+<span id="cb1-258"><a href="#cb1-258"></a>    </span>
+<span id="cb1-259"><a href="#cb1-259"></a></span>
+<span id="cb1-260"><a href="#cb1-260"></a><span class="fu">### Important Questions in MLR</span></span>
+<span id="cb1-261"><a href="#cb1-261"></a></span>
+<span id="cb1-262"><a href="#cb1-262"></a><span class="at">&gt; More variables/predictors $\rightarrow$ More things to assess!</span></span>
 <span id="cb1-263"><a href="#cb1-263"></a></span>
-<span id="cb1-264"><a href="#cb1-264"></a>$$y_i = \beta_0 + \beta_1 x_{i1} + \beta_2 x_{i2} + \epsilon_i$$</span>
-<span id="cb1-265"><a href="#cb1-265"></a></span>
-<span id="cb1-266"><a href="#cb1-266"></a>| Qualitative Predicitor | $x_{i1}$ | $x_{i2}$ |</span>
-<span id="cb1-267"><a href="#cb1-267"></a>| ---------------------- |:--------:|:--------:|</span>
-<span id="cb1-268"><a href="#cb1-268"></a>| level 0    (baseline)  |    0     |    0     |</span>
-<span id="cb1-269"><a href="#cb1-269"></a>| level 1                |    1     |    0     |</span>
-<span id="cb1-270"><a href="#cb1-270"></a>| level 2                |    0     |    1     |</span>
-<span id="cb1-271"><a href="#cb1-271"></a></span>
-<span id="cb1-272"><a href="#cb1-272"></a><span class="ss">- </span>Coefficients are interpreted the average effect relative to the baseline.</span>
-<span id="cb1-273"><a href="#cb1-273"></a></span>
-<span id="cb1-274"><a href="#cb1-274"></a></span>
-<span id="cb1-275"><a href="#cb1-275"></a><span class="fu">## Extensions to the Linear Model</span></span>
-<span id="cb1-276"><a href="#cb1-276"></a></span>
-<span id="cb1-277"><a href="#cb1-277"></a><span class="ss">- </span>**Interaction/Synergy Effects**  </span>
-<span id="cb1-278"><a href="#cb1-278"></a><span class="ss">    - </span>Remove the previous assumptions about independence among predictors (additive assumption)</span>
-<span id="cb1-279"><a href="#cb1-279"></a></span>
-<span id="cb1-280"><a href="#cb1-280"></a><span class="ss">    - </span>Add a product term $X_1 \times X_2$ with its own coefficient $\beta_3$ to model how the relationship between $Y$ and one variable $X_1$ changes depending on the value of the other variable $X_2$:  $$Y = \beta_{0} + \beta_{1}X_1 + \beta_{2}X_2 + \beta_{3}(X_1 \cdot X_2) + \epsilon_i$$</span>
-<span id="cb1-281"><a href="#cb1-281"></a><span class="ss">        - </span>There are many possibilities (e.g. interaction between quant. and qualit. variables)</span>
-<span id="cb1-282"><a href="#cb1-282"></a><span class="ss">- </span>Non-linear relationships (e.g. polynomial fits)</span>
-<span id="cb1-283"><a href="#cb1-283"></a> </span>
-<span id="cb1-284"><a href="#cb1-284"></a>$$Y = \beta_{0} + \beta_{1}X + \beta_{2}X^2 + ... \beta_{n}X^n + \epsilon_i$$</span>
-<span id="cb1-285"><a href="#cb1-285"></a></span>
-<span id="cb1-286"><a href="#cb1-286"></a><span class="fu">## Potential Problems</span></span>
-<span id="cb1-287"><a href="#cb1-287"></a><span class="at">&gt; Common problems with linear models and tips to address them</span></span>
-<span id="cb1-288"><a href="#cb1-288"></a></span>
-<span id="cb1-289"><a href="#cb1-289"></a><span class="ss">1. </span>*Non-linear relationships* </span>
-<span id="cb1-290"><a href="#cb1-290"></a><span class="al">![Figure 3.9](images/03-fig3_9.png)</span></span>
-<span id="cb1-291"><a href="#cb1-291"></a><span class="ss">    - </span>Residual plots are useful tool to see if any remaining trends exist. </span>
-<span id="cb1-292"><a href="#cb1-292"></a><span class="ss">    - </span>If a non-linear associations are observed, consider transformaing predictors before fitting (e.g. $log X$)</span>
-<span id="cb1-293"><a href="#cb1-293"></a>    </span>
-<span id="cb1-294"><a href="#cb1-294"></a><span class="ss">2. </span>*Correlation of Error Terms*</span>
-<span id="cb1-295"><a href="#cb1-295"></a></span>
-<span id="cb1-296"><a href="#cb1-296"></a>    Linear regression assumes that the error terms $\epsilon_i$ are uncorrelated. Residuals may indicate that this is not correct (obvious *tracking* in the data). One could also look at the autocorrelation of the residuals (e.g. time-series). </span>
-<span id="cb1-297"><a href="#cb1-297"></a>    </span>
-<span id="cb1-298"><a href="#cb1-298"></a><span class="ss">3. </span>*Non-constant variance of error terms*</span>
+<span id="cb1-264"><a href="#cb1-264"></a><span class="ss">1. </span>**Relationship between the resposne and predictors:** *Is at least one of the predictors $X_1$, $X_2$,  ... , $X_p$ useful in predicting the response?*</span>
+<span id="cb1-265"><a href="#cb1-265"></a>    a. formulate a null hypothesis $H_0: \beta_1 = \beta_2 = ... = \beta_p = 0$ </span>
+<span id="cb1-266"><a href="#cb1-266"></a>    b. compute $F$-statistic $$F = \frac{(TSS-RSS)/p}{RSS/(n-p-1)}$$ </span>
+<span id="cb1-267"><a href="#cb1-267"></a>    c. use it to find p-value (all of that can be don using computers)</span>
+<span id="cb1-268"><a href="#cb1-268"></a></span>
+<span id="cb1-269"><a href="#cb1-269"></a><span class="ss">2. </span>**Deciding on important variables to include in the model:** *Do all the predictors help to explain $Y$ , or is only a subset of the predictors useful?*</span>
+<span id="cb1-270"><a href="#cb1-270"></a></span>
+<span id="cb1-271"><a href="#cb1-271"></a><span class="ss">    - </span>a.k.a. Model Selection Problem</span>
+<span id="cb1-272"><a href="#cb1-272"></a><span class="ss">    - </span>**Option 1**: test all possibilities and choose the best subset (inefficient with many variables w/ $2^p$ possible models)</span>
+<span id="cb1-273"><a href="#cb1-273"></a><span class="ss">    - </span>**Option 2**: use a **variable selection** algorithm (Forward - Backward - Mixed)</span>
+<span id="cb1-274"><a href="#cb1-274"></a><span class="ss">        - </span>Discussed in detail in Chapter 6</span>
+<span id="cb1-275"><a href="#cb1-275"></a></span>
+<span id="cb1-276"><a href="#cb1-276"></a><span class="ss">3. </span>**Model evaluation:** *How well does the model fit the data?*</span>
+<span id="cb1-277"><a href="#cb1-277"></a></span>
+<span id="cb1-278"><a href="#cb1-278"></a><span class="ss">    - </span>**$R^2$** still gives *proportion of the variance explained*</span>
+<span id="cb1-279"><a href="#cb1-279"></a><span class="ss">        - </span>Adding predictors w/ no association to $Y$ can reducde $R^2$ but results in overfitting</span>
+<span id="cb1-280"><a href="#cb1-280"></a><span class="ss">    - </span>Can also look at **RSE** which is generalized for multiple regression as: $$RSE = \sqrt{\frac{1}{n-p-1}RSS}$$</span>
+<span id="cb1-281"><a href="#cb1-281"></a></span>
+<span id="cb1-282"><a href="#cb1-282"></a><span class="ss">4. </span>**Making and assising predictions:** *Given a set of predictor values, what response value should we predict,</span>
+<span id="cb1-283"><a href="#cb1-283"></a>and how accurate is our prediction? </span>
+<span id="cb1-284"><a href="#cb1-284"></a></span>
+<span id="cb1-285"><a href="#cb1-285"></a>    Three sets of uncertainty in predictions:</span>
+<span id="cb1-286"><a href="#cb1-286"></a>    </span>
+<span id="cb1-287"><a href="#cb1-287"></a><span class="ss">    - </span>Uncertainty in $\hat{\beta_i}$ the estimates of $\beta_i$ (use **confidence interval**)</span>
+<span id="cb1-288"><a href="#cb1-288"></a><span class="ss">    - </span>Model bias (i.e. inductive bias): casued by our assumptions</span>
+<span id="cb1-289"><a href="#cb1-289"></a><span class="ss">    - </span>Irreducible error $\epsilon$ (use **prediction interval**): even if we know the true $\beta_i$, there is still $\epsilon$!</span>
+<span id="cb1-290"><a href="#cb1-290"></a><span class="ss">        - </span>PI is wider than CI because it incorporates all all kinds of errors.</span>
+<span id="cb1-291"><a href="#cb1-291"></a></span>
+<span id="cb1-292"><a href="#cb1-292"></a><span class="fu">## Qualitative Predictors</span></span>
+<span id="cb1-293"><a href="#cb1-293"></a><span class="at">&gt; a.k.a. *categorical predictors* or *factor variables*</span></span>
+<span id="cb1-294"><a href="#cb1-294"></a></span>
+<span id="cb1-295"><a href="#cb1-295"></a><span class="ss">- </span>**Dummy variables** (a.k.a. one-hot encoding): if there are $k$ levels, introduce $k-1$ dummy variables which are equal to one when the underlying qualitative predictor takes that value. </span>
+<span id="cb1-296"><a href="#cb1-296"></a><span class="ss">- </span>For example if there are 3 levels, introduce 2 new dummy variables ($x_1$ and $x_2$) and fit the model:</span>
+<span id="cb1-297"><a href="#cb1-297"></a></span>
+<span id="cb1-298"><a href="#cb1-298"></a>$$y_i = \beta_0 + \beta_1 x_{i1} + \beta_2 x_{i2} + \epsilon_i$$</span>
 <span id="cb1-299"><a href="#cb1-299"></a></span>
-<span id="cb1-300"><a href="#cb1-300"></a>    Again this can be revealed by examining the residuals.  Consider transformation of the predictors to remove non-constant variance. The figure below shows residuals demonstrating non-constant variance, and shows this being mitigated to a great extent by log transforming the data.</span>
-<span id="cb1-301"><a href="#cb1-301"></a></span>
-<span id="cb1-304"><a href="#cb1-304"></a><span class="in">```{r}</span></span>
-<span id="cb1-305"><a href="#cb1-305"></a><span class="co">#| label: fig3-11</span></span>
-<span id="cb1-306"><a href="#cb1-306"></a><span class="co">#| echo: false</span></span>
-<span id="cb1-307"><a href="#cb1-307"></a><span class="co">#| fig-cap: Figure 3.11</span></span>
-<span id="cb1-308"><a href="#cb1-308"></a><span class="co">#| out-width: 100%</span></span>
-<span id="cb1-309"><a href="#cb1-309"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"images/fig3_11.png"</span>)</span>
-<span id="cb1-310"><a href="#cb1-310"></a><span class="in">```</span></span>
+<span id="cb1-300"><a href="#cb1-300"></a><span class="pp">|</span> Qualitative Predicitor <span class="pp">|</span> $x_{i1}$ <span class="pp">|</span> $x_{i2}$ <span class="pp">|</span></span>
+<span id="cb1-301"><a href="#cb1-301"></a><span class="pp">| ----------------------</span> <span class="pp">|:--------:|:--------:|</span></span>
+<span id="cb1-302"><a href="#cb1-302"></a><span class="pp">|</span> level 0    (baseline)  <span class="pp">|</span>    0     <span class="pp">|</span>    0     <span class="pp">|</span></span>
+<span id="cb1-303"><a href="#cb1-303"></a><span class="pp">|</span> level 1                <span class="pp">|</span>    1     <span class="pp">|</span>    0     <span class="pp">|</span></span>
+<span id="cb1-304"><a href="#cb1-304"></a><span class="pp">|</span> level 2                <span class="pp">|</span>    0     <span class="pp">|</span>    1     <span class="pp">|</span></span>
+<span id="cb1-305"><a href="#cb1-305"></a></span>
+<span id="cb1-306"><a href="#cb1-306"></a><span class="ss">- </span>Coefficients are interpreted the average effect relative to the baseline.</span>
+<span id="cb1-307"><a href="#cb1-307"></a></span>
+<span id="cb1-308"><a href="#cb1-308"></a><span class="fu">### Matrix Representation</span></span>
+<span id="cb1-309"><a href="#cb1-309"></a></span>
+<span id="cb1-310"><a href="#cb1-310"></a>$$y = X\beta + \epsilon$$</span>
 <span id="cb1-311"><a href="#cb1-311"></a></span>
-<span id="cb1-312"><a href="#cb1-312"></a><span class="ss">4. </span>*Outliers*</span>
-<span id="cb1-313"><a href="#cb1-313"></a></span>
-<span id="cb1-314"><a href="#cb1-314"></a><span class="ss">    - </span>Observations for which $y_i$ is unusual given $x_i$ (see point '20' in figure 3.12)</span>
-<span id="cb1-315"><a href="#cb1-315"></a><span class="ss">    - </span>Often outliers are mistakes in data collection and can be removed, but could also be an indicator of a deficient model.  </span>
-<span id="cb1-316"><a href="#cb1-316"></a><span class="ss">    - </span>Detect outliers by plotting studentized residuals (residual $e_i$ divided by the estimated error) and look for residuals larger then 3 standard deviations in absolute value.</span>
-<span id="cb1-317"><a href="#cb1-317"></a><span class="ss">    - </span>An outlier may not effect the fit much but can have dramatic effect on the **RSE**. </span>
-<span id="cb1-318"><a href="#cb1-318"></a><span class="ss">    - </span>We need to identify these before fitting the model</span>
-<span id="cb1-319"><a href="#cb1-319"></a></span>
-<span id="cb1-320"><a href="#cb1-320"></a><span class="al">![Figure 3.12](images/03-fig3_12.png)</span></span>
-<span id="cb1-321"><a href="#cb1-321"></a></span>
-<span id="cb1-322"><a href="#cb1-322"></a></span>
-<span id="cb1-323"><a href="#cb1-323"></a></span>
-<span id="cb1-324"><a href="#cb1-324"></a><span class="ss">5. </span>*High Leverage Points* </span>
-<span id="cb1-325"><a href="#cb1-325"></a></span>
-<span id="cb1-326"><a href="#cb1-326"></a><span class="ss">    - </span>These are points with unusual values of $x_i$ (see point '41' in figure 3.13)</span>
-<span id="cb1-327"><a href="#cb1-327"></a><span class="ss">    - </span>These points can have large impact on the fit, as in the example, including point 41 pulls slope up significantly.</span>
-<span id="cb1-328"><a href="#cb1-328"></a><span class="ss">    - </span>Use *leverage statistic* to identify high leverage points before fitting the model, which can be hard to identify in multiple regression.</span>
-<span id="cb1-329"><a href="#cb1-329"></a></span>
-<span id="cb1-332"><a href="#cb1-332"></a><span class="in">```{r}</span></span>
-<span id="cb1-333"><a href="#cb1-333"></a><span class="co">#| label: fig3-13</span></span>
-<span id="cb1-334"><a href="#cb1-334"></a><span class="co">#| echo: false</span></span>
-<span id="cb1-335"><a href="#cb1-335"></a><span class="co">#| fig-cap: Figure 3.13</span></span>
-<span id="cb1-336"><a href="#cb1-336"></a><span class="co">#| out-width: 100%</span></span>
-<span id="cb1-337"><a href="#cb1-337"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"images/fig3_13.png"</span>)</span>
-<span id="cb1-338"><a href="#cb1-338"></a><span class="in">```</span></span>
-<span id="cb1-339"><a href="#cb1-339"></a></span>
-<span id="cb1-340"><a href="#cb1-340"></a><span class="ss">6. </span>*Collinearity*</span>
+<span id="cb1-312"><a href="#cb1-312"></a>$$ \underbrace{\begin{bmatrix} </span>
+<span id="cb1-313"><a href="#cb1-313"></a>y_1 <span class="sc">\\</span></span>
+<span id="cb1-314"><a href="#cb1-314"></a>y_2 <span class="sc">\\</span></span>
+<span id="cb1-315"><a href="#cb1-315"></a>... <span class="sc">\\</span></span>
+<span id="cb1-316"><a href="#cb1-316"></a>y_n</span>
+<span id="cb1-317"><a href="#cb1-317"></a>\end{bmatrix}}_{\text{n x 1}}</span>
+<span id="cb1-318"><a href="#cb1-318"></a>  = </span>
+<span id="cb1-319"><a href="#cb1-319"></a>\underbrace{\begin{bmatrix}</span>
+<span id="cb1-320"><a href="#cb1-320"></a>1 &amp; x_1 &amp; z_1 <span class="sc">\\</span></span>
+<span id="cb1-321"><a href="#cb1-321"></a>1 &amp; x_2 &amp; z_2 <span class="sc">\\</span></span>
+<span id="cb1-322"><a href="#cb1-322"></a>   ... <span class="sc">\\</span></span>
+<span id="cb1-323"><a href="#cb1-323"></a>1 &amp; x_n &amp; z_n</span>
+<span id="cb1-324"><a href="#cb1-324"></a>\end{bmatrix}}_{\text{n x p}} \cdot </span>
+<span id="cb1-325"><a href="#cb1-325"></a>\underbrace{\begin{bmatrix}</span>
+<span id="cb1-326"><a href="#cb1-326"></a>\beta_0 <span class="sc">\\</span></span>
+<span id="cb1-327"><a href="#cb1-327"></a>\beta_1 <span class="sc">\\</span> </span>
+<span id="cb1-328"><a href="#cb1-328"></a>\beta_2 </span>
+<span id="cb1-329"><a href="#cb1-329"></a>\end{bmatrix}}_{\text{p x 1}} +</span>
+<span id="cb1-330"><a href="#cb1-330"></a>\underbrace{\begin{bmatrix}</span>
+<span id="cb1-331"><a href="#cb1-331"></a>\epsilon_1 <span class="sc">\\</span></span>
+<span id="cb1-332"><a href="#cb1-332"></a>\epsilon_2 <span class="sc">\\</span></span>
+<span id="cb1-333"><a href="#cb1-333"></a>... <span class="sc">\\</span></span>
+<span id="cb1-334"><a href="#cb1-334"></a>\epsilon_n</span>
+<span id="cb1-335"><a href="#cb1-335"></a>\end{bmatrix}}_{\text{n x 1}}</span>
+<span id="cb1-336"><a href="#cb1-336"></a>$$</span>
+<span id="cb1-337"><a href="#cb1-337"></a></span>
+<span id="cb1-338"><a href="#cb1-338"></a></span>
+<span id="cb1-339"><a href="#cb1-339"></a><span class="ss">- </span>$X$ is the "model matrix"</span>
+<span id="cb1-340"><a href="#cb1-340"></a><span class="ss">- </span>The model matrix is the core of the Python linear regression workflow</span>
 <span id="cb1-341"><a href="#cb1-341"></a></span>
-<span id="cb1-342"><a href="#cb1-342"></a><span class="ss">    - </span>Two predictor variables are closely related to one another.</span>
-<span id="cb1-343"><a href="#cb1-343"></a>    </span>
-<span id="cb1-344"><a href="#cb1-344"></a><span class="ss">    - </span>The problem is that it's difficult to separate out the individual effect of each one on the reponse.</span>
-<span id="cb1-345"><a href="#cb1-345"></a><span class="ss">    - </span>Often can be addressed with by: </span>
-<span id="cb1-346"><a href="#cb1-346"></a><span class="ss">        1. </span>Dropping one of the highly correlated predictors or </span>
-<span id="cb1-347"><a href="#cb1-347"></a><span class="ss">        2. </span>Combining correlated predictors into one variable. </span>
-<span id="cb1-348"><a href="#cb1-348"></a></span>
-<span id="cb1-349"><a href="#cb1-349"></a><span class="ss">    - </span>*Multicollinearity* (collinearity involving 3 or more predictors) is not so easy to identify. </span>
-<span id="cb1-350"><a href="#cb1-350"></a><span class="ss">        - </span>Use *Variance inflation factor*, which is the ratio of the variance of $\hat{\beta_j}$ when fitting the full model to fitting the parameter on its own. Can be computed using the formula: $$VIF(\hat{\beta_j}) = \frac{1}{1-R^2_{X_j|X_{-j}}}$$</span>
-<span id="cb1-351"><a href="#cb1-351"></a>        </span>
-<span id="cb1-352"><a href="#cb1-352"></a><span class="ss">            - </span>where $R^2_{X_j|X_{-j}}$ is the $R^2$ from a regression of $X_j$ onto all the other predictors.</span>
-<span id="cb1-353"><a href="#cb1-353"></a><span class="ss">            - </span>large $VIF$ indicates the presence of collinearty</span>
+<span id="cb1-342"><a href="#cb1-342"></a><span class="fu">### Multivariate OLS Proof</span></span>
+<span id="cb1-343"><a href="#cb1-343"></a></span>
+<span id="cb1-344"><a href="#cb1-344"></a>$$\hat{\beta} = (X^T X)^{-1} X^T y$$</span>
+<span id="cb1-345"><a href="#cb1-345"></a><span class="ss">- </span>$\hat{\beta}$ is a column vector of betas:</span>
+<span id="cb1-346"><a href="#cb1-346"></a></span>
+<span id="cb1-347"><a href="#cb1-347"></a>$$\hat{\beta}^\intercal = <span class="co">[</span><span class="ot">\beta_0, \beta_1, \text(...), \beta_k</span><span class="co">]</span>$$</span>
+<span id="cb1-348"><a href="#cb1-348"></a><span class="ss">- </span>We can solve for $\hat{\beta}$ by minimizing the sum of squared residuals.</span>
+<span id="cb1-349"><a href="#cb1-349"></a></span>
+<span id="cb1-350"><a href="#cb1-350"></a>$$\text{SSR} = (y - X\hat{\beta})^\intercal(y-X\hat{\beta})$$</span>
+<span id="cb1-351"><a href="#cb1-351"></a></span>
+<span id="cb1-352"><a href="#cb1-352"></a><span class="ss">- </span>The derivative is:</span>
+<span id="cb1-353"><a href="#cb1-353"></a>$$\text{SSR}^\prime = 2(-X^\intercal)(y-X\hat{\beta})$$</span>
 <span id="cb1-354"><a href="#cb1-354"></a></span>
-<span id="cb1-355"><a href="#cb1-355"></a><span class="fu">## Answers to the Marketing Plan questions</span></span>
+<span id="cb1-355"><a href="#cb1-355"></a><span class="ss">- </span>or:</span>
 <span id="cb1-356"><a href="#cb1-356"></a></span>
-<span id="cb1-357"><a href="#cb1-357"></a><span class="ss">1. </span>**Is there a relationship between advertising budget and sales?**</span>
+<span id="cb1-357"><a href="#cb1-357"></a>$$X^\intercal X \hat{\beta} = X^\intercal y$$</span>
 <span id="cb1-358"><a href="#cb1-358"></a></span>
-<span id="cb1-359"><a href="#cb1-359"></a>    Tool: Multiple regression, look at F-statistic.</span>
+<span id="cb1-359"><a href="#cb1-359"></a><span class="ss">- </span>If $X^\intercal X$ is invertible, then the solution is as above.</span>
 <span id="cb1-360"><a href="#cb1-360"></a></span>
-<span id="cb1-361"><a href="#cb1-361"></a><span class="ss">2. </span>**How strong is the relationship between advertising budget and sales?** </span>
-<span id="cb1-362"><a href="#cb1-362"></a></span>
-<span id="cb1-363"><a href="#cb1-363"></a>    Tool: **$R^2$** and **RSE**</span>
-<span id="cb1-364"><a href="#cb1-364"></a>    </span>
-<span id="cb1-365"><a href="#cb1-365"></a><span class="ss">3. </span>**Which media are associated with sales?**</span>
-<span id="cb1-366"><a href="#cb1-366"></a> </span>
-<span id="cb1-367"><a href="#cb1-367"></a>    Tool: model selection approaches e.g. p-values for each predictor's *t-statistic*.  Explored further in chapter 6.</span>
-<span id="cb1-368"><a href="#cb1-368"></a></span>
-<span id="cb1-369"><a href="#cb1-369"></a><span class="ss">4. </span>**How large is the association between each medium and sales?**</span>
-<span id="cb1-370"><a href="#cb1-370"></a></span>
-<span id="cb1-371"><a href="#cb1-371"></a>    Tool: Confidence intervals on $\hat{\beta_j}$. Narrow CI is a strong evidence for association</span>
-<span id="cb1-372"><a href="#cb1-372"></a></span>
-<span id="cb1-373"><a href="#cb1-373"></a><span class="ss">5. </span>**How accurately can we predict future sales?**</span>
-<span id="cb1-374"><a href="#cb1-374"></a></span>
-<span id="cb1-375"><a href="#cb1-375"></a>    Tool: Prediction intervals for individual response, confidence intervals for average response.</span>
-<span id="cb1-376"><a href="#cb1-376"></a>    </span>
-<span id="cb1-377"><a href="#cb1-377"></a>    </span>
-<span id="cb1-378"><a href="#cb1-378"></a><span class="ss">6. </span>**Is the relationship linear?** </span>
-<span id="cb1-379"><a href="#cb1-379"></a></span>
-<span id="cb1-380"><a href="#cb1-380"></a>    Tool: Residual Plots</span>
-<span id="cb1-381"><a href="#cb1-381"></a>    </span>
-<span id="cb1-382"><a href="#cb1-382"></a><span class="ss">7. </span>**Is there synergy among the advertising media?** </span>
-<span id="cb1-383"><a href="#cb1-383"></a></span>
-<span id="cb1-384"><a href="#cb1-384"></a>    Tool: Interaction terms and the significance of interaction term's coefficient.</span>
-<span id="cb1-385"><a href="#cb1-385"></a></span>
-<span id="cb1-386"><a href="#cb1-386"></a><span class="fu">## Comparison of Linear Regression with K-Nearest Neighbors</span></span>
+<span id="cb1-361"><a href="#cb1-361"></a><span class="ss">- </span>The variance-covariance matrix - which contains the standards errors for each predictor - is also easy to express but more difficult to derive:</span>
+<span id="cb1-362"><a href="#cb1-362"></a>$$\text{Var}(\beta) = \sigma^2 (X^T X)^{-1}$$</span>
+<span id="cb1-363"><a href="#cb1-363"></a></span>
+<span id="cb1-364"><a href="#cb1-364"></a><span class="ss">- </span>where $\hat{\sigma}^2$ is the variance of the error term, estimated from residuals:</span>
+<span id="cb1-365"><a href="#cb1-365"></a></span>
+<span id="cb1-366"><a href="#cb1-366"></a>$$\hat{\sigma}^2 = \frac{(y - X\hat{\beta})^T (y - X\hat{\beta})}{n - p}$$</span>
+<span id="cb1-367"><a href="#cb1-367"></a></span>
+<span id="cb1-368"><a href="#cb1-368"></a><span class="ss">- </span>The result is a square matrix of $<span class="co">[</span><span class="ot">(k+1)\text{x}(k+1)</span><span class="co">]</span>$ dimensions:</span>
+<span id="cb1-369"><a href="#cb1-369"></a></span>
+<span id="cb1-370"><a href="#cb1-370"></a>$$ </span>
+<span id="cb1-371"><a href="#cb1-371"></a>\begin{bmatrix}</span>
+<span id="cb1-372"><a href="#cb1-372"></a>\text{Var}(\beta_0) &amp; \text{Cov}(\beta_0, \beta_1) &amp; \text{Cov}(\beta_0, \beta_2) <span class="sc">\\</span></span>
+<span id="cb1-373"><a href="#cb1-373"></a>\text{Cov}(\beta_1, \beta_0) &amp; \text{Var}(\beta_1) &amp; \text{Cov}(\beta_1, \beta_2) <span class="sc">\\</span></span>
+<span id="cb1-374"><a href="#cb1-374"></a>\text{Cov}(\beta_2, \beta_0) &amp; \text{Cov}(\beta_2, \beta_1) &amp; \text{Var}(\beta_2) \end{bmatrix} </span>
+<span id="cb1-375"><a href="#cb1-375"></a>$$</span>
+<span id="cb1-376"><a href="#cb1-376"></a></span>
+<span id="cb1-377"><a href="#cb1-377"></a><span class="fu">### Computing beta</span></span>
+<span id="cb1-378"><a href="#cb1-378"></a></span>
+<span id="cb1-381"><a href="#cb1-381"></a><span class="in">```{python}</span></span>
+<span id="cb1-382"><a href="#cb1-382"></a><span class="co">#| label: model matrix example</span></span>
+<span id="cb1-383"><a href="#cb1-383"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-384"><a href="#cb1-384"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-385"><a href="#cb1-385"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span>
+<span id="cb1-386"><a href="#cb1-386"></a><span class="im">from</span> ISLP <span class="im">import</span> load_data</span>
 <span id="cb1-387"><a href="#cb1-387"></a></span>
-<span id="cb1-388"><a href="#cb1-388"></a><span class="ss">- </span>This section examines the K-nearest neighbor (KNN) method (a non-parameteric method).</span>
-<span id="cb1-389"><a href="#cb1-389"></a><span class="ss">- </span>Non-parametric methods doesn't make assumptions about the form of $f(X)$ (e.g. linearity)</span>
-<span id="cb1-390"><a href="#cb1-390"></a><span class="ss">- </span>This is essentially a $K$-point moving average.</span>
-<span id="cb1-391"><a href="#cb1-391"></a></span>
-<span id="cb1-392"><a href="#cb1-392"></a><span class="al">![](images/03-fig3_16.png)</span></span>
-<span id="cb1-393"><a href="#cb1-393"></a></span>
-<span id="cb1-394"><a href="#cb1-394"></a><span class="ss">- </span>$K$ determines the model smoothness </span>
-<span id="cb1-395"><a href="#cb1-395"></a><span class="ss">    - </span>Small value: low bias &amp; high variance</span>
-<span id="cb1-396"><a href="#cb1-396"></a><span class="ss">    - </span>High value: high bias &amp; low variance</span>
-<span id="cb1-397"><a href="#cb1-397"></a><span class="ss">- </span>This serves to illustrate the Bias-Variance trade-off nicely.</span>
-<span id="cb1-398"><a href="#cb1-398"></a><span class="ss">- </span>However, parameteric methods outperform non-parameteric methods if the assumptions made were close to the true $f(X)$.</span>
-<span id="cb1-399"><a href="#cb1-399"></a></span>
-<span id="cb1-400"><a href="#cb1-400"></a></span>
-<span id="cb1-401"><a href="#cb1-401"></a></span>
-<span id="cb1-402"><a href="#cb1-402"></a><span class="fu">## Helpful links</span></span>
-<span id="cb1-403"><a href="#cb1-403"></a><span class="ss">- </span><span class="co">[</span><span class="ot">https://mlu-explain.github.io/linear-regression/</span><span class="co">](https://mlu-explain.github.io/linear-regression/)</span></span>
-<span id="cb1-404"><a href="#cb1-404"></a><span class="ss">- </span><span class="co">[</span><span class="ot">https://observablehq.com/@yizhe-ang/interactive-visualization-of-linear-regression</span><span class="co">](https://observablehq.com/@yizhe-ang/interactive-visualization-of-linear-regression)</span></span>
+<span id="cb1-388"><a href="#cb1-388"></a>Boston <span class="op">=</span> load_data(<span class="st">"Boston"</span>)</span>
+<span id="cb1-389"><a href="#cb1-389"></a></span>
+<span id="cb1-390"><a href="#cb1-390"></a>X <span class="op">=</span> pd.DataFrame({<span class="st">'intercept'</span>: np.ones(Boston.shape[<span class="dv">0</span>]),</span>
+<span id="cb1-391"><a href="#cb1-391"></a>                  <span class="st">'lstat'</span>: Boston[<span class="st">'lstat'</span>]})</span>
+<span id="cb1-392"><a href="#cb1-392"></a>X[:<span class="dv">2</span>]</span>
+<span id="cb1-393"><a href="#cb1-393"></a><span class="in">```</span></span>
+<span id="cb1-394"><a href="#cb1-394"></a></span>
+<span id="cb1-395"><a href="#cb1-395"></a><span class="ss">- </span>The model matrix is passed to <span class="in">`sm.OLS()`</span> to create a model object </span>
+<span id="cb1-396"><a href="#cb1-396"></a><span class="ss">- </span>The model object is fitted using the <span class="in">`fit()`</span> method</span>
+<span id="cb1-397"><a href="#cb1-397"></a></span>
+<span id="cb1-400"><a href="#cb1-400"></a><span class="in">```{python}</span></span>
+<span id="cb1-401"><a href="#cb1-401"></a>y <span class="op">=</span> Boston[<span class="st">'medv'</span>]</span>
+<span id="cb1-402"><a href="#cb1-402"></a>model <span class="op">=</span> sm.OLS(y, X)</span>
+<span id="cb1-403"><a href="#cb1-403"></a>results <span class="op">=</span> model.fit()</span>
+<span id="cb1-404"><a href="#cb1-404"></a><span class="in">```</span></span>
+<span id="cb1-405"><a href="#cb1-405"></a></span>
+<span id="cb1-406"><a href="#cb1-406"></a><span class="ss">- </span>Multi-predictor model matrices are created using a transform object</span>
+<span id="cb1-407"><a href="#cb1-407"></a></span>
+<span id="cb1-410"><a href="#cb1-410"></a><span class="in">```{python}</span></span>
+<span id="cb1-411"><a href="#cb1-411"></a><span class="im">from</span> ISLP.models <span class="im">import</span> ModelSpec <span class="im">as</span> MS</span>
+<span id="cb1-412"><a href="#cb1-412"></a></span>
+<span id="cb1-413"><a href="#cb1-413"></a>design <span class="op">=</span> MS([<span class="st">'lstat'</span>, <span class="st">'age'</span>])</span>
+<span id="cb1-414"><a href="#cb1-414"></a>design <span class="op">=</span> design.fit(Boston) <span class="co"># specifiy pre-processing </span></span>
+<span id="cb1-415"><a href="#cb1-415"></a>X <span class="op">=</span> design.transform(Boston) <span class="co"># apply pre-processing</span></span>
+<span id="cb1-416"><a href="#cb1-416"></a>X[:<span class="dv">2</span>]</span>
+<span id="cb1-417"><a href="#cb1-417"></a><span class="in">```</span></span>
+<span id="cb1-418"><a href="#cb1-418"></a></span>
+<span id="cb1-419"><a href="#cb1-419"></a><span class="fu">### Multivariate OLS with (just) Numpy</span></span>
+<span id="cb1-420"><a href="#cb1-420"></a></span>
+<span id="cb1-421"><a href="#cb1-421"></a><span class="ss">- </span>We just need <span class="in">`@`</span> !</span>
+<span id="cb1-422"><a href="#cb1-422"></a></span>
+<span id="cb1-425"><a href="#cb1-425"></a><span class="in">```{python}</span></span>
+<span id="cb1-426"><a href="#cb1-426"></a><span class="co">#| label: Beta OLS with numpy</span></span>
+<span id="cb1-427"><a href="#cb1-427"></a><span class="co">#| eval: FALSE</span></span>
+<span id="cb1-428"><a href="#cb1-428"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-429"><a href="#cb1-429"></a></span>
+<span id="cb1-430"><a href="#cb1-430"></a><span class="kw">def</span> ols_beta(X, y):</span>
+<span id="cb1-431"><a href="#cb1-431"></a>    <span class="cf">return</span> np.linalg.inv(X.T <span class="op">@</span> X) <span class="op">@</span> X.T <span class="op">@</span> y</span>
+<span id="cb1-432"><a href="#cb1-432"></a><span class="in">```</span></span>
+<span id="cb1-433"><a href="#cb1-433"></a></span>
+<span id="cb1-436"><a href="#cb1-436"></a><span class="in">```{python}</span></span>
+<span id="cb1-437"><a href="#cb1-437"></a><span class="co">#| label: cov OLS with numpy</span></span>
+<span id="cb1-438"><a href="#cb1-438"></a><span class="co">#| eval: FALSE </span></span>
+<span id="cb1-439"><a href="#cb1-439"></a></span>
+<span id="cb1-440"><a href="#cb1-440"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-441"><a href="#cb1-441"></a></span>
+<span id="cb1-442"><a href="#cb1-442"></a><span class="kw">def</span> ols_variance(X, y):</span>
+<span id="cb1-443"><a href="#cb1-443"></a>    <span class="co"># Compute OLS estimate of beta</span></span>
+<span id="cb1-444"><a href="#cb1-444"></a>    beta_hat <span class="op">=</span> np.linalg.inv(X.T <span class="op">@</span> X) <span class="op">@</span> X.T <span class="op">@</span> y</span>
+<span id="cb1-445"><a href="#cb1-445"></a>    </span>
+<span id="cb1-446"><a href="#cb1-446"></a>    <span class="co"># Compute residuals</span></span>
+<span id="cb1-447"><a href="#cb1-447"></a>    residuals <span class="op">=</span> y <span class="op">-</span> X <span class="op">@</span> beta_hat</span>
+<span id="cb1-448"><a href="#cb1-448"></a>    </span>
+<span id="cb1-449"><a href="#cb1-449"></a>    <span class="co"># Estimate of error variance (sigma^2)</span></span>
+<span id="cb1-450"><a href="#cb1-450"></a>    n, p <span class="op">=</span> X.shape</span>
+<span id="cb1-451"><a href="#cb1-451"></a>    sigma_squared <span class="op">=</span> (residuals.T <span class="op">@</span> residuals) <span class="op">/</span> (n <span class="op">-</span> p)</span>
+<span id="cb1-452"><a href="#cb1-452"></a>    </span>
+<span id="cb1-453"><a href="#cb1-453"></a>    <span class="co"># Compute variance-covariance matrix</span></span>
+<span id="cb1-454"><a href="#cb1-454"></a>    var_beta <span class="op">=</span> sigma_squared <span class="op">*</span> np.linalg.inv(X.T <span class="op">@</span> X)</span>
+<span id="cb1-455"><a href="#cb1-455"></a>    </span>
+<span id="cb1-456"><a href="#cb1-456"></a>    <span class="cf">return</span> var_beta</span>
+<span id="cb1-457"><a href="#cb1-457"></a></span>
+<span id="cb1-458"><a href="#cb1-458"></a><span class="co"># The variance for each beta lies on the diagonal of the matrix</span></span>
+<span id="cb1-459"><a href="#cb1-459"></a>var_beta1 <span class="op">=</span> np.diag(ols_variance(X,y))[<span class="dv">1</span>]</span>
+<span id="cb1-460"><a href="#cb1-460"></a>```) <span class="op">/</span> (n <span class="op">-</span> p)</span>
+<span id="cb1-461"><a href="#cb1-461"></a>    </span>
+<span id="cb1-462"><a href="#cb1-462"></a>    <span class="co"># Compute variance-covariance matrix</span></span>
+<span id="cb1-463"><a href="#cb1-463"></a>    var_beta <span class="op">=</span> sigma_squared <span class="op">*</span> np.linalg.inv(X.T <span class="op">@</span> X)</span>
+<span id="cb1-464"><a href="#cb1-464"></a>    </span>
+<span id="cb1-465"><a href="#cb1-465"></a>    <span class="cf">return</span> var_beta</span>
+<span id="cb1-466"><a href="#cb1-466"></a></span>
+<span id="cb1-467"><a href="#cb1-467"></a><span class="co"># The variance for each beta lies on the diagonal of the matrix</span></span>
+<span id="cb1-468"><a href="#cb1-468"></a>var_beta1 <span class="op">=</span> np.diag(ols_variance(X,y))[<span class="dv">1</span>]</span>
+<span id="cb1-469"><a href="#cb1-469"></a><span class="in">```</span></span>
+<span id="cb1-470"><a href="#cb1-470"></a></span>
+<span id="cb1-471"><a href="#cb1-471"></a><span class="fu">### Encoding Qualitative Variables for Computation</span></span>
+<span id="cb1-472"><a href="#cb1-472"></a></span>
+<span id="cb1-473"><a href="#cb1-473"></a><span class="ss">- </span>Many modeling packages will automatically encode qualitative predictors as dummy variables in the model matrix.</span>
+<span id="cb1-474"><a href="#cb1-474"></a></span>
+<span id="cb1-477"><a href="#cb1-477"></a><span class="in">```{python}</span></span>
+<span id="cb1-478"><a href="#cb1-478"></a>Carseats <span class="op">=</span> load_data(<span class="st">'Carseats'</span>)</span>
+<span id="cb1-479"><a href="#cb1-479"></a>Carseats.columns</span>
+<span id="cb1-480"><a href="#cb1-480"></a>allvars <span class="op">=</span> <span class="bu">list</span>(Carseats.columns.drop(<span class="st">'Sales'</span>))</span>
+<span id="cb1-481"><a href="#cb1-481"></a>y <span class="op">=</span> Carseats[<span class="st">'Sales'</span>]</span>
+<span id="cb1-482"><a href="#cb1-482"></a>final <span class="op">=</span> allvars <span class="op">+</span> [(<span class="st">'Income'</span>, <span class="st">'Advertising'</span>),</span>
+<span id="cb1-483"><a href="#cb1-483"></a>                   (<span class="st">'Price'</span>, <span class="st">'Age'</span>)] </span>
+<span id="cb1-484"><a href="#cb1-484"></a>X <span class="op">=</span> MS(final).fit_transform(Carseats)</span>
+<span id="cb1-485"><a href="#cb1-485"></a><span class="bu">print</span>(X.head().iloc[:, [<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">10</span>,<span class="dv">11</span>]])</span>
+<span id="cb1-486"><a href="#cb1-486"></a><span class="in">```</span></span>
+<span id="cb1-487"><a href="#cb1-487"></a></span>
+<span id="cb1-488"><a href="#cb1-488"></a><span class="fu">### F statistics and F tests</span></span>
+<span id="cb1-489"><a href="#cb1-489"></a></span>
+<span id="cb1-490"><a href="#cb1-490"></a><span class="ss">- </span>We can evaluate the overall fit with the F-statistic:</span>
+<span id="cb1-491"><a href="#cb1-491"></a></span>
+<span id="cb1-492"><a href="#cb1-492"></a>$$F = \frac{\text{TSS}-\text{RSS}/p}{\text{RSS} (n-p-1)}$$</span>
+<span id="cb1-493"><a href="#cb1-493"></a></span>
+<span id="cb1-494"><a href="#cb1-494"></a><span class="ss">- </span>This tests whether the predictors are jointly significant. </span>
+<span id="cb1-495"><a href="#cb1-495"></a>$$H_0: \beta_1 = \beta_2 = ... = 0$$</span>
+<span id="cb1-496"><a href="#cb1-496"></a></span>
+<span id="cb1-497"><a href="#cb1-497"></a><span class="ss">- </span>Reminder:</span>
+<span id="cb1-498"><a href="#cb1-498"></a>$$RSS = \sum_i y_i - (\hat{\beta}_0 - \hat{\beta}_1x_i)^2$$ </span>
+<span id="cb1-499"><a href="#cb1-499"></a><span class="ss">- </span>or</span>
+<span id="cb1-500"><a href="#cb1-500"></a>$$RSS = \sum_i (y_i - \hat{y}_i)^2$$</span>
+<span id="cb1-501"><a href="#cb1-501"></a></span>
+<span id="cb1-502"><a href="#cb1-502"></a><span class="ss">- </span>and</span>
+<span id="cb1-503"><a href="#cb1-503"></a>$$TSS = \sum_i (y_i - \bar{y})^2$$</span>
+<span id="cb1-504"><a href="#cb1-504"></a><span class="ss">    - </span>**Interpretation:** *proportion of the variance in $Y$ explained by using some predictor $X$* </span>
+<span id="cb1-505"><a href="#cb1-505"></a></span>
+<span id="cb1-506"><a href="#cb1-506"></a><span class="ss">- </span>Intuitively, we're dividing the explained variance (TSS-RSS) by the level of uncertainty ($\sigma^2$)</span>
+<span id="cb1-507"><a href="#cb1-507"></a><span class="ss">- </span>Larger is better.</span>
+<span id="cb1-508"><a href="#cb1-508"></a><span class="ss">- </span>High values of $n$ can influence significance (just as with p-values)</span>
+<span id="cb1-509"><a href="#cb1-509"></a></span>
+<span id="cb1-510"><a href="#cb1-510"></a><span class="ss">- </span>Regression functions often calculate the F-statistic. </span>
+<span id="cb1-513"><a href="#cb1-513"></a><span class="in">```{python}</span></span>
+<span id="cb1-514"><a href="#cb1-514"></a><span class="co">#| label: load packagesthe squared sum of the error term</span></span>
+<span id="cb1-515"><a href="#cb1-515"></a><span class="co">#| echo: FALSE</span></span>
+<span id="cb1-516"><a href="#cb1-516"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-517"><a href="#cb1-517"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-518"><a href="#cb1-518"></a><span class="im">from</span> matplotlib.pyplot <span class="im">import</span> subplots</span>
+<span id="cb1-519"><a href="#cb1-519"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span>
+<span id="cb1-520"><a href="#cb1-520"></a><span class="im">from</span> ISLP <span class="im">import</span> load_data</span>
+<span id="cb1-521"><a href="#cb1-521"></a><span class="im">from</span> ISLP.models <span class="im">import</span> (ModelSpec <span class="im">as</span> MS,</span>
+<span id="cb1-522"><a href="#cb1-522"></a>                         summarize,</span>
+<span id="cb1-523"><a href="#cb1-523"></a>                         poly)</span>
+<span id="cb1-524"><a href="#cb1-524"></a></span>
+<span id="cb1-525"><a href="#cb1-525"></a>Boston <span class="op">=</span> load_data(<span class="st">"Boston"</span>)</span>
+<span id="cb1-526"><a href="#cb1-526"></a>X <span class="op">=</span> pd.DataFrame({<span class="st">'intercept'</span>: np.ones(Boston.shape[<span class="dv">0</span>]),</span>
+<span id="cb1-527"><a href="#cb1-527"></a>                  <span class="st">'lstat'</span>: Boston[<span class="st">'lstat'</span>]})</span>
+<span id="cb1-528"><a href="#cb1-528"></a><span class="in">```</span></span>
+<span id="cb1-531"><a href="#cb1-531"></a><span class="in">```{python}</span></span>
+<span id="cb1-532"><a href="#cb1-532"></a><span class="co">#| label: compute F statistic</span></span>
+<span id="cb1-533"><a href="#cb1-533"></a>y <span class="op">=</span> Boston[<span class="st">'medv'</span>]</span>
+<span id="cb1-534"><a href="#cb1-534"></a>model <span class="op">=</span> sm.OLS(y, X)</span>
+<span id="cb1-535"><a href="#cb1-535"></a>results <span class="op">=</span> model.fit()</span>
+<span id="cb1-536"><a href="#cb1-536"></a>results.summary()</span>
+<span id="cb1-537"><a href="#cb1-537"></a><span class="in">```</span></span>
+<span id="cb1-538"><a href="#cb1-538"></a></span>
+<span id="cb1-539"><a href="#cb1-539"></a><span class="ss">- </span>We can also calculate the F-statistic for a subset of predictors $q$:</span>
+<span id="cb1-540"><a href="#cb1-540"></a>$$F = \frac{(\text{RSS}_0 - \text{RSS})/q}{\text{RSS}/(n-q-1)}$$</span>
+<span id="cb1-541"><a href="#cb1-541"></a>where $\text{RSS}_0$ is RSS for a model that *excludes* the subset $q$. </span>
+<span id="cb1-542"><a href="#cb1-542"></a><span class="ss">- </span>This is usually not practical with a high number of predictors.</span>
+<span id="cb1-543"><a href="#cb1-543"></a><span class="ss">- </span>Forward selection, backward selection and mixed selection are algorithmic approaches to this problem. </span>
+<span id="cb1-544"><a href="#cb1-544"></a></span>
+<span id="cb1-545"><a href="#cb1-545"></a><span class="fu">## Extensions to the Linear Model</span></span>
+<span id="cb1-546"><a href="#cb1-546"></a></span>
+<span id="cb1-547"><a href="#cb1-547"></a><span class="ss">- </span>**Interaction/Synergy Effects**  </span>
+<span id="cb1-548"><a href="#cb1-548"></a><span class="ss">    - </span>Remove the previous assumptions about independence among predictors (additive assumption)</span>
+<span id="cb1-549"><a href="#cb1-549"></a></span>
+<span id="cb1-550"><a href="#cb1-550"></a><span class="ss">    - </span>Add a product term $X_1 \times X_2$ with its own coefficient $\beta_3$ to model how the relationship between $Y$ and one variable $X_1$ changes depending on the value of the other variable $X_2$:  $$Y = \beta_{0} + \beta_{1}X_1 + \beta_{2}X_2 + \beta_{3}(X_1 \cdot X_2) + \epsilon_i$$</span>
+<span id="cb1-551"><a href="#cb1-551"></a><span class="ss">        - </span>There are many possibilities (e.g. interaction between quant. and qualit. variables)</span>
+<span id="cb1-552"><a href="#cb1-552"></a><span class="ss">- </span>Non-linear relationships (e.g. polynomial fits)</span>
+<span id="cb1-553"><a href="#cb1-553"></a> </span>
+<span id="cb1-554"><a href="#cb1-554"></a>$$Y = \beta_{0} + \beta_{1}X + \beta_{2}X^2 + ... \beta_{n}X^n + \epsilon_i$$</span>
+<span id="cb1-555"><a href="#cb1-555"></a></span>
+<span id="cb1-556"><a href="#cb1-556"></a><span class="fu">### Computing Interactions and Polynomials</span></span>
+<span id="cb1-557"><a href="#cb1-557"></a></span>
+<span id="cb1-558"><a href="#cb1-558"></a><span class="ss">- </span>Interactions can be encoded with a tuple in <span class="in">`ModelSpec()`</span>'s <span class="in">`fit_transform()`</span> method: </span>
+<span id="cb1-561"><a href="#cb1-561"></a><span class="in">```{python}</span></span>
+<span id="cb1-562"><a href="#cb1-562"></a>X <span class="op">=</span> MS([<span class="st">'lstat'</span>,</span>
+<span id="cb1-563"><a href="#cb1-563"></a>        <span class="st">'age'</span>,</span>
+<span id="cb1-564"><a href="#cb1-564"></a>        (<span class="st">'lstat'</span>, <span class="st">'age'</span>)]).fit_transform(Boston)</span>
+<span id="cb1-565"><a href="#cb1-565"></a><span class="bu">print</span>(X.head())</span>
+<span id="cb1-566"><a href="#cb1-566"></a><span class="in">```</span></span>
+<span id="cb1-567"><a href="#cb1-567"></a><span class="fu">## Encoding Polynomials</span></span>
+<span id="cb1-568"><a href="#cb1-568"></a><span class="ss">- </span>The ISLP package provides a <span class="in">`poly()`</span> function for encoding polynomial terms.</span>
+<span id="cb1-569"><a href="#cb1-569"></a></span>
+<span id="cb1-572"><a href="#cb1-572"></a><span class="in">```{python}</span></span>
+<span id="cb1-573"><a href="#cb1-573"></a>X <span class="op">=</span> MS([poly(<span class="st">'lstat'</span>, degree<span class="op">=</span><span class="dv">2</span>), <span class="st">'age'</span>]).fit_transform(Boston)</span>
+<span id="cb1-574"><a href="#cb1-574"></a><span class="bu">print</span>(X.head())</span>
+<span id="cb1-575"><a href="#cb1-575"></a><span class="in">```</span></span>
+<span id="cb1-576"><a href="#cb1-576"></a><span class="fu">## Potential Problems</span></span>
+<span id="cb1-577"><a href="#cb1-577"></a><span class="at">&gt; Common problems with linear models and tips to address them</span></span>
+<span id="cb1-578"><a href="#cb1-578"></a></span>
+<span id="cb1-579"><a href="#cb1-579"></a><span class="ss">1. </span>*Non-linear relationships* </span>
+<span id="cb1-580"><a href="#cb1-580"></a><span class="al">![Figure 3.9](images/03-fig3_9.png)</span></span>
+<span id="cb1-581"><a href="#cb1-581"></a><span class="ss">    - </span>Residual plots are useful tool to see if any remaining trends exist. </span>
+<span id="cb1-582"><a href="#cb1-582"></a><span class="ss">    - </span>If a non-linear associations are observed, consider transformaing predictors before fitting (e.g. $log X$)</span>
+<span id="cb1-583"><a href="#cb1-583"></a>    </span>
+<span id="cb1-584"><a href="#cb1-584"></a><span class="ss">2. </span>*Correlation of Error Terms*</span>
+<span id="cb1-585"><a href="#cb1-585"></a></span>
+<span id="cb1-586"><a href="#cb1-586"></a>    Linear regression assumes that the error terms $\epsilon_i$ are uncorrelated. Residuals may indicate that this is not correct (obvious *tracking* in the data). One could also look at the autocorrelation of the residuals (e.g. time-series). </span>
+<span id="cb1-587"><a href="#cb1-587"></a>    </span>
+<span id="cb1-588"><a href="#cb1-588"></a><span class="ss">3. </span>*Non-constant variance of error terms*</span>
+<span id="cb1-589"><a href="#cb1-589"></a></span>
+<span id="cb1-590"><a href="#cb1-590"></a>    Again this can be revealed by examining the residuals.  Consider transformation of the predictors to remove non-constant variance. The figure below shows residuals demonstrating non-constant variance, and shows this being mitigated to a great extent by log transforming the data.</span>
+<span id="cb1-591"><a href="#cb1-591"></a></span>
+<span id="cb1-594"><a href="#cb1-594"></a><span class="in">```{r}</span></span>
+<span id="cb1-595"><a href="#cb1-595"></a><span class="co">#| label: fig3-11</span></span>
+<span id="cb1-596"><a href="#cb1-596"></a><span class="co">#| echo: false</span></span>
+<span id="cb1-597"><a href="#cb1-597"></a><span class="co">#| fig-cap: Figure 3.11</span></span>
+<span id="cb1-598"><a href="#cb1-598"></a><span class="co">#| out-width: 100%</span></span>
+<span id="cb1-599"><a href="#cb1-599"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"images/fig3_11.png"</span>)</span>
+<span id="cb1-600"><a href="#cb1-600"></a><span class="in">```</span></span>
+<span id="cb1-601"><a href="#cb1-601"></a></span>
+<span id="cb1-602"><a href="#cb1-602"></a><span class="ss">4. </span>*Outliers*</span>
+<span id="cb1-603"><a href="#cb1-603"></a></span>
+<span id="cb1-604"><a href="#cb1-604"></a><span class="ss">    - </span>Observations for which $y_i$ is unusual given $x_i$ (see point '20' in figure 3.12)</span>
+<span id="cb1-605"><a href="#cb1-605"></a><span class="ss">    - </span>Often outliers are mistakes in data collection and can be removed, but could also be an indicator of a deficient model.  </span>
+<span id="cb1-606"><a href="#cb1-606"></a><span class="ss">    - </span>Detect outliers by plotting studentized residuals (residual $e_i$ divided by the estimated error) and look for residuals larger then 3 standard deviations in absolute value.</span>
+<span id="cb1-607"><a href="#cb1-607"></a><span class="ss">    - </span>An outlier may not effect the fit much but can have dramatic effect on the **RSE**. </span>
+<span id="cb1-608"><a href="#cb1-608"></a><span class="ss">    - </span>We need to identify these before fitting the model</span>
+<span id="cb1-609"><a href="#cb1-609"></a></span>
+<span id="cb1-610"><a href="#cb1-610"></a><span class="al">![Figure 3.12](images/03-fig3_12.png)</span></span>
+<span id="cb1-611"><a href="#cb1-611"></a></span>
+<span id="cb1-612"><a href="#cb1-612"></a><span class="ss">5. </span>*High Leverage Points* </span>
+<span id="cb1-613"><a href="#cb1-613"></a></span>
+<span id="cb1-614"><a href="#cb1-614"></a><span class="ss">    - </span>These are points with unusual values of $x_i$ (see point '41' in figure 3.13)</span>
+<span id="cb1-615"><a href="#cb1-615"></a><span class="ss">    - </span>These points can have large impact on the fit, as in the example, including point 41 pulls slope up significantly.</span>
+<span id="cb1-616"><a href="#cb1-616"></a><span class="ss">    - </span>Use *leverage statistic* to identify high leverage points before fitting the model, which can be hard to identify in multiple regression.</span>
+<span id="cb1-617"><a href="#cb1-617"></a></span>
+<span id="cb1-620"><a href="#cb1-620"></a><span class="in">```{r}</span></span>
+<span id="cb1-621"><a href="#cb1-621"></a><span class="co">#| label: fig3-13</span></span>
+<span id="cb1-622"><a href="#cb1-622"></a><span class="co">#| echo: false</span></span>
+<span id="cb1-623"><a href="#cb1-623"></a><span class="co">#| fig-cap: Figure 3.13</span></span>
+<span id="cb1-624"><a href="#cb1-624"></a><span class="co">#| out-width: 100%</span></span>
+<span id="cb1-625"><a href="#cb1-625"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"images/fig3_13.png"</span>)</span>
+<span id="cb1-626"><a href="#cb1-626"></a><span class="in">```</span></span>
+<span id="cb1-627"><a href="#cb1-627"></a></span>
+<span id="cb1-628"><a href="#cb1-628"></a><span class="ss">   - </span>The object returned by <span class="in">`model.fit()`</span> has a <span class="in">`get_influence()`</span> method for leverage statistics. </span>
+<span id="cb1-629"><a href="#cb1-629"></a></span>
+<span id="cb1-632"><a href="#cb1-632"></a><span class="in">```{python}</span></span>
+<span id="cb1-633"><a href="#cb1-633"></a><span class="co">#| label: leverage points </span></span>
+<span id="cb1-634"><a href="#cb1-634"></a>infl <span class="op">=</span> results.get_influence()</span>
+<span id="cb1-635"><a href="#cb1-635"></a>ax <span class="op">=</span> subplots(figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">8</span>))[<span class="dv">1</span>]</span>
+<span id="cb1-636"><a href="#cb1-636"></a>ax.scatter(np.arange(X.shape[<span class="dv">0</span>]), infl.hat_matrix_diag)</span>
+<span id="cb1-637"><a href="#cb1-637"></a>ax.set_xlabel(<span class="st">'Index'</span>)</span>
+<span id="cb1-638"><a href="#cb1-638"></a>ax.set_ylabel(<span class="st">'Leverage'</span>)</span>
+<span id="cb1-639"><a href="#cb1-639"></a>np.argmax(infl.hat_matrix_diag)</span>
+<span id="cb1-640"><a href="#cb1-640"></a><span class="in">```</span></span>
+<span id="cb1-641"><a href="#cb1-641"></a></span>
+<span id="cb1-642"><a href="#cb1-642"></a><span class="ss">6. </span>*Collinearity*</span>
+<span id="cb1-643"><a href="#cb1-643"></a></span>
+<span id="cb1-644"><a href="#cb1-644"></a><span class="ss">    - </span>Two predictor variables are closely related to one another.</span>
+<span id="cb1-645"><a href="#cb1-645"></a>    </span>
+<span id="cb1-646"><a href="#cb1-646"></a><span class="ss">    - </span>The problem is that it's difficult to separate out the individual effect of each one on the reponse.</span>
+<span id="cb1-647"><a href="#cb1-647"></a><span class="ss">    - </span>Often can be addressed with by: </span>
+<span id="cb1-648"><a href="#cb1-648"></a><span class="ss">        1. </span>Dropping one of the highly correlated predictors or </span>
+<span id="cb1-649"><a href="#cb1-649"></a><span class="ss">        2. </span>Combining correlated predictors into one variable. </span>
+<span id="cb1-650"><a href="#cb1-650"></a></span>
+<span id="cb1-651"><a href="#cb1-651"></a><span class="ss">    - </span>*Multicollinearity* (collinearity involving 3 or more predictors) is not so easy to identify. </span>
+<span id="cb1-652"><a href="#cb1-652"></a><span class="ss">        - </span>Use *Variance inflation factor*, which is the ratio of the variance of $\hat{\beta_j}$ when fitting the full model to fitting the parameter on its own. Can be computed using the formula: $$VIF(\hat{\beta_j}) = \frac{1}{1-R^2_{X_j|X_{-j}}}$$</span>
+<span id="cb1-653"><a href="#cb1-653"></a>        </span>
+<span id="cb1-654"><a href="#cb1-654"></a><span class="ss">            - </span>where $R^2_{X_j|X_{-j}}$ is the $R^2$ from a regression of $X_j$ onto all the other predictors.</span>
+<span id="cb1-655"><a href="#cb1-655"></a><span class="ss">            - </span>large $VIF$ indicates the presence of collinearty</span>
+<span id="cb1-656"><a href="#cb1-656"></a></span>
+<span id="cb1-657"><a href="#cb1-657"></a><span class="fu">## Answers to the Marketing Plan questions</span></span>
+<span id="cb1-658"><a href="#cb1-658"></a></span>
+<span id="cb1-659"><a href="#cb1-659"></a><span class="ss">1. </span>**Is there a relationship between advertising budget and sales?**</span>
+<span id="cb1-660"><a href="#cb1-660"></a></span>
+<span id="cb1-661"><a href="#cb1-661"></a>    Tool: Multiple regression, look at F-statistic.</span>
+<span id="cb1-662"><a href="#cb1-662"></a></span>
+<span id="cb1-663"><a href="#cb1-663"></a><span class="ss">2. </span>**How strong is the relationship between advertising budget and sales?** </span>
+<span id="cb1-664"><a href="#cb1-664"></a></span>
+<span id="cb1-665"><a href="#cb1-665"></a>    Tool: **$R^2$** and **RSE**</span>
+<span id="cb1-666"><a href="#cb1-666"></a>    </span>
+<span id="cb1-667"><a href="#cb1-667"></a><span class="ss">3. </span>**Which media are associated with sales?**</span>
+<span id="cb1-668"><a href="#cb1-668"></a> </span>
+<span id="cb1-669"><a href="#cb1-669"></a>    Tool: model selection approaches e.g. p-values for each predictor's *t-statistic*.  Explored further in chapter 6.</span>
+<span id="cb1-670"><a href="#cb1-670"></a></span>
+<span id="cb1-671"><a href="#cb1-671"></a><span class="ss">4. </span>**How large is the association between each medium and sales?**</span>
+<span id="cb1-672"><a href="#cb1-672"></a></span>
+<span id="cb1-673"><a href="#cb1-673"></a>    Tool: Confidence intervals on $\hat{\beta_j}$. Narrow CI is a strong evidence for association</span>
+<span id="cb1-674"><a href="#cb1-674"></a></span>
+<span id="cb1-675"><a href="#cb1-675"></a><span class="ss">5. </span>**How accurately can we predict future sales?**</span>
+<span id="cb1-676"><a href="#cb1-676"></a></span>
+<span id="cb1-677"><a href="#cb1-677"></a>    Tool: Prediction intervals for individual response, confidence intervals for average response.</span>
+<span id="cb1-678"><a href="#cb1-678"></a>    </span>
+<span id="cb1-679"><a href="#cb1-679"></a>    </span>
+<span id="cb1-680"><a href="#cb1-680"></a><span class="ss">6. </span>**Is the relationship linear?** </span>
+<span id="cb1-681"><a href="#cb1-681"></a></span>
+<span id="cb1-682"><a href="#cb1-682"></a>    Tool: Residual Plots</span>
+<span id="cb1-683"><a href="#cb1-683"></a>    </span>
+<span id="cb1-684"><a href="#cb1-684"></a><span class="ss">7. </span>**Is there synergy among the advertising media?** </span>
+<span id="cb1-685"><a href="#cb1-685"></a></span>
+<span id="cb1-686"><a href="#cb1-686"></a>    Tool: Interaction terms and the significance of interaction term's coefficient.</span>
+<span id="cb1-687"><a href="#cb1-687"></a></span>
+<span id="cb1-688"><a href="#cb1-688"></a><span class="fu">## Comparison of Linear Regression with K-Nearest Neighbors</span></span>
+<span id="cb1-689"><a href="#cb1-689"></a></span>
+<span id="cb1-690"><a href="#cb1-690"></a><span class="ss">- </span>This section examines the K-nearest neighbor (KNN) method (a non-parameteric method).</span>
+<span id="cb1-691"><a href="#cb1-691"></a><span class="ss">- </span>Non-parametric methods doesn't make assumptions about the form of $f(X)$ (e.g. linearity)</span>
+<span id="cb1-692"><a href="#cb1-692"></a><span class="ss">- </span>This is essentially a $K$-point moving average.</span>
+<span id="cb1-693"><a href="#cb1-693"></a></span>
+<span id="cb1-694"><a href="#cb1-694"></a><span class="al">![](images/03-fig3_16.png)</span></span>
+<span id="cb1-695"><a href="#cb1-695"></a></span>
+<span id="cb1-696"><a href="#cb1-696"></a><span class="ss">- </span>$K$ determines the model smoothness </span>
+<span id="cb1-697"><a href="#cb1-697"></a><span class="ss">    - </span>Small value: low bias &amp; high variance</span>
+<span id="cb1-698"><a href="#cb1-698"></a><span class="ss">    - </span>High value: high bias &amp; low variance</span>
+<span id="cb1-699"><a href="#cb1-699"></a><span class="ss">- </span>This serves to illustrate the Bias-Variance trade-off nicely.</span>
+<span id="cb1-700"><a href="#cb1-700"></a><span class="ss">- </span>However, parameteric methods outperform non-parameteric methods if the assumptions made were close to the true $f(X)$.</span>
+<span id="cb1-701"><a href="#cb1-701"></a></span>
+<span id="cb1-702"><a href="#cb1-702"></a></span>
+<span id="cb1-703"><a href="#cb1-703"></a></span>
+<span id="cb1-704"><a href="#cb1-704"></a><span class="fu">## Helpful links</span></span>
+<span id="cb1-705"><a href="#cb1-705"></a><span class="ss">- </span><span class="co">[</span><span class="ot">https://mlu-explain.github.io/linear-regression/</span><span class="co">](https://mlu-explain.github.io/linear-regression/)</span></span>
+<span id="cb1-706"><a href="#cb1-706"></a><span class="ss">- </span><span class="co">[</span><span class="ot">https://observablehq.com/@yizhe-ang/interactive-visualization-of-linear-regression</span><span class="co">](https://observablehq.com/@yizhe-ang/interactive-visualization-of-linear-regression)</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
