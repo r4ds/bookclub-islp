@@ -117,9 +117,10 @@ $$Y = \beta_{0} + \beta_{1}X + \epsilon$$
 - Residual standard error (RSE): will be used later to find $SE$
 
 $$\mathrm{RSE} = \sqrt{\frac{\mathrm{RSS}}{n - 2}}$$
+- We can think of the residual standard error as the average amount the response will deviate from the true regression line.
 
 where $n$ is the sample size
-- Standard error assoicated with $\hat{\beta}_{0}$ and $\hat{\beta}_{1}$:
+- Standard error asscociated with $\hat{\beta}_{0}$ and $\hat{\beta}_{1}$:
 $$\mathrm{SE}(\hat\beta_0)^2 = \sigma^2 \left[\frac{1}{n} + \frac{\bar{x}^2}{\sum_{i=1}^n (x_i - \bar{x})^2}\right]$$
 
 $$\mathrm{SE}(\hat\beta_1)^2 = \frac{\sigma^2}{\sum_{i=1}^n (x_i - \bar{x})^2}$$
@@ -161,6 +162,32 @@ $$\hat\beta_0 \pm 2\ \cdot \ \mathrm{SE}(\hat\beta_0)$$
 - Easy to do using Python or R
 - More details in chapter 13
 
+### Computing Standard Errors
+
+- In Python, the fitted model object has attributes and methods to generate these quantities.
+```{python}
+#| label: standard error
+#| eval: false 
+from ISLP.models import summarize
+summarize(results)
+```
+
+- `conf_int()` method creates confidence intervals
+```{python}
+#| label: conf. int
+#| eval: false
+results.conf_int(alpha = 0.05)
+```
+
+ - Prediction intervals are substantially wider!
+```{python}
+#| label: prediction intervals
+#| eval: FALSE
+new_df = pd.DataFrame({'lstat':[5, 10, 15]})
+newX = design.transform(new_df)
+new_predictions = results.get_prediction(newX)
+new_predictions.conf_int(alpha = 0.05, obs = True)
+```
 
 ### Assessing the Accuracy of the Model
 > i.e. Model Evaluation
@@ -179,12 +206,16 @@ $$\mathrm{RSE} = \sqrt{\frac{\mathrm{RSS}}{n - 2}}$$
     - **small value** = model fits the data well
     - measured in the unit of $Y$ (e.g. RSE = 3.2 units sold)
 - *$R^2$* statistic (a.k.a coefficient of determination): 
+$$RSE = \sqrt{\frac{1}{n-p-1}\text{RSS}}$$
 $$R^2 = 1 - \frac{RSS}{TSS}$$
 where TSS is the **total sum of squares**:
 $$TSS = \Sigma (y_i - \bar{y})^2$$
     - **Interpretation:** *proportion of the variance in $Y$ explained by using some predictor $X$* 
     - a *good value* depends on the application.
     - ranges from 0 to 1 ([can be negative in extreme cases?](https://www.graphpad.com/support/faq/how-can-rsup2sup-be-negative/))
+
+-$R^2$ has diminished usefulness in the multivariate context
+- RSE is more appropriate, because it adjusts for the ratio between the number of predictors and the explained variance.
 
 - Pearson correlation coefficient ($r=Cor(X,Y)$)
 $$r = Cor(X,Y) = \frac{\sum{(x_i - \bar{x})(y_i - \bar{y})}}{\sqrt{\sum{(x_i - \bar{x})^2} \sum{(y_i - \bar{y})^2}}}$$
@@ -225,9 +256,6 @@ $$\hat{y} = \hat{\beta_{0}} + \hat{\beta_{1}}x_1 + \hat{\beta_{2}}x_2 + ... + \h
     b. compute $F$-statistic $$F = \frac{(TSS-RSS)/p}{RSS/(n-p-1)}$$ 
     c. use it to find p-value (all of that can be don using computers)
 
-
-
-
 2. **Deciding on important variables to include in the model:** *Do all the predictors help to explain $Y$ , or is only a subset of the predictors useful?*
 
     - a.k.a. Model Selection Problem
@@ -242,7 +270,7 @@ $$\hat{y} = \hat{\beta_{0}} + \hat{\beta_{1}}x_1 + \hat{\beta_{2}}x_2 + ... + \h
     - Can also look at **RSE** which is generalized for multiple regression as: $$RSE = \sqrt{\frac{1}{n-p-1}RSS}$$
 
 4. **Making and assising predictions:** *Given a set of predictor values, what response value should we predict,
-and how accurate is our prediction?* 
+and how accurate is our prediction? 
 
     Three sets of uncertainty in predictions:
     
@@ -267,6 +295,226 @@ $$y_i = \beta_0 + \beta_1 x_{i1} + \beta_2 x_{i2} + \epsilon_i$$
 
 - Coefficients are interpreted the average effect relative to the baseline.
 
+### Matrix Representation
+
+$$y = X\beta + \epsilon$$
+
+$$ \underbrace{\begin{bmatrix} 
+y_1 \\
+y_2 \\
+... \\
+y_n
+\end{bmatrix}}_{\text{n x 1}}
+  = 
+\underbrace{\begin{bmatrix}
+1 & x_1 & z_1 \\
+1 & x_2 & z_2 \\
+   ... \\
+1 & x_n & z_n
+\end{bmatrix}}_{\text{n x p}} \cdot 
+\underbrace{\begin{bmatrix}
+\beta_0 \\
+\beta_1 \\ 
+\beta_2 
+\end{bmatrix}}_{\text{p x 1}} +
+\underbrace{\begin{bmatrix}
+\epsilon_1 \\
+\epsilon_2 \\
+... \\
+\epsilon_n
+\end{bmatrix}}_{\text{n x 1}}
+$$
+
+
+- $X$ is the "model matrix"
+- The model matrix is the core of the Python linear regression workflow
+
+### Multivariate OLS Proof
+
+$$\hat{\beta} = (X^T X)^{-1} X^T y$$
+- $\hat{\beta}$ is a column vector of betas:
+
+$$\hat{\beta}^\intercal = [\beta_0, \beta_1, \text(...), \beta_k]$$
+- We can solve for $\hat{\beta}$ by minimizing the sum of squared residuals.
+
+$$\text{SSR} = (y - X\hat{\beta})^\intercal(y-X\hat{\beta})$$
+
+- The derivative is:
+$$\text{SSR}^\prime = 2(-X^\intercal)(y-X\hat{\beta})$$
+
+- or:
+
+$$X^\intercal X \hat{\beta} = X^\intercal y$$
+
+- If $X^\intercal X$ is invertible, then the solution is as above.
+
+- The variance-covariance matrix - which contains the standards errors for each predictor - is also easy to express but more difficult to derive:
+$$\text{Var}(\beta) = \sigma^2 (X^T X)^{-1}$$
+
+- where $\hat{\sigma}^2$ is the variance of the error term, estimated from residuals:
+
+$$\hat{\sigma}^2 = \frac{(y - X\hat{\beta})^T (y - X\hat{\beta})}{n - p}$$
+
+- The result is a square matrix of $[(k+1)\text{x}(k+1)]$ dimensions:
+
+$$ 
+\begin{bmatrix}
+\text{Var}(\beta_0) & \text{Cov}(\beta_0, \beta_1) & \text{Cov}(\beta_0, \beta_2) \\
+\text{Cov}(\beta_1, \beta_0) & \text{Var}(\beta_1) & \text{Cov}(\beta_1, \beta_2) \\
+\text{Cov}(\beta_2, \beta_0) & \text{Cov}(\beta_2, \beta_1) & \text{Var}(\beta_2) \end{bmatrix} 
+$$
+
+### Computing beta
+
+```{python}
+#| label: model matrix example
+import numpy as np
+import pandas as pd
+import statsmodels.api as sm
+from ISLP import load_data
+
+Boston = load_data("Boston")
+
+X = pd.DataFrame({'intercept': np.ones(Boston.shape[0]),
+                  'lstat': Boston['lstat']})
+X[:2]
+```
+
+- The model matrix is passed to `sm.OLS()` to create a model object 
+- The model object is fitted using the `fit()` method
+
+```{python}
+y = Boston['medv']
+model = sm.OLS(y, X)
+results = model.fit()
+```
+
+- Multi-predictor model matrices are created using a transform object
+
+```{python}
+from ISLP.models import ModelSpec as MS
+
+design = MS(['lstat', 'age'])
+design = design.fit(Boston) # specifiy pre-processing 
+X = design.transform(Boston) # apply pre-processing
+X[:2]
+```
+
+### Multivariate OLS with (just) Numpy
+
+- We just need `@` !
+
+```{python}
+#| label: Beta OLS with numpy
+#| eval: FALSE
+import numpy as np
+
+def ols_beta(X, y):
+    return np.linalg.inv(X.T @ X) @ X.T @ y
+```
+
+```{python}
+#| label: cov OLS with numpy
+#| eval: FALSE 
+
+import numpy as np
+
+def ols_variance(X, y):
+    # Compute OLS estimate of beta
+    beta_hat = np.linalg.inv(X.T @ X) @ X.T @ y
+    
+    # Compute residuals
+    residuals = y - X @ beta_hat
+    
+    # Estimate of error variance (sigma^2)
+    n, p = X.shape
+    sigma_squared = (residuals.T @ residuals) / (n - p)
+    
+    # Compute variance-covariance matrix
+    var_beta = sigma_squared * np.linalg.inv(X.T @ X)
+    
+    return var_beta
+
+# The variance for each beta lies on the diagonal of the matrix
+var_beta1 = np.diag(ols_variance(X,y))[1]
+```) / (n - p)
+    
+    # Compute variance-covariance matrix
+    var_beta = sigma_squared * np.linalg.inv(X.T @ X)
+    
+    return var_beta
+
+# The variance for each beta lies on the diagonal of the matrix
+var_beta1 = np.diag(ols_variance(X,y))[1]
+```
+
+### Encoding Qualitative Variables for Computation
+
+- Many modeling packages will automatically encode qualitative predictors as dummy variables in the model matrix.
+
+```{python}
+Carseats = load_data('Carseats')
+Carseats.columns
+allvars = list(Carseats.columns.drop('Sales'))
+y = Carseats['Sales']
+final = allvars + [('Income', 'Advertising'),
+                   ('Price', 'Age')] 
+X = MS(final).fit_transform(Carseats)
+print(X.head().iloc[:, [6,7,10,11]])
+```
+
+### F statistics and F tests
+
+- We can evaluate the overall fit with the F-statistic:
+
+$$F = \frac{\text{TSS}-\text{RSS}/p}{\text{RSS} (n-p-1)}$$
+
+- This tests whether the predictors are jointly significant. 
+$$H_0: \beta_1 = \beta_2 = ... = 0$$
+
+- Reminder:
+$$RSS = \sum_i y_i - (\hat{\beta}_0 - \hat{\beta}_1x_i)^2$$ 
+- or
+$$RSS = \sum_i (y_i - \hat{y}_i)^2$$
+
+- and
+$$TSS = \sum_i (y_i - \bar{y})^2$$
+    - **Interpretation:** *proportion of the variance in $Y$ explained by using some predictor $X$* 
+
+- Intuitively, we're dividing the explained variance (TSS-RSS) by the level of uncertainty ($\sigma^2$)
+- Larger is better.
+- High values of $n$ can influence significance (just as with p-values)
+
+- Regression functions often calculate the F-statistic. 
+```{python}
+#| label: load packagesthe squared sum of the error term
+#| echo: FALSE
+import numpy as np
+import pandas as pd
+from matplotlib.pyplot import subplots
+import statsmodels.api as sm
+from ISLP import load_data
+from ISLP.models import (ModelSpec as MS,
+                         summarize,
+                         poly)
+
+Boston = load_data("Boston")
+X = pd.DataFrame({'intercept': np.ones(Boston.shape[0]),
+                  'lstat': Boston['lstat']})
+```
+```{python}
+#| label: compute F statistic
+y = Boston['medv']
+model = sm.OLS(y, X)
+results = model.fit()
+results.summary()
+```
+
+- We can also calculate the F-statistic for a subset of predictors $q$:
+$$F = \frac{(\text{RSS}_0 - \text{RSS})/q}{\text{RSS}/(n-q-1)}$$
+where $\text{RSS}_0$ is RSS for a model that *excludes* the subset $q$. 
+- This is usually not practical with a high number of predictors.
+- Forward selection, backward selection and mixed selection are algorithmic approaches to this problem. 
 
 ## Extensions to the Linear Model
 
@@ -279,6 +527,22 @@ $$y_i = \beta_0 + \beta_1 x_{i1} + \beta_2 x_{i2} + \epsilon_i$$
  
 $$Y = \beta_{0} + \beta_{1}X + \beta_{2}X^2 + ... \beta_{n}X^n + \epsilon_i$$
 
+### Computing Interactions and Polynomials
+
+- Interactions can be encoded with a tuple in `ModelSpec()`'s `fit_transform()` method: 
+```{python}
+X = MS(['lstat',
+        'age',
+        ('lstat', 'age')]).fit_transform(Boston)
+print(X.head())
+```
+## Encoding Polynomials
+- The ISLP package provides a `poly()` function for encoding polynomial terms.
+
+```{python}
+X = MS([poly('lstat', degree=2), 'age']).fit_transform(Boston)
+print(X.head())
+```
 ## Potential Problems
 > Common problems with linear models and tips to address them
 
@@ -313,8 +577,6 @@ knitr::include_graphics("images/fig3_11.png")
 
 ![Figure 3.12](images/03-fig3_12.png)
 
-
-
 5. *High Leverage Points* 
 
     - These are points with unusual values of $x_i$ (see point '41' in figure 3.13)
@@ -327,6 +589,18 @@ knitr::include_graphics("images/fig3_11.png")
 #| fig-cap: Figure 3.13
 #| out-width: 100%
 knitr::include_graphics("images/fig3_13.png")
+```
+
+   - The object returned by `model.fit()` has a `get_influence()` method for leverage statistics. 
+
+```{python}
+#| label: leverage points 
+infl = results.get_influence()
+ax = subplots(figsize=(8,8))[1]
+ax.scatter(np.arange(X.shape[0]), infl.hat_matrix_diag)
+ax.set_xlabel('Index')
+ax.set_ylabel('Leverage')
+np.argmax(infl.hat_matrix_diag)
 ```
 
 6. *Collinearity*
