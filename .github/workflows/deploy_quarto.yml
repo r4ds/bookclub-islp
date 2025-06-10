@@ -23,8 +23,8 @@ jobs:
         with:
           python-version: '3.11'
           cache: 'pip'
-      - run: pip install jupyter
-      - run: pip install -r pyproject.toml
+      # - run: pip install jupyter
+      - run: pip install .
 
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
