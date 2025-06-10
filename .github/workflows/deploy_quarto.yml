@@ -28,11 +28,11 @@ jobs:
       - name: Set up yq
         uses: mikefarah/yq@master
 
-      - name: Install dependencies from pyproject.toml
-        run: |
-          # Extract each dependency from the 'dependencies' array and print on a new line
-          yq '.project.dependencies[]' pyproject.toml > requirements.txt
-          pip install -r requirements.txt
+      - name: Extract dependencies from pyproject.toml
+        run: yq '.project.dependencies[]' pyproject.toml > requirements.txt
+
+      - name: Install dependencies from requirements.txt
+        run: pip install -r requirements.txt
 
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
