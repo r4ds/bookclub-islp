@@ -24,7 +24,15 @@ jobs:
           python-version: '3.11'
           cache: 'pip'
       # - run: pip install jupyter
-      - run: pip install .
+
+      - name: Set up yq
+        uses: mikefarah/yq@master
+
+      - name: Install dependencies from pyproject.toml
+        run: |
+          # Extract each dependency from the 'dependencies' array and print on a new line
+          yq '.project.dependencies[]' pyproject.toml > requirements.txt
+          pip install -r requirements.txt
 
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2

@@ -23,14 +23,14 @@ jobs:
           cache: 'pip'
       # - run: pip install jupyter
 
-      - name: Install pip-tools
-        run: pip install pip-tools
+      - name: Set up yq
+        uses: mikefarah/yq@master
 
-      - name: Generate requirements.txt from pyproject.toml
-        run: pip-compile --output-file requirements.txt pyproject.toml
-
-      - name: Install requirements
-        run: pip install -r requirements.txt
+      - name: Install dependencies from pyproject.toml
+        run: |
+          # Extract each dependency from the 'dependencies' array and print on a new line
+          yq '.project.dependencies[]' pyproject.toml > requirements.txt
+          pip install -r requirements.txt
 
       - name: Render Quarto Project
         uses: quarto-dev/quarto-actions/render@v2
