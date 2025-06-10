@@ -58,7 +58,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -76,7 +76,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-9e1954d45f3dd01da8ddd802a33ecb74.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5fed136cbb581ab3aba52b0d178f5f09.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -145,7 +145,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
   );
 </script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
 
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="style.css">
 </head>
@@ -632,8 +664,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#summary-of-chapter-7-models" id="toc-summary-of-chapter-7-models" class="nav-link active" data-scroll-target="#summary-of-chapter-7-models">Summary of Chapter 7 Models</a></li>
+  <li><a href="#key-python-packages" id="toc-key-python-packages" class="nav-link" data-scroll-target="#key-python-packages">Key Python Packages</a></li>
+  <li><a href="#polynomials-and-step-functions" id="toc-polynomials-and-step-functions" class="nav-link" data-scroll-target="#polynomials-and-step-functions">Polynomials and Step Functions</a></li>
+  <li><a href="#basis-functions" id="toc-basis-functions" class="nav-link" data-scroll-target="#basis-functions">Basis functions</a></li>
+  <li><a href="#splines" id="toc-splines" class="nav-link" data-scroll-target="#splines">Splines</a></li>
+  <li><a href="#computation-of-splines" id="toc-computation-of-splines" class="nav-link" data-scroll-target="#computation-of-splines">Computation of Splines</a></li>
+  <li><a href="#gams" id="toc-gams" class="nav-link" data-scroll-target="#gams">GAMs</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -657,10 +701,340 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<section id="summary-of-chapter-7-models" class="level3">
+<h3 class="anchored" data-anchor-id="summary-of-chapter-7-models">Summary of Chapter 7 Models</h3>
+<ul>
+<li>Polynomials <span class="math inline">\(\clubsuit\)</span> <span class="math inline">\(\spadesuit\)</span> <span class="math inline">\(\heartsuit\)</span></li>
+<li>Step functions <span class="math inline">\(\clubsuit\)</span> <span class="math inline">\(\spadesuit\)</span> <span class="math inline">\(\heartsuit\)</span></li>
+<li>Splines
+<ul>
+<li>Regression splines <span class="math inline">\(\clubsuit\)</span> <span class="math inline">\(\spadesuit\)</span> <span class="math inline">\(\heartsuit\)</span>
+<ul>
+<li>Natural splines <span class="math inline">\(\clubsuit\)</span> <span class="math inline">\(\spadesuit\)</span> <span class="math inline">\(\heartsuit\)</span></li>
+</ul></li>
+<li>Smoothing splines <span class="math inline">\(\clubsuit\)</span> <span class="math inline">\(\heartsuit\)</span></li>
+</ul></li>
+<li>Local regression</li>
+</ul>
+<p><span class="math inline">\(\clubsuit\)</span> = Element of Generalized Additive Model<br>
+<span class="math inline">\(\spadesuit\)</span> = Can be represented with basis function<br>
+<span class="math inline">\(\heartsuit\)</span> = Efficient LOOCV</p>
+</section>
+<section id="key-python-packages" class="level3">
+<h3 class="anchored" data-anchor-id="key-python-packages">Key Python Packages</h3>
+<ul>
+<li>[<code>pygam</code>] (https://pygam.readthedocs.io/en/latest/)
+<ul>
+<li>A comprehensive framework for specifying GAMs</li>
+</ul></li>
+<li><code>scipy.interpolate</code>
+<ul>
+<li><code>BSpline()</code> - class for basis splines (but different workflow from scikit-learn)</li>
+<li><code>CubicSpline()</code> - class for cubic splines in scipy workflow (but different workflow from scikit-learn)</li>
+</ul></li>
+</ul>
+</section>
+<section id="polynomials-and-step-functions" class="level3">
+<h3 class="anchored" data-anchor-id="polynomials-and-step-functions">Polynomials and Step Functions</h3>
+<p><img src="images/7_1.png" class="img-fluid"></p>
+<p><img src="images/7_2.png" class="img-fluid"></p>
+</section>
+<section id="basis-functions" class="level3">
+<h3 class="anchored" data-anchor-id="basis-functions">Basis functions</h3>
+<ul>
+<li>Basis functions let us represent non-linear relationships in the standard linear modeling framework.</li>
+</ul>
+<p><span class="math display">\[y_i = \beta_0 + \beta_1b_1(x_i) + $\beta_2b_2(x_i) + \beta_3b_3(x_i) + ... \beta_k b_k(x_i) + \epsilon_i\]</span></p>
+<p>where <span class="math inline">\(b_1\)</span>…<span class="math inline">\(b_k\)</span> are known functions.</p>
+<ul>
+<li>Matrix representation: <span class="math display">\[\underbrace{y}_{n \times 1} = \underbrace{\mathbf{A}}_{n \times k}
+\underbrace{\beta}_{k \times 1} + \underbrace{\epsilon}_{n \times 1}\]</span></li>
+</ul>
+<p><span class="math display">\[ \begin{bmatrix}
+y_1 \\
+y_2 \\
+... \\
+y_n
+\end{bmatrix}
+  =
+\begin{bmatrix}
+b_0(x_1) &amp; b_1(x_1) &amp; b_k(x_1) \\
+b_0(x_2) &amp; b_1(x_2) &amp; b_k(x_2) \\
+   \dots &amp; \ddots &amp; \vdots \\
+b_0(x_n) &amp; b_0(x_n) &amp; b_k(x_n)
+\end{bmatrix} \cdot
+\begin{bmatrix}
+\beta_0 \\
+\beta_1 \\
+\vdots \\
+\beta_k
+\end{bmatrix} +
+\begin{bmatrix}
+\epsilon_1 \\
+\epsilon_2 \\
+\vdots \\
+\epsilon_n
+\end{bmatrix}
+\]</span></p>
+<ul>
+<li>The formula for <span class="math inline">\(\hat{\beta}\)</span> is even the same. <span class="math display">\[ \hat{\beta} = (\mathbf{A}^{\intercal} \mathbf{A}) \mathbf{A} y\]</span></li>
+</ul>
+</section>
+<section id="splines" class="level3">
+<h3 class="anchored" data-anchor-id="splines">Splines</h3>
+<p><img src="images/7_7.png" class="img-fluid"></p>
+<ul>
+<li>Splines are another class of nonlinear, wiggly functions</li>
+<li>Splines can achieve similar flexibility to polynomial regression with much lower degree and hence more stability</li>
+<li>They achieve this by fitting low-degree polynomial functions over pre-set ranges of the independent variable</li>
+</ul>
+<section id="regression-splines" class="level4">
+<h4 class="anchored" data-anchor-id="regression-splines">Regression Splines</h4>
+<ul>
+<li>The regression spline is a set of low-degree polynomial functions connected by <em>knots</em> and <em>constraints</em></li>
+<li><em>knots</em> define the range of each constituent polynomial function</li>
+<li><em>constraints</em> define the relationships between the functions
+<ul>
+<li>i.e.&nbsp;continuity, smoothness, linearity at the boundary<br>
+</li>
+</ul></li>
+<li>The relationship between the number of predictors, knots and degrees of freedom is somewhat arcane</li>
+<li>The truncated power basis function allows us to formulate the cubic spline as a basis function <span class="math display">\[h(\mathcal{x}, \xi) = (x - \xi)^3_+ =
+\begin{cases}
+(\mathcal(x)-\xi)^3 &amp; \text{if } \mathcal{x} &gt; \xi \\
+0 &amp; \text{otherwise}
+\end{cases}
+\]</span></li>
+</ul>
+<p><span class="math inline">\(y_i = \beta_0 + \beta_1 \cdot x_i + \beta_2 \cdot x_i^2 + \beta^3 \cdot x_i^3 +
+\beta_4 h(x_i, \xi_1) + \beta_5 h(x_i, \xi_2) + \beta_6\cdot h(x_i, \xi_3) + \epsilon_i\)</span></p>
+</section>
+<section id="natural-splines" class="level4">
+<h4 class="anchored" data-anchor-id="natural-splines">Natural Splines</h4>
+<ul>
+<li>Natural splines impose a boundary constraint on regression splines</li>
+</ul>
+<p><img src="images/7_4.png" class="img-fluid"></p>
+</section>
+<section id="smoothing-splines" class="level4">
+<h4 class="anchored" data-anchor-id="smoothing-splines">Smoothing Splines</h4>
+<ul>
+<li>Smoothing splines are regularized splines!</li>
+<li>Like with Ridge and Lasso regression, we derive the function from a minimization criteria:</li>
+</ul>
+<p><span class="math display">\[\underset{g}{\text{arg min}}(\text{RSS} + \lambda \int g^{''}(t)^2dt) \]</span></p>
+<ul>
+<li><p>Reminder about the Ridge minimization criteria: <span class="math display">\[\underset{\beta_j}{\text{arg min}}(\text{RSS} + \lambda (\sum_{j=1}^p \beta_j^2)\]</span></p></li>
+<li><p>It’s the same! But this time the penalty applies to the second derivative of the polynomial function.</p></li>
+<li><p>“Shrinkage” of coefficients in more complex regions of the model towards zero</p></li>
+<li><p>Think of it as a “wiggliness” penalty</p></li>
+<li><p>In general:</p>
+<ul>
+<li><span class="math inline">\(\lambda \to 0\)</span> we have low bias, high variance (i.e.&nbsp;overfitting)</li>
+<li><span class="math inline">\(\lambda \to \inf\)</span> we have high bias, low variance (i.e.&nbsp;linear regression)<br>
+</li>
+<li><span class="math inline">\(\lambda \to 0\)</span> then <span class="math inline">\(df_\lambda \to n\)</span></li>
+<li><span class="math inline">\(\lambda \to \inf\)</span> then <span class="math inline">\(df_\lambda \to 2\)</span></li>
+</ul></li>
+<li><p>Solving for the degrees of freedom is a bit arcane</p></li>
+<li><p>It is the sum of the diagonal elements of <span class="math inline">\(\mathbf{S}_{\lambda_{ii}}\)</span> <span class="math display">\[\hat{g}_\lambda = \mathbf{S}_\lambda y\]</span></p></li>
+</ul>
+<p><span class="math display">\[df_\lambda = \sum_{i=1}^n \mathbf{S}_{\lambda_{ii}}\]</span></p>
+</section>
+</section>
+<section id="computation-of-splines" class="level3">
+<h3 class="anchored" data-anchor-id="computation-of-splines">Computation of Splines</h3>
+<ul>
+<li><code>ISLP</code> wraps <code>scipy.interpolate</code> to fit into the “transform” workflow</li>
+</ul>
+<div id="4e52bcc7" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a>bs_age <span class="op">=</span> MS([bs(<span class="st">'age'</span>,</span>
+<span id="cb1-2"><a href="#cb1-2"></a>                internal_knots<span class="op">=</span>[<span class="dv">25</span>,<span class="dv">40</span>,<span class="dv">60</span>],</span>
+<span id="cb1-3"><a href="#cb1-3"></a>                name<span class="op">=</span><span class="st">'bs(age)'</span>)])</span>
+<span id="cb1-4"><a href="#cb1-4"></a>Xbs <span class="op">=</span> bs_age.fit_transform(Wage)</span>
+<span id="cb1-5"><a href="#cb1-5"></a>M <span class="op">=</span> sm.OLS(y, Xbs).fit()</span>
+<span id="cb1-6"><a href="#cb1-6"></a>summarize(M)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">coef</th>
+<th data-quarto-table-cell-role="th">std err</th>
+<th data-quarto-table-cell-role="th">t</th>
+<th data-quarto-table-cell-role="th">P&gt;|t|</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">intercept</td>
+<td>60.4937</td>
+<td>9.460</td>
+<td>6.394</td>
+<td>0.000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">bs(age)[0]</td>
+<td>3.9805</td>
+<td>12.538</td>
+<td>0.317</td>
+<td>0.751</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">bs(age)[1]</td>
+<td>44.6310</td>
+<td>9.626</td>
+<td>4.636</td>
+<td>0.000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">bs(age)[2]</td>
+<td>62.8388</td>
+<td>10.755</td>
+<td>5.843</td>
+<td>0.000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">bs(age)[3]</td>
+<td>55.9908</td>
+<td>10.706</td>
+<td>5.230</td>
+<td>0.000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">bs(age)[4]</td>
+<td>50.6881</td>
+<td>14.402</td>
+<td>3.520</td>
+<td>0.000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">bs(age)[5]</td>
+<td>16.6061</td>
+<td>19.126</td>
+<td>0.868</td>
+<td>0.385</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div id="d3525a76" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>bs_ <span class="op">=</span> BSpline(internal_knots<span class="op">=</span>[<span class="dv">25</span>,<span class="dv">40</span>,<span class="dv">60</span>], intercept<span class="op">=</span><span class="va">True</span>).fit(age)</span>
+<span id="cb2-2"><a href="#cb2-2"></a>bs_age <span class="op">=</span> bs_.transform(age)</span>
+<span id="cb2-3"><a href="#cb2-3"></a>bs_age.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">BSpline(intercept=True, internal_knots=[25, 40, 60], lower_bound=18.0,\n upper_bound=80.0)[0]</th>
+<th data-quarto-table-cell-role="th">BSpline(intercept=True, internal_knots=[25, 40, 60], lower_bound=18.0,\n upper_bound=80.0)[1]</th>
+<th data-quarto-table-cell-role="th">BSpline(intercept=True, internal_knots=[25, 40, 60], lower_bound=18.0,\n upper_bound=80.0)[2]</th>
+<th data-quarto-table-cell-role="th">BSpline(intercept=True, internal_knots=[25, 40, 60], lower_bound=18.0,\n upper_bound=80.0)[3]</th>
+<th data-quarto-table-cell-role="th">BSpline(intercept=True, internal_knots=[25, 40, 60], lower_bound=18.0,\n upper_bound=80.0)[4]</th>
+<th data-quarto-table-cell-role="th">BSpline(intercept=True, internal_knots=[25, 40, 60], lower_bound=18.0,\n upper_bound=80.0)[5]</th>
+<th data-quarto-table-cell-role="th">BSpline(intercept=True, internal_knots=[25, 40, 60], lower_bound=18.0,\n upper_bound=80.0)[6]</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>0.002915</td>
+<td>0.559911</td>
+<td>0.403778</td>
+<td>0.033395</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.114796</td>
+<td>0.618564</td>
+<td>0.262733</td>
+<td>0.003906</td>
+<td>0.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.167109</td>
+<td>0.633167</td>
+<td>0.198880</td>
+<td>0.000844</td>
+<td>0.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.034014</td>
+<td>0.508194</td>
+<td>0.426542</td>
+<td>0.031250</td>
+<td>0.0</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<ul>
+<li>The <code>scipy.interpolate()</code> documentation is…a bit technical</li>
+<li>It is left as an exercise to the reader to figure out how to create a model matrix without <code>ISLP</code>’s help. Try <code>splrep()</code></li>
+</ul>
+<div id="0ff3a69a" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="im">import</span> scipy.interpolate <span class="im">as</span> interpolate </span>
+<span id="cb3-2"><a href="#cb3-2"></a>x <span class="op">=</span> np.array([ <span class="fl">0.</span> ,  <span class="fl">1.2</span>,  <span class="fl">1.9</span>,  <span class="fl">3.2</span>,  <span class="fl">4.</span> ,  <span class="fl">6.5</span>])</span>
+<span id="cb3-3"><a href="#cb3-3"></a>y <span class="op">=</span> np.array([ <span class="fl">0.</span> ,  <span class="fl">2.3</span>,  <span class="fl">3.</span> ,  <span class="fl">4.3</span>,  <span class="fl">2.9</span>,  <span class="fl">3.1</span>])</span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="co"># t = knots, c = coefficients, k = degree</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a>t, c, k <span class="op">=</span> interpolate.splrep(x, y, s<span class="op">=</span><span class="dv">0</span>, k<span class="op">=</span><span class="dv">4</span>)</span>
+<span id="cb3-6"><a href="#cb3-6"></a>spline <span class="op">=</span> interpolate.BSpline(t, c, k, extrapolate <span class="op">=</span> <span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="28d3381a" class="cell" data-execution_count="5">
+<div class="cell-output cell-output-stdout">
+<pre><code>t: [0.   0.   0.   0.   0.   2.55 6.5  6.5  6.5  6.5  6.5 ]
+c: [-5.62048630e-18  2.98780300e+00 -5.74472095e-01  1.46700914e+01
+ -1.03253068e+01  3.10000000e+00  0.00000000e+00  0.00000000e+00
+  0.00000000e+00  0.00000000e+00  0.00000000e+00]
+k: 4
+</code></pre>
+</div>
+</div>
+</section>
+<section id="gams" class="level2">
+<h2 class="anchored" data-anchor-id="gams">GAMs</h2>
+<ul>
+<li>GAMs extend basis functions to the multivariate case…and more!</li>
+</ul>
 
 
 <!-- -->
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1132,7 +1506,208 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">## Notes {.unnumbered}</span></span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">## Notes {.unnumbered}</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a></span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="in">```{python}</span></span>
+<span id="cb5-6"><a href="#cb5-6"></a><span class="co">#| echo: false</span></span>
+<span id="cb5-7"><a href="#cb5-7"></a><span class="im">import</span> numpy <span class="im">as</span> np, pandas <span class="im">as</span> pd</span>
+<span id="cb5-8"><a href="#cb5-8"></a><span class="im">from</span> matplotlib.pyplot <span class="im">import</span> subplots</span>
+<span id="cb5-9"><a href="#cb5-9"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span>
+<span id="cb5-10"><a href="#cb5-10"></a><span class="im">from</span> ISLP <span class="im">import</span> load_data</span>
+<span id="cb5-11"><a href="#cb5-11"></a><span class="im">from</span> ISLP.models <span class="im">import</span> (summarize,</span>
+<span id="cb5-12"><a href="#cb5-12"></a>                         poly,</span>
+<span id="cb5-13"><a href="#cb5-13"></a>                         ModelSpec <span class="im">as</span> MS)</span>
+<span id="cb5-14"><a href="#cb5-14"></a><span class="im">from</span> statsmodels.stats.anova <span class="im">import</span> anova_lm</span>
+<span id="cb5-15"><a href="#cb5-15"></a><span class="im">from</span> pygam <span class="im">import</span> (s <span class="im">as</span> s_gam,</span>
+<span id="cb5-16"><a href="#cb5-16"></a>                   l <span class="im">as</span> l_gam,</span>
+<span id="cb5-17"><a href="#cb5-17"></a>                   f <span class="im">as</span> f_gam,</span>
+<span id="cb5-18"><a href="#cb5-18"></a>                   LinearGAM,</span>
+<span id="cb5-19"><a href="#cb5-19"></a>                   LogisticGAM)</span>
+<span id="cb5-20"><a href="#cb5-20"></a></span>
+<span id="cb5-21"><a href="#cb5-21"></a><span class="im">from</span> ISLP.transforms <span class="im">import</span> (BSpline,</span>
+<span id="cb5-22"><a href="#cb5-22"></a>                             NaturalSpline)</span>
+<span id="cb5-23"><a href="#cb5-23"></a><span class="im">from</span> ISLP.models <span class="im">import</span> bs, ns</span>
+<span id="cb5-24"><a href="#cb5-24"></a><span class="im">from</span> ISLP.pygam <span class="im">import</span> (approx_lam,</span>
+<span id="cb5-25"><a href="#cb5-25"></a>                        degrees_of_freedom,</span>
+<span id="cb5-26"><a href="#cb5-26"></a>                        plot <span class="im">as</span> plot_gam,</span>
+<span id="cb5-27"><a href="#cb5-27"></a>                        anova <span class="im">as</span> anova_gam)</span>
+<span id="cb5-28"><a href="#cb5-28"></a>Wage <span class="op">=</span> load_data(<span class="st">'Wage'</span>)</span>
+<span id="cb5-29"><a href="#cb5-29"></a>y <span class="op">=</span> Wage[<span class="st">'wage'</span>]</span>
+<span id="cb5-30"><a href="#cb5-30"></a>age <span class="op">=</span> Wage[<span class="st">'age'</span>]</span>
+<span id="cb5-31"><a href="#cb5-31"></a><span class="in">```</span></span>
+<span id="cb5-32"><a href="#cb5-32"></a></span>
+<span id="cb5-33"><a href="#cb5-33"></a><span class="fu">### Summary of Chapter 7 Models</span></span>
+<span id="cb5-34"><a href="#cb5-34"></a></span>
+<span id="cb5-35"><a href="#cb5-35"></a><span class="ss">- </span>Polynomials $\clubsuit$ $\spadesuit$ $\heartsuit$</span>
+<span id="cb5-36"><a href="#cb5-36"></a><span class="ss">- </span>Step functions $\clubsuit$ $\spadesuit$ $\heartsuit$</span>
+<span id="cb5-37"><a href="#cb5-37"></a><span class="ss">- </span>Splines</span>
+<span id="cb5-38"><a href="#cb5-38"></a><span class="ss">  - </span>Regression splines $\clubsuit$ $\spadesuit$ $\heartsuit$</span>
+<span id="cb5-39"><a href="#cb5-39"></a><span class="ss">    - </span>Natural splines $\clubsuit$ $\spadesuit$ $\heartsuit$</span>
+<span id="cb5-40"><a href="#cb5-40"></a><span class="ss">  - </span>Smoothing splines $\clubsuit$ $\heartsuit$</span>
+<span id="cb5-41"><a href="#cb5-41"></a><span class="ss">- </span>Local regression</span>
+<span id="cb5-42"><a href="#cb5-42"></a></span>
+<span id="cb5-43"><a href="#cb5-43"></a>$\clubsuit$ = Element of Generalized Additive Model \</span>
+<span id="cb5-44"><a href="#cb5-44"></a>$\spadesuit$ = Can be represented with basis function \</span>
+<span id="cb5-45"><a href="#cb5-45"></a>$\heartsuit$ = Efficient LOOCV</span>
+<span id="cb5-46"><a href="#cb5-46"></a></span>
+<span id="cb5-47"><a href="#cb5-47"></a><span class="fu">### Key Python Packages</span></span>
+<span id="cb5-48"><a href="#cb5-48"></a><span class="ss">- </span><span class="co">[</span><span class="ot">`pygam`</span><span class="co">]</span> (https://pygam.readthedocs.io/en/latest/)</span>
+<span id="cb5-49"><a href="#cb5-49"></a><span class="ss">  - </span>A comprehensive framework for specifying GAMs</span>
+<span id="cb5-50"><a href="#cb5-50"></a><span class="ss">- </span><span class="in">`scipy.interpolate`</span></span>
+<span id="cb5-51"><a href="#cb5-51"></a><span class="ss">  - </span><span class="in">`BSpline()`</span> - class for basis splines (but different workflow from scikit-learn)</span>
+<span id="cb5-52"><a href="#cb5-52"></a><span class="ss">  - </span><span class="in">`CubicSpline()`</span> - class for cubic splines in scipy workflow (but different workflow from scikit-learn)</span>
+<span id="cb5-53"><a href="#cb5-53"></a></span>
+<span id="cb5-54"><a href="#cb5-54"></a><span class="fu">### Polynomials and Step Functions</span></span>
+<span id="cb5-55"><a href="#cb5-55"></a><span class="al">![](images/7_1.png)</span></span>
+<span id="cb5-56"><a href="#cb5-56"></a></span>
+<span id="cb5-57"><a href="#cb5-57"></a><span class="al">![](images/7_2.png)</span></span>
+<span id="cb5-58"><a href="#cb5-58"></a></span>
+<span id="cb5-59"><a href="#cb5-59"></a><span class="fu">### Basis functions</span></span>
+<span id="cb5-60"><a href="#cb5-60"></a><span class="ss">- </span>Basis functions let us represent non-linear relationships in the standard linear modeling framework.</span>
+<span id="cb5-61"><a href="#cb5-61"></a></span>
+<span id="cb5-62"><a href="#cb5-62"></a>$$y_i = \beta_0 + \beta_1b_1(x_i) + $\beta_2b_2(x_i) + \beta_3b_3(x_i) + ... \beta_k b_k(x_i) + \epsilon_i$$</span>
+<span id="cb5-63"><a href="#cb5-63"></a></span>
+<span id="cb5-64"><a href="#cb5-64"></a>where $b_1$...$b_k$ are known functions.</span>
+<span id="cb5-65"><a href="#cb5-65"></a></span>
+<span id="cb5-66"><a href="#cb5-66"></a><span class="ss">- </span>Matrix representation: </span>
+<span id="cb5-67"><a href="#cb5-67"></a>$$\underbrace{y}_{n \times 1} = \underbrace{\mathbf{A}}_{n \times k}</span>
+<span id="cb5-68"><a href="#cb5-68"></a>\underbrace{\beta}_{k \times 1} + \underbrace{\epsilon}_{n \times 1}$$</span>
+<span id="cb5-69"><a href="#cb5-69"></a></span>
+<span id="cb5-70"><a href="#cb5-70"></a>$$ \begin{bmatrix} </span>
+<span id="cb5-71"><a href="#cb5-71"></a>y_1 <span class="sc">\\</span></span>
+<span id="cb5-72"><a href="#cb5-72"></a>y_2 <span class="sc">\\</span></span>
+<span id="cb5-73"><a href="#cb5-73"></a>... <span class="sc">\\</span></span>
+<span id="cb5-74"><a href="#cb5-74"></a>y_n</span>
+<span id="cb5-75"><a href="#cb5-75"></a>\end{bmatrix}</span>
+<span id="cb5-76"><a href="#cb5-76"></a>  = </span>
+<span id="cb5-77"><a href="#cb5-77"></a>\begin{bmatrix}</span>
+<span id="cb5-78"><a href="#cb5-78"></a>b_0(x_1) &amp; b_1(x_1) &amp; b_k(x_1) <span class="sc">\\</span></span>
+<span id="cb5-79"><a href="#cb5-79"></a>b_0(x_2) &amp; b_1(x_2) &amp; b_k(x_2) <span class="sc">\\</span></span>
+<span id="cb5-80"><a href="#cb5-80"></a>   \dots &amp; \ddots &amp; \vdots <span class="sc">\\</span></span>
+<span id="cb5-81"><a href="#cb5-81"></a>b_0(x_n) &amp; b_0(x_n) &amp; b_k(x_n)</span>
+<span id="cb5-82"><a href="#cb5-82"></a>\end{bmatrix} \cdot </span>
+<span id="cb5-83"><a href="#cb5-83"></a>\begin{bmatrix}</span>
+<span id="cb5-84"><a href="#cb5-84"></a>\beta_0 <span class="sc">\\</span></span>
+<span id="cb5-85"><a href="#cb5-85"></a>\beta_1 <span class="sc">\\</span> </span>
+<span id="cb5-86"><a href="#cb5-86"></a>\vdots <span class="sc">\\</span></span>
+<span id="cb5-87"><a href="#cb5-87"></a>\beta_k </span>
+<span id="cb5-88"><a href="#cb5-88"></a>\end{bmatrix} +</span>
+<span id="cb5-89"><a href="#cb5-89"></a>\begin{bmatrix}</span>
+<span id="cb5-90"><a href="#cb5-90"></a>\epsilon_1 <span class="sc">\\</span></span>
+<span id="cb5-91"><a href="#cb5-91"></a>\epsilon_2 <span class="sc">\\</span></span>
+<span id="cb5-92"><a href="#cb5-92"></a>\vdots <span class="sc">\\</span></span>
+<span id="cb5-93"><a href="#cb5-93"></a>\epsilon_n</span>
+<span id="cb5-94"><a href="#cb5-94"></a>\end{bmatrix}</span>
+<span id="cb5-95"><a href="#cb5-95"></a>$$</span>
+<span id="cb5-96"><a href="#cb5-96"></a> </span>
+<span id="cb5-97"><a href="#cb5-97"></a></span>
+<span id="cb5-98"><a href="#cb5-98"></a><span class="ss">- </span>The formula for $\hat{\beta}$ is even the same.</span>
+<span id="cb5-99"><a href="#cb5-99"></a>$$ \hat{\beta} = (\mathbf{A}^{\intercal} \mathbf{A}) \mathbf{A} y$$</span>
+<span id="cb5-100"><a href="#cb5-100"></a></span>
+<span id="cb5-101"><a href="#cb5-101"></a><span class="fu">### Splines</span></span>
+<span id="cb5-102"><a href="#cb5-102"></a></span>
+<span id="cb5-103"><a href="#cb5-103"></a><span class="al">![](images/7_7.png)</span></span>
+<span id="cb5-104"><a href="#cb5-104"></a></span>
+<span id="cb5-105"><a href="#cb5-105"></a><span class="ss">- </span>Splines are another class of nonlinear, wiggly functions</span>
+<span id="cb5-106"><a href="#cb5-106"></a><span class="ss">- </span>Splines can achieve similar flexibility to polynomial regression with much lower degree and hence more stability</span>
+<span id="cb5-107"><a href="#cb5-107"></a><span class="ss">- </span>They achieve this by fitting low-degree polynomial functions over pre-set ranges of the independent variable</span>
+<span id="cb5-108"><a href="#cb5-108"></a></span>
+<span id="cb5-109"><a href="#cb5-109"></a><span class="fu">#### Regression Splines</span></span>
+<span id="cb5-110"><a href="#cb5-110"></a><span class="ss">- </span>The regression spline is a set of low-degree polynomial functions connected by *knots* and *constraints*</span>
+<span id="cb5-111"><a href="#cb5-111"></a><span class="ss">- </span>*knots* define the range of each constituent polynomial function</span>
+<span id="cb5-112"><a href="#cb5-112"></a><span class="ss">- </span>*constraints* define the relationships between the functions</span>
+<span id="cb5-113"><a href="#cb5-113"></a><span class="ss">  - </span>i.e. continuity, smoothness, linearity at the boundary  </span>
+<span id="cb5-114"><a href="#cb5-114"></a><span class="ss">- </span>The relationship between the number of predictors, knots and degrees of freedom is somewhat arcane</span>
+<span id="cb5-115"><a href="#cb5-115"></a><span class="ss">- </span>The truncated power basis function allows us to formulate the cubic spline as a basis function</span>
+<span id="cb5-116"><a href="#cb5-116"></a>$$h(\mathcal{x}, \xi) = (x - \xi)^3_+ = </span>
+<span id="cb5-117"><a href="#cb5-117"></a>  \begin{cases}</span>
+<span id="cb5-118"><a href="#cb5-118"></a>  (\mathcal(x)-\xi)^3 &amp; \text{if } \mathcal{x} &gt; \xi <span class="sc">\\</span></span>
+<span id="cb5-119"><a href="#cb5-119"></a>  0 &amp; \text{otherwise}</span>
+<span id="cb5-120"><a href="#cb5-120"></a>  \end{cases}</span>
+<span id="cb5-121"><a href="#cb5-121"></a>$$</span>
+<span id="cb5-122"><a href="#cb5-122"></a></span>
+<span id="cb5-123"><a href="#cb5-123"></a>$y_i = \beta_0 + \beta_1 \cdot x_i + \beta_2 \cdot x_i^2 + \beta^3 \cdot x_i^3 +</span>
+<span id="cb5-124"><a href="#cb5-124"></a>\beta_4 h(x_i, \xi_1) + \beta_5 h(x_i, \xi_2) + \beta_6\cdot h(x_i, \xi_3) + \epsilon_i$</span>
+<span id="cb5-125"><a href="#cb5-125"></a></span>
+<span id="cb5-126"><a href="#cb5-126"></a><span class="fu">#### Natural Splines</span></span>
+<span id="cb5-127"><a href="#cb5-127"></a><span class="ss">- </span>Natural splines impose a boundary constraint on regression splines</span>
+<span id="cb5-128"><a href="#cb5-128"></a></span>
+<span id="cb5-129"><a href="#cb5-129"></a><span class="al">![](images/7_4.png)</span></span>
+<span id="cb5-130"><a href="#cb5-130"></a></span>
+<span id="cb5-131"><a href="#cb5-131"></a><span class="fu">#### Smoothing Splines</span></span>
+<span id="cb5-132"><a href="#cb5-132"></a><span class="ss">- </span>Smoothing splines are regularized splines!</span>
+<span id="cb5-133"><a href="#cb5-133"></a><span class="ss">- </span>Like with Ridge and Lasso regression, we derive the function from a minimization criteria:</span>
+<span id="cb5-134"><a href="#cb5-134"></a></span>
+<span id="cb5-135"><a href="#cb5-135"></a>$$\underset{g}{\text{arg min}}(\text{RSS} + \lambda \int g^{''}(t)^2dt) $$</span>
+<span id="cb5-136"><a href="#cb5-136"></a></span>
+<span id="cb5-137"><a href="#cb5-137"></a><span class="ss">- </span>Reminder about the Ridge minimization criteria:</span>
+<span id="cb5-138"><a href="#cb5-138"></a>$$\underset{\beta_j}{\text{arg min}}(\text{RSS} + \lambda (\sum_{j=1}^p \beta_j^2)$$</span>
+<span id="cb5-139"><a href="#cb5-139"></a></span>
+<span id="cb5-140"><a href="#cb5-140"></a><span class="ss">- </span>It's the same! But this time the penalty applies to the second derivative of the polynomial function.</span>
+<span id="cb5-141"><a href="#cb5-141"></a><span class="ss">- </span>"Shrinkage" of coefficients in more complex regions of the model towards zero</span>
+<span id="cb5-142"><a href="#cb5-142"></a><span class="ss">- </span>Think of it as a "wiggliness" penalty</span>
+<span id="cb5-143"><a href="#cb5-143"></a><span class="ss">- </span>In general:</span>
+<span id="cb5-144"><a href="#cb5-144"></a><span class="ss">  - </span>$\lambda \to 0$ we have low bias, high variance (i.e. overfitting)</span>
+<span id="cb5-145"><a href="#cb5-145"></a><span class="ss">  - </span>$\lambda \to \inf$ we have high bias, low variance (i.e. linear regression)  </span>
+<span id="cb5-146"><a href="#cb5-146"></a><span class="ss">  - </span>$\lambda \to 0$ then $df_\lambda \to n$</span>
+<span id="cb5-147"><a href="#cb5-147"></a><span class="ss">  - </span>$\lambda \to \inf$ then $df_\lambda \to 2$</span>
+<span id="cb5-148"><a href="#cb5-148"></a></span>
+<span id="cb5-149"><a href="#cb5-149"></a><span class="ss">- </span>Solving for the degrees of freedom is a bit arcane</span>
+<span id="cb5-150"><a href="#cb5-150"></a><span class="ss">- </span>It is the sum of the diagonal elements of $\mathbf{S}_{\lambda_{ii}}$</span>
+<span id="cb5-151"><a href="#cb5-151"></a>$$\hat{g}_\lambda = \mathbf{S}_\lambda y$$</span>
+<span id="cb5-152"><a href="#cb5-152"></a></span>
+<span id="cb5-153"><a href="#cb5-153"></a>$$df_\lambda = \sum_{i=1}^n \mathbf{S}_{\lambda_{ii}}$$ </span>
+<span id="cb5-154"><a href="#cb5-154"></a></span>
+<span id="cb5-155"><a href="#cb5-155"></a><span class="fu">### Computation of Splines</span></span>
+<span id="cb5-156"><a href="#cb5-156"></a></span>
+<span id="cb5-157"><a href="#cb5-157"></a><span class="ss">- </span><span class="in">`ISLP`</span> wraps <span class="in">`scipy.interpolate`</span> to fit into the "transform" workflow</span>
+<span id="cb5-158"><a href="#cb5-158"></a></span>
+<span id="cb5-161"><a href="#cb5-161"></a><span class="in">```{python}</span></span>
+<span id="cb5-162"><a href="#cb5-162"></a><span class="co">#| echo: true</span></span>
+<span id="cb5-163"><a href="#cb5-163"></a>bs_age <span class="op">=</span> MS([bs(<span class="st">'age'</span>,</span>
+<span id="cb5-164"><a href="#cb5-164"></a>                internal_knots<span class="op">=</span>[<span class="dv">25</span>,<span class="dv">40</span>,<span class="dv">60</span>],</span>
+<span id="cb5-165"><a href="#cb5-165"></a>                name<span class="op">=</span><span class="st">'bs(age)'</span>)])</span>
+<span id="cb5-166"><a href="#cb5-166"></a>Xbs <span class="op">=</span> bs_age.fit_transform(Wage)</span>
+<span id="cb5-167"><a href="#cb5-167"></a>M <span class="op">=</span> sm.OLS(y, Xbs).fit()</span>
+<span id="cb5-168"><a href="#cb5-168"></a>summarize(M)</span>
+<span id="cb5-169"><a href="#cb5-169"></a><span class="in">```</span></span>
+<span id="cb5-170"><a href="#cb5-170"></a></span>
+<span id="cb5-173"><a href="#cb5-173"></a><span class="in">```{python}</span></span>
+<span id="cb5-174"><a href="#cb5-174"></a><span class="co">#| echo: true</span></span>
+<span id="cb5-175"><a href="#cb5-175"></a><span class="co">#| eval: true </span></span>
+<span id="cb5-176"><a href="#cb5-176"></a>bs_ <span class="op">=</span> BSpline(internal_knots<span class="op">=</span>[<span class="dv">25</span>,<span class="dv">40</span>,<span class="dv">60</span>], intercept<span class="op">=</span><span class="va">True</span>).fit(age)</span>
+<span id="cb5-177"><a href="#cb5-177"></a>bs_age <span class="op">=</span> bs_.transform(age)</span>
+<span id="cb5-178"><a href="#cb5-178"></a>bs_age.head()</span>
+<span id="cb5-179"><a href="#cb5-179"></a><span class="in">```</span></span>
+<span id="cb5-180"><a href="#cb5-180"></a></span>
+<span id="cb5-181"><a href="#cb5-181"></a><span class="ss">- </span>The <span class="in">`scipy.interpolate()`</span> documentation is...a bit technical</span>
+<span id="cb5-182"><a href="#cb5-182"></a><span class="ss">- </span>It is left as an exercise to the reader to figure out how to create a model matrix without <span class="in">`ISLP`</span>'s help. Try <span class="in">`splrep()`</span></span>
+<span id="cb5-183"><a href="#cb5-183"></a></span>
+<span id="cb5-186"><a href="#cb5-186"></a><span class="in">```{python}</span></span>
+<span id="cb5-187"><a href="#cb5-187"></a><span class="co">#| echo: true</span></span>
+<span id="cb5-188"><a href="#cb5-188"></a><span class="co">#| eval: true </span></span>
+<span id="cb5-189"><a href="#cb5-189"></a><span class="im">import</span> scipy.interpolate <span class="im">as</span> interpolate </span>
+<span id="cb5-190"><a href="#cb5-190"></a>x <span class="op">=</span> np.array([ <span class="fl">0.</span> ,  <span class="fl">1.2</span>,  <span class="fl">1.9</span>,  <span class="fl">3.2</span>,  <span class="fl">4.</span> ,  <span class="fl">6.5</span>])</span>
+<span id="cb5-191"><a href="#cb5-191"></a>y <span class="op">=</span> np.array([ <span class="fl">0.</span> ,  <span class="fl">2.3</span>,  <span class="fl">3.</span> ,  <span class="fl">4.3</span>,  <span class="fl">2.9</span>,  <span class="fl">3.1</span>])</span>
+<span id="cb5-192"><a href="#cb5-192"></a><span class="co"># t = knots, c = coefficients, k = degree</span></span>
+<span id="cb5-193"><a href="#cb5-193"></a>t, c, k <span class="op">=</span> interpolate.splrep(x, y, s<span class="op">=</span><span class="dv">0</span>, k<span class="op">=</span><span class="dv">4</span>)</span>
+<span id="cb5-194"><a href="#cb5-194"></a>spline <span class="op">=</span> interpolate.BSpline(t, c, k, extrapolate <span class="op">=</span> <span class="va">False</span>)</span>
+<span id="cb5-195"><a href="#cb5-195"></a><span class="in">```</span></span>
+<span id="cb5-196"><a href="#cb5-196"></a></span>
+<span id="cb5-199"><a href="#cb5-199"></a><span class="in">```{python}</span></span>
+<span id="cb5-200"><a href="#cb5-200"></a><span class="co">#| echo: false</span></span>
+<span id="cb5-201"><a href="#cb5-201"></a><span class="co">#| eval: true</span></span>
+<span id="cb5-202"><a href="#cb5-202"></a><span class="bu">print</span>(<span class="st">'''</span><span class="op">\</span></span>
+<span id="cb5-203"><a href="#cb5-203"></a><span class="st">t: </span><span class="sc">{}</span></span>
+<span id="cb5-204"><a href="#cb5-204"></a><span class="st">c: </span><span class="sc">{}</span></span>
+<span id="cb5-205"><a href="#cb5-205"></a><span class="st">k: </span><span class="sc">{}</span></span>
+<span id="cb5-206"><a href="#cb5-206"></a><span class="st">'''</span>.<span class="bu">format</span>(t, c, k)) </span>
+<span id="cb5-207"><a href="#cb5-207"></a><span class="in">```</span></span>
+<span id="cb5-208"><a href="#cb5-208"></a></span>
+<span id="cb5-209"><a href="#cb5-209"></a><span class="fu">## GAMs</span></span>
+<span id="cb5-210"><a href="#cb5-210"></a></span>
+<span id="cb5-211"><a href="#cb5-211"></a><span class="ss">- </span>GAMs extend basis functions to the multivariate case...and more!</span>
+</code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

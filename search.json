@@ -632,6 +632,28 @@
     ]
   },
   {
+    "objectID": "07_notes.html",
+    "href": "07_notes.html",
+    "title": "Notes",
+    "section": "",
+    "text": "Summary of Chapter 7 Models\n\\(\\clubsuit\\) = Element of Generalized Additive Model\n\\(\\spadesuit\\) = Can be represented with basis function\n\\(\\heartsuit\\) = Efficient LOOCV",
+    "crumbs": [
+      "7. Moving Beyond Linearity",
+      "Notes"
+    ]
+  },
+  {
+    "objectID": "07_notes.html#gams",
+    "href": "07_notes.html#gams",
+    "title": "Notes",
+    "section": "GAMs",
+    "text": "GAMs\n\nGAMs extend basis functions to the multivariate case…and more!",
+    "crumbs": [
+      "7. Moving Beyond Linearity",
+      "Notes"
+    ]
+  },
+  {
     "objectID": "07_video.html",
     "href": "07_video.html",
     "title": "Video",
