@@ -1,2 +1,201 @@
 ## Notes {.unnumbered}
 
+```{python}
+#| echo: false
+import numpy as np, pandas as pd
+from matplotlib.pyplot import subplots
+import statsmodels.api as sm
+from ISLP import load_data
+from ISLP.models import (summarize,
+                         poly,
+                         ModelSpec as MS)
+from statsmodels.stats.anova import anova_lm
+from pygam import (s as s_gam,
+                   l as l_gam,
+                   f as f_gam,
+                   LinearGAM,
+                   LogisticGAM)
+
+from ISLP.transforms import (BSpline,
+                             NaturalSpline)
+from ISLP.models import bs, ns
+from ISLP.pygam import (approx_lam,
+                        degrees_of_freedom,
+                        plot as plot_gam,
+                        anova as anova_gam)
+Wage = load_data('Wage')
+y = Wage['wage']
+age = Wage['age']
+```
+
+### Summary of Chapter 7 Models
+
+- Polynomials $\clubsuit$ $\spadesuit$ $\heartsuit$
+- Step functions $\clubsuit$ $\spadesuit$ $\heartsuit$
+- Splines
+  - Regression splines $\clubsuit$ $\spadesuit$ $\heartsuit$
+    - Natural splines $\clubsuit$ $\spadesuit$ $\heartsuit$
+  - Smoothing splines $\clubsuit$ $\heartsuit$
+- Local regression
+
+$\clubsuit$ = Element of Generalized Additive Model \
+$\spadesuit$ = Can be represented with basis function \
+$\heartsuit$ = Efficient LOOCV
+
+### Key Python Packages
+- [`pygam`] (https://pygam.readthedocs.io/en/latest/)
+  - A comprehensive framework for specifying GAMs
+- `scipy.interpolate`
+  - `BSpline()` - class for basis splines (but different workflow from scikit-learn)
+  - `CubicSpline()` - class for cubic splines in scipy workflow (but different workflow from scikit-learn)
+
+### Polynomials and Step Functions
+![](images/7_1.png)
+
+![](images/7_2.png)
+
+### Basis functions
+- Basis functions let us represent non-linear relationships in the standard linear modeling framework.
+
+$$y_i = \beta_0 + \beta_1b_1(x_i) + $\beta_2b_2(x_i) + \beta_3b_3(x_i) + ... \beta_k b_k(x_i) + \epsilon_i$$
+
+where $b_1$...$b_k$ are known functions.
+
+- Matrix representation: 
+$$\underbrace{y}_{n \times 1} = \underbrace{\mathbf{A}}_{n \times k}
+\underbrace{\beta}_{k \times 1} + \underbrace{\epsilon}_{n \times 1}$$
+
+$$ \begin{bmatrix} 
+y_1 \\
+y_2 \\
+... \\
+y_n
+\end{bmatrix}
+  = 
+\begin{bmatrix}
+b_0(x_1) & b_1(x_1) & b_k(x_1) \\
+b_0(x_2) & b_1(x_2) & b_k(x_2) \\
+   \dots & \ddots & \vdots \\
+b_0(x_n) & b_0(x_n) & b_k(x_n)
+\end{bmatrix} \cdot 
+\begin{bmatrix}
+\beta_0 \\
+\beta_1 \\ 
+\vdots \\
+\beta_k 
+\end{bmatrix} +
+\begin{bmatrix}
+\epsilon_1 \\
+\epsilon_2 \\
+\vdots \\
+\epsilon_n
+\end{bmatrix}
+$$
+ 
+
+- The formula for $\hat{\beta}$ is even the same.
+$$ \hat{\beta} = (\mathbf{A}^{\intercal} \mathbf{A}) \mathbf{A} y$$
+
+### Splines
+
+![](images/7_7.png)
+
+- Splines are another class of nonlinear, wiggly functions
+- Splines can achieve similar flexibility to polynomial regression with much lower degree and hence more stability
+- They achieve this by fitting low-degree polynomial functions over pre-set ranges of the independent variable
+
+#### Regression Splines
+- The regression spline is a set of low-degree polynomial functions connected by *knots* and *constraints*
+- *knots* define the range of each constituent polynomial function
+- *constraints* define the relationships between the functions
+  - i.e. continuity, smoothness, linearity at the boundary  
+- The relationship between the number of predictors, knots and degrees of freedom is somewhat arcane
+- The truncated power basis function allows us to formulate the cubic spline as a basis function
+$$h(\mathcal{x}, \xi) = (x - \xi)^3_+ = 
+  \begin{cases}
+  (\mathcal(x)-\xi)^3 & \text{if } \mathcal{x} > \xi \\
+  0 & \text{otherwise}
+  \end{cases}
+$$
+
+$y_i = \beta_0 + \beta_1 \cdot x_i + \beta_2 \cdot x_i^2 + \beta^3 \cdot x_i^3 +
+\beta_4 h(x_i, \xi_1) + \beta_5 h(x_i, \xi_2) + \beta_6\cdot h(x_i, \xi_3) + \epsilon_i$
+
+#### Natural Splines
+- Natural splines impose a boundary constraint on regression splines
+
+![](images/7_4.png)
+
+#### Smoothing Splines
+- Smoothing splines are regularized splines!
+- Like with Ridge and Lasso regression, we derive the function from a minimization criteria:
+
+$$\underset{g}{\text{arg min}}(\text{RSS} + \lambda \int g^{''}(t)^2dt) $$
+
+- Reminder about the Ridge minimization criteria:
+$$\underset{\beta_j}{\text{arg min}}(\text{RSS} + \lambda (\sum_{j=1}^p \beta_j^2)$$
+
+- It's the same! But this time the penalty applies to the second derivative of the polynomial function.
+- "Shrinkage" of coefficients in more complex regions of the model towards zero
+- Think of it as a "wiggliness" penalty
+- In general:
+  - $\lambda \to 0$ we have low bias, high variance (i.e. overfitting)
+  - $\lambda \to \inf$ we have high bias, low variance (i.e. linear regression)  
+  - $\lambda \to 0$ then $df_\lambda \to n$
+  - $\lambda \to \inf$ then $df_\lambda \to 2$
+
+- Solving for the degrees of freedom is a bit arcane
+- It is the sum of the diagonal elements of $\mathbf{S}_{\lambda_{ii}}$
+$$\hat{g}_\lambda = \mathbf{S}_\lambda y$$
+
+$$df_\lambda = \sum_{i=1}^n \mathbf{S}_{\lambda_{ii}}$$ 
+
+### Computation of Splines
+
+- `ISLP` wraps `scipy.interpolate` to fit into the "transform" workflow
+
+```{python}
+#| echo: true
+bs_age = MS([bs('age',
+                internal_knots=[25,40,60],
+                name='bs(age)')])
+Xbs = bs_age.fit_transform(Wage)
+M = sm.OLS(y, Xbs).fit()
+summarize(M)
+```
+
+```{python}
+#| echo: true
+#| eval: true 
+bs_ = BSpline(internal_knots=[25,40,60], intercept=True).fit(age)
+bs_age = bs_.transform(age)
+bs_age.head()
+```
+
+- The `scipy.interpolate()` documentation is...a bit technical
+- It is left as an exercise to the reader to figure out how to create a model matrix without `ISLP`'s help. Try `splrep()`
+
+```{python}
+#| echo: true
+#| eval: true 
+import scipy.interpolate as interpolate 
+x = np.array([ 0. ,  1.2,  1.9,  3.2,  4. ,  6.5])
+y = np.array([ 0. ,  2.3,  3. ,  4.3,  2.9,  3.1])
+# t = knots, c = coefficients, k = degree
+t, c, k = interpolate.splrep(x, y, s=0, k=4)
+spline = interpolate.BSpline(t, c, k, extrapolate = False)
+```
+
+```{python}
+#| echo: false
+#| eval: true
+print('''\
+t: {}
+c: {}
+k: {}
+'''.format(t, c, k)) 
+```
+
+## GAMs
+
+- GAMs extend basis functions to the multivariate case...and more!
