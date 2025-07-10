@@ -4,6 +4,7 @@ format:
   revealjs:
     theme: simple
     margin: 0.04 
+    embed-resources: true
 ---
 
 ## What is classification?
