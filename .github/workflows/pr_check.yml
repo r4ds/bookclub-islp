@@ -11,10 +11,26 @@ jobs:
       contents: write
     steps:
       - name: Check out repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Install Python and Dependencies
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+      # - run: pip install jupyter
+
+      - name: Set up yq
+        uses: mikefarah/yq@master
+
+      - name: Extract dependencies from pyproject.toml
+        run: yq '.project.dependencies[]' pyproject.toml > requirements.txt
+
+      - name: Install dependencies from requirements.txt
+        run: pip install -r requirements.txt
 
       - name: Render Quarto Project
         uses: quarto-dev/quarto-actions/render@v2
