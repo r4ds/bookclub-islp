@@ -23,5 +23,3 @@ dependencies = [
     "torchmetrics"
 ]
 
-[tool.uv.workspace]
-members = ["Users/brown/Docments/dev/environments/islp"]
