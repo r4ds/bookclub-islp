@@ -76,7 +76,7 @@ $$
 
 In practice, we almost always don't know how 
 $\epsilon$'s variability affects our model,
-so, in this boook, we will focus on techniques for estimating $f$ .
+so, in this book, we will focus on techniques for estimating $f$ .
 
 #### Inference
 
