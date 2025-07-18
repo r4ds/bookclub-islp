@@ -847,7 +847,7 @@ b_0(x_n) &amp; b_0(x_n) &amp; b_k(x_n)
 <ul>
 <li><code>ISLP</code> wraps <code>scipy.interpolate</code> to fit into the “transform” workflow</li>
 </ul>
-<div id="1aa7b158" class="cell" data-execution_count="2">
+<div id="a7af6bf2" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a>bs_age <span class="op">=</span> MS([bs(<span class="st">'age'</span>,</span>
 <span id="cb1-2"><a href="#cb1-2"></a>                internal_knots<span class="op">=</span>[<span class="dv">25</span>,<span class="dv">40</span>,<span class="dv">60</span>],</span>
 <span id="cb1-3"><a href="#cb1-3"></a>                name<span class="op">=</span><span class="st">'bs(age)'</span>)])</span>
@@ -924,7 +924,7 @@ b_0(x_n) &amp; b_0(x_n) &amp; b_k(x_n)
 </div>
 </div>
 </div>
-<div id="8910600a" class="cell" data-execution_count="3">
+<div id="89da59d9" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>bs_ <span class="op">=</span> BSpline(internal_knots<span class="op">=</span>[<span class="dv">25</span>,<span class="dv">40</span>,<span class="dv">60</span>], intercept<span class="op">=</span><span class="va">True</span>).fit(age)</span>
 <span id="cb2-2"><a href="#cb2-2"></a>bs_age <span class="op">=</span> bs_.transform(age)</span>
 <span id="cb2-3"><a href="#cb2-3"></a>bs_age.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1006,7 +1006,7 @@ b_0(x_n) &amp; b_0(x_n) &amp; b_k(x_n)
 <li>The <code>scipy.interpolate()</code> documentation is…a bit technical</li>
 <li>It is left as an exercise to the reader to figure out how to create a model matrix without <code>ISLP</code>’s help. Try <code>splrep()</code></li>
 </ul>
-<div id="98508eaa" class="cell" data-execution_count="4">
+<div id="9e475780" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="im">import</span> scipy.interpolate <span class="im">as</span> interpolate </span>
 <span id="cb3-2"><a href="#cb3-2"></a>x <span class="op">=</span> np.array([ <span class="fl">0.</span> ,  <span class="fl">1.2</span>,  <span class="fl">1.9</span>,  <span class="fl">3.2</span>,  <span class="fl">4.</span> ,  <span class="fl">6.5</span>])</span>
 <span id="cb3-3"><a href="#cb3-3"></a>y <span class="op">=</span> np.array([ <span class="fl">0.</span> ,  <span class="fl">2.3</span>,  <span class="fl">3.</span> ,  <span class="fl">4.3</span>,  <span class="fl">2.9</span>,  <span class="fl">3.1</span>])</span>
@@ -1014,7 +1014,7 @@ b_0(x_n) &amp; b_0(x_n) &amp; b_k(x_n)
 <span id="cb3-5"><a href="#cb3-5"></a>t, c, k <span class="op">=</span> interpolate.splrep(x, y, s<span class="op">=</span><span class="dv">0</span>, k<span class="op">=</span><span class="dv">4</span>)</span>
 <span id="cb3-6"><a href="#cb3-6"></a>spline <span class="op">=</span> interpolate.BSpline(t, c, k, extrapolate <span class="op">=</span> <span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="80a158d7" class="cell" data-execution_count="5">
+<div id="b3c1a740" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-stdout">
 <pre><code>t: [0.   0.   0.   0.   0.   2.55 6.5  6.5  6.5  6.5  6.5 ]
 c: [-5.62048630e-18  2.98780300e+00 -5.74472095e-01  1.46700914e+01
