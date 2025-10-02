@@ -11,7 +11,8 @@ As we read, we are producing [notes about the book](https://r4ds.github.io/bookc
 If you would like to present, please see the sign-up sheet for your cohort (linked below, and pinned in the [#book_club-islp](https://dslcio.slack.com/archives/C05K1HJEXFA) channel on Slack)!
 
 - Cohort 1 (started 2023-08-13, ended 2024-04-14): [meeting videos](https://youtube.com/playlist?list=PL3x6DOfs2NGgqCo62O0lDTcJLvGpyG8_g)
-- [Cohort 2](https://docs.google.com/spreadsheets/d/1DgMfX7ReGoVxHkMl_jrJ_o6YTAL_ZNppYAODjfgFKTg/edit?usp=sharing) (started 2024-10-21): [Mondays, 1pm America/Chicago](https://www.timeanddate.com/worldclock/converter.html?iso=20241021T180000&p1=24&p2=1440) | [meeting videos](https://www.youtube.com/playlist?list=PL3x6DOfs2NGjM52UUBY61QkouibiO3YNP)
+- Cohort 2 (started 2024-10-21, ended 2024-12-03): [meeting videos](https://www.youtube.com/playlist?list=PL3x6DOfs2NGjM52UUBY61QkouibiO3YNP)
+- Cohort 3 (started 2025-02-12, ended 2025-09-24): [meeting videos](https://www.youtube.com/playlist?list=PL3x6DOfs2NGgbSNh0UG87rrM-z5LiKLZp)
 
 <hr>
 
