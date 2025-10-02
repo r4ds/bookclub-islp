@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -69,14 +69,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="./02_video.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-94132a13eab211b38f999440e910a243.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-0204ecbfb8a16f1d6bd85439096a7cdd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-0204ecbfb8a16f1d6bd85439096a7cdd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-0204ecbfb8a16f1d6bd85439096a7cdd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -172,7 +177,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Introduction to Statistical Learning using Python</a> 
         <div class="sidebar-tools-main">
@@ -695,9 +702,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(reticulate)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(reticulate)</span>
 <span id="cb1-2"><a href="#cb1-2"></a>os <span class="ot">&lt;-</span> <span class="fu">import</span>(<span class="st">"os"</span>)</span>
-<span id="cb1-3"><a href="#cb1-3"></a>os<span class="sc">$</span><span class="fu">listdir</span>(<span class="st">"."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3"></a>os<span class="sc">$</span><span class="fu">listdir</span>(<span class="st">"."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "03_exercises.qmd"       ".Rhistory"              "03_main.qmd"           
  [4] "02_main.qmd"            ".Rbuildignore"          "examples.md"           
@@ -729,17 +736,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a></span>
 <span id="cb3-2"><a href="#cb3-2"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb3-3"><a href="#cb3-3"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb3-4"><a href="#cb3-4"></a><span class="co">#%matplotlib inline</span></span>
 <span id="cb3-5"><a href="#cb3-5"></a><span class="im">from</span> matplotlib.pyplot <span class="im">import</span> subplots</span>
 <span id="cb3-6"><a href="#cb3-6"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb3-7"><a href="#cb3-7"></a><span class="im">from</span> ISLP <span class="im">import</span> load_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-7"><a href="#cb3-7"></a><span class="im">from</span> ISLP <span class="im">import</span> load_data</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>pd.set_option(<span class="st">'display.max_columns'</span>, <span class="va">None</span>)</span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="co">#pd.set_option('display.max_rows', None)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>pd.set_option(<span class="st">'display.max_columns'</span>, <span class="va">None</span>)</span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="co">#pd.set_option('display.max_rows', None)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <section id="this-exercise-relates-to-the-college-data-set-which-can-be-found-in-the-file-college.csv-on-the-book-website.-it-contains-a-number-of-variables-for-777-different-universities-and-colleges-in-the-us.-the-variables-are" class="level2">
 <h2 class="anchored" data-anchor-id="this-exercise-relates-to-the-college-data-set-which-can-be-found-in-the-file-college.csv-on-the-book-website.-it-contains-a-number-of-variables-for-777-different-universities-and-colleges-in-the-us.-the-variables-are">8. This exercise relates to the <code>College</code> data set, which can be found in the file <code>College.csv</code> on the book website. It contains a number of variables for 777 different universities and colleges in the US. The variables are</h2>
@@ -767,8 +774,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="a-use-the-pd.read_csv-function-to-read-the-data-into-python.-call-the-loaded-data-college.-make-sure-that-you-have-the-directory-set-to-the-correct-location-for-the-data." class="level3">
 <h3 class="anchored" data-anchor-id="a-use-the-pd.read_csv-function-to-read-the-data-into-python.-call-the-loaded-data-college.-make-sure-that-you-have-the-directory-set-to-the-correct-location-for-the-data.">(a) Use the <code>pd.read_csv()</code> function to read the data into <code>Python</code>. Call the loaded data <code>college</code>. Make sure that you have the directory set to the correct location for the data.</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>college <span class="op">=</span> pd.read_csv(<span class="st">'ISLP_data/College.csv'</span>)</span>
-<span id="cb5-2"><a href="#cb5-2"></a>college</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>college <span class="op">=</span> pd.read_csv(<span class="st">'ISLP_data/College.csv'</span>)</span>
+<span id="cb5-2"><a href="#cb5-2"></a>college</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                         Unnamed: 0 Private   Apps  Accept  Enroll  Top10perc  \
 0      Abilene Christian University     Yes   1660    1232     721         23   
@@ -816,7 +823,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="b-look-at-the-data-used-in-the-notebook-by-creating-and-running-a-new-cell-with-just-the-code-college-in-it.-you-should-notice-that-the-first-column-is-just-the-name-of-each-university-in-a-column-named-something-like-unnamed-0.-we-dont-really-want-pandas-to-treat-this-as-data.-however-it-may-be-handy-to-have-these-names-for-later.-try-the-following-commands-and-similarly-look-at-the-resulting-data-frames" class="level3">
 <h3 class="anchored" data-anchor-id="b-look-at-the-data-used-in-the-notebook-by-creating-and-running-a-new-cell-with-just-the-code-college-in-it.-you-should-notice-that-the-first-column-is-just-the-name-of-each-university-in-a-column-named-something-like-unnamed-0.-we-dont-really-want-pandas-to-treat-this-as-data.-however-it-may-be-handy-to-have-these-names-for-later.-try-the-following-commands-and-similarly-look-at-the-resulting-data-frames">(b) Look at the data used in the notebook by creating and running a new cell with just the code <code>college</code> in it. You should notice that the first column is just the name of each university in a column named something like <code>Unnamed: 0</code>. We don’t really want <code>pandas</code> to treat this as data. However, it may be handy to have these names for later. Try the following commands and similarly look at the resulting data frames:</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a></span>
 <span id="cb7-2"><a href="#cb7-2"></a>college2 <span class="op">=</span> pd.read_csv(<span class="st">'ISLP_data/College.csv'</span>, index_col<span class="op">=</span><span class="dv">0</span>)</span>
 <span id="cb7-3"><a href="#cb7-3"></a><span class="co">#college2</span></span>
 <span id="cb7-4"><a href="#cb7-4"></a></span>
@@ -825,12 +832,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-7"><a href="#cb7-7"></a><span class="co">#college3</span></span>
 <span id="cb7-8"><a href="#cb7-8"></a></span>
 <span id="cb7-9"><a href="#cb7-9"></a>college3 <span class="op">=</span> college3.set_index(<span class="st">'college'</span>)</span>
-<span id="cb7-10"><a href="#cb7-10"></a><span class="co">#college3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-10"><a href="#cb7-10"></a><span class="co">#college3</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>This has used the first column in the file as an <code>index</code> for the data frame. This means that <code>pandas</code> has given each row a name corresponding to the appropriate university. Now you should see that the first data column is <code>Private</code>. Note that the names of the colleges appear on the left of the table. We also introduced a new python object above: a <em>dictionary</em>, which is specified by <code>(key, value)</code> pairs. Keep your modified version of the data with the following:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>college <span class="op">=</span> college3</span>
-<span id="cb8-2"><a href="#cb8-2"></a>college</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>college <span class="op">=</span> college3</span>
+<span id="cb8-2"><a href="#cb8-2"></a>college</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                               Private   Apps  Accept  Enroll  Top10perc  \
 college                                                                    
@@ -895,7 +902,7 @@ York College of Pennsylvania         18.1           28    4509         99
 <section id="c-use-the-describe-method-to-produce-a-numerical-summary-of-the-variables-in-the-data-set." class="level3">
 <h3 class="anchored" data-anchor-id="c-use-the-describe-method-to-produce-a-numerical-summary-of-the-variables-in-the-data-set.">(c) Use the <code>describe()</code> method to produce a numerical summary of the variables in the data set.</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a>college.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a>college.describe()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>               Apps        Accept       Enroll   Top10perc   Top25perc  \
 count    777.000000    777.000000   777.000000  777.000000  777.000000   
@@ -942,8 +949,8 @@ max    56233.000000  118.00000  </code></pre>
 <section id="d-use-the-pd.plotting.scatter_matrix-function-to-produce-a-scatterplot-matrix-of-the-first-columns-top10perc-apps-enroll.-recall-that-you-can-reference-a-list-c-of-columns-of-a-data-frame-a-using-ac." class="level3">
 <h3 class="anchored" data-anchor-id="d-use-the-pd.plotting.scatter_matrix-function-to-produce-a-scatterplot-matrix-of-the-first-columns-top10perc-apps-enroll.-recall-that-you-can-reference-a-list-c-of-columns-of-a-data-frame-a-using-ac.">(d) Use the <code>pd.plotting.scatter_matrix()</code> function to produce a scatterplot matrix of the first columns <code>[Top10perc, Apps, Enroll]</code>. Recall that you can reference a list C of columns of a data frame <code>A</code> using <code>A[C]</code>.</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="co">#fig, ax = subplots(figsize=(8, 8))</span></span>
-<span id="cb12-2"><a href="#cb12-2"></a>pd.plotting.scatter_matrix(college[[<span class="st">'Top10perc'</span>,<span class="st">'Apps'</span>,<span class="st">'Enroll'</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="co">#fig, ax = subplots(figsize=(8, 8))</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a>pd.plotting.scatter_matrix(college[[<span class="st">'Top10perc'</span>,<span class="st">'Apps'</span>,<span class="st">'Enroll'</span>]])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>array([[&lt;AxesSubplot:xlabel='Top10perc', ylabel='Top10perc'&gt;,
         &lt;AxesSubplot:xlabel='Apps', ylabel='Top10perc'&gt;,
@@ -955,7 +962,7 @@ max    56233.000000  118.00000  </code></pre>
         &lt;AxesSubplot:xlabel='Apps', ylabel='Enroll'&gt;,
         &lt;AxesSubplot:xlabel='Enroll', ylabel='Enroll'&gt;]], dtype=object)</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a><span class="co">#plt.show()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a><span class="co">#plt.show()</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -971,13 +978,13 @@ max    56233.000000  118.00000  </code></pre>
 <section id="f-create-a-new-qualitative-variable-called-elite-by-binning-the-top10perc-variable-into-two-groups-based-on-whether-or-not-the-proportion-of-students-coming-from-the-top-10-of-their-high-school-classes-exceeds-50." class="level3">
 <h3 class="anchored" data-anchor-id="f-create-a-new-qualitative-variable-called-elite-by-binning-the-top10perc-variable-into-two-groups-based-on-whether-or-not-the-proportion-of-students-coming-from-the-top-10-of-their-high-school-classes-exceeds-50.">(f) Create a new qualitative variable, called Elite, by binning the Top10perc variable into two groups based on whether or not the proportion of students coming from the top 10% of their high school classes exceeds 50%.</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a>college[<span class="st">'Elite'</span>] <span class="op">=</span> pd.cut(college[<span class="st">'Top10perc'</span>],</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a>college[<span class="st">'Elite'</span>] <span class="op">=</span> pd.cut(college[<span class="st">'Top10perc'</span>],</span>
 <span id="cb15-2"><a href="#cb15-2"></a>  [<span class="dv">0</span>,<span class="fl">0.5</span>,<span class="dv">1</span>],</span>
-<span id="cb15-3"><a href="#cb15-3"></a>  labels<span class="op">=</span>[<span class="st">'No'</span>, <span class="st">'Yes'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-3"><a href="#cb15-3"></a>  labels<span class="op">=</span>[<span class="st">'No'</span>, <span class="st">'Yes'</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Use the <code>value_counts()</code> method of <code>college['Elite']</code> to see how many elite universities there are. Finally, use the <code>boxplot()</code> method again to produce side-by-side boxplots of <code>Outstate</code> versus <code>Elite</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>college[<span class="st">'Elite'</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>college[<span class="st">'Elite'</span>].value_counts()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Yes    3
 No     0
@@ -995,9 +1002,9 @@ Name: Elite, dtype: int64</code></pre>
 <section id="this-exercise-involves-the-auto-data-set-studied-in-the-lab.-make-sure-that-the-missing-values-have-been-removed-from-the-data." class="level2">
 <h2 class="anchored" data-anchor-id="this-exercise-involves-the-auto-data-set-studied-in-the-lab.-make-sure-that-the-missing-values-have-been-removed-from-the-data.">9. This exercise involves the <code>Auto</code> data set studied in the lab. Make sure that the missing values have been removed from the data.</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a>Auto <span class="op">=</span> pd.read_csv(<span class="st">'ISLP_data/Auto.csv'</span>,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a>Auto <span class="op">=</span> pd.read_csv(<span class="st">'ISLP_data/Auto.csv'</span>,</span>
 <span id="cb18-2"><a href="#cb18-2"></a>                    na_values<span class="op">=</span>[<span class="st">'?'</span>])</span>
-<span id="cb18-3"><a href="#cb18-3"></a>Auto</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-3"><a href="#cb18-3"></a>Auto</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>      mpg  cylinders  displacement  horsepower  weight  acceleration  year  \
 0    18.0          8         307.0       130.0    3504          12.0    70   
@@ -1032,7 +1039,7 @@ Name: Elite, dtype: int64</code></pre>
 <h3 class="anchored" data-anchor-id="a-which-of-the-predictors-are-quantitative-and-which-are-qualitative">(a) Which of the predictors are quantitative, and which are qualitative?</h3>
 <p>Mpg, Displacement, Horsepower, Weight and Acceleration are quantitative. Cylinders, Year, Origin, and Name are qualitative.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a>Auto.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a>Auto.info()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 397 entries, 0 to 396
@@ -1053,8 +1060,8 @@ memory usage: 28.0+ KB</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a>Auto[<span class="st">'cylinders'</span>] <span class="op">=</span> Auto[<span class="st">'cylinders'</span>].astype(<span class="st">'object'</span>) </span>
-<span id="cb22-2"><a href="#cb22-2"></a>Auto[<span class="st">'cylinders'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a>Auto[<span class="st">'cylinders'</span>] <span class="op">=</span> Auto[<span class="st">'cylinders'</span>].astype(<span class="st">'object'</span>) </span>
+<span id="cb22-2"><a href="#cb22-2"></a>Auto[<span class="st">'cylinders'</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>0      8
 1      8
@@ -1074,46 +1081,46 @@ Name: cylinders, Length: 397, dtype: object</code></pre>
 <section id="b-what-is-the-range-of-each-quantitative-predictor-you-can-answer-this-using-the-min-and-max-methods-in-numpy." class="level3">
 <h3 class="anchored" data-anchor-id="b-what-is-the-range-of-each-quantitative-predictor-you-can-answer-this-using-the-min-and-max-methods-in-numpy.">(b) What is the range of each quantitative predictor? You can answer this using the <code>min()</code> and <code>max()</code> methods in <code>numpy</code>.</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a>mpg_min <span class="op">=</span> Auto[<span class="st">'mpg'</span>].<span class="bu">min</span>( )</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a>mpg_min <span class="op">=</span> Auto[<span class="st">'mpg'</span>].<span class="bu">min</span>( )</span>
 <span id="cb24-2"><a href="#cb24-2"></a>mpg_max <span class="op">=</span> Auto[<span class="st">'mpg'</span>].<span class="bu">max</span>( )</span>
 <span id="cb24-3"><a href="#cb24-3"></a></span>
-<span id="cb24-4"><a href="#cb24-4"></a><span class="bu">print</span>(<span class="st">'The min and max miles per gallon are'</span>, (mpg_min, mpg_max))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb24-4"><a href="#cb24-4"></a><span class="bu">print</span>(<span class="st">'The min and max miles per gallon are'</span>, (mpg_min, mpg_max))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>The min and max miles per gallon are (9.0, 46.6)</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1"></a>dsp_min <span class="op">=</span> Auto[<span class="st">'displacement'</span>].<span class="bu">min</span>( )</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1"></a>dsp_min <span class="op">=</span> Auto[<span class="st">'displacement'</span>].<span class="bu">min</span>( )</span>
 <span id="cb26-2"><a href="#cb26-2"></a>dsp_max <span class="op">=</span> Auto[<span class="st">'displacement'</span>].<span class="bu">max</span>( )</span>
 <span id="cb26-3"><a href="#cb26-3"></a></span>
-<span id="cb26-4"><a href="#cb26-4"></a><span class="bu">print</span>(<span class="st">'The min and max displacement are'</span>, (dsp_min, dsp_max))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb26-4"><a href="#cb26-4"></a><span class="bu">print</span>(<span class="st">'The min and max displacement are'</span>, (dsp_min, dsp_max))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>The min and max displacement are (68.0, 455.0)</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1"></a>hpwr_min <span class="op">=</span> Auto[<span class="st">'horsepower'</span>].<span class="bu">min</span>( )</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1"></a>hpwr_min <span class="op">=</span> Auto[<span class="st">'horsepower'</span>].<span class="bu">min</span>( )</span>
 <span id="cb28-2"><a href="#cb28-2"></a>hpwr_max <span class="op">=</span> Auto[<span class="st">'horsepower'</span>].<span class="bu">max</span>( )</span>
 <span id="cb28-3"><a href="#cb28-3"></a></span>
-<span id="cb28-4"><a href="#cb28-4"></a><span class="bu">print</span>(<span class="st">'The min and max horsepower are'</span>, (hpwr_min, hpwr_max))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb28-4"><a href="#cb28-4"></a><span class="bu">print</span>(<span class="st">'The min and max horsepower are'</span>, (hpwr_min, hpwr_max))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>The min and max horsepower are (46.0, 230.0)</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1"></a>wt_min <span class="op">=</span> Auto[<span class="st">'weight'</span>].<span class="bu">min</span>( )</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1"></a>wt_min <span class="op">=</span> Auto[<span class="st">'weight'</span>].<span class="bu">min</span>( )</span>
 <span id="cb30-2"><a href="#cb30-2"></a>wt_max <span class="op">=</span> Auto[<span class="st">'weight'</span>].<span class="bu">max</span>( )</span>
 <span id="cb30-3"><a href="#cb30-3"></a></span>
-<span id="cb30-4"><a href="#cb30-4"></a><span class="bu">print</span>(<span class="st">'The min and max weights are'</span>, (wt_min, wt_max))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb30-4"><a href="#cb30-4"></a><span class="bu">print</span>(<span class="st">'The min and max weights are'</span>, (wt_min, wt_max))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>The min and max weights are (1613, 5140)</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1"></a>acc_min <span class="op">=</span> Auto[<span class="st">'acceleration'</span>].<span class="bu">min</span>( )</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1"></a>acc_min <span class="op">=</span> Auto[<span class="st">'acceleration'</span>].<span class="bu">min</span>( )</span>
 <span id="cb32-2"><a href="#cb32-2"></a>acc_max <span class="op">=</span> Auto[<span class="st">'acceleration'</span>].<span class="bu">max</span>( )</span>
 <span id="cb32-3"><a href="#cb32-3"></a></span>
-<span id="cb32-4"><a href="#cb32-4"></a><span class="bu">print</span>(<span class="st">'The min and max accelerations are'</span>, (acc_min, acc_max))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb32-4"><a href="#cb32-4"></a><span class="bu">print</span>(<span class="st">'The min and max accelerations are'</span>, (acc_min, acc_max))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>The min and max accelerations are (8.0, 24.8)</code></pre>
 </div>
@@ -1122,46 +1129,46 @@ Name: cylinders, Length: 397, dtype: object</code></pre>
 <section id="c-what-is-the-mean-and-standard-deviation-of-each-quantitative-predictor" class="level3">
 <h3 class="anchored" data-anchor-id="c-what-is-the-mean-and-standard-deviation-of-each-quantitative-predictor">(c) What is the mean and standard deviation of each quantitative predictor?</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1"></a>mpg_mean <span class="op">=</span> Auto[<span class="st">'mpg'</span>].mean( )</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1"></a>mpg_mean <span class="op">=</span> Auto[<span class="st">'mpg'</span>].mean( )</span>
 <span id="cb34-2"><a href="#cb34-2"></a>mpg_sd <span class="op">=</span> Auto[<span class="st">'mpg'</span>].std( )</span>
 <span id="cb34-3"><a href="#cb34-3"></a></span>
-<span id="cb34-4"><a href="#cb34-4"></a><span class="bu">print</span>(<span class="st">'The mean and standard deviation of miles per gallon are'</span>, mpg_mean,<span class="st">'and'</span>, mpg_sd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb34-4"><a href="#cb34-4"></a><span class="bu">print</span>(<span class="st">'The mean and standard deviation of miles per gallon are'</span>, mpg_mean,<span class="st">'and'</span>, mpg_sd)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>The mean and standard deviation of miles per gallon are 23.515869017632248 and 7.825803928946562</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1"></a>dsp_mean <span class="op">=</span> Auto[<span class="st">'displacement'</span>].mean( )</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1"></a>dsp_mean <span class="op">=</span> Auto[<span class="st">'displacement'</span>].mean( )</span>
 <span id="cb36-2"><a href="#cb36-2"></a>dsp_sd <span class="op">=</span> Auto[<span class="st">'displacement'</span>].std( )</span>
 <span id="cb36-3"><a href="#cb36-3"></a></span>
-<span id="cb36-4"><a href="#cb36-4"></a><span class="bu">print</span>(<span class="st">'The mean and standard deviation of weight are'</span>, dsp_mean,<span class="st">'and'</span>, dsp_sd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb36-4"><a href="#cb36-4"></a><span class="bu">print</span>(<span class="st">'The mean and standard deviation of weight are'</span>, dsp_mean,<span class="st">'and'</span>, dsp_sd)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>The mean and standard deviation of weight are 193.53274559193954 and 104.37958329992945</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1"></a>hpwr_mean <span class="op">=</span> Auto[<span class="st">'horsepower'</span>].mean( )</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1"></a>hpwr_mean <span class="op">=</span> Auto[<span class="st">'horsepower'</span>].mean( )</span>
 <span id="cb38-2"><a href="#cb38-2"></a>hpwr_sd <span class="op">=</span> Auto[<span class="st">'horsepower'</span>].std( )</span>
 <span id="cb38-3"><a href="#cb38-3"></a></span>
-<span id="cb38-4"><a href="#cb38-4"></a><span class="bu">print</span>(<span class="st">'The mean and standard deviation of horsepower are'</span>, hpwr_mean,<span class="st">'and'</span>, hpwr_sd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb38-4"><a href="#cb38-4"></a><span class="bu">print</span>(<span class="st">'The mean and standard deviation of horsepower are'</span>, hpwr_mean,<span class="st">'and'</span>, hpwr_sd)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>The mean and standard deviation of horsepower are 104.46938775510205 and 38.49115993282855</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1"></a>wt_mean <span class="op">=</span> Auto[<span class="st">'weight'</span>].mean( )</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1"></a>wt_mean <span class="op">=</span> Auto[<span class="st">'weight'</span>].mean( )</span>
 <span id="cb40-2"><a href="#cb40-2"></a>wt_sd <span class="op">=</span> Auto[<span class="st">'weight'</span>].std( )</span>
 <span id="cb40-3"><a href="#cb40-3"></a></span>
-<span id="cb40-4"><a href="#cb40-4"></a><span class="bu">print</span>(<span class="st">'The mean and standard deviation of weight are'</span>, wt_mean,<span class="st">'and'</span>, wt_sd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb40-4"><a href="#cb40-4"></a><span class="bu">print</span>(<span class="st">'The mean and standard deviation of weight are'</span>, wt_mean,<span class="st">'and'</span>, wt_sd)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>The mean and standard deviation of weight are 2970.2619647355164 and 847.9041194897246</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1"></a>acc_mean <span class="op">=</span> Auto[<span class="st">'acceleration'</span>].mean( )</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1"></a>acc_mean <span class="op">=</span> Auto[<span class="st">'acceleration'</span>].mean( )</span>
 <span id="cb42-2"><a href="#cb42-2"></a>acc_sd <span class="op">=</span> Auto[<span class="st">'acceleration'</span>].std( )</span>
 <span id="cb42-3"><a href="#cb42-3"></a></span>
-<span id="cb42-4"><a href="#cb42-4"></a><span class="bu">print</span>(<span class="st">'The mean and standard deviation of acceleration are'</span>, acc_mean,<span class="st">'and'</span>, acc_sd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb42-4"><a href="#cb42-4"></a><span class="bu">print</span>(<span class="st">'The mean and standard deviation of acceleration are'</span>, acc_mean,<span class="st">'and'</span>, acc_sd)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>The mean and standard deviation of acceleration are 15.555667506297214 and 2.7499952929761515</code></pre>
 </div>
@@ -1170,8 +1177,8 @@ Name: cylinders, Length: 397, dtype: object</code></pre>
 <section id="d-now-remove-the-10th-through-85th-observations.-what-is-the-range-mean-and-standard-deviation-of-each-predictor-in-the-subset-of-the-data-that-remains" class="level3">
 <h3 class="anchored" data-anchor-id="d-now-remove-the-10th-through-85th-observations.-what-is-the-range-mean-and-standard-deviation-of-each-predictor-in-the-subset-of-the-data-that-remains">(d) Now remove the 10th through 85th observations. What is the range, mean, and standard deviation of each predictor in the subset of the data that remains?</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1"></a>Auto_new <span class="op">=</span> Auto.drop(Auto.index[<span class="dv">10</span>:<span class="dv">85</span>])</span>
-<span id="cb44-2"><a href="#cb44-2"></a>Auto_new</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1"></a>Auto_new <span class="op">=</span> Auto.drop(Auto.index[<span class="dv">10</span>:<span class="dv">85</span>])</span>
+<span id="cb44-2"><a href="#cb44-2"></a>Auto_new</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>      mpg cylinders  displacement  horsepower  weight  acceleration  year  \
 0    18.0         8         307.0       130.0    3504          12.0    70   
@@ -1203,81 +1210,81 @@ Name: cylinders, Length: 397, dtype: object</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1"></a>mpg_min <span class="op">=</span> Auto_new[<span class="st">'mpg'</span>].<span class="bu">min</span>( )</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1"></a>mpg_min <span class="op">=</span> Auto_new[<span class="st">'mpg'</span>].<span class="bu">min</span>( )</span>
 <span id="cb46-2"><a href="#cb46-2"></a>mpg_max <span class="op">=</span> Auto_new[<span class="st">'mpg'</span>].<span class="bu">max</span>( )</span>
 <span id="cb46-3"><a href="#cb46-3"></a></span>
-<span id="cb46-4"><a href="#cb46-4"></a><span class="bu">print</span>(<span class="st">'The min and max miles per gallon of the subsetted data are'</span>, (mpg_min, mpg_max))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb46-4"><a href="#cb46-4"></a><span class="bu">print</span>(<span class="st">'The min and max miles per gallon of the subsetted data are'</span>, (mpg_min, mpg_max))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>The min and max miles per gallon of the subsetted data are (11.0, 46.6)</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1"></a>mpg_mean <span class="op">=</span> Auto_new[<span class="st">'mpg'</span>].mean( )</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1"></a>mpg_mean <span class="op">=</span> Auto_new[<span class="st">'mpg'</span>].mean( )</span>
 <span id="cb48-2"><a href="#cb48-2"></a>mpg_sd <span class="op">=</span> Auto_new[<span class="st">'mpg'</span>].std( )</span>
 <span id="cb48-3"><a href="#cb48-3"></a></span>
-<span id="cb48-4"><a href="#cb48-4"></a><span class="bu">print</span>(<span class="st">'The mean and standard deviation of miles per gallon of the subsetted data are'</span>, mpg_mean,<span class="st">'and'</span>, mpg_sd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb48-4"><a href="#cb48-4"></a><span class="bu">print</span>(<span class="st">'The mean and standard deviation of miles per gallon of the subsetted data are'</span>, mpg_mean,<span class="st">'and'</span>, mpg_sd)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>The mean and standard deviation of miles per gallon of the subsetted data are 24.40931677018633 and 7.913357147165568</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1"></a>dsp_min <span class="op">=</span> Auto_new[<span class="st">'displacement'</span>].<span class="bu">min</span>( )</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1"></a>dsp_min <span class="op">=</span> Auto_new[<span class="st">'displacement'</span>].<span class="bu">min</span>( )</span>
 <span id="cb50-2"><a href="#cb50-2"></a>dsp_max <span class="op">=</span> Auto_new[<span class="st">'displacement'</span>].<span class="bu">max</span>( )</span>
 <span id="cb50-3"><a href="#cb50-3"></a></span>
-<span id="cb50-4"><a href="#cb50-4"></a><span class="bu">print</span>(<span class="st">'The min and max displacement of the subsetted data are'</span>, (dsp_min, dsp_max))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb50-4"><a href="#cb50-4"></a><span class="bu">print</span>(<span class="st">'The min and max displacement of the subsetted data are'</span>, (dsp_min, dsp_max))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>The min and max displacement of the subsetted data are (68.0, 455.0)</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1"></a>dsp_mean <span class="op">=</span> Auto_new[<span class="st">'displacement'</span>].mean( )</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1"></a>dsp_mean <span class="op">=</span> Auto_new[<span class="st">'displacement'</span>].mean( )</span>
 <span id="cb52-2"><a href="#cb52-2"></a>dsp_sd <span class="op">=</span> Auto_new[<span class="st">'displacement'</span>].std( )</span>
 <span id="cb52-3"><a href="#cb52-3"></a></span>
-<span id="cb52-4"><a href="#cb52-4"></a><span class="bu">print</span>(<span class="st">'The mean and standard deviation of weight of the subsetted data are'</span>, dsp_mean,<span class="st">'and'</span>, dsp_sd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb52-4"><a href="#cb52-4"></a><span class="bu">print</span>(<span class="st">'The mean and standard deviation of weight of the subsetted data are'</span>, dsp_mean,<span class="st">'and'</span>, dsp_sd)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>The mean and standard deviation of weight of the subsetted data are 187.6801242236025 and 100.12092459330134</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1"></a>hpwr_min <span class="op">=</span> Auto[<span class="st">'horsepower'</span>].<span class="bu">min</span>( )</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1"></a>hpwr_min <span class="op">=</span> Auto[<span class="st">'horsepower'</span>].<span class="bu">min</span>( )</span>
 <span id="cb54-2"><a href="#cb54-2"></a>hpwr_max <span class="op">=</span> Auto[<span class="st">'horsepower'</span>].<span class="bu">max</span>( )</span>
 <span id="cb54-3"><a href="#cb54-3"></a></span>
-<span id="cb54-4"><a href="#cb54-4"></a><span class="bu">print</span>(<span class="st">'The min and max horsepower of the subsetted data are'</span>, (hpwr_min, hpwr_max))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb54-4"><a href="#cb54-4"></a><span class="bu">print</span>(<span class="st">'The min and max horsepower of the subsetted data are'</span>, (hpwr_min, hpwr_max))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>The min and max horsepower of the subsetted data are (46.0, 230.0)</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1"></a>hpwr_mean <span class="op">=</span> Auto[<span class="st">'horsepower'</span>].mean( )</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1"></a>hpwr_mean <span class="op">=</span> Auto[<span class="st">'horsepower'</span>].mean( )</span>
 <span id="cb56-2"><a href="#cb56-2"></a>hpwr_sd <span class="op">=</span> Auto[<span class="st">'horsepower'</span>].std( )</span>
 <span id="cb56-3"><a href="#cb56-3"></a></span>
-<span id="cb56-4"><a href="#cb56-4"></a><span class="bu">print</span>(<span class="st">'The mean and standard deviation of horsepower of the subsetted data are'</span>, hpwr_mean,<span class="st">'and'</span>, hpwr_sd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb56-4"><a href="#cb56-4"></a><span class="bu">print</span>(<span class="st">'The mean and standard deviation of horsepower of the subsetted data are'</span>, hpwr_mean,<span class="st">'and'</span>, hpwr_sd)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>The mean and standard deviation of horsepower of the subsetted data are 104.46938775510205 and 38.49115993282855</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1"></a>wt_min <span class="op">=</span> Auto[<span class="st">'weight'</span>].<span class="bu">min</span>( )</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1"></a>wt_min <span class="op">=</span> Auto[<span class="st">'weight'</span>].<span class="bu">min</span>( )</span>
 <span id="cb58-2"><a href="#cb58-2"></a>wt_max <span class="op">=</span> Auto[<span class="st">'weight'</span>].<span class="bu">max</span>( )</span>
 <span id="cb58-3"><a href="#cb58-3"></a></span>
-<span id="cb58-4"><a href="#cb58-4"></a><span class="bu">print</span>(<span class="st">'The min and max weights of the subsetted data are'</span>, (wt_min, wt_max))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb58-4"><a href="#cb58-4"></a><span class="bu">print</span>(<span class="st">'The min and max weights of the subsetted data are'</span>, (wt_min, wt_max))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>The min and max weights of the subsetted data are (1613, 5140)</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1"></a>wt_mean <span class="op">=</span> Auto[<span class="st">'weight'</span>].mean( )</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1"></a>wt_mean <span class="op">=</span> Auto[<span class="st">'weight'</span>].mean( )</span>
 <span id="cb60-2"><a href="#cb60-2"></a>wt_sd <span class="op">=</span> Auto[<span class="st">'weight'</span>].std( )</span>
 <span id="cb60-3"><a href="#cb60-3"></a></span>
-<span id="cb60-4"><a href="#cb60-4"></a><span class="bu">print</span>(<span class="st">'The mean and standard deviation of weight of the subsetted data are'</span>, wt_mean,<span class="st">'and'</span>, wt_sd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb60-4"><a href="#cb60-4"></a><span class="bu">print</span>(<span class="st">'The mean and standard deviation of weight of the subsetted data are'</span>, wt_mean,<span class="st">'and'</span>, wt_sd)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>The mean and standard deviation of weight of the subsetted data are 2970.2619647355164 and 847.9041194897246</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1"></a>acc_min <span class="op">=</span> Auto[<span class="st">'acceleration'</span>].<span class="bu">min</span>( )</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1"></a>acc_min <span class="op">=</span> Auto[<span class="st">'acceleration'</span>].<span class="bu">min</span>( )</span>
 <span id="cb62-2"><a href="#cb62-2"></a>acc_max <span class="op">=</span> Auto[<span class="st">'acceleration'</span>].<span class="bu">max</span>( )</span>
 <span id="cb62-3"><a href="#cb62-3"></a></span>
-<span id="cb62-4"><a href="#cb62-4"></a><span class="bu">print</span>(<span class="st">'The min and max accelerations of the subsetted data are'</span>, (acc_min, acc_max))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb62-4"><a href="#cb62-4"></a><span class="bu">print</span>(<span class="st">'The min and max accelerations of the subsetted data are'</span>, (acc_min, acc_max))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>The min and max accelerations of the subsetted data are (8.0, 24.8)</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1"></a>acc_mean <span class="op">=</span> Auto[<span class="st">'acceleration'</span>].mean( )</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1"></a>acc_mean <span class="op">=</span> Auto[<span class="st">'acceleration'</span>].mean( )</span>
 <span id="cb64-2"><a href="#cb64-2"></a>acc_sd <span class="op">=</span> Auto[<span class="st">'acceleration'</span>].std( )</span>
 <span id="cb64-3"><a href="#cb64-3"></a></span>
-<span id="cb64-4"><a href="#cb64-4"></a><span class="bu">print</span>(<span class="st">'The mean and standard deviation of acceleration of the subsetted data are'</span>, acc_mean,<span class="st">'and'</span>, acc_sd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb64-4"><a href="#cb64-4"></a><span class="bu">print</span>(<span class="st">'The mean and standard deviation of acceleration of the subsetted data are'</span>, acc_mean,<span class="st">'and'</span>, acc_sd)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>The mean and standard deviation of acceleration of the subsetted data are 15.555667506297214 and 2.7499952929761515</code></pre>
 </div>
@@ -1295,8 +1302,8 @@ Name: cylinders, Length: 397, dtype: object</code></pre>
 <section id="a-to-begin-load-in-the-boston-data-set-which-is-part-of-the-islp-library." class="level3">
 <h3 class="anchored" data-anchor-id="a-to-begin-load-in-the-boston-data-set-which-is-part-of-the-islp-library.">(a) To begin, load in the <code>Boston</code> data set, which is part of the <code>ISLP</code> library.</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1"></a>Boston <span class="op">=</span> load_data(<span class="st">"Boston"</span>)</span>
-<span id="cb66-2"><a href="#cb66-2"></a>Boston</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1"></a>Boston <span class="op">=</span> load_data(<span class="st">"Boston"</span>)</span>
+<span id="cb66-2"><a href="#cb66-2"></a>Boston</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>        crim    zn  indus  chas    nox     rm   age     dis  rad  tax  \
 0    0.00632  18.0   2.31     0  0.538  6.575  65.2  4.0900    1  296   
@@ -1410,13 +1417,14 @@ Name: cylinders, Length: 397, dtype: object</code></pre>
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -1828,7 +1836,7 @@ Name: cylinders, Length: 397, dtype: object</code></pre>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb68" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb68-1"><a href="#cb68-1"></a><span class="fu"># Applied Exercises {-}</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb68" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb68-1"><a href="#cb68-1"></a><span class="fu"># Applied Exercises {-}</span></span>
 <span id="cb68-2"><a href="#cb68-2"></a></span>
 <span id="cb68-5"><a href="#cb68-5"></a><span class="in">```{r}</span></span>
 <span id="cb68-6"><a href="#cb68-6"></a><span class="fu">library</span>(reticulate)</span>
@@ -2198,7 +2206,7 @@ Name: cylinders, Length: 397, dtype: object</code></pre>
 <span id="cb68-436"><a href="#cb68-436"></a></span>
 <span id="cb68-437"><a href="#cb68-437"></a></span>
 <span id="cb68-438"><a href="#cb68-438"></a></span>
-</code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
